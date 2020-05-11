@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintComplexDatatypeObject;
 import java.util.Date;
 
@@ -18,6 +19,6 @@ import java.util.Date;
 public class Periode implements FintComplexDatatypeObject {
     private String beskrivelse;
     private Date slutt;
-    @NonNull
+    @NotNull
     private Date start;
 }

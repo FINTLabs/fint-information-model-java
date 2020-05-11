@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.basisklasser.Enhet;
@@ -34,10 +35,10 @@ public class Skole extends Enhet implements FintMainObject {
 
     private String domenenavn;
     private String juridiskNavn;
-    @NonNull
+    @NotBlank
     private String navn;
-    @NonNull
-    private Identifikator skolenummer;
-    @NonNull
-    private Identifikator systemId;
+    @NotNull
+    private @Valid Identifikator skolenummer;
+    @NotNull
+    private @Valid Identifikator systemId;
 }

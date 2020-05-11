@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -17,12 +18,12 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public abstract class Begrep implements FintAbstractObject {
-    private Periode gyldighetsperiode;
-    @NonNull
+    private @Valid Periode gyldighetsperiode;
+    @NotBlank
     private String kode;
-    @NonNull
+    @NotBlank
     private String navn;
     private Boolean passiv;
-    @NonNull
-    private Identifikator systemId;
+    @NotNull
+    private @Valid Identifikator systemId;
 }

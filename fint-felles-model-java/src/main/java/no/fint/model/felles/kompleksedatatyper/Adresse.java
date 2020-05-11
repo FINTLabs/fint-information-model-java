@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintComplexDatatypeObject;
 
 @Data
@@ -19,7 +20,6 @@ public class Adresse implements FintComplexDatatypeObject {
             LAND
     }
 
-    @NonNull
     private List<String> adresselinje;
     private String postnummer;
     private String poststed;
