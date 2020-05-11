@@ -1,0 +1,3 @@
+rootProject.name = 'fint-information-model-java'
+
+include 'fint-administrasjon-model-java', 'fint-administrasjon-resource-model-java', 'fint-felles-model-java', 'fint-felles-resource-model-java', 'fint-utdanning-model-java', 'fint-utdanning-resource-model-java'

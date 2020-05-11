@@ -1,0 +1,18 @@
+{
+  "gyldighetsperiode" : {
+    "beskrivelse" : "VpHyNIg",
+    "slutt" : 1381948113454,
+    "start" : 1271290506880
+  },
+  "kode" : "UYQfaYAeHiUsqgAtQtCjHq",
+  "navn" : "N",
+  "passiv" : false,
+  "systemId" : {
+    "gyldighetsperiode" : {
+      "beskrivelse" : "xXTRSAXiRr",
+      "slutt" : 1496381152965,
+      "start" : 1848365105292
+    },
+    "identifikatorverdi" : "uEdKdOAfnUdV"
+  }
+}

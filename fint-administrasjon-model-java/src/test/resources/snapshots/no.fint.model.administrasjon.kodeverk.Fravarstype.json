@@ -1,0 +1,19 @@
+{
+  "gyldighetsperiode" : {
+    "beskrivelse" : "hgAklPaEAOPojTYoaEnKYOY",
+    "slutt" : 1704099408896,
+    "start" : 1631871549120
+  },
+  "kode" : "hJgFDyfLtCLYPZVEuRHtkmaSuhndjK",
+  "navn" : "qIAFbZDiqDTQWhkVLjv",
+  "passiv" : true,
+  "systemId" : {
+    "gyldighetsperiode" : {
+      "beskrivelse" : "eGERFZFkIAUHgCxI",
+      "slutt" : 1458804017745,
+      "start" : 1591494941376
+    },
+    "identifikatorverdi" : "nyQMArCzIO"
+  },
+  "overfores" : true
+}

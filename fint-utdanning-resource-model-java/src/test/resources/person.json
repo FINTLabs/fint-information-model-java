@@ -1,0 +1,30 @@
+{
+  "kontaktinformasjon": {
+    "epostadresse": null,
+    "mobiltelefonnummer": null,
+    "nettsted": null,
+    "sip": null,
+    "telefonnummer": null
+  },
+  "postadresse": null,
+  "bilde": null,
+  "bostedsadresse": {
+    "adresselinje": [
+      null
+    ],
+    "postnummer": null,
+    "poststed": null,
+    "_links": null
+  },
+  "fodselsdato": null,
+  "fodselsnummer": {
+    "gyldighetsperiode": null,
+    "identifikatorverdi": "14036837404"
+  },
+  "navn": {
+    "etternavn": " ",
+    "fornavn": " ",
+    "mellomnavn": null
+  },
+  "_links": null
+}

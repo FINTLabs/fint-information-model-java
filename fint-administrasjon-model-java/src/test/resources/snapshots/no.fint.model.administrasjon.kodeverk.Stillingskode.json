@@ -1,0 +1,18 @@
+{
+  "gyldighetsperiode" : {
+    "beskrivelse" : "s",
+    "slutt" : 1264428348316,
+    "start" : 1765391924859
+  },
+  "kode" : "bZCNMvCbloxRMpPmoDV",
+  "navn" : "NOhGunNkEJPPtRMwCtVqxvhMtC",
+  "passiv" : false,
+  "systemId" : {
+    "gyldighetsperiode" : {
+      "beskrivelse" : "nXRuhRQarZlmECDVEeMNTfcU",
+      "slutt" : 1887930303643,
+      "start" : 1747737700669
+    },
+    "identifikatorverdi" : "VVBnHTZPNkBniKddutIhKbqXXIphRGFZ"
+  }
+}

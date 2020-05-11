@@ -1,0 +1,21 @@
+{
+  "gyldighetsperiode" : {
+    "beskrivelse" : "nYMLdJdbFysEOakKznCSPrtdbUctJWrH",
+    "slutt" : 1657919791218,
+    "start" : 1695295086312
+  },
+  "kode" : "UjLqPiLuHDMxEMPTjAacvk",
+  "navn" : "SCKnhhAQkjMTTImVkPwF",
+  "passiv" : true,
+  "systemId" : {
+    "gyldighetsperiode" : {
+      "beskrivelse" : "mZJrUTIEuWbNIkTFqqU",
+      "slutt" : 1635966277830,
+      "start" : 1327301817545
+    },
+    "identifikatorverdi" : "WY"
+  },
+  "belop" : -6883935842214157660,
+  "enhet" : "ZSPJJQokxPQmkyNAxjUwZ",
+  "grenseverdi" : -5791564186825483261
+}

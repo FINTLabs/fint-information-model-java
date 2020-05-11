@@ -1,0 +1,18 @@
+{
+  "gyldighetsperiode" : {
+    "beskrivelse" : "tNhUdrkfQqhwtn",
+    "slutt" : 1531057705749,
+    "start" : 1773000039186
+  },
+  "kode" : "MkzEYUBUgKpHLCMMfENu",
+  "navn" : "SKmLGfcywOFxgYFXLMqPdcSwVu",
+  "passiv" : false,
+  "systemId" : {
+    "gyldighetsperiode" : {
+      "beskrivelse" : "EisL",
+      "slutt" : 1763744549543,
+      "start" : 1488191938762
+    },
+    "identifikatorverdi" : "GCPZFbafChnMGvupGuPlVkRVCf"
+  }
+}

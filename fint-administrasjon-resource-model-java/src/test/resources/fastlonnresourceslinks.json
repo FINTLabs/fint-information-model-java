@@ -1,0 +1,66 @@
+﻿{
+  "_embedded": {
+    "_entries": [
+      {
+        "anvist": "2018-04-05T14:51:20Z",
+        "attestert": "2018-04-05T14:51:10Z",
+        "kontert": null,
+        "periode": {
+          "beskrivelse": null,
+          "slutt": null,
+          "start": "2018-04-05T14:51:20Z"
+        },
+        "systemId": {
+          "gyldighetsperiode": null,
+          "identifikatorverdi": "ABC123"
+        },
+        "beskrivelse": "Test",
+        "kontostreng": {
+          "_links": {
+            "art": [
+              {
+                "href": "/administrasjon/kodeverk/art/systemid/1"
+              }
+            ],
+            "ansvar": [
+              {
+                "href": "/administrasjon/kodeverk/ansvar/systemid/2"
+              }
+            ],
+            "funksjon": [
+              {
+                "href": "/administrasjon/kodeverk/funksjon/systemid/3"
+              }
+            ]
+          }
+        },
+        "opptjent": {
+          "beskrivelse": null,
+          "slutt": null,
+          "start": "2018-04-05T14:51:20Z"
+        },
+        "prosent": 10000,
+        "_links": {
+          "lonnsart": [
+            {
+              "href": "/administrasjon/kodeverk/lonnsart/systemid/4"
+            }
+          ],
+          "arbeidsforhold": [
+            {
+              "href": "/administrasjon/personal/arbeidsforhold/systemid/1234"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "http://localhost:8080"
+      }
+    ]
+  },
+  "total_items": 1
+}

@@ -1,0 +1,17 @@
+{
+  "bostedsadresse": {
+    "adresselinje": [
+      "Storgata 12"
+    ],
+    "postnummer": "1234",
+    "poststed": "Test"
+  },
+  "fodselsdato": -459133200000,
+  "fodselsnummer": {
+    "identifikatorverdi": "12345678901"
+  },
+  "navn": {
+    "etternavn": "Test",
+    "fornavn": "Tore"
+  }
+}

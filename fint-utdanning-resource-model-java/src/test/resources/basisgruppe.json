@@ -1,0 +1,14 @@
+{
+  "beskrivelse": "Basisgruppe 123",
+  "navn": "ABC123",
+  "periode": [
+    {
+      "beskrivelse": "BG 123",
+      "slutt": "2019-04-17T13:47:48Z",
+      "start": "2018-04-17T13:47:48Z"
+    }
+  ],
+  "systemId": {
+    "identifikatorverdi": "ABC123"
+  }
+}
