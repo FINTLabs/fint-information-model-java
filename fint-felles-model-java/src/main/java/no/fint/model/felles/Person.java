@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Adresse;
 import java.util.Date;
@@ -33,10 +34,10 @@ public class Person extends Aktor implements FintMainObject {
     }
 
     private String bilde;
-    private Adresse bostedsadresse;
+    private @Valid Adresse bostedsadresse;
     private Date fodselsdato;
-    @NonNull
-    private Identifikator fodselsnummer;
-    @NonNull
-    private Personnavn navn;
+    @NotNull
+    private @Valid Identifikator fodselsnummer;
+    @NotNull
+    private @Valid Personnavn navn;
 }

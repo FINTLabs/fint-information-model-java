@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
@@ -22,10 +23,10 @@ public class Elev implements FintMainObject {
             ELEVFORHOLD
     }
 
-    private Identifikator brukernavn;
-    private Identifikator elevnummer;
-    private Identifikator feidenavn;
-    private Kontaktinformasjon kontaktinformasjon;
-    @NonNull
-    private Identifikator systemId;
+    private @Valid Identifikator brukernavn;
+    private @Valid Identifikator elevnummer;
+    private @Valid Identifikator feidenavn;
+    private @Valid Kontaktinformasjon kontaktinformasjon;
+    @NotNull
+    private @Valid Identifikator systemId;
 }

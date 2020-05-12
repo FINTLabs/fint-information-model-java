@@ -8,12 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
@@ -26,12 +27,12 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class VurderingResource implements FintMainObject, FintLinks {
     // Attributes
-    @NonNull
+    @NotNull
     private Boolean endelig;
-    @NonNull
+    @NotBlank
     private String kommentar;
-    @NonNull
-    private Identifikator systemId;
+    @NotNull
+    private @Valid Identifikator systemId;
 
     // Relations
     @Getter

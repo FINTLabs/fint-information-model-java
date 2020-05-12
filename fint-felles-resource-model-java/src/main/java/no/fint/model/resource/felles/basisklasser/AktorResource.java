@@ -8,12 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
@@ -36,8 +37,8 @@ public abstract class AktorResource implements FintAbstractObject, FintLinks {
         }
         return result;
     }
-    private Kontaktinformasjon kontaktinformasjon;
-    private AdresseResource postadresse;
+    private @Valid Kontaktinformasjon kontaktinformasjon;
+    private @Valid AdresseResource postadresse;
 
     // Relations
     @Getter

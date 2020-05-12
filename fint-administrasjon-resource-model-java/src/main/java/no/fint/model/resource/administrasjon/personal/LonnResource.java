@@ -8,12 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
@@ -40,16 +41,16 @@ public abstract class LonnResource implements FintAbstractObject, FintLinks {
     }
     private Date anvist;
     private Date attestert;
-    @NonNull
+    @NotBlank
     private String beskrivelse;
-    private Identifikator kildesystemId;
+    private @Valid Identifikator kildesystemId;
     private Date kontert;
-    @NonNull
-    private KontostrengResource kontostreng;
-    private Periode opptjent;
-    @NonNull
-    private Periode periode;
-    private Identifikator systemId;
+    @NotNull
+    private @Valid KontostrengResource kontostreng;
+    private @Valid Periode opptjent;
+    @NotNull
+    private @Valid Periode periode;
+    private @Valid Identifikator systemId;
 
     // Relations
     @Getter

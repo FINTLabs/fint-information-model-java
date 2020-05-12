@@ -8,12 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
@@ -27,23 +28,23 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class ArbeidsforholdResource implements FintMainObject, FintLinks {
     // Attributes
-    @NonNull
+    @NotNull
     private Long ansettelsesprosent;
-    private Periode arbeidsforholdsperiode;
-    @NonNull
+    private @Valid Periode arbeidsforholdsperiode;
+    @NotNull
     private Long arslonn;
-    @NonNull
-    private Periode gyldighetsperiode;
-    @NonNull
+    @NotNull
+    private @Valid Periode gyldighetsperiode;
+    @NotNull
     private Boolean hovedstilling;
-    @NonNull
+    @NotNull
     private Long lonnsprosent;
-    @NonNull
+    @NotBlank
     private String stillingsnummer;
     private String stillingstittel;
-    @NonNull
-    private Identifikator systemId;
-    @NonNull
+    @NotNull
+    private @Valid Identifikator systemId;
+    @NotNull
     private Long tilstedeprosent;
 
     // Relations

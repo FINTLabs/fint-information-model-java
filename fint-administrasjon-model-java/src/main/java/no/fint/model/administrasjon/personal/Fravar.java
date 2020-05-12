@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -25,9 +26,9 @@ public class Fravar implements FintMainObject {
             FORTSETTER
     }
 
-    @NonNull
-    private Periode periode;
-    @NonNull
+    @NotNull
+    private @Valid Periode periode;
+    @NotNull
     private Long prosent;
-    private Identifikator systemId;
+    private @Valid Identifikator systemId;
 }

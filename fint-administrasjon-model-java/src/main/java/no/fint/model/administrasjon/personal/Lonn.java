@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintAbstractObject;
 import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -21,14 +22,14 @@ import no.fint.model.felles.kompleksedatatyper.Periode;
 public abstract class Lonn implements FintAbstractObject {
     private Date anvist;
     private Date attestert;
-    @NonNull
+    @NotBlank
     private String beskrivelse;
-    private Identifikator kildesystemId;
+    private @Valid Identifikator kildesystemId;
     private Date kontert;
-    @NonNull
-    private Kontostreng kontostreng;
-    private Periode opptjent;
-    @NonNull
-    private Periode periode;
-    private Identifikator systemId;
+    @NotNull
+    private @Valid Kontostreng kontostreng;
+    private @Valid Periode opptjent;
+    @NotNull
+    private @Valid Periode periode;
+    private @Valid Identifikator systemId;
 }

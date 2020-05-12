@@ -8,12 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
@@ -40,12 +41,12 @@ public class PersonResource extends AktorResource implements FintMainObject, Fin
         return result;
     }
     private String bilde;
-    private AdresseResource bostedsadresse;
+    private @Valid AdresseResource bostedsadresse;
     private Date fodselsdato;
-    @NonNull
-    private Identifikator fodselsnummer;
-    @NonNull
-    private Personnavn navn;
+    @NotNull
+    private @Valid Identifikator fodselsnummer;
+    @NotNull
+    private @Valid Personnavn navn;
 
     // Relations
     @Getter

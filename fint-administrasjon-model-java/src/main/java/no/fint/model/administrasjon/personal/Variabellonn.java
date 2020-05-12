@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.administrasjon.personal.Lonn;
 
@@ -24,7 +25,7 @@ public class Variabellonn extends Lonn implements FintMainObject {
             ATTESTANT
     }
 
-    @NonNull
+    @NotNull
     private Long antall;
     private Long belop;
 }
