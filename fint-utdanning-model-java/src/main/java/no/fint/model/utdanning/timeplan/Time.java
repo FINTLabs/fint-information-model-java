@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.kompleksedatatyper.Periode;
@@ -24,10 +25,10 @@ public class Time implements FintMainObject {
     }
 
     private String beskrivelse;
-    @NonNull
+    @NotBlank
     private String navn;
-    @NonNull
-    private Identifikator systemId;
-    @NonNull
-    private Periode tidsrom;
+    @NotNull
+    private @Valid Identifikator systemId;
+    @NotNull
+    private @Valid Periode tidsrom;
 }

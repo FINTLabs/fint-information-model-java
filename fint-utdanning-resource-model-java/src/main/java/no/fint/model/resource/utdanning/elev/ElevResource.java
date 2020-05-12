@@ -8,12 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
@@ -27,12 +28,12 @@ import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 @ToString
 public class ElevResource implements FintMainObject, FintLinks {
     // Attributes
-    private Identifikator brukernavn;
-    private Identifikator elevnummer;
-    private Identifikator feidenavn;
-    private Kontaktinformasjon kontaktinformasjon;
-    @NonNull
-    private Identifikator systemId;
+    private @Valid Identifikator brukernavn;
+    private @Valid Identifikator elevnummer;
+    private @Valid Identifikator feidenavn;
+    private @Valid Kontaktinformasjon kontaktinformasjon;
+    @NotNull
+    private @Valid Identifikator systemId;
 
     // Relations
     @Getter

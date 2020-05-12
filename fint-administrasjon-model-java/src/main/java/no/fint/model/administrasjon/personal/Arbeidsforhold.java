@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -35,22 +36,22 @@ public class Arbeidsforhold implements FintMainObject {
             UNDERVISNINGSFORHOLD
     }
 
-    @NonNull
+    @NotNull
     private Long ansettelsesprosent;
-    private Periode arbeidsforholdsperiode;
-    @NonNull
+    private @Valid Periode arbeidsforholdsperiode;
+    @NotNull
     private Long arslonn;
-    @NonNull
-    private Periode gyldighetsperiode;
-    @NonNull
+    @NotNull
+    private @Valid Periode gyldighetsperiode;
+    @NotNull
     private Boolean hovedstilling;
-    @NonNull
+    @NotNull
     private Long lonnsprosent;
-    @NonNull
+    @NotBlank
     private String stillingsnummer;
     private String stillingstittel;
-    @NonNull
-    private Identifikator systemId;
-    @NonNull
+    @NotNull
+    private @Valid Identifikator systemId;
+    @NotNull
     private Long tilstedeprosent;
 }

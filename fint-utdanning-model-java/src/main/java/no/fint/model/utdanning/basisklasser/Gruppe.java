@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -17,12 +18,11 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public abstract class Gruppe implements FintAbstractObject {
-    @NonNull
+    @NotBlank
     private String beskrivelse;
-    @NonNull
+    @NotBlank
     private String navn;
-    @NonNull
-    private List<Periode> periode;
-    @NonNull
-    private Identifikator systemId;
+    private List<@Valid Periode> periode;
+    @NotNull
+    private @Valid Identifikator systemId;
 }

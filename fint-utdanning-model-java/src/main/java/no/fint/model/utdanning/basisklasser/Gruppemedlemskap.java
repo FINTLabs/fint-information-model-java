@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -17,7 +18,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public abstract class Gruppemedlemskap implements FintAbstractObject {
-    private Periode gyldighetsperiode;
-    @NonNull
-    private Identifikator systemId;
+    private @Valid Periode gyldighetsperiode;
+    @NotNull
+    private @Valid Identifikator systemId;
 }

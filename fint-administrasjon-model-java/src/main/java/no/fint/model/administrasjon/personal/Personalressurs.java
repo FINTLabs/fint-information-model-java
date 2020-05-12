@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.kompleksedatatyper.Periode;
@@ -30,12 +31,12 @@ public class Personalressurs implements FintMainObject {
             SKOLERESSURS
     }
 
-    @NonNull
-    private Identifikator ansattnummer;
-    @NonNull
-    private Periode ansettelsesperiode;
+    @NotNull
+    private @Valid Identifikator ansattnummer;
+    @NotNull
+    private @Valid Periode ansettelsesperiode;
     private Date ansiennitet;
-    private Identifikator brukernavn;
-    private Kontaktinformasjon kontaktinformasjon;
-    private Identifikator systemId;
+    private @Valid Identifikator brukernavn;
+    private @Valid Kontaktinformasjon kontaktinformasjon;
+    private @Valid Identifikator systemId;
 }
