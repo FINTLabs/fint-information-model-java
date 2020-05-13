@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.NonNull;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -27,11 +28,11 @@ public class Organisasjonselement extends Enhet implements FintMainObject {
             ARBEIDSFORHOLD
     }
 
-    private Periode gyldighetsperiode;
+    private @Valid Periode gyldighetsperiode;
     private String kortnavn;
     private String navn;
-    @NonNull
-    private Identifikator organisasjonsId;
-    @NonNull
-    private Identifikator organisasjonsKode;
+    @NotNull
+    private @Valid Identifikator organisasjonsId;
+    @NotNull
+    private @Valid Identifikator organisasjonsKode;
 }
