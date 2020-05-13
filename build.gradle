@@ -52,7 +52,6 @@ subprojects {
 
     if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
         bintray {
-            dryRun = true
             user = bintrayUser
             key = bintrayKey
             publish = true
