@@ -1,4 +1,4 @@
-// Built from tag v3.6.0-rc-1
+// Built from tag v3.6.0-rc-2
 
 package no.fint.model.administrasjon.organisasjon;
 
@@ -23,7 +23,6 @@ public class Organisasjonselement extends Enhet implements FintMainObject {
             ANSVAR,
             LEDER,
             OVERORDNET,
-            FAKTURAUTSTEDER,
             UNDERORDNET,
             SKOLE,
             ARBEIDSFORHOLD

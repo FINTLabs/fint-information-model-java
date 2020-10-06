@@ -1,5 +1,3 @@
-// Built from tag v3.6.0-rc-1
-
 package no.fint.model.resource.personvern.samtykke;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -48,17 +46,17 @@ public class SamtykkeResource implements FintMainObject, FintLinks {
         addLink("behandling", link);
     }
     @JsonIgnore
-    public List<Link> getOrganisasjonselement() {
-        return getLinks().getOrDefault("organisasjonselement", Collections.emptyList()); 
-    }
-    public void addOrganisasjonselement(Link link) {
-        addLink("organisasjonselement", link);
-    }
-    @JsonIgnore
     public List<Link> getPerson() {
         return getLinks().getOrDefault("person", Collections.emptyList()); 
     }
     public void addPerson(Link link) {
         addLink("person", link);
+    }
+    @JsonIgnore
+    public List<Link> getOrganisasjonselement() {
+        return getLinks().getOrDefault("organisasjonselement", Collections.emptyList()); 
+    }
+    public void addOrganisasjonselement(Link link) {
+        addLink("organisasjonselement", link);
     }
 }
