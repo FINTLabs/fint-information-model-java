@@ -1,5 +1,3 @@
-// Built from tag v3.6.0-rc-1
-
 package no.fint.model.administrasjon.organisasjon;
 
 import lombok.Data;
@@ -23,7 +21,6 @@ public class Organisasjonselement extends Enhet implements FintMainObject {
             ANSVAR,
             LEDER,
             OVERORDNET,
-            FAKTURAUTSTEDER,
             UNDERORDNET,
             SKOLE,
             ARBEIDSFORHOLD

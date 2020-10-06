@@ -1,5 +1,3 @@
-// Built from tag v3.6.0-rc-1
-
 package no.fint.model.utdanning.elev;
 
 import java.util.Arrays;
