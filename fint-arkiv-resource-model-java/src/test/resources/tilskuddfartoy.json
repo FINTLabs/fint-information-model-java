@@ -1,0 +1,2038 @@
+{
+	"mappeId": {
+		"identifikatorverdi": "19/00094"
+	},
+	"noekkelord": [
+		"Fartøy",
+		"Ternen"
+	],
+	"offentligTittel": "Tilskudd - AWQR - Ternen - 232291-0 - 35 - FINT Test #1",
+	"opprettetDato": "2019-05-13T10:23:57Z",
+	"part": [],
+	"systemId": {
+		"identifikatorverdi": "234825"
+	},
+	"tittel": "Tilskudd - AWQR - Ternen - 232291-0 - 35 - FINT Test #1",
+	"journalpost": [
+		{
+			"beskrivelse": "Inngående eksternt produsert - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Ferdig - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "JPG",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728194"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"Susanna Thommessen"
+					],
+					"tittel": "Tomt arkivskap",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/2"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206851"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/100072"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Tilskudd - AWQR - Ternen - 232291-0 - 35 - FINT Test #1 - dok. 1",
+			"opprettetDato": "2019-05-13T12:54:22Z",
+			"referanseArkivDel": [],
+			"tittel": "Tilskudd - AWQR - Ternen - 232291-0 - 35 - FINT Test #1 - dok. 1",
+			"antallVedlegg": 1,
+			"dokumentetsDato": "2019-05-12T22:00:00Z",
+			"journalDato": "2019-05-13T12:54:23Z",
+			"journalSekvensnummer": 1,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/100072"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "DOCX",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728195"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/0"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"Marianne Saastad"
+					],
+					"tittel": "Feilmelding",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				"Marianne Saastad"
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/223785"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/100013"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "test2",
+			"opprettetDato": "2019-05-13T15:31:46Z",
+			"referanseArkivDel": [],
+			"tittel": "test2",
+			"antallVedlegg": 1,
+			"dokumentetsDato": "2019-05-12T22:00:00Z",
+			"journalSekvensnummer": 3,
+			"_links": {
+				"saksbehandler": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/personal/personalressurs/ansattnummer/211230"
+					}
+				],
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/100013"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Internt notat uten oppfølging - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-14T08:10:35Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 0,
+			"journalDato": "2019-05-14T08:10:35Z",
+			"journalSekvensnummer": 4,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/60005"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728202"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-27T08:53:28Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 13,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728211"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/3"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-11-12T11:28:03Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 17,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728212"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-11-19T10:55:31Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 18,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728213"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-12-04T19:35:15Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 19,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728344"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/0"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon.pdf",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2020-01-07T09:37:33Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 22,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728201"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-23T08:52:50Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 12,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728330"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-12-13T11:17:16Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 21,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				"Marianne Saastad"
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206851"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/100013"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "TEST",
+			"opprettetDato": "2019-05-13T15:17:09Z",
+			"referanseArkivDel": [],
+			"tittel": "TEST",
+			"antallVedlegg": 0,
+			"dokumentetsDato": "2019-05-12T22:00:00Z",
+			"journalSekvensnummer": 2,
+			"_links": {
+				"saksbehandler": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/personal/personalressurs/ansattnummer/211230"
+					}
+				],
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/100013"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "HTML",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728345"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/0"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon.pdf",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2020-01-07T09:44:28Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 23,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728203"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-28T10:06:03Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 14,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728204"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-28T10:10:26Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 15,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Internt notat uten oppfølging - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-14T08:15:06Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 0,
+			"journalDato": "2019-05-14T08:15:06Z",
+			"journalSekvensnummer": 5,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/60005"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Internt notat uten oppfølging - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-14T08:19:39Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 0,
+			"journalDato": "2019-05-14T08:19:39Z",
+			"journalSekvensnummer": 6,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/100002"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Internt notat uten oppfølging - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-14T08:23:15Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 0,
+			"journalDato": "2019-05-14T08:23:15Z",
+			"journalSekvensnummer": 7,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/100002"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/215056"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/100072"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "test",
+			"opprettetDato": "2019-05-15T10:04:00Z",
+			"referanseArkivDel": [],
+			"tittel": "test",
+			"antallVedlegg": 0,
+			"dokumentetsDato": "2019-05-14T22:00:00Z",
+			"journalDato": "2019-05-15T10:04:00Z",
+			"journalSekvensnummer": 8,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/100072"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Internt notat uten oppfølging - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-15T11:48:39Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 0,
+			"journalDato": "2019-05-15T11:48:39Z",
+			"journalSekvensnummer": 9,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/100002"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Journalført - Grønn - Ugradert",
+			"dokumentbeskrivelse": [],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-23T06:50:20Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 0,
+			"journalDato": "2019-05-23T06:50:21Z",
+			"journalSekvensnummer": 10,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/6"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728200"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-05-23T08:36:16Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 11,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728210"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/3"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-09-10T17:36:18Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 16,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		},
+		{
+			"beskrivelse": "Inngående eksternt produsert - Registrert av ansvarlig person/leder - Grønn - Ugradert",
+			"dokumentbeskrivelse": [
+				{
+					"beskrivelse": "Behandles - Hoveddokument - Grønn - Ugradert - null",
+					"dokumentobjekt": [
+						{
+							"format": "PDF",
+							"_links": {
+								"referanseDokumentfil": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentfil/systemid/728249"
+									}
+								],
+								"variantFormat": [
+									{
+										"href": "https://beta.felleskomponent.no/administrasjon/arkiv/variantformat/systemid/1"
+									}
+								]
+							}
+						}
+					],
+					"forfatter": [
+						"FINT SIFSOAP"
+					],
+					"tittel": "Dokumentasjon",
+					"_links": {
+						"dokumentstatus": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumentstatus/systemid/1"
+							}
+						],
+						"tilknyttetRegistreringSom": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/tilknyttetregistreringsom/systemid/1"
+							}
+						],
+						"dokumentType": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/dokumenttype/systemid/1"
+							}
+						]
+					}
+				}
+			],
+			"forfatter": [
+				""
+			],
+			"korrespondansepart": [
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/225960"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/5"
+							}
+						]
+					}
+				},
+				{
+					"_links": {
+						"korrespondansepart": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondansepart/systemid/206760"
+							}
+						],
+						"korrespondanseparttype": [
+							{
+								"href": "https://beta.felleskomponent.no/administrasjon/arkiv/korrespondanseparttype/systemid/6"
+							}
+						]
+					}
+				}
+			],
+			"merknad": [],
+			"nokkelord": [],
+			"offentligTittel": "Kommentar til avslag på søknad",
+			"opprettetDato": "2019-12-10T14:38:55Z",
+			"referanseArkivDel": [],
+			"tittel": "Kommentar til avslag på søknad",
+			"antallVedlegg": 1,
+			"journalSekvensnummer": 20,
+			"_links": {
+				"administrativEnhet": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/206760"
+					}
+				],
+				"journalposttype": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalposttype/systemid/110"
+					}
+				],
+				"journalstatus": [
+					{
+						"href": "https://beta.felleskomponent.no/administrasjon/arkiv/journalstatus/systemid/3"
+					}
+				]
+			}
+		}
+	],
+	"saksaar": "19",
+	"saksdato": "2019-05-13T10:23:57Z",
+	"sakssekvensnummer": "00094",
+	"fartoyNavn": "Ternen",
+	"kallesignal": "AWQR",
+	"kulturminneId": "232291-0",
+	"soknadsnummer": {
+		"identifikatorverdi": "35"
+	},
+	"_links": {
+		"saksstatus": [
+			{
+				"href": "https://beta.felleskomponent.no/administrasjon/arkiv/saksstatus/systemid/5"
+			}
+		],
+		"administrativEnhet": [
+			{
+				"href": "https://beta.felleskomponent.no/administrasjon/organisasjon/organisasjonselement/organisasjonsid/100072"
+			}
+		],
+		"klasse": [
+			{
+				"href": "https://beta.felleskomponent.no/administrasjon/arkiv/klasse/systemid/105440"
+			}
+		],
+		"self": [
+			{
+				"href": "https://beta.felleskomponent.no/kultur/kulturminnevern/tilskuddfartoy/mappeid/19/00094"
+			},
+			{
+				"href": "https://beta.felleskomponent.no/kultur/kulturminnevern/tilskuddfartoy/systemid/234825"
+			},
+			{
+				"href": "https://beta.felleskomponent.no/kultur/kulturminnevern/tilskuddfartoy/soknadsnummer/35"
+			}
+		]
+	}
+}
