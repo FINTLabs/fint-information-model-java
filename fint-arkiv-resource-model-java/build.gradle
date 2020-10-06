@@ -1,0 +1,4 @@
+dependencies {
+    compile project(":fint-arkiv-model-java")
+    compile project(":fint-felles-resource-model-java")
+}
