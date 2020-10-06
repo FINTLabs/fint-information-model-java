@@ -1,0 +1,4 @@
+dependencies {
+    compile project(":fint-okonomi-model-java")
+    compile project(":fint-administrasjon-resource-model-java")
+}
