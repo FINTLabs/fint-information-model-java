@@ -1,5 +1,3 @@
-// Built from tag v3.6.0-rc-1
-
 package no.fint.model.resource.administrasjon.organisasjon;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -61,13 +59,6 @@ public class OrganisasjonselementResource extends EnhetResource implements FintM
     }
     public void addOverordnet(Link link) {
         addLink("overordnet", link);
-    }
-    @JsonIgnore
-    public List<Link> getFakturautsteder() {
-        return getLinks().getOrDefault("fakturautsteder", Collections.emptyList()); 
-    }
-    public void addFakturautsteder(Link link) {
-        addLink("fakturautsteder", link);
     }
     @JsonIgnore
     public List<Link> getUnderordnet() {

@@ -1,5 +1,3 @@
-// Built from tag v3.6.0-rc-1
-
 package no.fint.model.personvern.samtykke;
 
 import lombok.Data;
@@ -21,8 +19,8 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Samtykke implements FintMainObject {
     public enum Relasjonsnavn {
             BEHANDLING,
-            ORGANISASJONSELEMENT,
-            PERSON
+            PERSON,
+            ORGANISASJONSELEMENT
     }
 
     @NotNull
