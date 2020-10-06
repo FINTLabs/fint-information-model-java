@@ -1,4 +1,4 @@
-// Built from tag v3.5.0
+// Built from tag v3.6.0-rc-1
 
 package no.fint.model.resource.utdanning.basisklasser;
 
@@ -32,6 +32,7 @@ public abstract class GruppeResource implements FintAbstractObject, FintLinks {
     private String beskrivelse;
     @NotBlank
     private String navn;
+    @Deprecated
     private List<@Valid Periode> periode;
     @NotNull
     private @Valid Identifikator systemId;
