@@ -1,4 +1,4 @@
-// Built from tag v3.5.0
+// Built from tag v3.6.0-rc-1
 
 package no.fint.model.utdanning.elev;
 
@@ -18,6 +18,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Skoleressurs implements FintMainObject {
     public enum Relasjonsnavn {
+            PERSON,
             PERSONALRESSURS,
             UNDERVISNINGSFORHOLD,
             SKOLE

@@ -1,4 +1,4 @@
-// Built from tag v3.5.0
+// Built from tag v3.6.0-rc-1
 
 package no.fint.model.resource.felles;
 
@@ -52,6 +52,13 @@ public class PersonResource extends AktorResource implements FintMainObject, Fin
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+    @JsonIgnore
+    public List<Link> getSamtykke() {
+        return getLinks().getOrDefault("samtykke", Collections.emptyList()); 
+    }
+    public void addSamtykke(Link link) {
+        addLink("samtykke", link);
+    }
     @JsonIgnore
     public List<Link> getStatsborgerskap() {
         return getLinks().getOrDefault("statsborgerskap", Collections.emptyList()); 

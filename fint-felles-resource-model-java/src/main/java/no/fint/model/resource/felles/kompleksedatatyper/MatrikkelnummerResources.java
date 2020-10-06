@@ -1,6 +1,6 @@
 // Built from tag v3.6.0-rc-1
 
-package no.fint.model.resource.felles.kodeverk.iso;
+package no.fint.model.resource.felles.kompleksedatatyper;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -12,16 +12,16 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-public class SprakResources extends AbstractCollectionResources<SprakResource> {
+public class MatrikkelnummerResources extends AbstractCollectionResources<MatrikkelnummerResource> {
 
-    public SprakResources(Collection<SprakResource> input) {
+    public MatrikkelnummerResources(Collection<MatrikkelnummerResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<SprakResource>> getTypeReference() {
-        return new TypeReference<List<SprakResource>>() {};
+    public TypeReference<List<MatrikkelnummerResource>> getTypeReference() {
+        return new TypeReference<List<MatrikkelnummerResource>>() {};
     }
 }

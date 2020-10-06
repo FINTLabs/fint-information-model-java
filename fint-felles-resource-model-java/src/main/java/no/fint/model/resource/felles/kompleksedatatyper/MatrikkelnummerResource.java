@@ -1,6 +1,6 @@
 // Built from tag v3.6.0-rc-1
 
-package no.fint.model.resource.administrasjon.kodeverk;
+package no.fint.model.resource.felles.kompleksedatatyper;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -16,26 +16,30 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.FintComplexDatatypeObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
-public class AnleggResource extends Kontodimensjon implements FintMainObject, FintLinks {
+@EqualsAndHashCode
+@ToString
+public class MatrikkelnummerResource implements FintComplexDatatypeObject, FintLinks {
+    // Attributes
+    private String bruksnummer;
+    private String festenummer;
+    private String gardsnummer;
+    private String seksjonsnummer;
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getFullmakt() {
-        return getLinks().getOrDefault("fullmakt", Collections.emptyList()); 
+    public List<Link> getKommunenummer() {
+        return getLinks().getOrDefault("kommunenummer", Collections.emptyList()); 
     }
-    public void addFullmakt(Link link) {
-        addLink("fullmakt", link);
+    public void addKommunenummer(Link link) {
+        addLink("kommunenummer", link);
     }
 }

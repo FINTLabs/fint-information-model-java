@@ -1,6 +1,6 @@
 // Built from tag v3.6.0-rc-1
 
-package no.fint.model.administrasjon.kompleksedatatyper;
+package no.fint.model.felles.kompleksedatatyper;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,19 +15,13 @@ import no.fint.model.FintComplexDatatypeObject;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Kontostreng implements FintComplexDatatypeObject {
+public class Matrikkelnummer implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            AKTIVITET,
-            ANLEGG,
-            ANSVAR,
-            ART,
-            DIVERSE,
-            FUNKSJON,
-            KONTRAKT,
-            LOPENUMMER,
-            OBJEKT,
-            PROSJEKT,
-            RAMME
+            KOMMUNENUMMER
     }
 
+    private String bruksnummer;
+    private String festenummer;
+    private String gardsnummer;
+    private String seksjonsnummer;
 }
