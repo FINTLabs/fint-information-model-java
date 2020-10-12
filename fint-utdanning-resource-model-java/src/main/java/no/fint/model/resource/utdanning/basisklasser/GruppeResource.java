@@ -38,4 +38,28 @@ public abstract class GruppeResource implements FintAbstractObject, FintLinks {
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
+        
+    @JsonIgnore
+    public List<Link> getGrepreferanse() {
+        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
+    }
+    public void addGrepreferanse(Link link) {
+        addLink("grepreferanse", link);
+    }
+    @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
+    public void addVigoreferanse(Link link) {
+        addLink("vigoreferanse", link);
+    }
+    @Deprecated
+    @JsonIgnore
+    public List<Link> getMedlemskap() {
+        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
+    }
+    @Deprecated
+    public void addMedlemskap(Link link) {
+        addLink("medlemskap", link);
+    }
 }

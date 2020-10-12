@@ -15,14 +15,4 @@ import no.fint.model.arkiv.noark.Saksmappe;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class Sak extends Saksmappe implements FintMainObject {
-    public enum Relasjonsnavn {
-            SAKSSTATUS,
-            JOURNALENHET,
-            ADMINISTRATIVENHET,
-            SAKSANSVARLIG,
-            ARKIVDEL,
-            AVSLUTTETAV,
-            OPPRETTETAV
-    }
-
 }

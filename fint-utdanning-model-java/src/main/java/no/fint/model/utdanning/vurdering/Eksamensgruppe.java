@@ -22,10 +22,7 @@ public class Eksamensgruppe extends Gruppe implements FintMainObject {
             TERMIN,
             SKOLEAR,
             UNDERVISNINGSFORHOLD,
-            GRUPPEMEDLEMSKAP,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            GRUPPEMEDLEMSKAP
     }
 
 }

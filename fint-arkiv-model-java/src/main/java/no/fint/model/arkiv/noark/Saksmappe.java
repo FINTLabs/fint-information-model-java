@@ -18,6 +18,13 @@ import no.fint.model.arkiv.noark.Mappe;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public abstract class Saksmappe extends Mappe implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            SAKSSTATUS,
+            JOURNALENHET,
+            ADMINISTRATIVENHET,
+            SAKSANSVARLIG
+    }
+
     private List<@Valid Registrering> arkivnotat;
     private List<@Valid Journalpost> journalpost;
     private String saksaar;

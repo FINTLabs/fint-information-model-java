@@ -17,13 +17,13 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
+import no.fint.model.resource.administrasjon.kodeverk.KontodimensjonResource;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class FunksjonResource extends Kontodimensjon implements FintMainObject, FintLinks {
+public class FunksjonResource extends KontodimensjonResource implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
@@ -42,12 +42,5 @@ public class FunksjonResource extends Kontodimensjon implements FintMainObject, 
     }
     public void addUnderordnet(Link link) {
         addLink("underordnet", link);
-    }
-    @JsonIgnore
-    public List<Link> getFullmakt() {
-        return getLinks().getOrDefault("fullmakt", Collections.emptyList()); 
-    }
-    public void addFullmakt(Link link) {
-        addLink("fullmakt", link);
     }
 }

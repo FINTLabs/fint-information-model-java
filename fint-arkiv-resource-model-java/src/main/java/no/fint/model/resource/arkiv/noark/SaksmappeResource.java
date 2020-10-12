@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.arkiv.noark.Registrering;
+import no.fint.model.resource.arkiv.noark.RegistreringResource;
 import no.fint.model.resource.arkiv.noark.JournalpostResource;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.MappeResource;
@@ -32,12 +32,15 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     @Override
     public List<FintLinks> getNestedResources() {
         List<FintLinks> result = super.getNestedResources();
+        if (arkivnotat != null) {
+            result.addAll(arkivnotat);
+        }
         if (journalpost != null) {
             result.addAll(journalpost);
         }
         return result;
     }
-    private List<@Valid Registrering> arkivnotat;
+    private List<@Valid RegistreringResource> arkivnotat;
     private List<@Valid JournalpostResource> journalpost;
     private String saksaar;
     private Date saksdato;
@@ -47,4 +50,33 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
+        
+    @JsonIgnore
+    public List<Link> getSaksstatus() {
+        return getLinks().getOrDefault("saksstatus", Collections.emptyList()); 
+    }
+    public void addSaksstatus(Link link) {
+        addLink("saksstatus", link);
+    }
+    @JsonIgnore
+    public List<Link> getJournalenhet() {
+        return getLinks().getOrDefault("journalenhet", Collections.emptyList()); 
+    }
+    public void addJournalenhet(Link link) {
+        addLink("journalenhet", link);
+    }
+    @JsonIgnore
+    public List<Link> getAdministrativEnhet() {
+        return getLinks().getOrDefault("administrativEnhet", Collections.emptyList()); 
+    }
+    public void addAdministrativEnhet(Link link) {
+        addLink("administrativEnhet", link);
+    }
+    @JsonIgnore
+    public List<Link> getSaksansvarlig() {
+        return getLinks().getOrDefault("saksansvarlig", Collections.emptyList()); 
+    }
+    public void addSaksansvarlig(Link link) {
+        addLink("saksansvarlig", link);
+    }
 }
