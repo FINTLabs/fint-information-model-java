@@ -17,8 +17,7 @@ import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
 public class Funksjon extends Kontodimensjon implements FintMainObject {
     public enum Relasjonsnavn {
             OVERORDNET,
-            UNDERORDNET,
-            FULLMAKT
+            UNDERORDNET
     }
 
 }

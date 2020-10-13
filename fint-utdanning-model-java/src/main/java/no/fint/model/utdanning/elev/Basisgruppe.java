@@ -23,10 +23,7 @@ public class Basisgruppe extends Gruppe implements FintMainObject {
             SKOLE,
             UNDERVISNINGSFORHOLD,
             GRUPPEMEDLEMSKAP,
-            KONTAKTLARERGRUPPE,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            KONTAKTLARERGRUPPE
     }
 
 }

@@ -15,4 +15,8 @@ import no.fint.model.felles.basisklasser.Begrep;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public abstract class Kontodimensjon extends Begrep implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            FULLMAKT
+    }
+
 }

@@ -23,10 +23,7 @@ public class Undervisningsgruppe extends Gruppe implements FintMainObject {
             SKOLEAR,
             UNDERVISNINGSFORHOLD,
             TIME,
-            GRUPPEMEDLEMSKAP,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            GRUPPEMEDLEMSKAP
     }
 
 }

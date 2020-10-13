@@ -20,10 +20,7 @@ public class Programomrade extends Gruppe implements FintMainObject {
             UTDANNINGSPROGRAM,
             FAG,
             TRINN,
-            GRUPPEMEDLEMSKAP,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            GRUPPEMEDLEMSKAP
     }
 
 }

@@ -17,16 +17,6 @@ import no.fint.model.arkiv.noark.Saksmappe;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class TilskuddFredaBygningPrivatEie extends Saksmappe implements FintMainObject {
-    public enum Relasjonsnavn {
-            SAKSSTATUS,
-            JOURNALENHET,
-            ADMINISTRATIVENHET,
-            SAKSANSVARLIG,
-            ARKIVDEL,
-            AVSLUTTETAV,
-            OPPRETTETAV
-    }
-
     private String bygningsnavn;
     @NotBlank
     private String kulturminneId;

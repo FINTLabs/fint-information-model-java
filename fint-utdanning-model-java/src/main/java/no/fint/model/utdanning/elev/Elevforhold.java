@@ -31,8 +31,7 @@ public class Elevforhold extends Utdanningsforhold implements FintMainObject {
             FRAVAR,
             PROGRAMOMRADEMEDLEMSKAP,
             EKSAMENSGRUPPE,
-            UNDERVISNINGSGRUPPE,
-            MEDLEMSKAP
+            UNDERVISNINGSGRUPPE
     }
 
     private @Valid Periode gyldighetsperiode;

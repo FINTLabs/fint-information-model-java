@@ -21,6 +21,14 @@ import no.fint.model.arkiv.noark.Skjerming;
 @EqualsAndHashCode
 @ToString
 public abstract class Registrering implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            ADMINISTRATIVENHET,
+            ARKIVDEL,
+            SAKSBEHANDLER,
+            ARKIVERTAV,
+            OPPRETTETAV
+    }
+
     private Date arkivertDato;
     private String beskrivelse;
     private List<@Valid Dokumentbeskrivelse> dokumentbeskrivelse;

@@ -22,10 +22,7 @@ public class Kontaktlarergruppe extends Gruppe implements FintMainObject {
             SKOLE,
             SKOLEAR,
             UNDERVISNINGSFORHOLD,
-            GRUPPEMEDLEMSKAP,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            GRUPPEMEDLEMSKAP
     }
 
 }

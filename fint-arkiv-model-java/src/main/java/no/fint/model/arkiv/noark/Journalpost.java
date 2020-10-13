@@ -19,12 +19,7 @@ public class Journalpost extends Registrering implements FintComplexDatatypeObje
     public enum Relasjonsnavn {
             JOURNALPOSTTYPE,
             JOURNALSTATUS,
-            JOURNALENHET,
-            ADMINISTRATIVENHET,
-            ARKIVDEL,
-            SAKSBEHANDLER,
-            ARKIVERTAV,
-            OPPRETTETAV
+            JOURNALENHET
     }
 
     private Long antallVedlegg;

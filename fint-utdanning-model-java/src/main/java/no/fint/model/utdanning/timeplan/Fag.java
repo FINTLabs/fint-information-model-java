@@ -19,10 +19,7 @@ public class Fag extends Gruppe implements FintMainObject {
             PROGRAMOMRADE,
             SKOLE,
             UNDERVISNINGSGRUPPE,
-            EKSAMENSGRUPPE,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            EKSAMENSGRUPPE
     }
 
 }

@@ -17,10 +17,7 @@ import no.fint.model.administrasjon.personal.Lonn;
 public class Fasttillegg extends Lonn implements FintMainObject {
     public enum Relasjonsnavn {
             LONNSART,
-            ARBEIDSFORHOLD,
-            ANVISER,
-            KONTERER,
-            ATTESTANT
+            ARBEIDSFORHOLD
     }
 
     @NotNull

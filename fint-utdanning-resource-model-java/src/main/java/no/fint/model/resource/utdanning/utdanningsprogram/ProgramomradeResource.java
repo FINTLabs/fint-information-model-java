@@ -17,13 +17,13 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.utdanning.basisklasser.Gruppe;
+import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ProgramomradeResource extends Gruppe implements FintMainObject, FintLinks {
+public class ProgramomradeResource extends GruppeResource implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
@@ -63,28 +63,5 @@ public class ProgramomradeResource extends Gruppe implements FintMainObject, Fin
     }
     public void addGruppemedlemskap(Link link) {
         addLink("gruppemedlemskap", link);
-    }
-    @JsonIgnore
-    public List<Link> getGrepreferanse() {
-        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
-    }
-    public void addGrepreferanse(Link link) {
-        addLink("grepreferanse", link);
-    }
-    @JsonIgnore
-    public List<Link> getVigoreferanse() {
-        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
-    }
-    public void addVigoreferanse(Link link) {
-        addLink("vigoreferanse", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMedlemskap() {
-        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMedlemskap(Link link) {
-        addLink("medlemskap", link);
     }
 }

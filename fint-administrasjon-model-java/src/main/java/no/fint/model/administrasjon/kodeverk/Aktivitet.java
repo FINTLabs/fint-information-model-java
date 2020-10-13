@@ -15,8 +15,4 @@ import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class Aktivitet extends Kontodimensjon implements FintMainObject {
-    public enum Relasjonsnavn {
-            FULLMAKT
-    }
-
 }

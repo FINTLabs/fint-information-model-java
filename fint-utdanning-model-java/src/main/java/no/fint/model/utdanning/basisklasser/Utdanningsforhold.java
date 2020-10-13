@@ -15,6 +15,10 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public abstract class Utdanningsforhold implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            MEDLEMSKAP
+    }
+
     @NotBlank
     private String beskrivelse;
     @NotNull

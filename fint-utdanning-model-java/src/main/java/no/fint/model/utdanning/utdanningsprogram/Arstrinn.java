@@ -17,10 +17,7 @@ import no.fint.model.utdanning.basisklasser.Gruppe;
 public class Arstrinn extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
             PROGRAMOMRADE,
-            BASISGRUPPE,
-            GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            BASISGRUPPE
     }
 
 }

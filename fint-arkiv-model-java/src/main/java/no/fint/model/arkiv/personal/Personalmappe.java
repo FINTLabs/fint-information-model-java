@@ -20,14 +20,7 @@ public class Personalmappe extends Saksmappe implements FintMainObject {
             PERSON,
             LEDER,
             ARBEIDSSTED,
-            PERSONALRESSURS,
-            SAKSSTATUS,
-            JOURNALENHET,
-            ADMINISTRATIVENHET,
-            SAKSANSVARLIG,
-            ARKIVDEL,
-            AVSLUTTETAV,
-            OPPRETTETAV
+            PERSONALRESSURS
     }
 
     @NotNull

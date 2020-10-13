@@ -18,8 +18,7 @@ public class Ansvar extends Kontodimensjon implements FintMainObject {
     public enum Relasjonsnavn {
             OVERORDNET,
             UNDERORDNET,
-            ORGANISASJONSELEMENT,
-            FULLMAKT
+            ORGANISASJONSELEMENT
     }
 
 }

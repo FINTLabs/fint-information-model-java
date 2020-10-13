@@ -18,6 +18,12 @@ import no.fint.model.felles.kompleksedatatyper.Periode;
 @EqualsAndHashCode
 @ToString
 public abstract class Lonn implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            ANVISER,
+            KONTERER,
+            ATTESTANT
+    }
+
     private Date anvist;
     private Date attestert;
     @NotBlank

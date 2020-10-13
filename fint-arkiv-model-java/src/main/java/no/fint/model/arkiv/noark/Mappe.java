@@ -20,6 +20,12 @@ import no.fint.model.arkiv.noark.Skjerming;
 @EqualsAndHashCode
 @ToString
 public abstract class Mappe implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            ARKIVDEL,
+            AVSLUTTETAV,
+            OPPRETTETAV
+    }
+
     private Date avsluttetDato;
     private String beskrivelse;
     private @Valid Klasse klasse;

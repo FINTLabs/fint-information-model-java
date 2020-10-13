@@ -53,4 +53,26 @@ public abstract class LonnResource implements FintAbstractObject, FintLinks {
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
+        
+    @JsonIgnore
+    public List<Link> getAnviser() {
+        return getLinks().getOrDefault("anviser", Collections.emptyList()); 
+    }
+    public void addAnviser(Link link) {
+        addLink("anviser", link);
+    }
+    @JsonIgnore
+    public List<Link> getKonterer() {
+        return getLinks().getOrDefault("konterer", Collections.emptyList()); 
+    }
+    public void addKonterer(Link link) {
+        addLink("konterer", link);
+    }
+    @JsonIgnore
+    public List<Link> getAttestant() {
+        return getLinks().getOrDefault("attestant", Collections.emptyList()); 
+    }
+    public void addAttestant(Link link) {
+        addLink("attestant", link);
+    }
 }

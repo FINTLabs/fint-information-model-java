@@ -16,6 +16,12 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public abstract class Gruppe implements FintAbstractObject {
+    public enum Relasjonsnavn {
+            GREPREFERANSE,
+            VIGOREFERANSE,
+            MEDLEMSKAP
+    }
+
     @NotBlank
     private String beskrivelse;
     @NotBlank
