@@ -28,7 +28,7 @@ public abstract class Mappe implements FintAbstractObject {
 
     private Date avsluttetDato;
     private String beskrivelse;
-    private @Valid Klasse klasse;
+    private List<@Valid Klasse> klasse;
     private @Valid Identifikator mappeId;
     private List<@Valid Merknad> merknad;
     private List<String> noekkelord;
