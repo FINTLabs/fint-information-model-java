@@ -35,7 +35,7 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     public List<FintLinks> getNestedResources() {
         List<FintLinks> result = FintLinks.super.getNestedResources();
         if (klasse != null) {
-            result.add(klasse);
+            result.addAll(klasse);
         }
         if (merknad != null) {
             result.addAll(merknad);
@@ -50,7 +50,7 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     }
     private Date avsluttetDato;
     private String beskrivelse;
-    private @Valid KlasseResource klasse;
+    private List<@Valid KlasseResource> klasse;
     private @Valid Identifikator mappeId;
     private List<@Valid MerknadResource> merknad;
     private List<String> noekkelord;
