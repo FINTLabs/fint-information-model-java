@@ -24,8 +24,6 @@ pipeline {
                 }
                 sh "echo Version is ${VERSION}"
                 sh "gradle --no-daemon -Pversion=${VERSION} -PbintrayUser=${BINTRAY_USR} -PbintrayKey=${BINTRAY_PSW} bintrayUpload"
-                build job: '/FINTLabs/fint-graphql/master', parameters: [
-                    string(name: 'MODEL_VERSION', value: "${VERSION}")]
             }
         }
     }
