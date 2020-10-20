@@ -1,5 +1,5 @@
 # FINT Java Model
 
-Version 3.6.10
+Version 3.7.0-drosje-1
 
-Generated Mon Oct 19 09:53:56 UTC 2020
+Generated Tue Oct 20 08:29:10 UTC 2020
