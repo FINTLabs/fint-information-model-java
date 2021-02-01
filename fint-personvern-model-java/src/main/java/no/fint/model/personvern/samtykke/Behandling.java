@@ -18,6 +18,7 @@ public class Behandling implements FintMainObject {
     public enum Relasjonsnavn {
             BEHANDLINGSGRUNNLAG,
             PERSONOPPLYSNING,
+            SAMTYKKE,
             TJENESTE
     }
 

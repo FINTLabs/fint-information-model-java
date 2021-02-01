@@ -8,6 +8,7 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintComplexDatatypeObject;
+import no.fint.model.felles.kompleksedatatyper.Adresse;
 
 @Data
 @NoArgsConstructor
@@ -18,6 +19,7 @@ public class Matrikkelnummer implements FintComplexDatatypeObject {
             KOMMUNENUMMER
     }
 
+    private @Valid Adresse adresse;
     private String bruksnummer;
     private String festenummer;
     private String gardsnummer;

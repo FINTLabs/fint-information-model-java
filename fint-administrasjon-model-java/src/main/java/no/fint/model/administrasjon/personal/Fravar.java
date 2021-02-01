@@ -8,8 +8,9 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
-import no.fint.model.felles.kompleksedatatyper.Periode;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
@@ -21,9 +22,12 @@ public class Fravar implements FintMainObject {
             FRAVARSTYPE,
             ARBEIDSFORHOLD,
             FORTSETTELSE,
+            GODKJENNER,
             FORTSETTER
     }
 
+    private Date godkjent;
+    private @Valid Identifikator kildesystemId;
     @NotNull
     private @Valid Periode periode;
     @NotNull
