@@ -17,8 +17,9 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.felles.kompleksedatatyper.Periode;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
@@ -26,6 +27,8 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class FravarResource implements FintMainObject, FintLinks {
     // Attributes
+    private Date godkjent;
+    private @Valid Identifikator kildesystemId;
     @NotNull
     private @Valid Periode periode;
     @NotNull
@@ -63,6 +66,13 @@ public class FravarResource implements FintMainObject, FintLinks {
     }
     public void addFortsettelse(Link link) {
         addLink("fortsettelse", link);
+    }
+    @JsonIgnore
+    public List<Link> getGodkjenner() {
+        return getLinks().getOrDefault("godkjenner", Collections.emptyList()); 
+    }
+    public void addGodkjenner(Link link) {
+        addLink("godkjenner", link);
     }
     @JsonIgnore
     public List<Link> getFortsetter() {

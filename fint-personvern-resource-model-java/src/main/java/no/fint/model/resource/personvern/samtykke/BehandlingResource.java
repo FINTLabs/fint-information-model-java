@@ -51,6 +51,13 @@ public class BehandlingResource implements FintMainObject, FintLinks {
         addLink("personopplysning", link);
     }
     @JsonIgnore
+    public List<Link> getSamtykke() {
+        return getLinks().getOrDefault("samtykke", Collections.emptyList()); 
+    }
+    public void addSamtykke(Link link) {
+        addLink("samtykke", link);
+    }
+    @JsonIgnore
     public List<Link> getTjeneste() {
         return getLinks().getOrDefault("tjeneste", Collections.emptyList()); 
     }
