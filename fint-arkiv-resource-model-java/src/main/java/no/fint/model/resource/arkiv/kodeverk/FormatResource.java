@@ -1,4 +1,4 @@
-package no.fint.model.resource.administrasjon.kodeverk;
+package no.fint.model.resource.arkiv.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -14,7 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintAbstractObject;
+import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
 import no.fint.model.felles.basisklasser.Begrep;
@@ -23,19 +23,9 @@ import no.fint.model.felles.basisklasser.Begrep;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public abstract class KontodimensjonResource extends Begrep implements FintAbstractObject, FintLinks {
+public class FormatResource extends Begrep implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getFullmakt() {
-        return getLinks().getOrDefault("fullmakt", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addFullmakt(Link link) {
-        addLink("fullmakt", link);
-    }
 }

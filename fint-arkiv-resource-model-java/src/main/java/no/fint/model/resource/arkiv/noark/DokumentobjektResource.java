@@ -25,6 +25,7 @@ import no.fint.model.resource.Link;
 public class DokumentobjektResource implements FintComplexDatatypeObject, FintLinks {
     // Attributes
     private String filstorrelse;
+    @Deprecated
     private String format;
     private String formatDetaljer;
     private String sjekksum;
@@ -35,6 +36,13 @@ public class DokumentobjektResource implements FintComplexDatatypeObject, FintLi
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+    @JsonIgnore
+    public List<Link> getFormat() {
+        return getLinks().getOrDefault("format", Collections.emptyList()); 
+    }
+    public void addFormat(Link link) {
+        addLink("format", link);
+    }
     @JsonIgnore
     public List<Link> getVariantFormat() {
         return getLinks().getOrDefault("variantFormat", Collections.emptyList()); 
