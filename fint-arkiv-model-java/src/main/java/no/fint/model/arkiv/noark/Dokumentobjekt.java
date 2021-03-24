@@ -15,12 +15,14 @@ import no.fint.model.FintComplexDatatypeObject;
 @ToString
 public class Dokumentobjekt implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
+            FORMAT,
             VARIANTFORMAT,
             OPPRETTETAV,
             REFERANSEDOKUMENTFIL
     }
 
     private String filstorrelse;
+    @Deprecated
     private String format;
     private String formatDetaljer;
     private String sjekksum;

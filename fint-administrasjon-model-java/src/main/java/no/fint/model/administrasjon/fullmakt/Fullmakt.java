@@ -18,9 +18,21 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Fullmakt implements FintMainObject {
     public enum Relasjonsnavn {
             MYNDIGHET,
+            RAMME,
+            FUNKSJON,
+            OBJEKT,
+            ORGANISASJONSELEMENT,
+            ART,
+            ANLEGG,
+            DIVERSE,
+            AKTIVITET,
+            ANSVAR,
             STEDFORTREDER,
+            KONTRAKT,
             FULLMEKTIG,
-            ROLLE
+            PROSJEKT,
+            ROLLE,
+            LOPENUMMER
     }
 
     @NotNull
