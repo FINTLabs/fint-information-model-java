@@ -17,10 +17,18 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Arbeidsforhold implements FintMainObject {
     public enum Relasjonsnavn {
+            AKTIVITET,
+            ANLEGG,
             ANSVAR,
             ARBEIDSFORHOLDSTYPE,
             ART,
+            DIVERSE,
             FUNKSJON,
+            KONTRAKT,
+            LOPENUMMER,
+            OBJEKT,
+            PROSJEKT,
+            RAMME,
             STILLINGSKODE,
             TIMERPERUKE,
             ARBEIDSSTED,
