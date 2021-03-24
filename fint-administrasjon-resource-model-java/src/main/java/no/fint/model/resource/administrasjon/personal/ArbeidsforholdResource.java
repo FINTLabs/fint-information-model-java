@@ -50,6 +50,20 @@ public class ArbeidsforholdResource implements FintMainObject, FintLinks {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getAktivitet() {
+        return getLinks().getOrDefault("aktivitet", Collections.emptyList()); 
+    }
+    public void addAktivitet(Link link) {
+        addLink("aktivitet", link);
+    }
+    @JsonIgnore
+    public List<Link> getAnlegg() {
+        return getLinks().getOrDefault("anlegg", Collections.emptyList()); 
+    }
+    public void addAnlegg(Link link) {
+        addLink("anlegg", link);
+    }
+    @JsonIgnore
     public List<Link> getAnsvar() {
         return getLinks().getOrDefault("ansvar", Collections.emptyList()); 
     }
@@ -71,11 +85,53 @@ public class ArbeidsforholdResource implements FintMainObject, FintLinks {
         addLink("art", link);
     }
     @JsonIgnore
+    public List<Link> getDiverse() {
+        return getLinks().getOrDefault("diverse", Collections.emptyList()); 
+    }
+    public void addDiverse(Link link) {
+        addLink("diverse", link);
+    }
+    @JsonIgnore
     public List<Link> getFunksjon() {
         return getLinks().getOrDefault("funksjon", Collections.emptyList()); 
     }
     public void addFunksjon(Link link) {
         addLink("funksjon", link);
+    }
+    @JsonIgnore
+    public List<Link> getKontrakt() {
+        return getLinks().getOrDefault("kontrakt", Collections.emptyList()); 
+    }
+    public void addKontrakt(Link link) {
+        addLink("kontrakt", link);
+    }
+    @JsonIgnore
+    public List<Link> getLopenummer() {
+        return getLinks().getOrDefault("lopenummer", Collections.emptyList()); 
+    }
+    public void addLopenummer(Link link) {
+        addLink("lopenummer", link);
+    }
+    @JsonIgnore
+    public List<Link> getObjekt() {
+        return getLinks().getOrDefault("objekt", Collections.emptyList()); 
+    }
+    public void addObjekt(Link link) {
+        addLink("objekt", link);
+    }
+    @JsonIgnore
+    public List<Link> getProsjekt() {
+        return getLinks().getOrDefault("prosjekt", Collections.emptyList()); 
+    }
+    public void addProsjekt(Link link) {
+        addLink("prosjekt", link);
+    }
+    @JsonIgnore
+    public List<Link> getRamme() {
+        return getLinks().getOrDefault("ramme", Collections.emptyList()); 
+    }
+    public void addRamme(Link link) {
+        addLink("ramme", link);
     }
     @JsonIgnore
     public List<Link> getStillingskode() {
