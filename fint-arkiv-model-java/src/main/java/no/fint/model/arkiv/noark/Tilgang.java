@@ -17,9 +17,9 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Tilgang implements FintMainObject {
     public enum Relasjonsnavn {
             ROLLE,
+            ARKIVRESSURS,
             ADMINISTRATIVENHET,
-            ARKIVDEL,
-            ARKIVRESSURS
+            ARKIVDEL
     }
 
     @NotNull
