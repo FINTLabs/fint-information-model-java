@@ -21,8 +21,8 @@ public abstract class Saksmappe extends Mappe implements FintAbstractObject {
     public enum Relasjonsnavn {
             SAKSSTATUS,
             JOURNALENHET,
-            ADMINISTRATIVENHET,
-            SAKSANSVARLIG
+            SAKSANSVARLIG,
+            ADMINISTRATIVENHET
     }
 
     private List<@Valid Registrering> arkivnotat;

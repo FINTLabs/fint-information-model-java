@@ -15,10 +15,10 @@ import no.fint.model.FintComplexDatatypeObject;
 @ToString
 public class Dokumentobjekt implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            FORMAT,
+            FILFORMAT,
             VARIANTFORMAT,
-            OPPRETTETAV,
-            REFERANSEDOKUMENTFIL
+            REFERANSEDOKUMENTFIL,
+            OPPRETTETAV
     }
 
     private String filstorrelse;
