@@ -77,11 +77,11 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getAdministrativEnhet() {
-        return getLinks().getOrDefault("administrativEnhet", Collections.emptyList()); 
+    public List<Link> getSaksbehandler() {
+        return getLinks().getOrDefault("saksbehandler", Collections.emptyList()); 
     }
-    public void addAdministrativEnhet(Link link) {
-        addLink("administrativEnhet", link);
+    public void addSaksbehandler(Link link) {
+        addLink("saksbehandler", link);
     }
     @JsonIgnore
     public List<Link> getArkivdel() {
@@ -89,13 +89,6 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     }
     public void addArkivdel(Link link) {
         addLink("arkivdel", link);
-    }
-    @JsonIgnore
-    public List<Link> getSaksbehandler() {
-        return getLinks().getOrDefault("saksbehandler", Collections.emptyList()); 
-    }
-    public void addSaksbehandler(Link link) {
-        addLink("saksbehandler", link);
     }
     @JsonIgnore
     public List<Link> getArkivertAv() {
@@ -110,5 +103,12 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     }
     public void addOpprettetAv(Link link) {
         addLink("opprettetAv", link);
+    }
+    @JsonIgnore
+    public List<Link> getAdministrativEnhet() {
+        return getLinks().getOrDefault("administrativEnhet", Collections.emptyList()); 
+    }
+    public void addAdministrativEnhet(Link link) {
+        addLink("administrativEnhet", link);
     }
 }

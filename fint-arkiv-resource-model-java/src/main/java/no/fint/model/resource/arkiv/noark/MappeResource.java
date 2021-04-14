@@ -66,13 +66,6 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getArkivdel() {
-        return getLinks().getOrDefault("arkivdel", Collections.emptyList()); 
-    }
-    public void addArkivdel(Link link) {
-        addLink("arkivdel", link);
-    }
-    @JsonIgnore
     public List<Link> getAvsluttetAv() {
         return getLinks().getOrDefault("avsluttetAv", Collections.emptyList()); 
     }
@@ -85,5 +78,12 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     }
     public void addOpprettetAv(Link link) {
         addLink("opprettetAv", link);
+    }
+    @JsonIgnore
+    public List<Link> getArkivdel() {
+        return getLinks().getOrDefault("arkivdel", Collections.emptyList()); 
+    }
+    public void addArkivdel(Link link) {
+        addLink("arkivdel", link);
     }
 }

@@ -42,6 +42,13 @@ public class TilgangResource implements FintMainObject, FintLinks {
         addLink("rolle", link);
     }
     @JsonIgnore
+    public List<Link> getArkivressurs() {
+        return getLinks().getOrDefault("arkivressurs", Collections.emptyList()); 
+    }
+    public void addArkivressurs(Link link) {
+        addLink("arkivressurs", link);
+    }
+    @JsonIgnore
     public List<Link> getAdministrativEnhet() {
         return getLinks().getOrDefault("administrativEnhet", Collections.emptyList()); 
     }
@@ -54,12 +61,5 @@ public class TilgangResource implements FintMainObject, FintLinks {
     }
     public void addArkivdel(Link link) {
         addLink("arkivdel", link);
-    }
-    @JsonIgnore
-    public List<Link> getArkivressurs() {
-        return getLinks().getOrDefault("arkivressurs", Collections.emptyList()); 
-    }
-    public void addArkivressurs(Link link) {
-        addLink("arkivressurs", link);
     }
 }
