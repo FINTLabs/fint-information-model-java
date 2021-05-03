@@ -1,5 +1,4 @@
 plugins {
-    id 'com.jfrog.bintray' version '1.8.5' apply false
     id 'com.github.ben-manes.versions' version '0.27.0'
 }
 
@@ -13,11 +12,15 @@ allprojects {
     project.group = 'no.fint'
 
     repositories {
-        mavenLocal()
+        mavenCentral()
         jcenter()
         maven {
-            url 'http://dl.bintray.com/fint/maven'
+            url 'https://repo.fintlabs.no/releases'
         }
+        maven {
+            url 'https://dl.bintray.com/fint/maven'
+        }
+        mavenLocal()
     }
 }
 
@@ -25,12 +28,10 @@ subprojects {
     apply plugin: 'java-library'
     apply plugin: 'groovy'
     apply plugin: 'maven-publish'
-    apply plugin: 'com.jfrog.bintray'
     apply from: 'https://raw.githubusercontent.com/FINTLabs/fint-buildscripts/v1.8.0/dependencies.gradle'
 
     dependencies {
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
-        testCompile('no.fint:fint-model-test-utils:1.2.0')
     }
 
     test {
@@ -40,34 +41,27 @@ subprojects {
     }
 
     publishing {
+        if (project.hasProperty('reposiliteUsername') && project.hasProperty('reposiliteToken')) {
+            repositories {
+                maven {
+                    url "https://repo.fintlabs.no/releases"
+                    credentials {
+                        username = reposiliteUsername
+                        password = reposiliteToken
+                    }
+                    authentication {
+                        basic(BasicAuthentication)
+                    }
+                }
+            }
+        }
+
         publications {
             mavenJava(MavenPublication) {
                 from components.java
                 afterEvaluate {
                     artifactId = jar.archiveBaseName
                 }
-            }
-        }
-    }
-
-    if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
-        bintray {
-            user = bintrayUser
-            key = bintrayKey
-            publish = true
-            publications = ['mavenJava']
-            pkg {
-                repo = 'maven'
-                userOrg = 'fint'
-                vcsUrl = "https://github.com/FINTmodels/fint-information-model-java"
-                afterEvaluate {
-                    name = jar.baseName
-                    version {
-                        name = jar.version
-                        vcsTag = "v${jar.version}"
-                    }
-                }
-                licenses = ['MIT']
             }
         }
     }
