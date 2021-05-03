@@ -32,7 +32,6 @@ subprojects {
 
     dependencies {
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
-        testCompile('no.fint:fint-model-test-utils:1.2.0')
     }
 
     test {
