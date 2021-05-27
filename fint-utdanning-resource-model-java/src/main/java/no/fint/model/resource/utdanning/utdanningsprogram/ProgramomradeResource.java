@@ -29,10 +29,12 @@ public class ProgramomradeResource extends GruppeResource implements FintMainObj
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+    @Deprecated
     @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
+    @Deprecated
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
     }

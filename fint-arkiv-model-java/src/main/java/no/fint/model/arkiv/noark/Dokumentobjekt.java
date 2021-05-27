@@ -17,8 +17,8 @@ public class Dokumentobjekt implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
             FILFORMAT,
             VARIANTFORMAT,
-            REFERANSEDOKUMENTFIL,
-            OPPRETTETAV
+            OPPRETTETAV,
+            REFERANSEDOKUMENTFIL
     }
 
     private String filstorrelse;

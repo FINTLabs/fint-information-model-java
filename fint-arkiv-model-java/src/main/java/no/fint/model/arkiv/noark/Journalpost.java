@@ -8,6 +8,7 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintComplexDatatypeObject;
+import no.fint.model.arkiv.noark.Avskrivning;
 import java.util.Date;
 import no.fint.model.arkiv.noark.Registrering;
 
@@ -23,6 +24,7 @@ public class Journalpost extends Registrering implements FintComplexDatatypeObje
     }
 
     private Long antallVedlegg;
+    private @Valid Avskrivning avskrivning;
     private Date dokumentetsDato;
     private Date forfallsDato;
     private String journalAr;
