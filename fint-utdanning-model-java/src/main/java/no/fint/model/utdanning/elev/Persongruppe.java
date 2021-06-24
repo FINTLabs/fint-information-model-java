@@ -1,4 +1,4 @@
-package no.fint.model.utdanning.vurdering;
+package no.fint.model.utdanning.elev;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,23 +8,21 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
-import java.util.Date;
 import no.fint.model.utdanning.basisklasser.Gruppe;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class Eksamensgruppe extends Gruppe implements FintMainObject {
+public class Persongruppe extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
-            ELEVFORHOLD,
-            FAG,
-            SKOLE,
+            ELEV,
+            PERSONGRUPPEMEDLEMSKAP,
             TERMIN,
-            SKOLEAR,
             UNDERVISNINGSFORHOLD,
-            GRUPPEMEDLEMSKAP
+            SKOLE,
+            SKOLERESSURS,
+            SKOLEAR
     }
 
-    private Date eksamensdato;
 }

@@ -16,8 +16,8 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Arkivressurs implements FintMainObject {
     public enum Relasjonsnavn {
-            AUTORISASJON,
             PERSONALRESSURS,
+            AUTORISASJON,
             TILGANG
     }
 

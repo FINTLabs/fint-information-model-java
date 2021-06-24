@@ -25,6 +25,7 @@ public class Elevforhold extends Utdanningsforhold implements FintMainObject {
             UNDERVISNINGSGRUPPEMEDLEMSKAP,
             VURDERING,
             KONTAKTLARERGRUPPE,
+            PERSONGRUPPEMEDLEMSKAP,
             EKSAMENSGRUPPEMEDLEMSKAP,
             KONTAKTLARERGRUPPEMEDLEMSKAP,
             PROGRAMOMRADE,

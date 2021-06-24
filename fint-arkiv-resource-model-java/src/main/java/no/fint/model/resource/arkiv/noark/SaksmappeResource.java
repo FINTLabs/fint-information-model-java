@@ -66,17 +66,17 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
         addLink("journalenhet", link);
     }
     @JsonIgnore
-    public List<Link> getSaksansvarlig() {
-        return getLinks().getOrDefault("saksansvarlig", Collections.emptyList()); 
-    }
-    public void addSaksansvarlig(Link link) {
-        addLink("saksansvarlig", link);
-    }
-    @JsonIgnore
     public List<Link> getAdministrativEnhet() {
         return getLinks().getOrDefault("administrativEnhet", Collections.emptyList()); 
     }
     public void addAdministrativEnhet(Link link) {
         addLink("administrativEnhet", link);
+    }
+    @JsonIgnore
+    public List<Link> getSaksansvarlig() {
+        return getLinks().getOrDefault("saksansvarlig", Collections.emptyList()); 
+    }
+    public void addSaksansvarlig(Link link) {
+        addLink("saksansvarlig", link);
     }
 }

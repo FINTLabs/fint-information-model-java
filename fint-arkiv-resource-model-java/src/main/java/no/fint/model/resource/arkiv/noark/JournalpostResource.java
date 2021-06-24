@@ -17,6 +17,7 @@ import javax.validation.constraints.*;
 import no.fint.model.FintComplexDatatypeObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import no.fint.model.arkiv.noark.Avskrivning;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.RegistreringResource;
 
@@ -27,6 +28,7 @@ import no.fint.model.resource.arkiv.noark.RegistreringResource;
 public class JournalpostResource extends RegistreringResource implements FintComplexDatatypeObject, FintLinks {
     // Attributes
     private Long antallVedlegg;
+    private @Valid Avskrivning avskrivning;
     private Date dokumentetsDato;
     private Date forfallsDato;
     private String journalAr;

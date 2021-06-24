@@ -51,17 +51,17 @@ public class DokumentobjektResource implements FintComplexDatatypeObject, FintLi
         addLink("variantFormat", link);
     }
     @JsonIgnore
-    public List<Link> getReferanseDokumentfil() {
-        return getLinks().getOrDefault("referanseDokumentfil", Collections.emptyList()); 
-    }
-    public void addReferanseDokumentfil(Link link) {
-        addLink("referanseDokumentfil", link);
-    }
-    @JsonIgnore
     public List<Link> getOpprettetAv() {
         return getLinks().getOrDefault("opprettetAv", Collections.emptyList()); 
     }
     public void addOpprettetAv(Link link) {
         addLink("opprettetAv", link);
+    }
+    @JsonIgnore
+    public List<Link> getReferanseDokumentfil() {
+        return getLinks().getOrDefault("referanseDokumentfil", Collections.emptyList()); 
+    }
+    public void addReferanseDokumentfil(Link link) {
+        addLink("referanseDokumentfil", link);
     }
 }

@@ -22,11 +22,11 @@ import no.fint.model.arkiv.noark.Skjerming;
 @ToString
 public abstract class Registrering implements FintAbstractObject {
     public enum Relasjonsnavn {
-            SAKSBEHANDLER,
+            ADMINISTRATIVENHET,
             ARKIVDEL,
+            SAKSBEHANDLER,
             ARKIVERTAV,
-            OPPRETTETAV,
-            ADMINISTRATIVENHET
+            OPPRETTETAV
     }
 
     private Date arkivertDato;

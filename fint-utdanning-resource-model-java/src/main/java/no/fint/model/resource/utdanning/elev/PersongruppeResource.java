@@ -1,4 +1,4 @@
-package no.fint.model.resource.utdanning.timeplan;
+package no.fint.model.resource.utdanning.elev;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,27 +23,25 @@ import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class UndervisningsgruppeResource extends GruppeResource implements FintMainObject, FintLinks {
+public class PersongruppeResource extends GruppeResource implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
     @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    public List<Link> getElev() {
+        return getLinks().getOrDefault("elev", Collections.emptyList()); 
     }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
+    public void addElev(Link link) {
+        addLink("elev", link);
     }
     @JsonIgnore
-    public List<Link> getFag() {
-        return getLinks().getOrDefault("fag", Collections.emptyList()); 
+    public List<Link> getPersongruppemedlemskap() {
+        return getLinks().getOrDefault("persongruppemedlemskap", Collections.emptyList()); 
     }
-    public void addFag(Link link) {
-        addLink("fag", link);
+    public void addPersongruppemedlemskap(Link link) {
+        addLink("persongruppemedlemskap", link);
     }
     @JsonIgnore
     public List<Link> getTermin() {
@@ -53,20 +51,6 @@ public class UndervisningsgruppeResource extends GruppeResource implements FintM
         addLink("termin", link);
     }
     @JsonIgnore
-    public List<Link> getSkole() {
-        return getLinks().getOrDefault("skole", Collections.emptyList()); 
-    }
-    public void addSkole(Link link) {
-        addLink("skole", link);
-    }
-    @JsonIgnore
-    public List<Link> getSkolear() {
-        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
-    }
-    public void addSkolear(Link link) {
-        addLink("skolear", link);
-    }
-    @JsonIgnore
     public List<Link> getUndervisningsforhold() {
         return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
     }
@@ -74,17 +58,24 @@ public class UndervisningsgruppeResource extends GruppeResource implements FintM
         addLink("undervisningsforhold", link);
     }
     @JsonIgnore
-    public List<Link> getTime() {
-        return getLinks().getOrDefault("time", Collections.emptyList()); 
+    public List<Link> getSkole() {
+        return getLinks().getOrDefault("skole", Collections.emptyList()); 
     }
-    public void addTime(Link link) {
-        addLink("time", link);
+    public void addSkole(Link link) {
+        addLink("skole", link);
     }
     @JsonIgnore
-    public List<Link> getGruppemedlemskap() {
-        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
+    public List<Link> getSkoleressurs() {
+        return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
     }
-    public void addGruppemedlemskap(Link link) {
-        addLink("gruppemedlemskap", link);
+    public void addSkoleressurs(Link link) {
+        addLink("skoleressurs", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
+    }
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
     }
 }
