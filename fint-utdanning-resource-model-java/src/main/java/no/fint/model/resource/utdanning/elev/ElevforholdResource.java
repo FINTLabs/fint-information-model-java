@@ -54,10 +54,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addSkole(Link link) {
         addLink("skole", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getBasisgruppe() {
         return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addBasisgruppe(Link link) {
         addLink("basisgruppe", link);
     }
@@ -82,12 +84,21 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addVurdering(Link link) {
         addLink("vurdering", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getKontaktlarergruppe() {
         return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addKontaktlarergruppe(Link link) {
         addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getPersongruppemedlemskap() {
+        return getLinks().getOrDefault("persongruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addPersongruppemedlemskap(Link link) {
+        addLink("persongruppemedlemskap", link);
     }
     @JsonIgnore
     public List<Link> getEksamensgruppemedlemskap() {
@@ -103,10 +114,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addKontaktlarergruppemedlemskap(Link link) {
         addLink("kontaktlarergruppemedlemskap", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getProgramomrade() {
         return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
     }
+    @Deprecated
     public void addProgramomrade(Link link) {
         addLink("programomrade", link);
     }
@@ -124,17 +137,21 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addProgramomrademedlemskap(Link link) {
         addLink("programomrademedlemskap", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getEksamensgruppe() {
         return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addEksamensgruppe(Link link) {
         addLink("eksamensgruppe", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addUndervisningsgruppe(Link link) {
         addLink("undervisningsgruppe", link);
     }

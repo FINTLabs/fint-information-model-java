@@ -33,18 +33,18 @@ public class ArkivressursResource implements FintMainObject, FintLinks {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getAutorisasjon() {
-        return getLinks().getOrDefault("autorisasjon", Collections.emptyList()); 
-    }
-    public void addAutorisasjon(Link link) {
-        addLink("autorisasjon", link);
-    }
-    @JsonIgnore
     public List<Link> getPersonalressurs() {
         return getLinks().getOrDefault("personalressurs", Collections.emptyList()); 
     }
     public void addPersonalressurs(Link link) {
         addLink("personalressurs", link);
+    }
+    @JsonIgnore
+    public List<Link> getAutorisasjon() {
+        return getLinks().getOrDefault("autorisasjon", Collections.emptyList()); 
+    }
+    public void addAutorisasjon(Link link) {
+        addLink("autorisasjon", link);
     }
     @JsonIgnore
     public List<Link> getTilgang() {

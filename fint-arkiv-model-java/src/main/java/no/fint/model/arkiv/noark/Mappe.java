@@ -21,9 +21,9 @@ import no.fint.model.arkiv.noark.Skjerming;
 @ToString
 public abstract class Mappe implements FintAbstractObject {
     public enum Relasjonsnavn {
+            ARKIVDEL,
             AVSLUTTETAV,
-            OPPRETTETAV,
-            ARKIVDEL
+            OPPRETTETAV
     }
 
     private Date avsluttetDato;
