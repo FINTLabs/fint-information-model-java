@@ -26,4 +26,5 @@ public class Undervisningsforhold extends Utdanningsforhold implements FintMainO
             SKOLERESSURS
     }
 
+    private Boolean hovedskole;
 }

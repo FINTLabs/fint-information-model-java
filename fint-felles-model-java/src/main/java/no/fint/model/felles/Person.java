@@ -21,6 +21,7 @@ import no.fint.model.felles.basisklasser.Aktor;
 public class Person extends Aktor implements FintMainObject {
     public enum Relasjonsnavn {
             STATSBORGERSKAP,
+            KOMMUNE,
             KJONN,
             FORELDREANSVAR,
             MALFORM,

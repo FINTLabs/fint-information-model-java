@@ -17,19 +17,19 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import no.fint.model.utdanning.vurdering.Fravarsprosent;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-@Deprecated
-public class VurderingResource implements FintMainObject, FintLinks {
+public class FravarsoversiktResource implements FintMainObject, FintLinks {
     // Attributes
     @NotNull
-    private Boolean endelig;
-    @NotBlank
-    private String kommentar;
+    private @Valid Fravarsprosent halvar;
+    @NotNull
+    private @Valid Fravarsprosent skolear;
     @NotNull
     private @Valid Identifikator systemId;
 
@@ -37,12 +37,10 @@ public class VurderingResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
     @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
-    @Deprecated
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
     }
@@ -52,26 +50,5 @@ public class VurderingResource implements FintMainObject, FintLinks {
     }
     public void addFag(Link link) {
         addLink("fag", link);
-    }
-    @JsonIgnore
-    public List<Link> getUndervisningsgruppe() {
-        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
-    }
-    public void addUndervisningsgruppe(Link link) {
-        addLink("undervisningsgruppe", link);
-    }
-    @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
-    }
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
-    }
-    @JsonIgnore
-    public List<Link> getKarakter() {
-        return getLinks().getOrDefault("karakter", Collections.emptyList()); 
-    }
-    public void addKarakter(Link link) {
-        addLink("karakter", link);
     }
 }

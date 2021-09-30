@@ -24,6 +24,8 @@ import no.fint.model.resource.utdanning.basisklasser.UtdanningsforholdResource;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class UndervisningsforholdResource extends UtdanningsforholdResource implements FintMainObject, FintLinks {
+    // Attributes
+    private Boolean hovedskole;
 
     // Relations
     @Getter

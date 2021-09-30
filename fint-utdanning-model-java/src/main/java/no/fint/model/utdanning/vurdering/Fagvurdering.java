@@ -7,32 +7,25 @@ import lombok.ToString;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMainObject;
-import no.fint.model.felles.kompleksedatatyper.Periode;
+import no.fint.model.FintAbstractObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Fravar implements FintMainObject {
+public abstract class Fagvurdering implements FintAbstractObject {
     public enum Relasjonsnavn {
-            ELEVFORHOLD,
-            REGISTRERTAV,
+            FAG,
             UNDERVISNINGSGRUPPE,
-            EKSAMENSGRUPPE,
-            FRAVARSTYPE
+            SKOLEAR,
+            KARAKTER
     }
 
-    @Deprecated
-    @NotNull
-    private Boolean dokumentert;
-    @NotNull
-    private Boolean foresPaVitnemal;
-    @NotNull
-    private @Valid Periode gjelderPeriode;
     @NotBlank
     private String kommentar;
     @NotNull
     private @Valid Identifikator systemId;
+    @NotNull
+    private @Valid datetime vurderingsdato;
 }

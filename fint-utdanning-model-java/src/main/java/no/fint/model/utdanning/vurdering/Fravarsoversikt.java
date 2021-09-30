@@ -8,31 +8,23 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
-import no.fint.model.felles.kompleksedatatyper.Periode;
+import no.fint.model.utdanning.vurdering.Fravarsprosent;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Fravar implements FintMainObject {
+public class Fravarsoversikt implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
-            REGISTRERTAV,
-            UNDERVISNINGSGRUPPE,
-            EKSAMENSGRUPPE,
-            FRAVARSTYPE
+            FAG
     }
 
-    @Deprecated
     @NotNull
-    private Boolean dokumentert;
+    private @Valid Fravarsprosent halvar;
     @NotNull
-    private Boolean foresPaVitnemal;
-    @NotNull
-    private @Valid Periode gjelderPeriode;
-    @NotBlank
-    private String kommentar;
+    private @Valid Fravarsprosent skolear;
     @NotNull
     private @Valid Identifikator systemId;
 }

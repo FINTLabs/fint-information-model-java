@@ -10,17 +10,16 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-@Deprecated
-public class VurderingResources extends AbstractCollectionResources<VurderingResource> {
+public class HalvarsfagvurderingResources extends AbstractCollectionResources<HalvarsfagvurderingResource> {
 
-    public VurderingResources(Collection<VurderingResource> input) {
+    public HalvarsfagvurderingResources(Collection<HalvarsfagvurderingResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<VurderingResource>> getTypeReference() {
-        return new TypeReference<List<VurderingResource>>() {};
+    public TypeReference<List<HalvarsfagvurderingResource>> getTypeReference() {
+        return new TypeReference<List<HalvarsfagvurderingResource>>() {};
     }
 }

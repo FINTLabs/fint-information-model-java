@@ -1,4 +1,4 @@
-package no.fint.model.utdanning.timeplan;
+package no.fint.model.utdanning.kodeverk;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,19 +8,11 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
-import no.fint.model.utdanning.basisklasser.Gruppe;
+import no.fint.model.felles.basisklasser.Begrep;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class Fag extends Gruppe implements FintMainObject {
-    public enum Relasjonsnavn {
-            PROGRAMOMRADE,
-            TILRETTELEGGING,
-            SKOLE,
-            UNDERVISNINGSGRUPPE,
-            EKSAMENSGRUPPE
-    }
-
+public class Fagmerknad extends Begrep implements FintMainObject {
 }

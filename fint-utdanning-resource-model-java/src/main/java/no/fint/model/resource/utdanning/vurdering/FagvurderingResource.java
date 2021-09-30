@@ -14,7 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -23,29 +23,19 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-@Deprecated
-public class VurderingResource implements FintMainObject, FintLinks {
+public abstract class FagvurderingResource implements FintAbstractObject, FintLinks {
     // Attributes
-    @NotNull
-    private Boolean endelig;
     @NotBlank
     private String kommentar;
     @NotNull
     private @Valid Identifikator systemId;
+    @NotNull
+    private @Valid datetime vurderingsdato;
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
-    }
     @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
@@ -61,11 +51,11 @@ public class VurderingResource implements FintMainObject, FintLinks {
         addLink("undervisningsgruppe", link);
     }
     @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
     }
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
     }
     @JsonIgnore
     public List<Link> getKarakter() {
