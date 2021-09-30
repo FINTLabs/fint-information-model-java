@@ -18,7 +18,7 @@ public class Avskrivning implements FintComplexDatatypeObject {
     @NotBlank
     private String avskrevetAv;
     @NotNull
-    private Date avskrivningsdato;
+    private @Valid Date avskrivningsdato;
     @NotBlank
     private String avskrivningsmate;
 }

@@ -37,6 +37,13 @@ public class FagResource extends GruppeResource implements FintMainObject, FintL
         addLink("programomrade", link);
     }
     @JsonIgnore
+    public List<Link> getTilrettelegging() {
+        return getLinks().getOrDefault("tilrettelegging", Collections.emptyList()); 
+    }
+    public void addTilrettelegging(Link link) {
+        addLink("tilrettelegging", link);
+    }
+    @JsonIgnore
     public List<Link> getSkole() {
         return getLinks().getOrDefault("skole", Collections.emptyList()); 
     }

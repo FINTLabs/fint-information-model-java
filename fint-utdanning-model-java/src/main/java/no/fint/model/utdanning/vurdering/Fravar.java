@@ -18,11 +18,13 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Fravar implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
+            REGISTRERTAV,
             UNDERVISNINGSGRUPPE,
             EKSAMENSGRUPPE,
             FRAVARSTYPE
     }
 
+    @Deprecated
     @NotNull
     private Boolean dokumentert;
     @NotNull

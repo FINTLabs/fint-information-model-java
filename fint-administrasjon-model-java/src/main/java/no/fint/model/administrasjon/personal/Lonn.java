@@ -24,12 +24,12 @@ public abstract class Lonn implements FintAbstractObject {
             ATTESTANT
     }
 
-    private Date anvist;
-    private Date attestert;
+    private @Valid Date anvist;
+    private @Valid Date attestert;
     @NotBlank
     private String beskrivelse;
     private @Valid Identifikator kildesystemId;
-    private Date kontert;
+    private @Valid Date kontert;
     @NotNull
     private @Valid Kontostreng kontostreng;
     private @Valid Periode opptjent;

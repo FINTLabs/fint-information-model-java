@@ -55,7 +55,7 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
         }
         return result;
     }
-    private Date arkivertDato;
+    private @Valid Date arkivertDato;
     private String beskrivelse;
     private List<@Valid DokumentbeskrivelseResource> dokumentbeskrivelse;
     private List<String> forfatter;
@@ -64,7 +64,7 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     private List<@Valid MerknadResource> merknad;
     private List<String> nokkelord;
     private String offentligTittel;
-    private Date opprettetDato;
+    private @Valid Date opprettetDato;
     private List<@Valid PartResource> part;
     private List<String> referanseArkivDel;
     private String registreringsId;

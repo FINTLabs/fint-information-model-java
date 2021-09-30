@@ -14,9 +14,11 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Deprecated
 public class Vurdering implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
+            FAG,
             UNDERVISNINGSGRUPPE,
             EKSAMENSGRUPPE,
             KARAKTER

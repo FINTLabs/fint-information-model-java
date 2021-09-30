@@ -8,6 +8,8 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
+import no.fint.model.utdanning.vurdering.Anmerkninger;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.utdanning.basisklasser.Utdanningsforhold;
 
@@ -18,23 +20,36 @@ import no.fint.model.utdanning.basisklasser.Utdanningsforhold;
 public class Elevforhold extends Utdanningsforhold implements FintMainObject {
     public enum Relasjonsnavn {
             ELEV,
+            SIDEMAL,
             KATEGORI,
+            KROPPSOVING,
             SKOLE,
+            AVBRUDDSARSAK,
             BASISGRUPPE,
             BASISGRUPPEMEDLEMSKAP,
             UNDERVISNINGSGRUPPEMEDLEMSKAP,
             VURDERING,
+            SLUTTORDENSVURDERING,
             KONTAKTLARERGRUPPE,
+            UNDERVEISFAGVURDERING,
+            HALVARSFAGVURDERING,
+            SLUTTFAGVURDERING,
             PERSONGRUPPEMEDLEMSKAP,
             EKSAMENSGRUPPEMEDLEMSKAP,
             KONTAKTLARERGRUPPEMEDLEMSKAP,
+            ELEVFRAVAR,
+            TILRETTELEGGING,
+            HALVARSORDENSVURDERING,
             PROGRAMOMRADE,
             FRAVAR,
             PROGRAMOMRADEMEDLEMSKAP,
+            UNDERVEISORDENSVURDERING,
             EKSAMENSGRUPPE,
             UNDERVISNINGSGRUPPE
     }
 
+    private List<@Valid Anmerkninger> anmerkninger;
+    private Date avbruddsdato;
     private @Valid Periode gyldighetsperiode;
     private Boolean hovedskole;
 }

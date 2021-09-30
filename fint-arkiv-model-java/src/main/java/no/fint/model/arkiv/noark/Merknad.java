@@ -21,7 +21,7 @@ public class Merknad implements FintComplexDatatypeObject {
     }
 
     @NotNull
-    private Date merknadsdato;
+    private @Valid Date merknadsdato;
     @NotBlank
     private String merknadstekst;
 }

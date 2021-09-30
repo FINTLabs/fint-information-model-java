@@ -23,14 +23,14 @@ public class Klassifikasjonssystem implements FintMainObject {
     }
 
     private String avsluttetAv;
-    private Date avsluttetDato;
+    private @Valid Date avsluttetDato;
     private String beskrivelse;
     @NotEmpty
     private List<@Valid Klasse> klasse;
     @NotBlank
     private String opprettetAv;
     @NotNull
-    private Date opprettetDato;
+    private @Valid Date opprettetDato;
     @NotNull
     private @Valid Identifikator systemId;
     @NotBlank

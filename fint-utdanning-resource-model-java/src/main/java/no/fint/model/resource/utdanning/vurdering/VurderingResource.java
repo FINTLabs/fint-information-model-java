@@ -23,6 +23,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Deprecated
 public class VurderingResource implements FintMainObject, FintLinks {
     // Attributes
     @NotNull
@@ -36,12 +37,21 @@ public class VurderingResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+    @Deprecated
     @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
+    @Deprecated
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getFag() {
+        return getLinks().getOrDefault("fag", Collections.emptyList()); 
+    }
+    public void addFag(Link link) {
+        addLink("fag", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {

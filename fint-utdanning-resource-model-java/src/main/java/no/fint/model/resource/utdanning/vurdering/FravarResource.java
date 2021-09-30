@@ -26,6 +26,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class FravarResource implements FintMainObject, FintLinks {
     // Attributes
+    @Deprecated
     @NotNull
     private Boolean dokumentert;
     @NotNull
@@ -49,16 +50,25 @@ public class FravarResource implements FintMainObject, FintLinks {
         addLink("elevforhold", link);
     }
     @JsonIgnore
+    public List<Link> getRegistrertav() {
+        return getLinks().getOrDefault("registrertav", Collections.emptyList()); 
+    }
+    public void addRegistrertav(Link link) {
+        addLink("registrertav", link);
+    }
+    @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
     }
     public void addUndervisningsgruppe(Link link) {
         addLink("undervisningsgruppe", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getEksamensgruppe() {
         return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addEksamensgruppe(Link link) {
         addLink("eksamensgruppe", link);
     }

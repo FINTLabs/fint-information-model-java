@@ -29,15 +29,15 @@ public class JournalpostResource extends RegistreringResource implements FintCom
     // Attributes
     private Long antallVedlegg;
     private @Valid Avskrivning avskrivning;
-    private Date dokumentetsDato;
-    private Date forfallsDato;
+    private @Valid Date dokumentetsDato;
+    private @Valid Date forfallsDato;
     private String journalAr;
-    private Date journalDato;
+    private @Valid Date journalDato;
     private Long journalPostnummer;
     private Long journalSekvensnummer;
-    private Date mottattDato;
-    private Date offentlighetsvurdertDato;
-    private Date sendtDato;
+    private @Valid Date mottattDato;
+    private @Valid Date offentlighetsvurdertDato;
+    private @Valid Date sendtDato;
 
     // Relations
     @Getter

@@ -30,7 +30,7 @@ public class SamtykkeResource implements FintMainObject, FintLinks {
     @NotNull
     private @Valid Periode gyldighetsperiode;
     @NotNull
-    private Date opprettet;
+    private @Valid Date opprettet;
     @NotNull
     private @Valid Identifikator systemId;
 

@@ -26,7 +26,7 @@ public class Samtykke implements FintMainObject {
     @NotNull
     private @Valid Periode gyldighetsperiode;
     @NotNull
-    private Date opprettet;
+    private @Valid Date opprettet;
     @NotNull
     private @Valid Identifikator systemId;
 }

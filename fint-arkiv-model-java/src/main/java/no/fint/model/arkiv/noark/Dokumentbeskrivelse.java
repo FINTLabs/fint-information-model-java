@@ -30,11 +30,11 @@ public class Dokumentbeskrivelse implements FintComplexDatatypeObject {
     private Long dokumentnummer;
     private List<@Valid Dokumentobjekt> dokumentobjekt;
     private List<String> forfatter;
-    private Date opprettetDato;
+    private @Valid Date opprettetDato;
     private List<@Valid Part> part;
     private List<String> referanseArkivdel;
     private @Valid Skjerming skjerming;
-    private Date tilknyttetDato;
+    private @Valid Date tilknyttetDato;
     @NotBlank
     private String tittel;
 }

@@ -43,9 +43,9 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     private List<@Valid RegistreringResource> arkivnotat;
     private List<@Valid JournalpostResource> journalpost;
     private String saksaar;
-    private Date saksdato;
+    private @Valid Date saksdato;
     private String sakssekvensnummer;
-    private Date utlaantDato;
+    private @Valid Date utlaantDato;
 
     // Relations
     @Getter
