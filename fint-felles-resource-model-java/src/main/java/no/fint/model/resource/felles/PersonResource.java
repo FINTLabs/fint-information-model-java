@@ -58,6 +58,13 @@ public class PersonResource extends AktorResource implements FintMainObject, Fin
         addLink("statsborgerskap", link);
     }
     @JsonIgnore
+    public List<Link> getKommune() {
+        return getLinks().getOrDefault("kommune", Collections.emptyList()); 
+    }
+    public void addKommune(Link link) {
+        addLink("kommune", link);
+    }
+    @JsonIgnore
     public List<Link> getKjonn() {
         return getLinks().getOrDefault("kjonn", Collections.emptyList()); 
     }

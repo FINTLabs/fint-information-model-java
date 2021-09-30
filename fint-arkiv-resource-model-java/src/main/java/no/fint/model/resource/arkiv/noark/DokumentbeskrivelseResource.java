@@ -47,11 +47,11 @@ public class DokumentbeskrivelseResource implements FintComplexDatatypeObject, F
     private Long dokumentnummer;
     private List<@Valid DokumentobjektResource> dokumentobjekt;
     private List<String> forfatter;
-    private Date opprettetDato;
+    private @Valid Date opprettetDato;
     private List<@Valid PartResource> part;
     private List<String> referanseArkivdel;
     private @Valid SkjermingResource skjerming;
-    private Date tilknyttetDato;
+    private @Valid Date tilknyttetDato;
     @NotBlank
     private String tittel;
 

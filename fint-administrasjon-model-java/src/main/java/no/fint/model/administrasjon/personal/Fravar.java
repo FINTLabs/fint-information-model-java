@@ -26,7 +26,7 @@ public class Fravar implements FintMainObject {
             FORTSETTER
     }
 
-    private Date godkjent;
+    private @Valid Date godkjent;
     private @Valid Identifikator kildesystemId;
     @NotNull
     private @Valid Periode periode;

@@ -17,6 +17,7 @@ import no.fint.model.utdanning.basisklasser.Gruppe;
 public class Fag extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
             PROGRAMOMRADE,
+            TILRETTELEGGING,
             SKOLE,
             UNDERVISNINGSGRUPPE,
             EKSAMENSGRUPPE

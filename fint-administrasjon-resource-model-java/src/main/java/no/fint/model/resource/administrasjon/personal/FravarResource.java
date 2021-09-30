@@ -27,7 +27,7 @@ import no.fint.model.felles.kompleksedatatyper.Periode;
 @ToString
 public class FravarResource implements FintMainObject, FintLinks {
     // Attributes
-    private Date godkjent;
+    private @Valid Date godkjent;
     private @Valid Identifikator kildesystemId;
     @NotNull
     private @Valid Periode periode;

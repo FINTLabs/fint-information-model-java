@@ -26,7 +26,7 @@ import java.util.Date;
 public class MerknadResource implements FintComplexDatatypeObject, FintLinks {
     // Attributes
     @NotNull
-    private Date merknadsdato;
+    private @Valid Date merknadsdato;
     @NotBlank
     private String merknadstekst;
 

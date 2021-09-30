@@ -26,5 +26,5 @@ public class Eksamensgruppe extends Gruppe implements FintMainObject {
             GRUPPEMEDLEMSKAP
     }
 
-    private Date eksamensdato;
+    private @Valid Date eksamensdato;
 }

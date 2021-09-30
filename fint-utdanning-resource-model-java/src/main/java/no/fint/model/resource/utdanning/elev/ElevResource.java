@@ -18,6 +18,7 @@ import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.resource.felles.kompleksedatatyper.AdresseResource;
 import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 
 @Data
@@ -26,9 +27,20 @@ import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 @ToString
 public class ElevResource implements FintMainObject, FintLinks {
     // Attributes
+    @JsonIgnore
+    @Override
+    public List<FintLinks> getNestedResources() {
+        List<FintLinks> result = FintLinks.super.getNestedResources();
+        if (hybeladresse != null) {
+            result.add(hybeladresse);
+        }
+        return result;
+    }
     private @Valid Identifikator brukernavn;
     private @Valid Identifikator elevnummer;
     private @Valid Identifikator feidenavn;
+    private Boolean gjest;
+    private @Valid AdresseResource hybeladresse;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     @NotNull
     private @Valid Identifikator systemId;

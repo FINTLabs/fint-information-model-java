@@ -29,7 +29,7 @@ public abstract class Registrering implements FintAbstractObject {
             OPPRETTETAV
     }
 
-    private Date arkivertDato;
+    private @Valid Date arkivertDato;
     private String beskrivelse;
     private List<@Valid Dokumentbeskrivelse> dokumentbeskrivelse;
     private List<String> forfatter;
@@ -38,7 +38,7 @@ public abstract class Registrering implements FintAbstractObject {
     private List<@Valid Merknad> merknad;
     private List<String> nokkelord;
     private String offentligTittel;
-    private Date opprettetDato;
+    private @Valid Date opprettetDato;
     private List<@Valid Part> part;
     private List<String> referanseArkivDel;
     private String registreringsId;

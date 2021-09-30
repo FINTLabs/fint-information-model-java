@@ -28,7 +28,7 @@ public abstract class Saksmappe extends Mappe implements FintAbstractObject {
     private List<@Valid Registrering> arkivnotat;
     private List<@Valid Journalpost> journalpost;
     private String saksaar;
-    private Date saksdato;
+    private @Valid Date saksdato;
     private String sakssekvensnummer;
-    private Date utlaantDato;
+    private @Valid Date utlaantDato;
 }

@@ -26,7 +26,7 @@ import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
 @ToString(callSuper=true)
 public class EksamensgruppeResource extends GruppeResource implements FintMainObject, FintLinks {
     // Attributes
-    private Date eksamensdato;
+    private @Valid Date eksamensdato;
 
     // Relations
     @Getter

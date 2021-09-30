@@ -48,14 +48,14 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
         }
         return result;
     }
-    private Date avsluttetDato;
+    private @Valid Date avsluttetDato;
     private String beskrivelse;
     private List<@Valid KlasseResource> klasse;
     private @Valid Identifikator mappeId;
     private List<@Valid MerknadResource> merknad;
     private List<String> noekkelord;
     private String offentligTittel;
-    private Date opprettetDato;
+    private @Valid Date opprettetDato;
     private List<@Valid PartResource> part;
     private @Valid SkjermingResource skjerming;
     private @Valid Identifikator systemId;
