@@ -15,12 +15,8 @@ jobs:
           distribution: adopt
           java-version: 8
 
-      - name: Gradle wrapper validation
-        uses: gradle/wrapper-validation-action@v1
-
-      - name: Gradle setup
+      - name: Gradle Build
         uses: gradle/gradle-build-action@v2
-
-      - name: Gradle build
-        run: |
-          ./gradlew clean build --no-build-cache
+        with:
+          gradle-version: 4.10.3
+          arguments: clean build 
