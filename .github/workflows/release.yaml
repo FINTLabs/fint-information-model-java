@@ -1,9 +1,8 @@
 name: Publish to Reposilite
 
 on:
-  push:
-#  release:
-#    types: [ published ]
+  release:
+    types: [ published ]
 
 jobs:
   publish:
@@ -28,9 +27,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 4.10.3
-          arguments: clean build 
-
-#                                 publish -Pversion=${{env.RELEASE_VERSION}}
-#        env:
-#          REPOSILITE_USERNAME: ${{secrets.REPOSILITE_USERNAME}}
-#          REPOSILITE_PASSWORD: ${{secrets.REPOSILITE_PASSWORD}}
+          arguments: clean build publish -Pversion=${{env.RELEASE_VERSION}}
+        env:
+          REPOSILITE_USERNAME: ${{secrets.REPOSILITE_USERNAME}}
+          REPOSILITE_PASSWORD: ${{secrets.REPOSILITE_PASSWORD}}
