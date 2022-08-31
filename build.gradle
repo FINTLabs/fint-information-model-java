@@ -12,9 +12,9 @@ allprojects {
     project.group = 'no.fint'
 
     repositories {
-        mavenCentral()
         maven { url 'https://repo.fintlabs.no/releases' }
         mavenLocal()
+        mavenCentral()
     }
 }
 
@@ -37,27 +37,21 @@ subprojects {
     }
 
     publishing {
-        if (project.hasProperty('reposiliteUsername') && project.hasProperty('reposiliteToken')) {
-            repositories {
-                maven {
-                    url "https://repo.fintlabs.no/releases"
-                    credentials {
-                        username = reposiliteUsername
-                        password = reposiliteToken
-                    }
-                    authentication {
-                        basic(BasicAuthentication)
-                    }
+        repositories {
+            maven {
+                url "https://repo.fintlabs.no/releases"
+                credentials {
+                    username = System.getenv("REPOSILITE_USERNAME")
+                    password = System.getenv("REPOSILITE_PASSWORD")
+                }
+                authentication {
+                    basic(BasicAuthentication)
                 }
             }
         }
-
         publications {
-            mavenJava(MavenPublication) {
-                from components.java
-                afterEvaluate {
-                    artifactId = jar.archiveBaseName
-                }
+            maven(MavenPublication) {
+                from(components.java)
             }
         }
     }
