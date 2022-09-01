@@ -63,6 +63,13 @@ public class EksamensgruppeResource extends GruppeResource implements FintMainOb
         addLink("termin", link);
     }
     @JsonIgnore
+    public List<Link> getEksamensform() {
+        return getLinks().getOrDefault("eksamensform", Collections.emptyList()); 
+    }
+    public void addEksamensform(Link link) {
+        addLink("eksamensform", link);
+    }
+    @JsonIgnore
     public List<Link> getSkolear() {
         return getLinks().getOrDefault("skolear", Collections.emptyList()); 
     }
@@ -82,5 +89,12 @@ public class EksamensgruppeResource extends GruppeResource implements FintMainOb
     }
     public void addGruppemedlemskap(Link link) {
         addLink("gruppemedlemskap", link);
+    }
+    @JsonIgnore
+    public List<Link> getSensor() {
+        return getLinks().getOrDefault("sensor", Collections.emptyList()); 
+    }
+    public void addSensor(Link link) {
+        addLink("sensor", link);
     }
 }

@@ -19,7 +19,8 @@ public class Skoleressurs implements FintMainObject {
             PERSON,
             PERSONALRESSURS,
             UNDERVISNINGSFORHOLD,
-            SKOLE
+            SKOLE,
+            SENSOR
     }
 
     private @Valid Identifikator feidenavn;

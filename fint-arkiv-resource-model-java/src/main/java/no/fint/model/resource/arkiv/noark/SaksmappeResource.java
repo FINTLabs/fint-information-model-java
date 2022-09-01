@@ -52,6 +52,13 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getSaksmappetype() {
+        return getLinks().getOrDefault("saksmappetype", Collections.emptyList()); 
+    }
+    public void addSaksmappetype(Link link) {
+        addLink("saksmappetype", link);
+    }
+    @JsonIgnore
     public List<Link> getSaksstatus() {
         return getLinks().getOrDefault("saksstatus", Collections.emptyList()); 
     }

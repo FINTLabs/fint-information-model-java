@@ -20,6 +20,7 @@ public class Kontostreng implements FintComplexDatatypeObject {
             ANSVAR,
             ART,
             DIVERSE,
+            FORMAL,
             FUNKSJON,
             KONTRAKT,
             LOPENUMMER,

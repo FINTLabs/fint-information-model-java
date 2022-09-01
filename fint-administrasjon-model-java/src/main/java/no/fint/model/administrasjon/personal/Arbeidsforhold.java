@@ -23,6 +23,7 @@ public class Arbeidsforhold implements FintMainObject {
             ARBEIDSFORHOLDSTYPE,
             ART,
             DIVERSE,
+            FORMAL,
             FUNKSJON,
             KONTRAKT,
             LOPENUMMER,

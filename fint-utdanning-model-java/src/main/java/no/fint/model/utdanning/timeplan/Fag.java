@@ -18,6 +18,7 @@ public class Fag extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
             PROGRAMOMRADE,
             TILRETTELEGGING,
+            FAGGRUPPE,
             SKOLE,
             UNDERVISNINGSGRUPPE,
             EKSAMENSGRUPPE

@@ -25,6 +25,9 @@ public class Elevforhold extends Utdanningsforhold implements FintMainObject {
             KROPPSOVING,
             SKOLE,
             AVBRUDDSARSAK,
+            FRAVARSREGISTRERINGER,
+            FAGGRUPPEMEDLEMSKAP,
+            SKOLEAR,
             BASISGRUPPE,
             BASISGRUPPEMEDLEMSKAP,
             UNDERVISNINGSGRUPPEMEDLEMSKAP,
@@ -52,4 +55,5 @@ public class Elevforhold extends Utdanningsforhold implements FintMainObject {
     private Date avbruddsdato;
     private @Valid Periode gyldighetsperiode;
     private Boolean hovedskole;
+    private Boolean tosprakligFagopplaring;
 }

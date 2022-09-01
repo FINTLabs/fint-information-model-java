@@ -136,6 +136,13 @@ public class FullmaktResource implements FintMainObject, FintLinks {
         addLink("prosjekt", link);
     }
     @JsonIgnore
+    public List<Link> getFormal() {
+        return getLinks().getOrDefault("formal", Collections.emptyList()); 
+    }
+    public void addFormal(Link link) {
+        addLink("formal", link);
+    }
+    @JsonIgnore
     public List<Link> getRolle() {
         return getLinks().getOrDefault("rolle", Collections.emptyList()); 
     }

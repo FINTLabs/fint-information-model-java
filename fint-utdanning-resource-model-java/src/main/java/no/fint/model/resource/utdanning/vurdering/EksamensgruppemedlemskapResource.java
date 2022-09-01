@@ -43,4 +43,11 @@ public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implement
     public void addEksamensgruppe(Link link) {
         addLink("eksamensgruppe", link);
     }
+    @JsonIgnore
+    public List<Link> getNus() {
+        return getLinks().getOrDefault("nus", Collections.emptyList()); 
+    }
+    public void addNus(Link link) {
+        addLink("nus", link);
+    }
 }

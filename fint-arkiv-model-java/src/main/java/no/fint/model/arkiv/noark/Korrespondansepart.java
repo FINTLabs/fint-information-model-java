@@ -10,6 +10,7 @@ import javax.validation.constraints.*;
 import no.fint.model.FintComplexDatatypeObject;
 import no.fint.model.felles.kompleksedatatyper.Adresse;
 import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
+import no.fint.model.arkiv.noark.Skjerming;
 
 @Data
 @NoArgsConstructor
@@ -26,4 +27,5 @@ public class Korrespondansepart implements FintComplexDatatypeObject {
     private String kontaktperson;
     private String korrespondansepartNavn;
     private String organisasjonsnummer;
+    private @Valid Skjerming skjerming;
 }

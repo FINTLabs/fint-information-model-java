@@ -15,6 +15,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Deprecated
 public class Fravar implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
