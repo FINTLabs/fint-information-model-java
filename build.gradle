@@ -12,15 +12,9 @@ allprojects {
     project.group = 'no.fint'
 
     repositories {
-        mavenCentral()
-        jcenter()
-        maven {
-            url 'https://repo.fintlabs.no/releases'
-        }
-        maven {
-            url 'https://dl.bintray.com/fint/maven'
-        }
+        maven { url 'https://repo.fintlabs.no/releases' }
         mavenLocal()
+        mavenCentral()
     }
 }
 
@@ -32,6 +26,8 @@ subprojects {
 
     dependencies {
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
+        implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.3")
+        implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
     }
 
     test {
@@ -41,27 +37,21 @@ subprojects {
     }
 
     publishing {
-        if (project.hasProperty('reposiliteUsername') && project.hasProperty('reposiliteToken')) {
-            repositories {
-                maven {
-                    url "https://repo.fintlabs.no/releases"
-                    credentials {
-                        username = reposiliteUsername
-                        password = reposiliteToken
-                    }
-                    authentication {
-                        basic(BasicAuthentication)
-                    }
+        repositories {
+            maven {
+                url "https://repo.fintlabs.no/releases"
+                credentials {
+                    username = System.getenv("REPOSILITE_USERNAME")
+                    password = System.getenv("REPOSILITE_PASSWORD")
+                }
+                authentication {
+                    basic(BasicAuthentication)
                 }
             }
         }
-
         publications {
-            mavenJava(MavenPublication) {
-                from components.java
-                afterEvaluate {
-                    artifactId = jar.archiveBaseName
-                }
+            maven(MavenPublication) {
+                from(components.java)
             }
         }
     }
