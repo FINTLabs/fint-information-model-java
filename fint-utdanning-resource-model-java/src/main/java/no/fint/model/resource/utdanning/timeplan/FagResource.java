@@ -44,6 +44,13 @@ public class FagResource extends GruppeResource implements FintMainObject, FintL
         addLink("tilrettelegging", link);
     }
     @JsonIgnore
+    public List<Link> getFaggruppe() {
+        return getLinks().getOrDefault("faggruppe", Collections.emptyList()); 
+    }
+    public void addFaggruppe(Link link) {
+        addLink("faggruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getSkole() {
         return getLinks().getOrDefault("skole", Collections.emptyList()); 
     }

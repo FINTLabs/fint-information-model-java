@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
+@Deprecated
 public class FravarResources extends AbstractCollectionResources<FravarResource> {
 
     public FravarResources(Collection<FravarResource> input) {

@@ -21,9 +21,11 @@ public class Eksamensgruppe extends Gruppe implements FintMainObject {
             FAG,
             SKOLE,
             TERMIN,
+            EKSAMENSFORM,
             SKOLEAR,
             UNDERVISNINGSFORHOLD,
-            GRUPPEMEDLEMSKAP
+            GRUPPEMEDLEMSKAP,
+            SENSOR
     }
 
     private @Valid Date eksamensdato;

@@ -31,6 +31,7 @@ public class Fullmakt implements FintMainObject {
             KONTRAKT,
             FULLMEKTIG,
             PROSJEKT,
+            FORMAL,
             ROLLE,
             LOPENUMMER
     }

@@ -92,6 +92,13 @@ public class ArbeidsforholdResource implements FintMainObject, FintLinks {
         addLink("diverse", link);
     }
     @JsonIgnore
+    public List<Link> getFormal() {
+        return getLinks().getOrDefault("formal", Collections.emptyList()); 
+    }
+    public void addFormal(Link link) {
+        addLink("formal", link);
+    }
+    @JsonIgnore
     public List<Link> getFunksjon() {
         return getLinks().getOrDefault("funksjon", Collections.emptyList()); 
     }

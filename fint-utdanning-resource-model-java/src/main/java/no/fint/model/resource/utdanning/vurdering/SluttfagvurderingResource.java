@@ -43,4 +43,11 @@ public class SluttfagvurderingResource extends FagvurderingResource implements F
     public void addEksamensgruppe(Link link) {
         addLink("eksamensgruppe", link);
     }
+    @JsonIgnore
+    public List<Link> getKarakterhistorie() {
+        return getLinks().getOrDefault("karakterhistorie", Collections.emptyList()); 
+    }
+    public void addKarakterhistorie(Link link) {
+        addLink("karakterhistorie", link);
+    }
 }

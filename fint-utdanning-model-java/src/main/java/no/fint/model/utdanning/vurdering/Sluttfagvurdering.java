@@ -17,7 +17,8 @@ import no.fint.model.utdanning.vurdering.Fagvurdering;
 public class Sluttfagvurdering extends Fagvurdering implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
-            EKSAMENSGRUPPE
+            EKSAMENSGRUPPE,
+            KARAKTERHISTORIE
     }
 
 }

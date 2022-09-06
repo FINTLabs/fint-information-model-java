@@ -19,6 +19,7 @@ import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
 import no.fint.model.resource.felles.kompleksedatatyper.AdresseResource;
 import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
+import no.fint.model.resource.arkiv.noark.SkjermingResource;
 
 @Data
 @NoArgsConstructor
@@ -33,6 +34,9 @@ public class KorrespondansepartResource implements FintComplexDatatypeObject, Fi
         if (adresse != null) {
             result.add(adresse);
         }
+        if (skjerming != null) {
+            result.add(skjerming);
+        }
         return result;
     }
     private @Valid AdresseResource adresse;
@@ -41,6 +45,7 @@ public class KorrespondansepartResource implements FintComplexDatatypeObject, Fi
     private String kontaktperson;
     private String korrespondansepartNavn;
     private String organisasjonsnummer;
+    private @Valid SkjermingResource skjerming;
 
     // Relations
     @Getter

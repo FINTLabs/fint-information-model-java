@@ -19,6 +19,7 @@ import no.fint.model.arkiv.noark.Mappe;
 @ToString(callSuper=true)
 public abstract class Saksmappe extends Mappe implements FintAbstractObject {
     public enum Relasjonsnavn {
+            SAKSMAPPETYPE,
             SAKSSTATUS,
             JOURNALENHET,
             ADMINISTRATIVENHET,

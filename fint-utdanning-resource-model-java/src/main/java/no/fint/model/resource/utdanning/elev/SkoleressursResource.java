@@ -61,4 +61,11 @@ public class SkoleressursResource implements FintMainObject, FintLinks {
     public void addSkole(Link link) {
         addLink("skole", link);
     }
+    @JsonIgnore
+    public List<Link> getSensor() {
+        return getLinks().getOrDefault("sensor", Collections.emptyList()); 
+    }
+    public void addSensor(Link link) {
+        addLink("sensor", link);
+    }
 }

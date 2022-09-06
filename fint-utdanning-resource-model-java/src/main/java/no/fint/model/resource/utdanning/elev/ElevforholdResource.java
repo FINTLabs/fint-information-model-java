@@ -41,6 +41,7 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     private Date avbruddsdato;
     private @Valid Periode gyldighetsperiode;
     private Boolean hovedskole;
+    private Boolean tosprakligFagopplaring;
 
     // Relations
     @Getter
@@ -87,6 +88,27 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     }
     public void addAvbruddsarsak(Link link) {
         addLink("avbruddsarsak", link);
+    }
+    @JsonIgnore
+    public List<Link> getFravarsregistreringer() {
+        return getLinks().getOrDefault("fravarsregistreringer", Collections.emptyList()); 
+    }
+    public void addFravarsregistreringer(Link link) {
+        addLink("fravarsregistreringer", link);
+    }
+    @JsonIgnore
+    public List<Link> getFaggruppemedlemskap() {
+        return getLinks().getOrDefault("faggruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addFaggruppemedlemskap(Link link) {
+        addLink("faggruppemedlemskap", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
+    }
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
     }
     @Deprecated
     @JsonIgnore
@@ -208,10 +230,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addProgramomrade(Link link) {
         addLink("programomrade", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getFravar() {
         return getLinks().getOrDefault("fravar", Collections.emptyList()); 
     }
+    @Deprecated
     public void addFravar(Link link) {
         addLink("fravar", link);
     }
