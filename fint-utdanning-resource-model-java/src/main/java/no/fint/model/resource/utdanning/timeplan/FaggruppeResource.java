@@ -17,12 +17,13 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class FaggruppeResource implements FintMainObject, FintLinks {
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class FaggruppeResource extends GruppeResource implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
