@@ -42,6 +42,7 @@ public class DispensasjonAutomatiskFredaKulturminneResource extends SaksmappeRes
     private @Valid MatrikkelnummerResource matrikkelnummer;
     @NotNull
     private @Valid Identifikator soknadsnummer;
+    private String tiltak;
 
     // Relations
     @Getter

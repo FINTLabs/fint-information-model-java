@@ -44,6 +44,13 @@ public class FravarsregistreringResource implements FintComplexDatatypeObject, F
         addLink("registrertAv", link);
     }
     @JsonIgnore
+    public List<Link> getFaggruppe() {
+        return getLinks().getOrDefault("faggruppe", Collections.emptyList()); 
+    }
+    public void addFaggruppe(Link link) {
+        addLink("faggruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
     }

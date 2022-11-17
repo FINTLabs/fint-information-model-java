@@ -17,6 +17,7 @@ import no.fint.model.felles.kompleksedatatyper.Periode;
 public class Fravarsregistrering implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
             REGISTRERTAV,
+            FAGGRUPPE,
             UNDERVISNINGSGRUPPE,
             FRAVARSTYPE
     }
