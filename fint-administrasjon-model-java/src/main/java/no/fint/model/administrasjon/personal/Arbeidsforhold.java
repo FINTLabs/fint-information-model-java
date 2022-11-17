@@ -32,6 +32,7 @@ public class Arbeidsforhold implements FintMainObject {
             RAMME,
             STILLINGSKODE,
             TIMERPERUKE,
+            ARBEIDSLOKASJON,
             ARBEIDSSTED,
             PERSONALLEDER,
             FASTLONN,

@@ -155,6 +155,13 @@ public class ArbeidsforholdResource implements FintMainObject, FintLinks {
         addLink("timerPerUke", link);
     }
     @JsonIgnore
+    public List<Link> getArbeidslokasjon() {
+        return getLinks().getOrDefault("arbeidslokasjon", Collections.emptyList()); 
+    }
+    public void addArbeidslokasjon(Link link) {
+        addLink("arbeidslokasjon", link);
+    }
+    @JsonIgnore
     public List<Link> getArbeidssted() {
         return getLinks().getOrDefault("arbeidssted", Collections.emptyList()); 
     }

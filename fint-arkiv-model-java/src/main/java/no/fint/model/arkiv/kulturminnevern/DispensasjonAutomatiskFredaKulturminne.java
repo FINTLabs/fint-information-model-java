@@ -23,4 +23,5 @@ public class DispensasjonAutomatiskFredaKulturminne extends Saksmappe implements
     private @Valid Matrikkelnummer matrikkelnummer;
     @NotNull
     private @Valid Identifikator soknadsnummer;
+    private String tiltak;
 }
