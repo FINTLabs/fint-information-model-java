@@ -1,4 +1,4 @@
-package no.fint.model.felles;
+package no.fint.model.utdanning.larling;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,18 +8,22 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.felles.basisklasser.Enhet;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
-public class Virksomhet extends Enhet implements FintMainObject {
+@EqualsAndHashCode
+@ToString
+public class Larling implements FintMainObject {
     public enum Relasjonsnavn {
-            LARLING
+            PERSON,
+            BEDRIFT,
+            PROGRAMOMRADEMEDLEMSKAP
     }
 
+    private String kontraktstype;
+    private @Valid Periode laretid;
     @NotNull
-    private @Valid Identifikator virksomhetsId;
+    private @Valid Identifikator systemId;
 }

@@ -29,7 +29,9 @@ public class Person extends Aktor implements FintMainObject {
             MORSMAL,
             PARORENDE,
             FORELDRE,
-            ELEV
+            LARLING,
+            ELEV,
+            OTUNGDOM
     }
 
     private String bilde;

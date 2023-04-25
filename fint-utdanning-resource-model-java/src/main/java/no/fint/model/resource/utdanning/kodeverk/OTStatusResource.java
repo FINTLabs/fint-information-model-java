@@ -1,4 +1,4 @@
-package no.fint.model.resource.felles;
+package no.fint.model.resource.utdanning.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,27 +17,19 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.resource.felles.basisklasser.EnhetResource;
+import no.fint.model.felles.basisklasser.Begrep;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class VirksomhetResource extends EnhetResource implements FintMainObject, FintLinks {
+public class OTStatusResource extends Begrep implements FintMainObject, FintLinks {
     // Attributes
-    @NotNull
-    private @Valid Identifikator virksomhetsId;
+    private String beskrivelse;
+    @NotBlank
+    private String type;
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @JsonIgnore
-    public List<Link> getLarling() {
-        return getLinks().getOrDefault("larling", Collections.emptyList()); 
-    }
-    public void addLarling(Link link) {
-        addLink("larling", link);
-    }
 }
