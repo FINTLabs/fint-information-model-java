@@ -43,4 +43,18 @@ public class ProgramomrademedlemskapResource extends Gruppemedlemskap implements
     public void addProgramomrade(Link link) {
         addLink("programomrade", link);
     }
+    @JsonIgnore
+    public List<Link> getLarling() {
+        return getLinks().getOrDefault("larling", Collections.emptyList()); 
+    }
+    public void addLarling(Link link) {
+        addLink("larling", link);
+    }
+    @JsonIgnore
+    public List<Link> getOtungdom() {
+        return getLinks().getOrDefault("otungdom", Collections.emptyList()); 
+    }
+    public void addOtungdom(Link link) {
+        addLink("otungdom", link);
+    }
 }
