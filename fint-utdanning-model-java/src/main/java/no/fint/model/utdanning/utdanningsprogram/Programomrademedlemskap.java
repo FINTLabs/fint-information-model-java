@@ -17,9 +17,7 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 public class Programomrademedlemskap extends Gruppemedlemskap implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
-            PROGRAMOMRADE,
-            LARLING,
-            OTUNGDOM
+            PROGRAMOMRADE
     }
 
 }

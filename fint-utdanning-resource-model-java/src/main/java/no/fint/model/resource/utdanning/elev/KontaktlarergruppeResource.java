@@ -29,13 +29,6 @@ public class KontaktlarergruppeResource extends GruppeResource implements FintMa
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
-    }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
-    }
     @Deprecated
     @JsonIgnore
     public List<Link> getElevforhold() {
@@ -67,11 +60,11 @@ public class KontaktlarergruppeResource extends GruppeResource implements FintMa
         addLink("skolear", link);
     }
     @JsonIgnore
-    public List<Link> getUndervisningsforhold() {
-        return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
     }
-    public void addUndervisningsforhold(Link link) {
-        addLink("undervisningsforhold", link);
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
     }
     @JsonIgnore
     public List<Link> getGruppemedlemskap() {
@@ -79,5 +72,12 @@ public class KontaktlarergruppeResource extends GruppeResource implements FintMa
     }
     public void addGruppemedlemskap(Link link) {
         addLink("gruppemedlemskap", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsforhold() {
+        return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
+    }
+    public void addUndervisningsforhold(Link link) {
+        addLink("undervisningsforhold", link);
     }
 }

@@ -17,8 +17,8 @@ import no.fint.model.utdanning.basisklasser.Utdanningsforhold;
 public class Undervisningsforhold extends Utdanningsforhold implements FintMainObject {
     public enum Relasjonsnavn {
             ARBEIDSFORHOLD,
-            BASISGRUPPE,
             KONTAKTLARERGRUPPE,
+            BASISGRUPPE,
             UNDERVISNINGSGRUPPE,
             EKSAMENSGRUPPE,
             TIME,

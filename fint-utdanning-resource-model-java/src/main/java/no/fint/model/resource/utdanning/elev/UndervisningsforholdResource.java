@@ -39,18 +39,18 @@ public class UndervisningsforholdResource extends UtdanningsforholdResource impl
         addLink("arbeidsforhold", link);
     }
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
-    }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
-    }
-    @JsonIgnore
     public List<Link> getKontaktlarergruppe() {
         return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
     }
     public void addKontaktlarergruppe(Link link) {
         addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    }
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {

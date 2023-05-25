@@ -16,9 +16,9 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Elevtilrettelegging implements FintMainObject {
     public enum Relasjonsnavn {
-            ELEV,
             FAG,
-            TILRETTELEGGING
+            TILRETTELEGGING,
+            ELEV
     }
 
     @NotNull

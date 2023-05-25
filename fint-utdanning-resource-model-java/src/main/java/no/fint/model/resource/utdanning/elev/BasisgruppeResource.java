@@ -29,13 +29,6 @@ public class BasisgruppeResource extends GruppeResource implements FintMainObjec
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @JsonIgnore
-    public List<Link> getSkolear() {
-        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
-    }
-    public void addSkolear(Link link) {
-        addLink("skolear", link);
-    }
     @Deprecated
     @JsonIgnore
     public List<Link> getElevforhold() {
@@ -44,6 +37,13 @@ public class BasisgruppeResource extends GruppeResource implements FintMainObjec
     @Deprecated
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
+    }
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
     }
     @JsonIgnore
     public List<Link> getTermin() {
@@ -67,13 +67,6 @@ public class BasisgruppeResource extends GruppeResource implements FintMainObjec
         addLink("skole", link);
     }
     @JsonIgnore
-    public List<Link> getUndervisningsforhold() {
-        return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
-    }
-    public void addUndervisningsforhold(Link link) {
-        addLink("undervisningsforhold", link);
-    }
-    @JsonIgnore
     public List<Link> getGruppemedlemskap() {
         return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
     }
@@ -86,5 +79,12 @@ public class BasisgruppeResource extends GruppeResource implements FintMainObjec
     }
     public void addKontaktlarergruppe(Link link) {
         addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsforhold() {
+        return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
+    }
+    public void addUndervisningsforhold(Link link) {
+        addLink("undervisningsforhold", link);
     }
 }

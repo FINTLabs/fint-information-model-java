@@ -16,14 +16,14 @@ import no.fint.model.utdanning.basisklasser.Gruppe;
 @ToString(callSuper=true)
 public class Basisgruppe extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
-            SKOLEAR,
             ELEVFORHOLD,
+            SKOLEAR,
             TERMIN,
             TRINN,
             SKOLE,
-            UNDERVISNINGSFORHOLD,
             GRUPPEMEDLEMSKAP,
-            KONTAKTLARERGRUPPE
+            KONTAKTLARERGRUPPE,
+            UNDERVISNINGSFORHOLD
     }
 
 }

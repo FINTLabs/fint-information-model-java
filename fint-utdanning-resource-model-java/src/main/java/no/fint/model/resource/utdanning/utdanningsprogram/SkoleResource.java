@@ -68,11 +68,11 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
         addLink("vigoreferanse", link);
     }
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    public List<Link> getSkoleressurs() {
+        return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
     }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
+    public void addSkoleressurs(Link link) {
+        addLink("skoleressurs", link);
     }
     @JsonIgnore
     public List<Link> getElevforhold() {
@@ -89,11 +89,11 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
         addLink("kontaktlarergruppe", link);
     }
     @JsonIgnore
-    public List<Link> getSkoleressurs() {
-        return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
     }
-    public void addSkoleressurs(Link link) {
-        addLink("skoleressurs", link);
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsforhold() {

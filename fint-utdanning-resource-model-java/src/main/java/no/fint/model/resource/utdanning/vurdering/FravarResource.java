@@ -43,6 +43,13 @@ public class FravarResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+    @JsonIgnore
+    public List<Link> getRegistrertav() {
+        return getLinks().getOrDefault("registrertav", Collections.emptyList()); 
+    }
+    public void addRegistrertav(Link link) {
+        addLink("registrertav", link);
+    }
     @Deprecated
     @JsonIgnore
     public List<Link> getElevforhold() {
@@ -51,13 +58,6 @@ public class FravarResource implements FintMainObject, FintLinks {
     @Deprecated
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
-    }
-    @JsonIgnore
-    public List<Link> getRegistrertav() {
-        return getLinks().getOrDefault("registrertav", Collections.emptyList()); 
-    }
-    public void addRegistrertav(Link link) {
-        addLink("registrertav", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {

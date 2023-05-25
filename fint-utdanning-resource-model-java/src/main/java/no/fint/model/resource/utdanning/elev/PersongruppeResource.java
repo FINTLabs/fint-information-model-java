@@ -30,13 +30,6 @@ public class PersongruppeResource extends GruppeResource implements FintMainObje
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getElev() {
-        return getLinks().getOrDefault("elev", Collections.emptyList()); 
-    }
-    public void addElev(Link link) {
-        addLink("elev", link);
-    }
-    @JsonIgnore
     public List<Link> getPersongruppemedlemskap() {
         return getLinks().getOrDefault("persongruppemedlemskap", Collections.emptyList()); 
     }
@@ -56,6 +49,13 @@ public class PersongruppeResource extends GruppeResource implements FintMainObje
     }
     public void addUndervisningsforhold(Link link) {
         addLink("undervisningsforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getElev() {
+        return getLinks().getOrDefault("elev", Collections.emptyList()); 
+    }
+    public void addElev(Link link) {
+        addLink("elev", link);
     }
     @JsonIgnore
     public List<Link> getSkole() {
