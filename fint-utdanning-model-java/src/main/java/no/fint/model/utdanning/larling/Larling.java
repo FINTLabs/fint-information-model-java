@@ -19,7 +19,7 @@ public class Larling implements FintMainObject {
     public enum Relasjonsnavn {
             PERSON,
             BEDRIFT,
-            PROGRAMOMRADEMEDLEMSKAP
+            PROGRAMOMRADE
     }
 
     private String kontraktstype;
