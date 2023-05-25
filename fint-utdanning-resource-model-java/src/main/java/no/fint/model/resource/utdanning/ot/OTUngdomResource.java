@@ -47,17 +47,17 @@ public class OTUngdomResource implements FintMainObject, FintLinks {
         addLink("status", link);
     }
     @JsonIgnore
-    public List<Link> getProgramomrademedlemskap() {
-        return getLinks().getOrDefault("programomrademedlemskap", Collections.emptyList()); 
-    }
-    public void addProgramomrademedlemskap(Link link) {
-        addLink("programomrademedlemskap", link);
-    }
-    @JsonIgnore
     public List<Link> getEnhet() {
         return getLinks().getOrDefault("enhet", Collections.emptyList()); 
     }
     public void addEnhet(Link link) {
         addLink("enhet", link);
+    }
+    @JsonIgnore
+    public List<Link> getProgramomrade() {
+        return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
+    }
+    public void addProgramomrade(Link link) {
+        addLink("programomrade", link);
     }
 }
