@@ -18,8 +18,8 @@ public class OTUngdom implements FintMainObject {
     public enum Relasjonsnavn {
             PERSON,
             STATUS,
-            PROGRAMOMRADEMEDLEMSKAP,
-            ENHET
+            ENHET,
+            PROGRAMOMRADE
     }
 
     @NotNull
