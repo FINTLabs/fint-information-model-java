@@ -23,7 +23,7 @@ import no.fint.model.felles.basisklasser.Begrep;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class OTStatusResource extends Begrep implements FintMainObject, FintLinks {
+public class OtStatusResource extends Begrep implements FintMainObject, FintLinks {
     // Attributes
     private String beskrivelse;
     @NotBlank

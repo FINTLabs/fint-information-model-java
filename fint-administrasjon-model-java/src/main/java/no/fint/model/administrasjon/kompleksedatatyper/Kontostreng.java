@@ -26,6 +26,7 @@ public class Kontostreng implements FintComplexDatatypeObject {
             LOPENUMMER,
             OBJEKT,
             PROSJEKT,
+            PROSJEKTART,
             RAMME
     }
 

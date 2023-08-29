@@ -8,6 +8,7 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
@@ -26,6 +27,7 @@ public class Behandling implements FintMainObject {
     private Boolean aktiv;
     @NotBlank
     private String formal;
+    private @Valid Date slettet;
     @NotNull
     private @Valid Identifikator systemId;
 }

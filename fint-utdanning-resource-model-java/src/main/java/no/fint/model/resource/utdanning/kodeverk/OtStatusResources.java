@@ -10,16 +10,16 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-public class OTEnhetResources extends AbstractCollectionResources<OTEnhetResource> {
+public class OtStatusResources extends AbstractCollectionResources<OtStatusResource> {
 
-    public OTEnhetResources(Collection<OTEnhetResource> input) {
+    public OtStatusResources(Collection<OtStatusResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<OTEnhetResource>> getTypeReference() {
-        return new TypeReference<List<OTEnhetResource>>() {};
+    public TypeReference<List<OtStatusResource>> getTypeReference() {
+        return new TypeReference<List<OtStatusResource>>() {};
     }
 }

@@ -14,7 +14,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class OTUngdom implements FintMainObject {
+public class OtUngdom implements FintMainObject {
     public enum Relasjonsnavn {
             PERSON,
             STATUS,
