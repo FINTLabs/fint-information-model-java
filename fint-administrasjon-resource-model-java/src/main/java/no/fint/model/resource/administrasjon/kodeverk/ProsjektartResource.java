@@ -23,17 +23,31 @@ import no.fint.model.resource.administrasjon.kodeverk.KontodimensjonResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ProsjektResource extends KontodimensjonResource implements FintMainObject, FintLinks {
+public class ProsjektartResource extends KontodimensjonResource implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getProsjektart() {
-        return getLinks().getOrDefault("prosjektart", Collections.emptyList()); 
+    public List<Link> getUnderordnet() {
+        return getLinks().getOrDefault("underordnet", Collections.emptyList()); 
     }
-    public void addProsjektart(Link link) {
-        addLink("prosjektart", link);
+    public void addUnderordnet(Link link) {
+        addLink("underordnet", link);
+    }
+    @JsonIgnore
+    public List<Link> getProsjekt() {
+        return getLinks().getOrDefault("prosjekt", Collections.emptyList()); 
+    }
+    public void addProsjekt(Link link) {
+        addLink("prosjekt", link);
+    }
+    @JsonIgnore
+    public List<Link> getOverordnet() {
+        return getLinks().getOrDefault("overordnet", Collections.emptyList()); 
+    }
+    public void addOverordnet(Link link) {
+        addLink("overordnet", link);
     }
 }
