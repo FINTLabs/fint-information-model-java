@@ -106,6 +106,13 @@ public class KontostrengResource implements FintComplexDatatypeObject, FintLinks
         addLink("prosjekt", link);
     }
     @JsonIgnore
+    public List<Link> getProsjektart() {
+        return getLinks().getOrDefault("prosjektart", Collections.emptyList()); 
+    }
+    public void addProsjektart(Link link) {
+        addLink("prosjektart", link);
+    }
+    @JsonIgnore
     public List<Link> getRamme() {
         return getLinks().getOrDefault("ramme", Collections.emptyList()); 
     }

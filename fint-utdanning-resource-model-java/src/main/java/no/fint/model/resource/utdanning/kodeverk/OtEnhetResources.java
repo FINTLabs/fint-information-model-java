@@ -1,4 +1,4 @@
-package no.fint.model.resource.utdanning.ot;
+package no.fint.model.resource.utdanning.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -10,16 +10,16 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-public class OTUngdomResources extends AbstractCollectionResources<OTUngdomResource> {
+public class OtEnhetResources extends AbstractCollectionResources<OtEnhetResource> {
 
-    public OTUngdomResources(Collection<OTUngdomResource> input) {
+    public OtEnhetResources(Collection<OtEnhetResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<OTUngdomResource>> getTypeReference() {
-        return new TypeReference<List<OTUngdomResource>>() {};
+    public TypeReference<List<OtEnhetResource>> getTypeReference() {
+        return new TypeReference<List<OtEnhetResource>>() {};
     }
 }

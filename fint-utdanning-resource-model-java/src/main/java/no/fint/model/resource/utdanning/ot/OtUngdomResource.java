@@ -23,7 +23,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class OTUngdomResource implements FintMainObject, FintLinks {
+public class OtUngdomResource implements FintMainObject, FintLinks {
     // Attributes
     @NotNull
     private @Valid Identifikator systemId;

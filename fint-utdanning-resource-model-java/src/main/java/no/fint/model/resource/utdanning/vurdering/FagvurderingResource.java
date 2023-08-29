@@ -44,10 +44,12 @@ public abstract class FagvurderingResource implements FintAbstractObject, FintLi
     public void addFag(Link link) {
         addLink("fag", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addUndervisningsgruppe(Link link) {
         addLink("undervisningsgruppe", link);
     }

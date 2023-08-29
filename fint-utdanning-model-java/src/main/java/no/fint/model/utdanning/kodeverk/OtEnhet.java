@@ -1,4 +1,4 @@
-package no.fint.model.administrasjon.kodeverk;
+package no.fint.model.utdanning.kodeverk;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,15 +8,15 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
-import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
+import no.fint.model.felles.basisklasser.Begrep;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class Prosjekt extends Kontodimensjon implements FintMainObject {
+public class OtEnhet extends Begrep implements FintMainObject {
     public enum Relasjonsnavn {
-            PROSJEKTART
+            KOMMUNE
     }
 
 }

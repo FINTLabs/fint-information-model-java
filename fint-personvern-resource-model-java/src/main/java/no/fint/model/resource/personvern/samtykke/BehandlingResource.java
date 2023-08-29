@@ -17,6 +17,7 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
@@ -29,6 +30,7 @@ public class BehandlingResource implements FintMainObject, FintLinks {
     private Boolean aktiv;
     @NotBlank
     private String formal;
+    private @Valid Date slettet;
     @NotNull
     private @Valid Identifikator systemId;
 

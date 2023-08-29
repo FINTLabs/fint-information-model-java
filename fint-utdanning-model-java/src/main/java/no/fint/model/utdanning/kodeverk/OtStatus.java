@@ -14,9 +14,8 @@ import no.fint.model.felles.basisklasser.Begrep;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class OTEnhet extends Begrep implements FintMainObject {
-    public enum Relasjonsnavn {
-            KOMMUNE
-    }
-
+public class OtStatus extends Begrep implements FintMainObject {
+    private String beskrivelse;
+    @NotBlank
+    private String type;
 }
