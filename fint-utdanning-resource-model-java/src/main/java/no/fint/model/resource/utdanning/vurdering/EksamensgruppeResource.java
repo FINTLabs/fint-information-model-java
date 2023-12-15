@@ -42,6 +42,13 @@ public class EksamensgruppeResource extends GruppeResource implements FintMainOb
         addLink("elevforhold", link);
     }
     @JsonIgnore
+    public List<Link> getEksamen() {
+        return getLinks().getOrDefault("eksamen", Collections.emptyList()); 
+    }
+    public void addEksamen(Link link) {
+        addLink("eksamen", link);
+    }
+    @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
     }
@@ -84,17 +91,17 @@ public class EksamensgruppeResource extends GruppeResource implements FintMainOb
         addLink("undervisningsforhold", link);
     }
     @JsonIgnore
-    public List<Link> getGruppemedlemskap() {
-        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
-    }
-    public void addGruppemedlemskap(Link link) {
-        addLink("gruppemedlemskap", link);
-    }
-    @JsonIgnore
     public List<Link> getSensor() {
         return getLinks().getOrDefault("sensor", Collections.emptyList()); 
     }
     public void addSensor(Link link) {
         addLink("sensor", link);
+    }
+    @JsonIgnore
+    public List<Link> getGruppemedlemskap() {
+        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addGruppemedlemskap(Link link) {
+        addLink("gruppemedlemskap", link);
     }
 }

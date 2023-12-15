@@ -1,4 +1,4 @@
-package no.fint.model.utdanning.vurdering;
+package no.fint.model.utdanning.timeplan;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,25 +7,25 @@ import lombok.ToString;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintAbstractObject;
+import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import java.util.Date;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public abstract class Ordensvurdering implements FintAbstractObject {
+public class Eksamen implements FintMainObject {
     public enum Relasjonsnavn {
-            ATFERD,
-            SKOLEAR,
-            ORDEN
+            ROM,
+            EKSAMENSGRUPPE
     }
 
+    private String beskrivelse;
     @NotBlank
-    private String kommentar;
+    private String navn;
     @NotNull
     private @Valid Identifikator systemId;
     @NotNull
-    private Date vurderingsdato;
+    private @Valid Periode tidsrom;
 }

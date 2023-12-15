@@ -103,6 +103,13 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
         addLink("undervisningsforhold", link);
     }
     @JsonIgnore
+    public List<Link> getFaggruppe() {
+        return getLinks().getOrDefault("faggruppe", Collections.emptyList()); 
+    }
+    public void addFaggruppe(Link link) {
+        addLink("faggruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
     }

@@ -40,4 +40,11 @@ public class RomResource implements FintMainObject, FintLinks {
     public void addTime(Link link) {
         addLink("time", link);
     }
+    @JsonIgnore
+    public List<Link> getEksamen() {
+        return getLinks().getOrDefault("eksamen", Collections.emptyList()); 
+    }
+    public void addEksamen(Link link) {
+        addLink("eksamen", link);
+    }
 }

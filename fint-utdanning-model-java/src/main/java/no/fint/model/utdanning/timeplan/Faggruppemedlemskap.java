@@ -16,6 +16,8 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @ToString(callSuper=true)
 public class Faggruppemedlemskap extends Gruppemedlemskap implements FintMainObject {
     public enum Relasjonsnavn {
+            FAGMERKNAD,
+            FAGSTATUS,
             ELEVFORHOLD,
             FAGGRUPPE
     }
