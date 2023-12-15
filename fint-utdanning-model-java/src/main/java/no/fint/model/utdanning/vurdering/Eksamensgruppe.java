@@ -18,6 +18,7 @@ import no.fint.model.utdanning.basisklasser.Gruppe;
 public class Eksamensgruppe extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
             ELEVFORHOLD,
+            EKSAMEN,
             FAG,
             SKOLE,
             TERMIN,

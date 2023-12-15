@@ -30,6 +30,20 @@ public class FaggruppemedlemskapResource extends Gruppemedlemskap implements Fin
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getFagmerknad() {
+        return getLinks().getOrDefault("fagmerknad", Collections.emptyList()); 
+    }
+    public void addFagmerknad(Link link) {
+        addLink("fagmerknad", link);
+    }
+    @JsonIgnore
+    public List<Link> getFagstatus() {
+        return getLinks().getOrDefault("fagstatus", Collections.emptyList()); 
+    }
+    public void addFagstatus(Link link) {
+        addLink("fagstatus", link);
+    }
+    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
