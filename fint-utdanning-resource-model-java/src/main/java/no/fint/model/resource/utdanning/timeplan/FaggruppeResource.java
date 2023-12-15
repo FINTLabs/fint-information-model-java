@@ -37,6 +37,20 @@ public class FaggruppeResource extends GruppeResource implements FintMainObject,
         addLink("fag", link);
     }
     @JsonIgnore
+    public List<Link> getSkole() {
+        return getLinks().getOrDefault("skole", Collections.emptyList()); 
+    }
+    public void addSkole(Link link) {
+        addLink("skole", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
+    }
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
+    }
+    @JsonIgnore
     public List<Link> getFaggruppemedlemskap() {
         return getLinks().getOrDefault("faggruppemedlemskap", Collections.emptyList()); 
     }

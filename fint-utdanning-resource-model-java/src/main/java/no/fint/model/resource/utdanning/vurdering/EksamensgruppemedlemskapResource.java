@@ -24,17 +24,34 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implements FintMainObject, FintLinks {
+    // Attributes
+    private Boolean delegert;
+    private String kandidatnummer;
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getDelegertTil() {
+        return getLinks().getOrDefault("delegertTil", Collections.emptyList()); 
+    }
+    public void addDelegertTil(Link link) {
+        addLink("delegertTil", link);
+    }
+    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getForetrukketSkole() {
+        return getLinks().getOrDefault("foretrukketSkole", Collections.emptyList()); 
+    }
+    public void addForetrukketSkole(Link link) {
+        addLink("foretrukketSkole", link);
     }
     @JsonIgnore
     public List<Link> getEksamensgruppe() {
@@ -49,5 +66,12 @@ public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implement
     }
     public void addNus(Link link) {
         addLink("nus", link);
+    }
+    @JsonIgnore
+    public List<Link> getForetrukketSensor() {
+        return getLinks().getOrDefault("foretrukketSensor", Collections.emptyList()); 
+    }
+    public void addForetrukketSensor(Link link) {
+        addLink("foretrukketSensor", link);
     }
 }
