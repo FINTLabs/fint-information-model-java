@@ -1,4 +1,4 @@
-package no.fint.model.resource.utdanning.vurdering;
+package no.fint.model.resource.utdanning.timeplan;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,31 +17,33 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.resource.utdanning.vurdering.FagvurderingResource;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
-public class SluttfagvurderingResource extends FagvurderingResource implements FintMainObject, FintLinks {
+@EqualsAndHashCode
+@ToString
+public class EksamenResource implements FintMainObject, FintLinks {
+    // Attributes
+    private String beskrivelse;
+    @NotBlank
+    private String navn;
+    @NotNull
+    private @Valid Identifikator systemId;
+    @NotNull
+    private @Valid Periode tidsrom;
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    public List<Link> getRom() {
+        return getLinks().getOrDefault("rom", Collections.emptyList()); 
     }
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
-    }
-    @JsonIgnore
-    public List<Link> getKarakterhistorie() {
-        return getLinks().getOrDefault("karakterhistorie", Collections.emptyList()); 
-    }
-    public void addKarakterhistorie(Link link) {
-        addLink("karakterhistorie", link);
+    public void addRom(Link link) {
+        addLink("rom", link);
     }
     @JsonIgnore
     public List<Link> getEksamensgruppe() {

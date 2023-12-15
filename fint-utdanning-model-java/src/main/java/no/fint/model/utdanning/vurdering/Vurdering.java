@@ -20,8 +20,8 @@ public class Vurdering implements FintMainObject {
             ELEVFORHOLD,
             FAG,
             UNDERVISNINGSGRUPPE,
-            EKSAMENSGRUPPE,
-            KARAKTER
+            KARAKTER,
+            EKSAMENSGRUPPE
     }
 
     @NotNull

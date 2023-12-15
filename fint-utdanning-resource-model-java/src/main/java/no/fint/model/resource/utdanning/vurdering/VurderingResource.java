@@ -61,17 +61,17 @@ public class VurderingResource implements FintMainObject, FintLinks {
         addLink("undervisningsgruppe", link);
     }
     @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
-    }
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
-    }
-    @JsonIgnore
     public List<Link> getKarakter() {
         return getLinks().getOrDefault("karakter", Collections.emptyList()); 
     }
     public void addKarakter(Link link) {
         addLink("karakter", link);
+    }
+    @JsonIgnore
+    public List<Link> getEksamensgruppe() {
+        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    }
+    public void addEksamensgruppe(Link link) {
+        addLink("eksamensgruppe", link);
     }
 }

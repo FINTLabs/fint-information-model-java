@@ -45,17 +45,17 @@ public abstract class OrdensvurderingResource implements FintAbstractObject, Fin
         addLink("atferd", link);
     }
     @JsonIgnore
-    public List<Link> getOrden() {
-        return getLinks().getOrDefault("orden", Collections.emptyList()); 
-    }
-    public void addOrden(Link link) {
-        addLink("orden", link);
-    }
-    @JsonIgnore
     public List<Link> getSkolear() {
         return getLinks().getOrDefault("skolear", Collections.emptyList()); 
     }
     public void addSkolear(Link link) {
         addLink("skolear", link);
+    }
+    @JsonIgnore
+    public List<Link> getOrden() {
+        return getLinks().getOrDefault("orden", Collections.emptyList()); 
+    }
+    public void addOrden(Link link) {
+        addLink("orden", link);
     }
 }

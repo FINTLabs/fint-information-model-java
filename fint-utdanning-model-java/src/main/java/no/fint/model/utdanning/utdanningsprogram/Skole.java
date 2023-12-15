@@ -26,6 +26,7 @@ public class Skole extends Enhet implements FintMainObject {
             KONTAKTLARERGRUPPE,
             SKOLERESSURS,
             UNDERVISNINGSFORHOLD,
+            FAGGRUPPE,
             UNDERVISNINGSGRUPPE,
             EKSAMENSGRUPPE,
             UTDANNINGSPROGRAM

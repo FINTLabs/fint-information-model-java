@@ -5,9 +5,6 @@ import java.util.List;
 
 public enum SamtykkeActions {
 	
-	GET_BEHANDLING,
-	GET_ALL_BEHANDLING,
-	UPDATE_BEHANDLING,
 	GET_SAMTYKKE,
 	GET_ALL_SAMTYKKE,
 	UPDATE_SAMTYKKE,
