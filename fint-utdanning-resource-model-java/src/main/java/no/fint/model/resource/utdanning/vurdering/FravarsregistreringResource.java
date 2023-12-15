@@ -14,23 +14,25 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintComplexDatatypeObject;
+import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
 import no.fint.model.felles.kompleksedatatyper.Periode;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class FravarsregistreringResource implements FintComplexDatatypeObject, FintLinks {
+public class FravarsregistreringResource implements FintMainObject, FintLinks {
     // Attributes
     @NotNull
     private Boolean foresPaVitnemal;
-    @NotBlank
     private String kommentar;
     @NotNull
     private @Valid Periode periode;
+    @NotNull
+    private @Valid Identifikator systemId;
 
     // Relations
     @Getter
@@ -63,5 +65,12 @@ public class FravarsregistreringResource implements FintComplexDatatypeObject, F
     }
     public void addFravarstype(Link link) {
         addLink("fravarstype", link);
+    }
+    @JsonIgnore
+    public List<Link> getElevfravar() {
+        return getLinks().getOrDefault("elevfravar", Collections.emptyList()); 
+    }
+    public void addElevfravar(Link link) {
+        addLink("elevfravar", link);
     }
 }

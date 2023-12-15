@@ -54,10 +54,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addElev(Link link) {
         addLink("elev", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getSidemal() {
         return getLinks().getOrDefault("sidemal", Collections.emptyList()); 
     }
+    @Deprecated
     public void addSidemal(Link link) {
         addLink("sidemal", link);
     }
@@ -68,10 +70,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addKategori(Link link) {
         addLink("kategori", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getKroppsoving() {
         return getLinks().getOrDefault("kroppsoving", Collections.emptyList()); 
     }
+    @Deprecated
     public void addKroppsoving(Link link) {
         addLink("kroppsoving", link);
     }

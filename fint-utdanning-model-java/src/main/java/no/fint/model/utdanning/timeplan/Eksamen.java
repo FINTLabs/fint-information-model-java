@@ -9,18 +9,23 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Rom implements FintMainObject {
+public class Eksamen implements FintMainObject {
     public enum Relasjonsnavn {
-            TIME,
-            EKSAMEN
+            ROM,
+            EKSAMENSGRUPPE
     }
 
+    private String beskrivelse;
+    @NotBlank
     private String navn;
     @NotNull
     private @Valid Identifikator systemId;
+    @NotNull
+    private @Valid Periode tidsrom;
 }

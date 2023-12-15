@@ -8,7 +8,6 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
-import no.fint.model.utdanning.vurdering.Fravarsregistrering;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
@@ -17,10 +16,10 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Elevfravar implements FintMainObject {
     public enum Relasjonsnavn {
+            FRAVARSREGISTRERING,
             ELEVFORHOLD
     }
 
-    private List<@Valid Fravarsregistrering> fravar;
     @NotNull
     private @Valid Identifikator systemId;
 }
