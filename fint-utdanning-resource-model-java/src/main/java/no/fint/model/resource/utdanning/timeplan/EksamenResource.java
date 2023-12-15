@@ -18,33 +18,38 @@ import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class RomResource implements FintMainObject, FintLinks {
+public class EksamenResource implements FintMainObject, FintLinks {
     // Attributes
+    private String beskrivelse;
+    @NotBlank
     private String navn;
     @NotNull
     private @Valid Identifikator systemId;
+    @NotNull
+    private @Valid Periode tidsrom;
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getTime() {
-        return getLinks().getOrDefault("time", Collections.emptyList()); 
+    public List<Link> getRom() {
+        return getLinks().getOrDefault("rom", Collections.emptyList()); 
     }
-    public void addTime(Link link) {
-        addLink("time", link);
+    public void addRom(Link link) {
+        addLink("rom", link);
     }
     @JsonIgnore
-    public List<Link> getEksamen() {
-        return getLinks().getOrDefault("eksamen", Collections.emptyList()); 
+    public List<Link> getEksamensgruppe() {
+        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
     }
-    public void addEksamen(Link link) {
-        addLink("eksamen", link);
+    public void addEksamensgruppe(Link link) {
+        addLink("eksamensgruppe", link);
     }
 }

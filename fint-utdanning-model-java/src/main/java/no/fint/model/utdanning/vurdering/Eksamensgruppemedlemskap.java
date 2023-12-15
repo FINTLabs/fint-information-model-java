@@ -16,9 +16,14 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @ToString(callSuper=true)
 public class Eksamensgruppemedlemskap extends Gruppemedlemskap implements FintMainObject {
     public enum Relasjonsnavn {
+            DELEGERTTIL,
             ELEVFORHOLD,
+            FORETRUKKETSKOLE,
             EKSAMENSGRUPPE,
-            NUS
+            NUS,
+            FORETRUKKETSENSOR
     }
 
+    private Boolean delegert;
+    private String kandidatnummer;
 }

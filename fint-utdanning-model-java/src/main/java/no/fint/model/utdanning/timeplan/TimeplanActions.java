@@ -5,6 +5,9 @@ import java.util.List;
 
 public enum TimeplanActions {
 	
+	GET_EKSAMEN,
+	GET_ALL_EKSAMEN,
+	UPDATE_EKSAMEN,
 	GET_FAG,
 	GET_ALL_FAG,
 	UPDATE_FAG,

@@ -42,6 +42,13 @@ public class EksamensgruppeResource extends GruppeResource implements FintMainOb
         addLink("elevforhold", link);
     }
     @JsonIgnore
+    public List<Link> getEksamensdato() {
+        return getLinks().getOrDefault("eksamensdato", Collections.emptyList()); 
+    }
+    public void addEksamensdato(Link link) {
+        addLink("eksamensdato", link);
+    }
+    @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
     }
