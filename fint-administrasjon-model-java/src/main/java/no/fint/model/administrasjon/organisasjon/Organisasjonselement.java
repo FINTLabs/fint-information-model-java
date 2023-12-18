@@ -18,12 +18,28 @@ import no.fint.model.felles.basisklasser.Enhet;
 @ToString(callSuper=true)
 public class Organisasjonselement extends Enhet implements FintMainObject {
     public enum Relasjonsnavn {
-            ANSVAR,
-            LEDER,
-            OVERORDNET,
-            UNDERORDNET,
-            SKOLE,
-            ARBEIDSFORHOLD
+            ANSVAR("no.fint.model.administrasjon.organisasjon.Ansvar", "0..*"),
+            LEDER("no.fint.model.administrasjon.organisasjon.Personalressurs", "0..1"),
+            OVERORDNET("no.fint.model.administrasjon.organisasjon.Organisasjonselement", "1"),
+            UNDERORDNET("no.fint.model.administrasjon.organisasjon.Organisasjonselement", "0..*"),
+            SKOLE("no.fint.model.administrasjon.organisasjon.Skole", "0..1"),
+            ARBEIDSFORHOLD("no.fint.model.administrasjon.organisasjon.Arbeidsforhold", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Periode gyldighetsperiode;

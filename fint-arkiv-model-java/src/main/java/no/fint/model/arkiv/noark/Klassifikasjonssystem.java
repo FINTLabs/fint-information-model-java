@@ -18,8 +18,24 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Klassifikasjonssystem implements FintMainObject {
     public enum Relasjonsnavn {
-            KLASSIFIKASJONSTYPE,
-            ARKIVDEL
+            KLASSIFIKASJONSTYPE("no.fint.model.arkiv.noark.Klassifikasjonstype", "0..1"),
+            ARKIVDEL("no.fint.model.arkiv.noark.Arkivdel", "1..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private String avsluttetAv;

@@ -17,10 +17,26 @@ import java.util.Date;
 @ToString
 public abstract class Fagvurdering implements FintAbstractObject {
     public enum Relasjonsnavn {
-            FAG,
-            UNDERVISNINGSGRUPPE,
-            SKOLEAR,
-            KARAKTER
+            FAG("no.fint.model.utdanning.vurdering.Fag", "1"),
+            UNDERVISNINGSGRUPPE("no.fint.model.utdanning.vurdering.Undervisningsgruppe", "0..1"),
+            SKOLEAR("no.fint.model.utdanning.vurdering.Skolear", "0..1"),
+            KARAKTER("no.fint.model.utdanning.vurdering.Karakterverdi", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotBlank

@@ -17,11 +17,27 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @Deprecated
 public class Medlemskap implements FintMainObject {
     public enum Relasjonsnavn {
-            MEDLEM,
-            FORTLOPENDEVURDERING,
-            GRUPPE,
-            ENDELIGVURDERING,
-            FRAVAR
+            MEDLEM("no.fint.model.utdanning.elev.Utdanningsforhold", "1"),
+            FORTLOPENDEVURDERING("no.fint.model.utdanning.elev.Vurdering", "0..*"),
+            GRUPPE("no.fint.model.utdanning.elev.Gruppe", "1"),
+            ENDELIGVURDERING("no.fint.model.utdanning.elev.Vurdering", "0..1"),
+            FRAVAR("no.fint.model.utdanning.elev.Fravar", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @Deprecated

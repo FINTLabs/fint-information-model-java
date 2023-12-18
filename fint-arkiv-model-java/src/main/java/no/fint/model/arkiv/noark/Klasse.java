@@ -16,7 +16,23 @@ import no.fint.model.arkiv.noark.Skjerming;
 @ToString
 public class Klasse implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            KLASSIFIKASJONSSYSTEM
+            KLASSIFIKASJONSSYSTEM("no.fint.model.arkiv.noark.Klassifikasjonssystem", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotBlank

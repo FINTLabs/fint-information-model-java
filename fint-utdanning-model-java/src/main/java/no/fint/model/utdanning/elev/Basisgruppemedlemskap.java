@@ -16,8 +16,24 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @ToString(callSuper=true)
 public class Basisgruppemedlemskap extends Gruppemedlemskap implements FintMainObject {
     public enum Relasjonsnavn {
-            BASISGRUPPE,
-            ELEVFORHOLD
+            BASISGRUPPE("no.fint.model.utdanning.elev.Basisgruppe", "1"),
+            ELEVFORHOLD("no.fint.model.utdanning.elev.Elevforhold", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
 }

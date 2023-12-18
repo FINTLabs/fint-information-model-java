@@ -17,7 +17,23 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Tjeneste implements FintMainObject {
     public enum Relasjonsnavn {
-            BEHANDLING
+            BEHANDLING("no.fint.model.personvern.samtykke.Behandling", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotBlank

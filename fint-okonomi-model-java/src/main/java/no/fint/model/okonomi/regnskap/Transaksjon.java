@@ -18,10 +18,26 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Transaksjon implements FintMainObject {
     public enum Relasjonsnavn {
-            LEVERANDOR,
-            ANSVARLIG,
-            VALUTA,
-            POSTERING
+            LEVERANDOR("no.fint.model.okonomi.regnskap.Leverandor", "0..1"),
+            ANSVARLIG("no.fint.model.okonomi.regnskap.Personalressurs", "0..1"),
+            VALUTA("no.fint.model.okonomi.regnskap.Valuta", "1"),
+            POSTERING("no.fint.model.okonomi.regnskap.Postering", "1..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

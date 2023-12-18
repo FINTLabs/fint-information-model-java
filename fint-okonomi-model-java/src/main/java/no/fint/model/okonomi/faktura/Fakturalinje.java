@@ -15,7 +15,23 @@ import no.fint.model.FintComplexDatatypeObject;
 @ToString
 public class Fakturalinje implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            VARE
+            VARE("no.fint.model.okonomi.faktura.Vare", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

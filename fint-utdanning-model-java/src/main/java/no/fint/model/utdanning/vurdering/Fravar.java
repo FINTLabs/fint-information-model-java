@@ -18,11 +18,27 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @Deprecated
 public class Fravar implements FintMainObject {
     public enum Relasjonsnavn {
-            ELEVFORHOLD,
-            REGISTRERTAV,
-            UNDERVISNINGSGRUPPE,
-            EKSAMENSGRUPPE,
-            FRAVARSTYPE
+            ELEVFORHOLD("no.fint.model.utdanning.vurdering.Elevforhold", "1"),
+            REGISTRERTAV("no.fint.model.utdanning.vurdering.Skoleressurs", "0..1"),
+            UNDERVISNINGSGRUPPE("no.fint.model.utdanning.vurdering.Undervisningsgruppe", "0..1"),
+            EKSAMENSGRUPPE("no.fint.model.utdanning.vurdering.Eksamensgruppe", "0..1"),
+            FRAVARSTYPE("no.fint.model.utdanning.vurdering.Fravarstype", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @Deprecated

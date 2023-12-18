@@ -16,7 +16,23 @@ import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
 @ToString(callSuper=true)
 public class Prosjekt extends Kontodimensjon implements FintMainObject {
     public enum Relasjonsnavn {
-            PROSJEKTART
+            PROSJEKTART("no.fint.model.administrasjon.kodeverk.Prosjektart", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
 }

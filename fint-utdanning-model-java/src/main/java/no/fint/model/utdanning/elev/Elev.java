@@ -18,8 +18,24 @@ import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 @ToString
 public class Elev implements FintMainObject {
     public enum Relasjonsnavn {
-            PERSON,
-            ELEVFORHOLD
+            PERSON("no.fint.model.utdanning.elev.Person", "1"),
+            ELEVFORHOLD("no.fint.model.utdanning.elev.Elevforhold", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Identifikator brukernavn;

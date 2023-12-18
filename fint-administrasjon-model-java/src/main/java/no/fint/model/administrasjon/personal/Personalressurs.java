@@ -19,14 +19,30 @@ import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 @ToString
 public class Personalressurs implements FintMainObject {
     public enum Relasjonsnavn {
-            PERSONALRESSURSKATEGORI,
-            ARBEIDSFORHOLD,
-            PERSON,
-            STEDFORTREDER,
-            FULLMAKT,
-            LEDER,
-            PERSONALANSVAR,
-            SKOLERESSURS
+            PERSONALRESSURSKATEGORI("no.fint.model.administrasjon.personal.Personalressurskategori", "1"),
+            ARBEIDSFORHOLD("no.fint.model.administrasjon.personal.Arbeidsforhold", "0..*"),
+            PERSON("no.fint.model.administrasjon.personal.Person", "1"),
+            STEDFORTREDER("no.fint.model.administrasjon.personal.Fullmakt", "0..*"),
+            FULLMAKT("no.fint.model.administrasjon.personal.Fullmakt", "0..*"),
+            LEDER("no.fint.model.administrasjon.personal.Organisasjonselement", "0..*"),
+            PERSONALANSVAR("no.fint.model.administrasjon.personal.Arbeidsforhold", "0..*"),
+            SKOLERESSURS("no.fint.model.administrasjon.personal.Skoleressurs", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

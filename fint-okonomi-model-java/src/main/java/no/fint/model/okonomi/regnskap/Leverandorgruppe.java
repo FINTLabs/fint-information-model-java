@@ -16,7 +16,23 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Leverandorgruppe implements FintMainObject {
     public enum Relasjonsnavn {
-            LEVERANDOR
+            LEVERANDOR("no.fint.model.okonomi.regnskap.Leverandor", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotBlank

@@ -16,7 +16,23 @@ import no.fint.model.felles.basisklasser.Begrep;
 @ToString(callSuper=true)
 public class Fravarstype extends Begrep implements FintMainObject {
     public enum Relasjonsnavn {
-            LONNSART
+            LONNSART("no.fint.model.administrasjon.kodeverk.Lonnsart", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private Boolean overfores;

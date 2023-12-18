@@ -16,8 +16,24 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Rom implements FintMainObject {
     public enum Relasjonsnavn {
-            TIME,
-            EKSAMEN
+            TIME("no.fint.model.utdanning.timeplan.Time", "0..*"),
+            EKSAMEN("no.fint.model.utdanning.timeplan.Eksamen", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private String navn;

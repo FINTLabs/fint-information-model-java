@@ -18,7 +18,23 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Faktura implements FintMainObject {
     public enum Relasjonsnavn {
-            FAKTURAGRUNNLAG
+            FAKTURAGRUNNLAG("no.fint.model.okonomi.faktura.Fakturagrunnlag", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Adresse adresse;
