@@ -16,8 +16,24 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Sensor implements FintMainObject {
     public enum Relasjonsnavn {
-            SKOLERESSURS,
-            EKSAMENSGRUPPE
+            SKOLERESSURS("no.fint.model.utdanning.vurdering.Skoleressurs", "1"),
+            EKSAMENSGRUPPE("no.fint.model.utdanning.vurdering.Eksamensgruppe", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

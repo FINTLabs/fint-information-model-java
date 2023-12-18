@@ -16,8 +16,24 @@ import no.fint.model.utdanning.basisklasser.Gruppe;
 @ToString(callSuper=true)
 public class Utdanningsprogram extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
-            SKOLE,
-            PROGRAMOMRADE
+            SKOLE("no.fint.model.utdanning.utdanningsprogram.Skole", "0..*"),
+            PROGRAMOMRADE("no.fint.model.utdanning.utdanningsprogram.Programomrade", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
 }

@@ -18,9 +18,25 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Samtykke implements FintMainObject {
     public enum Relasjonsnavn {
-            BEHANDLING,
-            PERSON,
-            ORGANISASJONSELEMENT
+            BEHANDLING("no.fint.model.personvern.samtykke.Behandling", "1"),
+            PERSON("no.fint.model.personvern.samtykke.Person", "1"),
+            ORGANISASJONSELEMENT("no.fint.model.personvern.samtykke.Organisasjonselement", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

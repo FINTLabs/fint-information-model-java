@@ -15,10 +15,26 @@ import no.fint.model.FintComplexDatatypeObject;
 @ToString
 public class Dokumentobjekt implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            FILFORMAT,
-            VARIANTFORMAT,
-            OPPRETTETAV,
-            REFERANSEDOKUMENTFIL
+            FILFORMAT("no.fint.model.arkiv.noark.Format", "0..1"),
+            VARIANTFORMAT("no.fint.model.arkiv.noark.Variantformat", "1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1"),
+            REFERANSEDOKUMENTFIL("no.fint.model.arkiv.noark.Dokumentfil", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private String filstorrelse;

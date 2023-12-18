@@ -19,11 +19,27 @@ import no.fint.model.arkiv.noark.Skjerming;
 @ToString
 public class Dokumentbeskrivelse implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            DOKUMENTSTATUS,
-            DOKUMENTTYPE,
-            TILKNYTTETREGISTRERINGSOM,
-            TILKNYTTETAV,
-            OPPRETTETAV
+            DOKUMENTSTATUS("no.fint.model.arkiv.noark.DokumentStatus", "1"),
+            DOKUMENTTYPE("no.fint.model.arkiv.noark.DokumentType", "1"),
+            TILKNYTTETREGISTRERINGSOM("no.fint.model.arkiv.noark.TilknyttetRegistreringSom", "1..*"),
+            TILKNYTTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private String beskrivelse;

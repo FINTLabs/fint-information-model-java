@@ -17,7 +17,23 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class AdministrativEnhet implements FintMainObject {
     public enum Relasjonsnavn {
-            ORGANISASJONSELEMENT
+            ORGANISASJONSELEMENT("no.fint.model.arkiv.noark.Organisasjonselement", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Periode gyldighetsperiode;

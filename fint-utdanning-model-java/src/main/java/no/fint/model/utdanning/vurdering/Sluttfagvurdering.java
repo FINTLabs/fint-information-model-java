@@ -16,9 +16,25 @@ import no.fint.model.utdanning.vurdering.Fagvurdering;
 @ToString(callSuper=true)
 public class Sluttfagvurdering extends Fagvurdering implements FintMainObject {
     public enum Relasjonsnavn {
-            ELEVFORHOLD,
-            EKSAMENSGRUPPE,
-            KARAKTERHISTORIE
+            ELEVFORHOLD("no.fint.model.utdanning.vurdering.Elevforhold", "1"),
+            EKSAMENSGRUPPE("no.fint.model.utdanning.vurdering.Eksamensgruppe", "0..1"),
+            KARAKTERHISTORIE("no.fint.model.utdanning.vurdering.Karakterhistorie", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
 }
