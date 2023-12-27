@@ -17,8 +17,24 @@ import no.fint.model.felles.basisklasser.Begrep;
 @ToString(callSuper=true)
 public class Vare extends Begrep implements FintMainObject {
     public enum Relasjonsnavn {
-            FAKTURAUTSTEDER,
-            MERVERDIAVGIFT
+            FAKTURAUTSTEDER("no.fint.model.okonomi.faktura.Fakturautsteder", "1"),
+            MERVERDIAVGIFT("no.fint.model.okonomi.kodeverk.Merverdiavgift", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotBlank

@@ -21,9 +21,25 @@ import no.fint.model.arkiv.noark.Skjerming;
 @ToString
 public abstract class Mappe implements FintAbstractObject {
     public enum Relasjonsnavn {
-            ARKIVDEL,
-            AVSLUTTETAV,
-            OPPRETTETAV
+            ARKIVDEL("no.fint.model.arkiv.noark.Arkivdel", "0..1"),
+            AVSLUTTETAV("no.fint.model.arkiv.noark.Arkivressurs", "0..1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Date avsluttetDato;

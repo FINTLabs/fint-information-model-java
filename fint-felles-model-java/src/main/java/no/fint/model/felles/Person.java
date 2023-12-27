@@ -20,18 +20,34 @@ import no.fint.model.felles.basisklasser.Aktor;
 @ToString(callSuper=true)
 public class Person extends Aktor implements FintMainObject {
     public enum Relasjonsnavn {
-            STATSBORGERSKAP,
-            KOMMUNE,
-            KJONN,
-            FORELDREANSVAR,
-            MALFORM,
-            PERSONALRESSURS,
-            MORSMAL,
-            PARORENDE,
-            FORELDRE,
-            LARLING,
-            ELEV,
-            OTUNGDOM
+            STATSBORGERSKAP("no.fint.model.felles.kodeverk.iso.Landkode", "0..*"),
+            KOMMUNE("no.fint.model.felles.kodeverk.Kommune", "0..1"),
+            KJONN("no.fint.model.felles.kodeverk.iso.Kjonn", "0..1"),
+            FORELDREANSVAR("no.fint.model.felles.Person", "0..*"),
+            MALFORM("no.fint.model.felles.kodeverk.iso.Sprak", "0..1"),
+            PERSONALRESSURS("no.fint.model.administrasjon.personal.Personalressurs", "0..1"),
+            MORSMAL("no.fint.model.felles.kodeverk.iso.Sprak", "0..1"),
+            PARORENDE("no.fint.model.felles.Kontaktperson", "0..*"),
+            FORELDRE("no.fint.model.felles.Person", "0..*"),
+            LARLING("no.fint.model.utdanning.larling.Larling", "0..*"),
+            ELEV("no.fint.model.utdanning.elev.Elev", "0..1"),
+            OTUNGDOM("no.fint.model.utdanning.ot.OtUngdom", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private String bilde;

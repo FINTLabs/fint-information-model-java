@@ -16,8 +16,24 @@ import no.fint.model.administrasjon.personal.Lonn;
 @ToString(callSuper=true)
 public class Fasttillegg extends Lonn implements FintMainObject {
     public enum Relasjonsnavn {
-            LONNSART,
-            ARBEIDSFORHOLD
+            LONNSART("no.fint.model.administrasjon.kodeverk.Lonnsart", "1"),
+            ARBEIDSFORHOLD("no.fint.model.administrasjon.personal.Arbeidsforhold", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

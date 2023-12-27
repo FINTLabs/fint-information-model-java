@@ -17,11 +17,27 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Fravarsregistrering implements FintMainObject {
     public enum Relasjonsnavn {
-            REGISTRERTAV,
-            FAGGRUPPE,
-            UNDERVISNINGSGRUPPE,
-            FRAVARSTYPE,
-            ELEVFRAVAR
+            REGISTRERTAV("no.fint.model.utdanning.elev.Skoleressurs", "0..1"),
+            FAGGRUPPE("no.fint.model.utdanning.timeplan.Faggruppe", "0..1"),
+            UNDERVISNINGSGRUPPE("no.fint.model.utdanning.timeplan.Undervisningsgruppe", "1"),
+            FRAVARSTYPE("no.fint.model.utdanning.kodeverk.Fravarstype", "1"),
+            ELEVFRAVAR("no.fint.model.utdanning.vurdering.Elevfravar", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

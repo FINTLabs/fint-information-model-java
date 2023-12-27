@@ -16,7 +16,23 @@ import no.fint.model.felles.basisklasser.Begrep;
 @ToString(callSuper=true)
 public class OtEnhet extends Begrep implements FintMainObject {
     public enum Relasjonsnavn {
-            KOMMUNE
+            KOMMUNE("no.fint.model.felles.kodeverk.Kommune", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
 }

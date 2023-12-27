@@ -16,8 +16,24 @@ import java.util.Date;
 @ToString
 public class Merknad implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            MERKNADSTYPE,
-            MERKNADREGISTRERTAV
+            MERKNADSTYPE("no.fint.model.arkiv.kodeverk.Merknadstype", "1"),
+            MERKNADREGISTRERTAV("no.fint.model.arkiv.noark.Arkivressurs", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

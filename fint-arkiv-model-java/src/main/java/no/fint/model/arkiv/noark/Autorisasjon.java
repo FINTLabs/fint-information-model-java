@@ -16,9 +16,25 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class Autorisasjon implements FintMainObject {
     public enum Relasjonsnavn {
-            TILGANGSRESTRIKSJON,
-            ADMINISTRATIVENHET,
-            ARKIVRESSURS
+            TILGANGSRESTRIKSJON("no.fint.model.arkiv.kodeverk.Tilgangsrestriksjon", "1..*"),
+            ADMINISTRATIVENHET("no.fint.model.arkiv.noark.AdministrativEnhet", "0..*"),
+            ARKIVRESSURS("no.fint.model.arkiv.noark.Arkivressurs", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     @NotNull

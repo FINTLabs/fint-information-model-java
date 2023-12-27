@@ -18,7 +18,23 @@ import no.fint.model.arkiv.noark.Skjerming;
 @ToString
 public class Korrespondansepart implements FintComplexDatatypeObject {
     public enum Relasjonsnavn {
-            KORRESPONDANSEPARTTYPE
+            KORRESPONDANSEPARTTYPE("no.fint.model.arkiv.kodeverk.KorrespondansepartType", "1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Adresse adresse;

@@ -19,9 +19,25 @@ import no.fint.model.felles.kompleksedatatyper.Periode;
 @ToString
 public abstract class Lonn implements FintAbstractObject {
     public enum Relasjonsnavn {
-            ANVISER,
-            KONTERER,
-            ATTESTANT
+            ANVISER("no.fint.model.administrasjon.personal.Personalressurs", "0..1"),
+            KONTERER("no.fint.model.administrasjon.personal.Personalressurs", "0..1"),
+            ATTESTANT("no.fint.model.administrasjon.personal.Personalressurs", "0..1");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
     private @Valid Date anvist;

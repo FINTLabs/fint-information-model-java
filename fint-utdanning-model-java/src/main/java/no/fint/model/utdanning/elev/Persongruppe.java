@@ -16,13 +16,29 @@ import no.fint.model.utdanning.basisklasser.Gruppe;
 @ToString(callSuper=true)
 public class Persongruppe extends Gruppe implements FintMainObject {
     public enum Relasjonsnavn {
-            ELEV,
-            PERSONGRUPPEMEDLEMSKAP,
-            TERMIN,
-            UNDERVISNINGSFORHOLD,
-            SKOLE,
-            SKOLERESSURS,
-            SKOLEAR
+            ELEV("no.fint.model.utdanning.elev.Elev", "0..*"),
+            PERSONGRUPPEMEDLEMSKAP("no.fint.model.utdanning.elev.Persongruppemedlemskap", "0..*"),
+            TERMIN("no.fint.model.utdanning.kodeverk.Termin", "0..*"),
+            UNDERVISNINGSFORHOLD("no.fint.model.utdanning.elev.Undervisningsforhold", "0..*"),
+            SKOLE("no.fint.model.utdanning.utdanningsprogram.Skole", "0..*"),
+            SKOLERESSURS("no.fint.model.utdanning.elev.Skoleressurs", "0..*"),
+            SKOLEAR("no.fint.model.utdanning.kodeverk.Skolear", "0..*");
+	
+		private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public String getMultiplicity() {
+            return multiplicity;
+        }
     }
 
 }
