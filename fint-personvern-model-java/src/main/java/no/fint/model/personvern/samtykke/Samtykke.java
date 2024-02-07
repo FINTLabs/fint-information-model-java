@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -17,10 +18,19 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public class Samtykke implements FintMainObject {
+    @Getter
     public enum Relasjonsnavn {
-            BEHANDLING,
-            PERSON,
-            ORGANISASJONSELEMENT
+            BEHANDLING("no.fint.model.personvern.samtykke.Behandling", "1"),
+            PERSON("no.fint.model.felles.Person", "1"),
+            ORGANISASJONSELEMENT("no.fint.model.administrasjon.organisasjon.Organisasjonselement", "0..1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     @NotNull

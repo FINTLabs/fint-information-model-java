@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -16,8 +17,17 @@ import no.fint.model.felles.basisklasser.Enhet;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class Virksomhet extends Enhet implements FintMainObject {
+    @Getter
     public enum Relasjonsnavn {
-            LARLING
+            LARLING("no.fint.model.utdanning.larling.Larling", "0..*");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     @NotNull

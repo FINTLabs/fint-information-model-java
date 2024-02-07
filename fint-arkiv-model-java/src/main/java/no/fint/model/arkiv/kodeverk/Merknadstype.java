@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;

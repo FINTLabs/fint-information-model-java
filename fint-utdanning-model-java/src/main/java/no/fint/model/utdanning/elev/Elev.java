@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -17,9 +18,18 @@ import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 @EqualsAndHashCode
 @ToString
 public class Elev implements FintMainObject {
+    @Getter
     public enum Relasjonsnavn {
-            PERSON,
-            ELEVFORHOLD
+            PERSON("no.fint.model.felles.Person", "1"),
+            ELEVFORHOLD("no.fint.model.utdanning.elev.Elevforhold", "0..*");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private @Valid Identifikator brukernavn;

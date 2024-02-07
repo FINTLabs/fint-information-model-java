@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -18,9 +19,18 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public class Fakturagrunnlag implements FintMainObject {
+    @Getter
     public enum Relasjonsnavn {
-            FAKTURA,
-            FAKTURAUTSTEDER
+            FAKTURA("no.fint.model.okonomi.faktura.Faktura", "0..*"),
+            FAKTURAUTSTEDER("no.fint.model.okonomi.faktura.Fakturautsteder", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private Long avgiftsbelop;

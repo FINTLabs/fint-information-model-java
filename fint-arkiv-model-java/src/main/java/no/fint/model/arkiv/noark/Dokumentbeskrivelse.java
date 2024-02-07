@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -18,12 +19,21 @@ import no.fint.model.arkiv.noark.Skjerming;
 @EqualsAndHashCode
 @ToString
 public class Dokumentbeskrivelse implements FintComplexDatatypeObject {
+    @Getter
     public enum Relasjonsnavn {
-            DOKUMENTSTATUS,
-            DOKUMENTTYPE,
-            TILKNYTTETREGISTRERINGSOM,
-            TILKNYTTETAV,
-            OPPRETTETAV
+            DOKUMENTSTATUS("no.fint.model.arkiv.kodeverk.DokumentStatus", "1"),
+            DOKUMENTTYPE("no.fint.model.arkiv.kodeverk.DokumentType", "1"),
+            TILKNYTTETREGISTRERINGSOM("no.fint.model.arkiv.kodeverk.TilknyttetRegistreringSom", "1..*"),
+            TILKNYTTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private String beskrivelse;

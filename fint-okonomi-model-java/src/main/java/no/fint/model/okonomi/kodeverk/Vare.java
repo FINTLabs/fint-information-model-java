@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -16,9 +17,18 @@ import no.fint.model.felles.basisklasser.Begrep;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class Vare extends Begrep implements FintMainObject {
+    @Getter
     public enum Relasjonsnavn {
-            FAKTURAUTSTEDER,
-            MERVERDIAVGIFT
+            FAKTURAUTSTEDER("no.fint.model.okonomi.faktura.Fakturautsteder", "1"),
+            MERVERDIAVGIFT("no.fint.model.okonomi.kodeverk.Merverdiavgift", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     @NotBlank

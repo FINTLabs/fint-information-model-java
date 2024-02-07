@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -17,8 +18,17 @@ import no.fint.model.arkiv.noark.Skjerming;
 @EqualsAndHashCode
 @ToString
 public class Korrespondansepart implements FintComplexDatatypeObject {
+    @Getter
     public enum Relasjonsnavn {
-            KORRESPONDANSEPARTTYPE
+            KORRESPONDANSEPARTTYPE("no.fint.model.arkiv.kodeverk.KorrespondansepartType", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private @Valid Adresse adresse;

@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -18,10 +19,19 @@ import no.fint.model.felles.kompleksedatatyper.Periode;
 @EqualsAndHashCode
 @ToString
 public abstract class Lonn implements FintAbstractObject {
+    @Getter
     public enum Relasjonsnavn {
-            ANVISER,
-            KONTERER,
-            ATTESTANT
+            ANVISER("no.fint.model.administrasjon.personal.Personalressurs", "0..1"),
+            KONTERER("no.fint.model.administrasjon.personal.Personalressurs", "0..1"),
+            ATTESTANT("no.fint.model.administrasjon.personal.Personalressurs", "0..1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private @Valid Date anvist;

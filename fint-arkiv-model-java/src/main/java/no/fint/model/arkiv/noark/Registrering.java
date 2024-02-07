@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -21,12 +22,21 @@ import no.fint.model.arkiv.noark.Skjerming;
 @EqualsAndHashCode
 @ToString
 public abstract class Registrering implements FintAbstractObject {
+    @Getter
     public enum Relasjonsnavn {
-            ADMINISTRATIVENHET,
-            ARKIVDEL,
-            SAKSBEHANDLER,
-            ARKIVERTAV,
-            OPPRETTETAV
+            ADMINISTRATIVENHET("no.fint.model.arkiv.noark.AdministrativEnhet", "0..1"),
+            ARKIVDEL("no.fint.model.arkiv.noark.Arkivdel", "0..1"),
+            SAKSBEHANDLER("no.fint.model.arkiv.noark.Arkivressurs", "0..1"),
+            ARKIVERTAV("no.fint.model.arkiv.noark.Arkivressurs", "1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private @Valid Date arkivertDato;

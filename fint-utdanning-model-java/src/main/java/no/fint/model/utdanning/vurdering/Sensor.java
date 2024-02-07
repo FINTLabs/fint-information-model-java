@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -15,9 +16,18 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @EqualsAndHashCode
 @ToString
 public class Sensor implements FintMainObject {
+    @Getter
     public enum Relasjonsnavn {
-            SKOLERESSURS,
-            EKSAMENSGRUPPE
+            SKOLERESSURS("no.fint.model.utdanning.elev.Skoleressurs", "1"),
+            EKSAMENSGRUPPE("no.fint.model.utdanning.vurdering.Eksamensgruppe", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     @NotNull

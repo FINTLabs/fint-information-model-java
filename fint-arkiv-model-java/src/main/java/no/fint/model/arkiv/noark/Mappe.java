@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -20,10 +21,19 @@ import no.fint.model.arkiv.noark.Skjerming;
 @EqualsAndHashCode
 @ToString
 public abstract class Mappe implements FintAbstractObject {
+    @Getter
     public enum Relasjonsnavn {
-            ARKIVDEL,
-            AVSLUTTETAV,
-            OPPRETTETAV
+            ARKIVDEL("no.fint.model.arkiv.noark.Arkivdel", "0..1"),
+            AVSLUTTETAV("no.fint.model.arkiv.noark.Arkivressurs", "0..1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
 
     private @Valid Date avsluttetDato;
