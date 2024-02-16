@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -29,6 +30,13 @@ public class SoknadDrosjeloyveResource extends SaksmappeResource implements Fint
     private String organisasjonsnavn;
     @NotBlank
     private String organisasjonsnummer;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

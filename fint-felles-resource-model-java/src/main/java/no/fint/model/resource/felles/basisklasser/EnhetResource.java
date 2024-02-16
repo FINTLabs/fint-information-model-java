@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -39,6 +40,14 @@ public abstract class EnhetResource extends AktorResource implements FintAbstrac
     private @Valid AdresseResource forretningsadresse;
     private String organisasjonsnavn;
     private @Valid Identifikator organisasjonsnummer;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+		identifikators.put("organisasjonsnummer", this.organisasjonsnummer);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

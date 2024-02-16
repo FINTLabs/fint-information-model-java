@@ -4,9 +4,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintReference;
 
 @Data
@@ -14,4 +16,12 @@ import no.fint.model.FintReference;
 @EqualsAndHashCode
 @ToString
 public class Grepreferanse implements FintReference {
+
+	public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+    
+    	return identifikators;
+	}
+
+
 }

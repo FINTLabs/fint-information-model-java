@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintComplexDatatypeObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -31,6 +32,12 @@ public class DokumentobjektResource implements FintComplexDatatypeObject, FintLi
     private String sjekksum;
     private String sjekksumAlgoritme;
     private Long versjonsnummer;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

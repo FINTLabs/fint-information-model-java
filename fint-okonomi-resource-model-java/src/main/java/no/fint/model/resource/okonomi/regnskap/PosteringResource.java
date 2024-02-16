@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -43,6 +44,13 @@ public class PosteringResource implements FintMainObject, FintLinks {
     private @Valid KontostrengResource kontering;
     @NotNull
     private @Valid Identifikator posteringsId;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+		identifikators.put("posteringsId", this.posteringsId);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

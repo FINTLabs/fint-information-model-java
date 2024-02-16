@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -34,6 +35,15 @@ public class OrganisasjonselementResource extends EnhetResource implements FintM
     private @Valid Identifikator organisasjonsId;
     @NotNull
     private @Valid Identifikator organisasjonsKode;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+		identifikators.put("organisasjonsId", this.organisasjonsId);
+		identifikators.put("organisasjonsKode", this.organisasjonsKode);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

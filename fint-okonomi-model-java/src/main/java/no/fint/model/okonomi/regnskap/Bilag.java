@@ -4,9 +4,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintComplexDatatypeObject;
 import java.util.Date;
 
@@ -15,6 +17,14 @@ import java.util.Date;
 @EqualsAndHashCode
 @ToString
 public class Bilag implements FintComplexDatatypeObject {
+
+	public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+    
+    	return identifikators;
+	}
+
+
     @NotNull
     private Date bilagsdato;
     private String bilagsnummer;

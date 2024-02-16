@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -46,6 +47,13 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     private @Valid Date saksdato;
     private String sakssekvensnummer;
     private @Valid Date utlaantDato;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

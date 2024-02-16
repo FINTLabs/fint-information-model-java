@@ -4,9 +4,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.Getter;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintComplexDatatypeObject;
 
 @Data
@@ -14,12 +16,29 @@ import no.fint.model.FintComplexDatatypeObject;
 @EqualsAndHashCode
 @ToString
 public class Dokumentobjekt implements FintComplexDatatypeObject {
+    @Getter
     public enum Relasjonsnavn {
-            FILFORMAT,
-            VARIANTFORMAT,
-            OPPRETTETAV,
-            REFERANSEDOKUMENTFIL
+            FILFORMAT("no.fint.model.arkiv.kodeverk.Format", "0..1"),
+            VARIANTFORMAT("no.fint.model.arkiv.kodeverk.Variantformat", "1"),
+            OPPRETTETAV("no.fint.model.arkiv.noark.Arkivressurs", "1"),
+            REFERANSEDOKUMENTFIL("no.fint.model.arkiv.noark.Dokumentfil", "0..1");
+	
+        private final String typeName;
+        private final String multiplicity;
+
+        private Relasjonsnavn(String typeName, String multiplicity) {
+            this.typeName = typeName;
+            this.multiplicity = multiplicity;
+        }
     }
+
+
+	public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+    
+    	return identifikators;
+	}
+
 
     private String filstorrelse;
     @Deprecated

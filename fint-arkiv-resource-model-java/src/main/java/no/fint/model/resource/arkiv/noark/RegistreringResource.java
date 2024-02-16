@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -71,6 +72,12 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     private @Valid SkjermingResource skjerming;
     @NotBlank
     private String tittel;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

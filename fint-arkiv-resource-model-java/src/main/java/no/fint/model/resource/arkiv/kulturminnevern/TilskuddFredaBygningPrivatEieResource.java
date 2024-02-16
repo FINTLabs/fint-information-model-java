@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
@@ -41,6 +42,14 @@ public class TilskuddFredaBygningPrivatEieResource extends SaksmappeResource imp
     private String kulturminneId;
     private @Valid MatrikkelnummerResource matrikkelnummer;
     private @Valid Identifikator soknadsnummer;
+
+    public Map<String, Identifikator> getIdentifikators() {
+    	Map<String, Identifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+		identifikators.put("soknadsnummer", this.soknadsnummer);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter
