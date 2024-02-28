@@ -20,18 +20,18 @@ import no.fint.model.resource.Link;
 import no.fint.model.resource.utdanning.vurdering.AnmerkningerResource;
 import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Periode;
-import no.fint.model.resource.utdanning.basisklasser.UtdanningsforholdResource;
+import no.fint.model.utdanning.basisklasser.Utdanningsforhold;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ElevforholdResource extends UtdanningsforholdResource implements FintMainObject, FintLinks {
+public class ElevforholdResource extends Utdanningsforhold implements FintMainObject, FintLinks {
     // Attributes
     @JsonIgnore
     @Override
     public List<FintLinks> getNestedResources() {
-        List<FintLinks> result = super.getNestedResources();
+        List<FintLinks> result = FintLinks.super.getNestedResources();
         if (anmerkninger != null) {
             result.addAll(anmerkninger);
         }

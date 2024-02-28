@@ -23,6 +23,7 @@ public class Undervisningsforhold extends Utdanningsforhold implements FintMainO
             EKSAMENSGRUPPE,
             TIME,
             SKOLE,
+            MEDLEMSKAP,
             SKOLERESSURS
     }
 
