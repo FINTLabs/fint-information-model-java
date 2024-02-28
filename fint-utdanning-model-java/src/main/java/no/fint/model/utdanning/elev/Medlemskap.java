@@ -17,11 +17,11 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @Deprecated
 public class Medlemskap implements FintMainObject {
     public enum Relasjonsnavn {
-            MEDLEM,
-            FORTLOPENDEVURDERING,
             GRUPPE,
+            FORTLOPENDEVURDERING,
             ENDELIGVURDERING,
-            FRAVAR
+            FRAVAR,
+            MEDLEM
     }
 
     @Deprecated
