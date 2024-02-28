@@ -17,13 +17,13 @@ import javax.validation.constraints.*;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.resource.utdanning.basisklasser.UtdanningsforholdResource;
+import no.fint.model.utdanning.basisklasser.Utdanningsforhold;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class UndervisningsforholdResource extends UtdanningsforholdResource implements FintMainObject, FintLinks {
+public class UndervisningsforholdResource extends Utdanningsforhold implements FintMainObject, FintLinks {
     // Attributes
     private Boolean hovedskole;
 
@@ -79,6 +79,15 @@ public class UndervisningsforholdResource extends UtdanningsforholdResource impl
     }
     public void addSkole(Link link) {
         addLink("skole", link);
+    }
+    @Deprecated
+    @JsonIgnore
+    public List<Link> getMedlemskap() {
+        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
+    }
+    @Deprecated
+    public void addMedlemskap(Link link) {
+        addLink("medlemskap", link);
     }
     @JsonIgnore
     public List<Link> getSkoleressurs() {

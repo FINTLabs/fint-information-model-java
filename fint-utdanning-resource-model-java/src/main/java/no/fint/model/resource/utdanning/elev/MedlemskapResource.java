@@ -36,6 +36,15 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
         
     @Deprecated
     @JsonIgnore
+    public List<Link> getGruppe() {
+        return getLinks().getOrDefault("gruppe", Collections.emptyList()); 
+    }
+    @Deprecated
+    public void addGruppe(Link link) {
+        addLink("gruppe", link);
+    }
+    @Deprecated
+    @JsonIgnore
     public List<Link> getMedlem() {
         return getLinks().getOrDefault("medlem", Collections.emptyList()); 
     }
@@ -51,15 +60,6 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
     @Deprecated
     public void addFortlopendeVurdering(Link link) {
         addLink("fortlopendeVurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getGruppe() {
-        return getLinks().getOrDefault("gruppe", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addGruppe(Link link) {
-        addLink("gruppe", link);
     }
     @Deprecated
     @JsonIgnore

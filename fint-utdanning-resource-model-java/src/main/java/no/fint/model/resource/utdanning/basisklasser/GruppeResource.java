@@ -53,13 +53,4 @@ public abstract class GruppeResource implements FintAbstractObject, FintLinks {
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMedlemskap() {
-        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMedlemskap(Link link) {
-        addLink("medlemskap", link);
-    }
 }

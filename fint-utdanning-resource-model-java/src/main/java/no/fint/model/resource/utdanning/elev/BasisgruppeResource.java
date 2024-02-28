@@ -73,6 +73,15 @@ public class BasisgruppeResource extends GruppeResource implements FintMainObjec
     public void addUndervisningsforhold(Link link) {
         addLink("undervisningsforhold", link);
     }
+    @Deprecated
+    @JsonIgnore
+    public List<Link> getMedlemskap() {
+        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
+    }
+    @Deprecated
+    public void addMedlemskap(Link link) {
+        addLink("medlemskap", link);
+    }
     @JsonIgnore
     public List<Link> getGruppemedlemskap() {
         return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 

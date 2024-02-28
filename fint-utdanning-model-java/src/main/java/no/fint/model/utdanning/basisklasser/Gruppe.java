@@ -18,8 +18,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public abstract class Gruppe implements FintAbstractObject {
     public enum Relasjonsnavn {
             GREPREFERANSE,
-            VIGOREFERANSE,
-            MEDLEMSKAP
+            VIGOREFERANSE
     }
 
     @NotBlank
