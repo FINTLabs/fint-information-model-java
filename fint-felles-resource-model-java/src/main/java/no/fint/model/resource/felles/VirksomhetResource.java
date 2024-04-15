@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.felles.basisklasser.EnhetResource;
 
@@ -28,6 +31,14 @@ public class VirksomhetResource extends EnhetResource implements FintMainObject,
     // Attributes
     @NotNull
     private @Valid Identifikator virksomhetsId;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+		identifikators.put("virksomhetsId", this.virksomhetsId);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter
