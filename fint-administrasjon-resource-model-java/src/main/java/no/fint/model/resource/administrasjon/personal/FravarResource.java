@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.kompleksedatatyper.Periode;
@@ -34,6 +37,14 @@ public class FravarResource implements FintMainObject, FintLinks {
     @NotNull
     private Long prosent;
     private @Valid Identifikator systemId;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.put("kildesystemId", this.kildesystemId);
+		identifikators.put("systemId", this.systemId);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

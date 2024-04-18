@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.felles.kompleksedatatyper.MatrikkelnummerResource;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.arkiv.noark.SaksmappeResource;
@@ -43,6 +46,14 @@ public class DispensasjonAutomatiskFredaKulturminneResource extends SaksmappeRes
     @NotNull
     private @Valid Identifikator soknadsnummer;
     private String tiltak;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+		identifikators.put("soknadsnummer", this.soknadsnummer);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter
