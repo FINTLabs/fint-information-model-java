@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintAbstractObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import java.util.Date;
 
@@ -24,7 +27,7 @@ import java.util.Date;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public abstract class FagvurderingResource implements FintAbstractObject, FintLinks {
+public abstract class FagvurderingResource implements FintResource, FintLinks {
     // Attributes
     @NotBlank
     private String kommentar;
@@ -32,6 +35,13 @@ public abstract class FagvurderingResource implements FintAbstractObject, FintLi
     private @Valid Identifikator systemId;
     @NotNull
     private Date vurderingsdato;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.put("systemId", this.systemId);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

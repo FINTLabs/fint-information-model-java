@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintAbstractObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.DokumentbeskrivelseResource;
 import no.fint.model.resource.arkiv.noark.KlasseResource;
@@ -29,7 +32,7 @@ import no.fint.model.resource.arkiv.noark.SkjermingResource;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public abstract class RegistreringResource implements FintAbstractObject, FintLinks {
+public abstract class RegistreringResource implements FintResource, FintLinks {
     // Attributes
     @JsonIgnore
     @Override

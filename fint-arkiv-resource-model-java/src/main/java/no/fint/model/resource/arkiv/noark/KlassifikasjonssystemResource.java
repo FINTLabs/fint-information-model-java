@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.KlasseResource;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -25,7 +28,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class KlassifikasjonssystemResource implements FintMainObject, FintLinks {
+public class KlassifikasjonssystemResource implements FintResource, FintLinks {
     // Attributes
     @JsonIgnore
     @Override
@@ -49,6 +52,13 @@ public class KlassifikasjonssystemResource implements FintMainObject, FintLinks 
     private @Valid Identifikator systemId;
     @NotBlank
     private String tittel;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.put("systemId", this.systemId);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter

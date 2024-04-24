@@ -11,19 +11,22 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintComplexDatatypeObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.arkiv.noark.SkjermingResource;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class KlasseResource implements FintComplexDatatypeObject, FintLinks {
+public class KlasseResource implements FintResource, FintLinks {
     // Attributes
     @JsonIgnore
     @Override

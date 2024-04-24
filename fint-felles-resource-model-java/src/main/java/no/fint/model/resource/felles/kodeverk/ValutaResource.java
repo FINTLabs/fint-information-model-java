@@ -11,19 +11,22 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class ValutaResource implements FintMainObject, FintLinks {
+public class ValutaResource implements FintResource, FintLinks {
     // Attributes
     @NotNull
     private @Valid Identifikator bokstavkode;
@@ -31,6 +34,14 @@ public class ValutaResource implements FintMainObject, FintLinks {
     private String navn;
     @NotNull
     private @Valid Identifikator nummerkode;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.put("bokstavkode", this.bokstavkode);
+		identifikators.put("nummerkode", this.nummerkode);
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter
