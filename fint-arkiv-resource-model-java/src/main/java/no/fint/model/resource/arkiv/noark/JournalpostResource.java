@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintComplexDatatypeObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.FintResource;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.arkiv.noark.Avskrivning;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.RegistreringResource;
@@ -25,7 +28,7 @@ import no.fint.model.resource.arkiv.noark.RegistreringResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class JournalpostResource extends RegistreringResource implements FintComplexDatatypeObject, FintLinks {
+public class JournalpostResource extends RegistreringResource implements FintResource, FintLinks {
     // Attributes
     private Long antallVedlegg;
     private @Valid Avskrivning avskrivning;
