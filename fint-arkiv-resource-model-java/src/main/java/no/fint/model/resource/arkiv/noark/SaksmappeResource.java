@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintAbstractObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.arkiv.noark.RegistreringResource;
 import no.fint.model.resource.arkiv.noark.JournalpostResource;
 import java.util.Date;
@@ -46,6 +49,13 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     private @Valid Date saksdato;
     private String sakssekvensnummer;
     private @Valid Date utlaantDato;
+	@JsonIgnore
+	public Map<String, FintIdentifikator> getIdentifikators() {
+    	Map<String, FintIdentifikator> identifikators = new HashMap<>();
+		identifikators.putAll(super.getIdentifikators());
+    
+    	return identifikators;
+	}
 
     // Relations
     @Getter
