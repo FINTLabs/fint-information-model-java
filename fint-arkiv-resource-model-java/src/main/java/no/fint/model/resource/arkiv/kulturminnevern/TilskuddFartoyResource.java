@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.FintResourceObject;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.arkiv.noark.SaksmappeResource;
 
@@ -24,7 +27,7 @@ import no.fint.model.resource.arkiv.noark.SaksmappeResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class TilskuddFartoyResource extends SaksmappeResource implements FintMainObject, FintLinks {
+public class TilskuddFartoyResource extends SaksmappeResource implements FintResourceObject, FintLinks {
     // Attributes
     @NotBlank
     private String fartoyNavn;
@@ -34,6 +37,14 @@ public class TilskuddFartoyResource extends SaksmappeResource implements FintMai
     private String kulturminneId;
     @NotNull
     private @Valid Identifikator soknadsnummer;
+    @JsonIgnore
+    public Map<String, FintIdentifikator> getIdentifikators() {
+        Map<String, FintIdentifikator> identifikators = new HashMap<>();
+        identifikators.putAll(super.getIdentifikators());
+        identifikators.put("soknadsnummer", this.soknadsnummer);
+    
+        return identifikators;
+    }
 
     // Relations
     @Getter
