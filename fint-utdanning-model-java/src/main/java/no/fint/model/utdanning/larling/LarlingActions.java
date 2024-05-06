@@ -5,6 +5,9 @@ import java.util.List;
 
 public enum LarlingActions {
 	
+	GET_AVLAGTPROVE,
+	GET_ALL_AVLAGTPROVE,
+	UPDATE_AVLAGTPROVE,
 	GET_LARLING,
 	GET_ALL_LARLING,
 	UPDATE_LARLING

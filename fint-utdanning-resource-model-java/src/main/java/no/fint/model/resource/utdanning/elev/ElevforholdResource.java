@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.FintResourceObject;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.utdanning.vurdering.AnmerkningerResource;
 import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Periode;
@@ -26,7 +29,7 @@ import no.fint.model.resource.utdanning.basisklasser.UtdanningsforholdResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ElevforholdResource extends UtdanningsforholdResource implements FintMainObject, FintLinks {
+public class ElevforholdResource extends UtdanningsforholdResource implements FintResourceObject, FintLinks {
     // Attributes
     @JsonIgnore
     @Override
@@ -42,6 +45,13 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     private @Valid Periode gyldighetsperiode;
     private Boolean hovedskole;
     private Boolean tosprakligFagopplaring;
+    @JsonIgnore
+    public Map<String, FintIdentifikator> getIdentifikators() {
+        Map<String, FintIdentifikator> identifikators = new HashMap<>();
+        identifikators.putAll(super.getIdentifikators());
+    
+        return identifikators;
+    }
 
     // Relations
     @Getter
@@ -146,10 +156,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addVurdering(Link link) {
         addLink("vurdering", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getSluttordensvurdering() {
         return getLinks().getOrDefault("sluttordensvurdering", Collections.emptyList()); 
     }
+    @Deprecated
     public void addSluttordensvurdering(Link link) {
         addLink("sluttordensvurdering", link);
     }
@@ -162,24 +174,30 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addKontaktlarergruppe(Link link) {
         addLink("kontaktlarergruppe", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getUnderveisfagvurdering() {
         return getLinks().getOrDefault("underveisfagvurdering", Collections.emptyList()); 
     }
+    @Deprecated
     public void addUnderveisfagvurdering(Link link) {
         addLink("underveisfagvurdering", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getHalvarsfagvurdering() {
         return getLinks().getOrDefault("halvarsfagvurdering", Collections.emptyList()); 
     }
+    @Deprecated
     public void addHalvarsfagvurdering(Link link) {
         addLink("halvarsfagvurdering", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getSluttfagvurdering() {
         return getLinks().getOrDefault("sluttfagvurdering", Collections.emptyList()); 
     }
+    @Deprecated
     public void addSluttfagvurdering(Link link) {
         addLink("sluttfagvurdering", link);
     }
@@ -218,10 +236,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addTilrettelegging(Link link) {
         addLink("tilrettelegging", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getHalvarsordensvurdering() {
         return getLinks().getOrDefault("halvarsordensvurdering", Collections.emptyList()); 
     }
+    @Deprecated
     public void addHalvarsordensvurdering(Link link) {
         addLink("halvarsordensvurdering", link);
     }
@@ -233,6 +253,13 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     @Deprecated
     public void addProgramomrade(Link link) {
         addLink("programomrade", link);
+    }
+    @JsonIgnore
+    public List<Link> getElevvurdering() {
+        return getLinks().getOrDefault("elevvurdering", Collections.emptyList()); 
+    }
+    public void addElevvurdering(Link link) {
+        addLink("elevvurdering", link);
     }
     @Deprecated
     @JsonIgnore
@@ -250,10 +277,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addProgramomrademedlemskap(Link link) {
         addLink("programomrademedlemskap", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getUnderveisordensvurdering() {
         return getLinks().getOrDefault("underveisordensvurdering", Collections.emptyList()); 
     }
+    @Deprecated
     public void addUnderveisordensvurdering(Link link) {
         addLink("underveisordensvurdering", link);
     }

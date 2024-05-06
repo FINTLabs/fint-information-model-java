@@ -11,19 +11,29 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.FintResourceObject;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class FaggruppemedlemskapResource extends Gruppemedlemskap implements FintMainObject, FintLinks {
+public class FaggruppemedlemskapResource extends Gruppemedlemskap implements FintResourceObject, FintLinks {
+    @JsonIgnore
+    public Map<String, FintIdentifikator> getIdentifikators() {
+        Map<String, FintIdentifikator> identifikators = new HashMap<>();
+        identifikators.putAll(super.getIdentifikators());
+    
+        return identifikators;
+    }
 
     // Relations
     @Getter
@@ -49,6 +59,13 @@ public class FaggruppemedlemskapResource extends Gruppemedlemskap implements Fin
     }
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getVarsel() {
+        return getLinks().getOrDefault("varsel", Collections.emptyList()); 
+    }
+    public void addVarsel(Link link) {
+        addLink("varsel", link);
     }
     @JsonIgnore
     public List<Link> getFaggruppe() {

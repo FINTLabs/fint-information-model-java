@@ -11,12 +11,15 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.FintAbstractObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
+import no.fint.model.FintAbstractObject;
 import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.KlasseResource;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -60,6 +63,14 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     private @Valid SkjermingResource skjerming;
     private @Valid Identifikator systemId;
     private String tittel;
+    @JsonIgnore
+    public Map<String, FintIdentifikator> getIdentifikators() {
+        Map<String, FintIdentifikator> identifikators = new HashMap<>();
+        identifikators.put("mappeId", this.mappeId);
+        identifikators.put("systemId", this.systemId);
+    
+        return identifikators;
+    }
 
     // Relations
     @Getter
