@@ -49,10 +49,10 @@ public class SluttordensvurderingResource extends OrdensvurderingResource implem
         addLink("elevforhold", link);
     }
     @JsonIgnore
-    public List<Link> getVurdering() {
-        return getLinks().getOrDefault("vurdering", Collections.emptyList()); 
+    public List<Link> getElevvurdering() {
+        return getLinks().getOrDefault("elevvurdering", Collections.emptyList()); 
     }
-    public void addVurdering(Link link) {
-        addLink("vurdering", link);
+    public void addElevvurdering(Link link) {
+        addLink("elevvurdering", link);
     }
 }
