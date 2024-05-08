@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.administrasjon.kompleksedatatyper.KontostrengResource;
@@ -27,7 +27,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class PosteringResource implements FintResourceObject, FintLinks {
+public class PosteringResource implements FintResource, FintLinks {
     // Attributes
     @JsonIgnore
     @Override

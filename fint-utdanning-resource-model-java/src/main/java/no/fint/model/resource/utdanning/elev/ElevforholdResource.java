@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.utdanning.vurdering.AnmerkningerResource;
@@ -29,7 +29,7 @@ import no.fint.model.resource.utdanning.basisklasser.UtdanningsforholdResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ElevforholdResource extends UtdanningsforholdResource implements FintResourceObject, FintLinks {
+public class ElevforholdResource extends UtdanningsforholdResource implements FintResource, FintLinks {
     // Attributes
     @JsonIgnore
     @Override

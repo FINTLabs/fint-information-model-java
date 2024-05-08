@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -26,7 +26,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class TilgangResource implements FintResourceObject, FintLinks {
+public class TilgangResource implements FintResource, FintLinks {
     // Attributes
     @NotNull
     private @Valid Identifikator systemId;
