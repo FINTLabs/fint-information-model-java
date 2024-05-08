@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
@@ -26,7 +26,7 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class BasisgruppemedlemskapResource extends Gruppemedlemskap implements FintResourceObject, FintLinks {
+public class BasisgruppemedlemskapResource extends Gruppemedlemskap implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();

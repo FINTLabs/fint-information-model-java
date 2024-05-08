@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
@@ -27,7 +27,7 @@ import no.fint.model.resource.felles.basisklasser.EnhetResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class VirksomhetResource extends EnhetResource implements FintResourceObject, FintLinks {
+public class VirksomhetResource extends EnhetResource implements FintResource {
     // Attributes
     @NotNull
     private @Valid Identifikator virksomhetsId;
