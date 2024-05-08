@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.utdanning.vurdering.Fravarsprosent;
@@ -27,7 +27,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class FravarsoversiktResource implements FintResourceObject, FintLinks {
+public class FravarsoversiktResource implements resource.FintResource, FintLinks {
     // Attributes
     @NotNull
     private @Valid Fravarsprosent halvar;

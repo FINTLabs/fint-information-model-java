@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.felles.kompleksedatatyper.MatrikkelnummerResource;
@@ -28,7 +28,7 @@ import no.fint.model.resource.arkiv.noark.SaksmappeResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class TilskuddFredaBygningPrivatEieResource extends SaksmappeResource implements FintResourceObject, FintLinks {
+public class TilskuddFredaBygningPrivatEieResource extends SaksmappeResource implements resource.FintResource, FintLinks {
     // Attributes
     @JsonIgnore
     @Override
