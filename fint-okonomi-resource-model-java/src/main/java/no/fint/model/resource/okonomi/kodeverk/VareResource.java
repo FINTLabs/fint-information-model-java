@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.administrasjon.kompleksedatatyper.KontostrengResource;
@@ -27,12 +27,12 @@ import no.fint.model.felles.basisklasser.Begrep;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class VareResource extends Begrep implements FintResourceObject, FintLinks {
+public class VareResource extends Begrep implements FintResource {
     // Attributes
     @JsonIgnore
     @Override
     public List<FintLinks> getNestedResources() {
-        List<FintLinks> result = FintLinks.super.getNestedResources();
+        List<FintLinks> result = FintResource.super.getNestedResources();
         if (kontering != null) {
             result.add(kontering);
         }

@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.okonomi.regnskap.Bilag;
@@ -28,7 +28,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class TransaksjonResource implements FintResourceObject, FintLinks {
+public class TransaksjonResource implements FintResource {
     // Attributes
     @NotNull
     private Long belop;

@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import java.util.Date;
@@ -27,7 +27,7 @@ import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class EksamensgruppeResource extends GruppeResource implements FintResourceObject, FintLinks {
+public class EksamensgruppeResource extends GruppeResource implements FintResource {
     // Attributes
     private @Valid Date eksamensdato;
     @JsonIgnore

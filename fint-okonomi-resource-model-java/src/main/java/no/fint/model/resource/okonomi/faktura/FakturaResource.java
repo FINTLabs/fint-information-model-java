@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.FintLinks;
-import no.fint.model.FintResourceObject;
+import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.resource.felles.kompleksedatatyper.AdresseResource;
@@ -28,12 +28,12 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class FakturaResource implements FintResourceObject, FintLinks {
+public class FakturaResource implements FintResource {
     // Attributes
     @JsonIgnore
     @Override
     public List<FintLinks> getNestedResources() {
-        List<FintLinks> result = FintLinks.super.getNestedResources();
+        List<FintLinks> result = FintResource.super.getNestedResources();
         if (adresse != null) {
             result.add(adresse);
         }
