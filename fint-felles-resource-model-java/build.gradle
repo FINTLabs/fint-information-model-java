@@ -1,6 +1,6 @@
 dependencies {
     compile project(":fint-felles-model-java")
-    compile('no.fint:fint-model-resource:0.4.1')
+    compile('no.fintlabs:fint-model-resource:0.5.0')
 
     testCompile("org.spockframework:spock-core:${spockSpringVersion}")
     testCompile("org.spockframework:spock-spring:${spockSpringVersion}")
