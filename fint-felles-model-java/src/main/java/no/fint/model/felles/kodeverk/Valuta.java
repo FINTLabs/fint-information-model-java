@@ -39,6 +39,12 @@ public class Valuta  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = false;
     @NotNull
     private @Valid Identifikator bokstavkode;
     @NotBlank

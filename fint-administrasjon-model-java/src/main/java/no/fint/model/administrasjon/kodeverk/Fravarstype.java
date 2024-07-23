@@ -53,6 +53,12 @@ public class Fravarstype extends Begrep  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = false;
     @JsonIgnore
     private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
     private Boolean overfores;

@@ -50,6 +50,12 @@ public class Journalpost extends Registrering  implements FintComplexDatatypeObj
         }
     }
 
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
     private Long antallVedlegg;

@@ -60,6 +60,12 @@ public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
     private List<@Valid Registrering> arkivnotat;
