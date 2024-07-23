@@ -38,6 +38,12 @@ public class Dokumentfil  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     @NotBlank
     private String data;
     private String filnavn;

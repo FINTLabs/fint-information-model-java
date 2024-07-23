@@ -38,4 +38,10 @@ public class Objekt extends Kontodimensjon  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = false;
 }

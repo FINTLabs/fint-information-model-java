@@ -41,6 +41,12 @@ public class TilskuddFredaBygningPrivatEie extends Saksmappe  implements FintMod
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     private String bygningsnavn;
     @NotBlank
     private String kulturminneId;

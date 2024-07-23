@@ -32,6 +32,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @EqualsAndHashCode
 @ToString
 public abstract class Aktor  implements FintAbstractObject {
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Adresse postadresse;
 }

@@ -38,4 +38,10 @@ public class Variantformat extends Begrep  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = false;
 }

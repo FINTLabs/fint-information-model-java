@@ -40,6 +40,12 @@ public class TilskuddFartoy extends Saksmappe  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     @NotBlank
     private String fartoyNavn;
     @NotBlank

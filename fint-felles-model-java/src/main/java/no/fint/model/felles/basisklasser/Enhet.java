@@ -40,6 +40,12 @@ public abstract class Enhet extends Aktor  implements FintAbstractObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = true;
     private @Valid Adresse forretningsadresse;
     private String organisasjonsnavn;
     private @Valid Identifikator organisasjonsnummer;

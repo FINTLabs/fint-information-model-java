@@ -38,6 +38,12 @@ public class OtStatus extends Begrep  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    private final boolean writeable = false;
     private String beskrivelse;
     @NotBlank
     private String type;
