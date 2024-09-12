@@ -39,6 +39,13 @@ public abstract class Gruppemedlemskap  implements FintAbstractObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
     private @Valid Periode gyldighetsperiode;
     @NotNull
     private @Valid Identifikator systemId;

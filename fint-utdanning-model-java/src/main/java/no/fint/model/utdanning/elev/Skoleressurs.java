@@ -58,6 +58,13 @@ public class Skoleressurs  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
     private @Valid Identifikator feidenavn;

@@ -38,4 +38,11 @@ public class Sak extends Saksmappe  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
 }
