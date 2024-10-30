@@ -39,6 +39,13 @@ public abstract class Begrep  implements FintAbstractObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
     private @Valid Periode gyldighetsperiode;
     @NotBlank
     private String kode;

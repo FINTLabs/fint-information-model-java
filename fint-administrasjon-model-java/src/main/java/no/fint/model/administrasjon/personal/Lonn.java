@@ -59,6 +59,13 @@ public abstract class Lonn  implements FintAbstractObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
     private @Valid Date anvist;

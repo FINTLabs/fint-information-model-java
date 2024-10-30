@@ -55,6 +55,13 @@ public class Eksamen  implements FintModelObject {
     
         return identifikators;
     }
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
     @JsonIgnore
     private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
     private String beskrivelse;

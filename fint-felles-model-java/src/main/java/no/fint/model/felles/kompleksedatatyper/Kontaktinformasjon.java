@@ -30,6 +30,13 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @EqualsAndHashCode
 @ToString
 public class Kontaktinformasjon  implements FintComplexDatatypeObject {
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
     private String epostadresse;
     private String mobiltelefonnummer;
     private String nettsted;

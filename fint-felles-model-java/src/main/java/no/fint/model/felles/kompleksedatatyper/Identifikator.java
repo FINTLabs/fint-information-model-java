@@ -31,6 +31,13 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @EqualsAndHashCode
 @ToString
 public class Identifikator  implements FintComplexDatatypeObject, FintIdentifikator {
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
     private @Valid Periode gyldighetsperiode;
     @NotBlank
     private String identifikatorverdi;
