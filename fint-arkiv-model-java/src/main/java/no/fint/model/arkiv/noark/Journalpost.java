@@ -50,6 +50,15 @@ public class Journalpost extends Registrering  implements FintComplexDatatypeObj
         }
     }
 
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+        relations.addAll(super.getRelations());
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
+    }
 
     public boolean isWriteable() {
         return this.writeable;
@@ -58,7 +67,7 @@ public class Journalpost extends Registrering  implements FintComplexDatatypeObj
     @JsonIgnore
     private final boolean writeable = true;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
     private Long antallVedlegg;
     private @Valid Avskrivning avskrivning;
     private @Valid Date dokumentetsDato;

@@ -56,6 +56,14 @@ public abstract class Registrering  implements FintAbstractObject {
         }
     }
 
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
+    }
 
     public boolean isWriteable() {
         return this.writeable;
@@ -64,7 +72,7 @@ public abstract class Registrering  implements FintAbstractObject {
     @JsonIgnore
     private final boolean writeable = true;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
     private @Valid Date arkivertDato;
     private String beskrivelse;
     private List<@Valid Dokumentbeskrivelse> dokumentbeskrivelse;

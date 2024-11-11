@@ -32,12 +32,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @ToString
 public class Valuta  implements FintModelObject {
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("bokstavkode", this.bokstavkode);
         identifikators.put("nummerkode", this.nummerkode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     public boolean isWriteable() {
@@ -46,6 +46,8 @@ public class Valuta  implements FintModelObject {
 
     @JsonIgnore
     private final boolean writeable = false;
+    @JsonIgnore
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
     @NotNull
     private @Valid Identifikator bokstavkode;
     @NotBlank

@@ -53,6 +53,14 @@ public class Dokumentbeskrivelse  implements FintComplexDatatypeObject {
         }
     }
 
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
+    }
 
     public boolean isWriteable() {
         return this.writeable;
@@ -61,7 +69,7 @@ public class Dokumentbeskrivelse  implements FintComplexDatatypeObject {
     @JsonIgnore
     private final boolean writeable = true;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
     private String beskrivelse;
     private Long dokumentnummer;
     private List<@Valid Dokumentobjekt> dokumentobjekt;

@@ -35,12 +35,15 @@ public class ValutaResource implements FintResource {
     @NotNull
     private @Valid Identifikator nummerkode;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
+
+    @JsonIgnore
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("bokstavkode", this.bokstavkode);
         identifikators.put("nummerkode", this.nummerkode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

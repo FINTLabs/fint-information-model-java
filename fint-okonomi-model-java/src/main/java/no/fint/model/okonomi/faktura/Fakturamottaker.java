@@ -45,6 +45,14 @@ public class Fakturamottaker  implements FintComplexDatatypeObject {
         }
     }
 
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
+    }
 
     public boolean isWriteable() {
         return this.writeable;
@@ -53,5 +61,5 @@ public class Fakturamottaker  implements FintComplexDatatypeObject {
     @JsonIgnore
     private final boolean writeable = false;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
 }

@@ -48,11 +48,19 @@ public class Persongruppemedlemskap extends Gruppemedlemskap  implements FintMod
     }
 
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
+    }
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
     }
 
     public boolean isWriteable() {
@@ -62,5 +70,7 @@ public class Persongruppemedlemskap extends Gruppemedlemskap  implements FintMod
     @JsonIgnore
     private final boolean writeable = false;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
+    @JsonIgnore
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
 }

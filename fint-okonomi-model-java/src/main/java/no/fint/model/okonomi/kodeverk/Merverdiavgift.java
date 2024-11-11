@@ -32,11 +32,11 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @ToString(callSuper=true)
 public class Merverdiavgift extends Begrep  implements FintModelObject {
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     public boolean isWriteable() {
@@ -45,6 +45,8 @@ public class Merverdiavgift extends Begrep  implements FintModelObject {
 
     @JsonIgnore
     private final boolean writeable = false;
+    @JsonIgnore
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
     @NotNull
     private Long sats;
 }
