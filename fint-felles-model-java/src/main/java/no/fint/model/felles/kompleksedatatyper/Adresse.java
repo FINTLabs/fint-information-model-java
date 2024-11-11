@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +46,14 @@ public class Adresse  implements FintComplexDatatypeObject {
         }
     }
 
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
+    }
 
     public boolean isWriteable() {
         return this.writeable;
@@ -53,7 +62,7 @@ public class Adresse  implements FintComplexDatatypeObject {
     @JsonIgnore
     private final boolean writeable = false;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
     private List<String> adresselinje;
     private String postnummer;
     private String poststed;

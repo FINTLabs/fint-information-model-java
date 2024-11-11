@@ -44,11 +44,14 @@ public class VareResource extends Begrep implements FintResource {
     @NotNull
     private Long pris;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
+
+    @JsonIgnore
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

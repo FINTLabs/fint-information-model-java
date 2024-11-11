@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -54,12 +55,20 @@ public abstract class Mappe  implements FintAbstractObject {
     }
 
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("mappeId", this.mappeId);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
+    }
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
     }
 
     public boolean isWriteable() {
@@ -69,7 +78,9 @@ public abstract class Mappe  implements FintAbstractObject {
     @JsonIgnore
     private final boolean writeable = true;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
+    @JsonIgnore
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
     private @Valid Date avsluttetDato;
     private String beskrivelse;
     private List<@Valid Klasse> klasse;

@@ -41,13 +41,16 @@ public class PersonalressursResource implements FintResource {
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Identifikator systemId;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
+
+    @JsonIgnore
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("ansattnummer", this.ansattnummer);
         identifikators.put("brukernavn", this.brukernavn);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

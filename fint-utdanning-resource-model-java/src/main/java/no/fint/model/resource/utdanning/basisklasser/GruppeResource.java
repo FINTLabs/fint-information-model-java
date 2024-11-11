@@ -38,11 +38,14 @@ public abstract class GruppeResource implements FintAbstractObject, FintLinks {
     @NotNull
     private @Valid Identifikator systemId;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
+
+    @JsonIgnore
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

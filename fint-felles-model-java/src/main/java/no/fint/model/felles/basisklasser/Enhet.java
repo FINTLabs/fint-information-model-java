@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,11 +35,11 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @ToString(callSuper=true)
 public abstract class Enhet extends Aktor  implements FintAbstractObject {
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("organisasjonsnummer", this.organisasjonsnummer);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     public boolean isWriteable() {
@@ -47,6 +48,8 @@ public abstract class Enhet extends Aktor  implements FintAbstractObject {
 
     @JsonIgnore
     private final boolean writeable = true;
+    @JsonIgnore
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
     private @Valid Adresse forretningsadresse;
     private String organisasjonsnavn;
     private @Valid Identifikator organisasjonsnummer;

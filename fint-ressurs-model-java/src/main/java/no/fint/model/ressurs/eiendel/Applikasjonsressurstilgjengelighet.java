@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -49,11 +50,19 @@ public class Applikasjonsressurstilgjengelighet  implements FintModelObject {
     }
 
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
+    }
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
     }
 
     public boolean isWriteable() {
@@ -63,7 +72,9 @@ public class Applikasjonsressurstilgjengelighet  implements FintModelObject {
     @JsonIgnore
     private final boolean writeable = false;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
+    @JsonIgnore
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
     @NotNull
     private @Valid Periode gyldighetsperiode;
     private Long lisensantall;

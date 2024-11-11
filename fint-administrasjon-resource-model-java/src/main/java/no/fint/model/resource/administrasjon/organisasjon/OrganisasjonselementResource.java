@@ -38,13 +38,16 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
     @NotNull
     private @Valid Identifikator organisasjonsKode;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    private final Map<String, FintIdentifikator> identifikators = createIdentifikators();
+
+    @JsonIgnore
+    private Map<String, FintIdentifikator> createIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
         identifikators.put("organisasjonsId", this.organisasjonsId);
         identifikators.put("organisasjonsKode", this.organisasjonsKode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
