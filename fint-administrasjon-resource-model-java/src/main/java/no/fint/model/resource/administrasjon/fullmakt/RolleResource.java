@@ -33,11 +33,12 @@ public class RolleResource implements FintResource {
     @NotNull
     private @Valid Identifikator navn;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("navn", this.navn);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

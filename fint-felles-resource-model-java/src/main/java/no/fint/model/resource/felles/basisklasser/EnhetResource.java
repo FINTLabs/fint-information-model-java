@@ -43,11 +43,12 @@ public abstract class EnhetResource extends AktorResource implements FintAbstrac
     private String organisasjonsnavn;
     private @Valid Identifikator organisasjonsnummer;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("organisasjonsnummer", this.organisasjonsnummer);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

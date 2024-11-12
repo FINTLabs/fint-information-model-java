@@ -32,11 +32,12 @@ public class VariabellonnResource extends LonnResource implements FintResource {
     private Long antall;
     private Long belop;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

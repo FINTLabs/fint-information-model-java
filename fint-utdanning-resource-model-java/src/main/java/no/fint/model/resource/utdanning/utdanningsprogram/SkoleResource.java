@@ -38,13 +38,14 @@ public class SkoleResource extends EnhetResource implements FintResource {
     @NotNull
     private @Valid Identifikator systemId;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
         identifikators.put("skolenummer", this.skolenummer);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

@@ -47,11 +47,12 @@ public class PosteringResource implements FintResource {
     @NotNull
     private @Valid Identifikator posteringsId;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("posteringsId", this.posteringsId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

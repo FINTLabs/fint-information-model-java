@@ -28,11 +28,12 @@ import no.fint.model.resource.utdanning.vurdering.FagvurderingResource;
 @ToString(callSuper=true)
 public class SluttfagvurderingResource extends FagvurderingResource implements FintResource {
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

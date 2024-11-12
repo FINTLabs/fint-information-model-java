@@ -49,11 +49,12 @@ public class PersonResource extends AktorResource implements FintResource {
     @NotNull
     private @Valid Personnavn navn;
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("fodselsnummer", this.fodselsnummer);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

@@ -28,11 +28,12 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @ToString(callSuper=true)
 public class PersongruppemedlemskapResource extends Gruppemedlemskap implements FintResource {
     @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
+    @Override
+    private Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
