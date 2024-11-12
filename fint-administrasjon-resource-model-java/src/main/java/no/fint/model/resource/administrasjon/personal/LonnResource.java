@@ -57,8 +57,8 @@ public abstract class LonnResource implements FintAbstractObject, FintLinks {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("kildesystemId", this.kildesystemId);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

@@ -54,8 +54,8 @@ public class ElevResource implements FintResource {
         identifikators.put("elevnummer", this.elevnummer);
         identifikators.put("feidenavn", this.feidenavn);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
