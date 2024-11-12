@@ -28,11 +28,12 @@ import no.fint.model.felles.basisklasser.Begrep;
 @ToString(callSuper=true)
 public abstract class KontodimensjonResource extends Begrep implements FintAbstractObject, FintLinks {
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

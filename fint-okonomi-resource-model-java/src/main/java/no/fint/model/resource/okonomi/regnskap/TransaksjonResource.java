@@ -40,11 +40,12 @@ public class TransaksjonResource implements FintResource {
     private @Valid Identifikator transaksjonsId;
     private Date transaksjonstidspunkt;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("transaksjonsId", this.transaksjonsId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

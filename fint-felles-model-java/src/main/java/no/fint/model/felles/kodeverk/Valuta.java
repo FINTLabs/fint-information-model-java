@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -32,12 +33,13 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @ToString
 public class Valuta  implements FintModelObject {
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("bokstavkode", this.bokstavkode);
         identifikators.put("nummerkode", this.nummerkode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     public boolean isWriteable() {

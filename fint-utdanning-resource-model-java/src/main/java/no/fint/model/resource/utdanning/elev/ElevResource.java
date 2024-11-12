@@ -48,14 +48,15 @@ public class ElevResource implements FintResource {
     @NotNull
     private @Valid Identifikator systemId;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("brukernavn", this.brukernavn);
         identifikators.put("elevnummer", this.elevnummer);
         identifikators.put("feidenavn", this.feidenavn);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

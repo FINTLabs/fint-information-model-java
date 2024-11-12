@@ -31,11 +31,12 @@ public class MerverdiavgiftResource extends Begrep implements FintResource {
     @NotNull
     private Long sats;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

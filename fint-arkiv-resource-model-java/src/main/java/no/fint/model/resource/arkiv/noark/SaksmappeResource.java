@@ -50,11 +50,12 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     private String sakssekvensnummer;
     private @Valid Date utlaantDato;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

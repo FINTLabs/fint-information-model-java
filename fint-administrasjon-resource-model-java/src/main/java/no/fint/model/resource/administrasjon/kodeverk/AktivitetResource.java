@@ -28,11 +28,12 @@ import no.fint.model.resource.administrasjon.kodeverk.KontodimensjonResource;
 @ToString(callSuper=true)
 public class AktivitetResource extends KontodimensjonResource implements FintResource {
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

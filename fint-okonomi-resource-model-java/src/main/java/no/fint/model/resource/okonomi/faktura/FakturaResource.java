@@ -55,11 +55,12 @@ public class FakturaResource implements FintResource {
     private String mottaker;
     private Long restbelop;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("fakturanummer", this.fakturanummer);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

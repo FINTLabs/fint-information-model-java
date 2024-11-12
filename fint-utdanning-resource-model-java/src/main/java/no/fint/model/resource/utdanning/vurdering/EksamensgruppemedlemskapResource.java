@@ -31,11 +31,12 @@ public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implement
     private Boolean delegert;
     private String kandidatnummer;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

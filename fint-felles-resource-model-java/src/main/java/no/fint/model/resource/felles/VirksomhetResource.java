@@ -32,12 +32,13 @@ public class VirksomhetResource extends EnhetResource implements FintResource {
     @NotNull
     private @Valid Identifikator virksomhetsId;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
         identifikators.put("virksomhetsId", this.virksomhetsId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

@@ -46,11 +46,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     private Boolean hovedskole;
     private Boolean tosprakligFagopplaring;
     @JsonIgnore
+    @Override
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
