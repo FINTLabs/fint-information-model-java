@@ -50,8 +50,8 @@ public class PosteringResource implements FintResource {
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("posteringsId", this.posteringsId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

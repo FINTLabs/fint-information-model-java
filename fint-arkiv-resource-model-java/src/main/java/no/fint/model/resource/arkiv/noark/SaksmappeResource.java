@@ -53,8 +53,8 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
@@ -74,6 +74,13 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     }
     public void addSaksstatus(Link link) {
         addLink("saksstatus", link);
+    }
+    @JsonIgnore
+    public List<Link> getTilgangsgruppe() {
+        return getLinks().getOrDefault("tilgangsgruppe", Collections.emptyList()); 
+    }
+    public void addTilgangsgruppe(Link link) {
+        addLink("tilgangsgruppe", link);
     }
     @JsonIgnore
     public List<Link> getJournalenhet() {

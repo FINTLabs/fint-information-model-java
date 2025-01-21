@@ -68,8 +68,8 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("mappeId", this.mappeId);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

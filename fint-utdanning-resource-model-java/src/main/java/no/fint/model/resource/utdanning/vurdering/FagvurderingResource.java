@@ -39,8 +39,8 @@ public abstract class FagvurderingResource implements FintAbstractObject, FintLi
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

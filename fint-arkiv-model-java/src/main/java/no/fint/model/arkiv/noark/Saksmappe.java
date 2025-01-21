@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,7 @@ public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     public enum Relasjonsnavn implements FintRelation {
         SAKSMAPPETYPE("saksmappetype", "no.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE),
         SAKSSTATUS("saksstatus", "no.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE),
+        TILGANGSGRUPPE("tilgangsgruppe", "no.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
         JOURNALENHET("journalenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
         ADMINISTRATIVENHET("administrativEnhet", "no.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE),
         SAKSANSVARLIG("saksansvarlig", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
@@ -57,8 +59,17 @@ public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
+    }
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+        relations.addAll(super.getRelations());
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
     }
 
     public boolean isWriteable() {
@@ -68,7 +79,7 @@ public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     @JsonIgnore
     private final boolean writeable = true;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
     private List<@Valid Registrering> arkivnotat;
     private List<@Valid Journalpost> journalpost;
     private String saksaar;

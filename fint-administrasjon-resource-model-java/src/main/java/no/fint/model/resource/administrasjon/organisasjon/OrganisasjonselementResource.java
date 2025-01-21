@@ -43,8 +43,8 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
         identifikators.putAll(super.getIdentifikators());
         identifikators.put("organisasjonsId", this.organisasjonsId);
         identifikators.put("organisasjonsKode", this.organisasjonsKode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

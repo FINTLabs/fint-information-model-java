@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Getter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,7 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Registrering  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
+        TILGANGSGRUPPE("tilgangsgruppe", "no.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
         ADMINISTRATIVENHET("administrativEnhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
         ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE),
         SAKSBEHANDLER("saksbehandler", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE),
@@ -56,6 +58,14 @@ public abstract class Registrering  implements FintAbstractObject {
         }
     }
 
+    @JsonIgnore
+    private List<FintRelation> createRelations() {
+        List<FintRelation> relations = new ArrayList<>();
+
+        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+
+        return Collections.unmodifiableList(relations);
+    }
 
     public boolean isWriteable() {
         return this.writeable;
@@ -64,7 +74,7 @@ public abstract class Registrering  implements FintAbstractObject {
     @JsonIgnore
     private final boolean writeable = true;
     @JsonIgnore
-    private final List<FintRelation> relations = new ArrayList<>(Arrays.asList(Relasjonsnavn.values()));
+    private final List<FintRelation> relations = createRelations();
     private @Valid Date arkivertDato;
     private String beskrivelse;
     private List<@Valid Dokumentbeskrivelse> dokumentbeskrivelse;
