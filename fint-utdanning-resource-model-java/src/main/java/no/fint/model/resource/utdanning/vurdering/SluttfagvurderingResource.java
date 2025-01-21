@@ -31,8 +31,8 @@ public class SluttfagvurderingResource extends FagvurderingResource implements F
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
@@ -48,10 +48,12 @@ public class SluttfagvurderingResource extends FagvurderingResource implements F
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getEksamensgruppe() {
         return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
     }
+    @Deprecated
     public void addEksamensgruppe(Link link) {
         addLink("eksamensgruppe", link);
     }

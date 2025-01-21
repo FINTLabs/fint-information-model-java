@@ -34,8 +34,8 @@ public class ElevvurderingResource implements FintResource {
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
@@ -97,5 +97,12 @@ public class ElevvurderingResource implements FintResource {
     }
     public void addSluttordensvurdering(Link link) {
         addLink("sluttordensvurdering", link);
+    }
+    @JsonIgnore
+    public List<Link> getEksamensvurdering() {
+        return getLinks().getOrDefault("eksamensvurdering", Collections.emptyList()); 
+    }
+    public void addEksamensvurdering(Link link) {
+        addLink("eksamensvurdering", link);
     }
 }

@@ -43,8 +43,8 @@ public class SkoleResource extends EnhetResource implements FintResource {
         identifikators.putAll(super.getIdentifikators());
         identifikators.put("skolenummer", this.skolenummer);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

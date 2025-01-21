@@ -39,8 +39,10 @@ public class PartResource implements FintComplexDatatypeObject, FintLinks {
         return result;
     }
     private @Valid AdresseResource adresse;
+    private String fodselsnummer;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private String kontaktperson;
+    private String organisasjonsnummer;
     @NotBlank
     private String partNavn;
 

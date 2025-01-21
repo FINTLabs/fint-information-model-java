@@ -39,8 +39,8 @@ public class ValutaResource implements FintResource {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("bokstavkode", this.bokstavkode);
         identifikators.put("nummerkode", this.nummerkode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
