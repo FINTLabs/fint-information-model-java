@@ -37,8 +37,8 @@ public class ArbeidslokasjonResource extends EnhetResource implements FintResour
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
         identifikators.put("lokasjonskode", this.lokasjonskode);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

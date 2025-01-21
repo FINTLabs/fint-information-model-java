@@ -80,6 +80,13 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getTilgangsgruppe() {
+        return getLinks().getOrDefault("tilgangsgruppe", Collections.emptyList()); 
+    }
+    public void addTilgangsgruppe(Link link) {
+        addLink("tilgangsgruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getAdministrativEnhet() {
         return getLinks().getOrDefault("administrativEnhet", Collections.emptyList()); 
     }

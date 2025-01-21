@@ -31,7 +31,6 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public class KontaktpersonResource implements FintResource {
     // Attributes
     @Deprecated
-    @NotNull
     private Boolean foreldreansvar;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Personnavn navn;
@@ -43,8 +42,8 @@ public class KontaktpersonResource implements FintResource {
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations

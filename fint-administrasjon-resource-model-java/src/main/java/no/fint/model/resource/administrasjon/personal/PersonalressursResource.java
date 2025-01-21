@@ -46,8 +46,8 @@ public class PersonalressursResource implements FintResource {
         identifikators.put("ansattnummer", this.ansattnummer);
         identifikators.put("brukernavn", this.brukernavn);
         identifikators.put("systemId", this.systemId);
-    
-        return identifikators;
+
+        return Collections.unmodifiableMap(identifikators);
     }
 
     // Relations
