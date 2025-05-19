@@ -41,15 +41,6 @@ public class SluttfagvurderingResource extends FagvurderingResource implements F
         
     @Deprecated
     @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
-    }
-    @Deprecated
-    @JsonIgnore
     public List<Link> getEksamensgruppe() {
         return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
     }

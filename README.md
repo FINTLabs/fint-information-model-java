@@ -1,5 +1,5 @@
 # FINT Java Model
 
-Version v3.19.0
+Version v4.0.0-rc-1
 
-Generated 2025-01-21T10:08:02
+Generated 2025-05-19T09:48:43

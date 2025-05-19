@@ -28,8 +28,6 @@ import no.fint.model.FintIdentifikator;
 public class DokumentobjektResource implements FintComplexDatatypeObject, FintLinks {
     // Attributes
     private String filstorrelse;
-    @Deprecated
-    private String format;
     private String formatDetaljer;
     private String sjekksum;
     private String sjekksumAlgoritme;

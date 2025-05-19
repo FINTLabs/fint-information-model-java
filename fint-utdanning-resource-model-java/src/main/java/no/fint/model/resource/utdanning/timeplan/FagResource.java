@@ -20,13 +20,13 @@ import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
-import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
+import no.fint.model.utdanning.basisklasser.Gruppe;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class FagResource extends GruppeResource implements FintResource {
+public class FagResource extends Gruppe implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
@@ -40,11 +40,25 @@ public class FagResource extends GruppeResource implements FintResource {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getGrepreferanse() {
+        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
+    }
+    public void addGrepreferanse(Link link) {
+        addLink("grepreferanse", link);
+    }
+    @JsonIgnore
     public List<Link> getProgramomrade() {
         return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
     }
     public void addProgramomrade(Link link) {
         addLink("programomrade", link);
+    }
+    @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
+    public void addVigoreferanse(Link link) {
+        addLink("vigoreferanse", link);
     }
     @JsonIgnore
     public List<Link> getTilrettelegging() {

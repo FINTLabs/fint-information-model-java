@@ -20,17 +20,16 @@ import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
-import no.fint.model.resource.administrasjon.kodeverk.KontodimensjonResource;
+import no.fint.model.administrasjon.kodeverk.Kontodimensjon;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class AnleggResource extends KontodimensjonResource implements FintResource {
+public class AnleggResource extends Kontodimensjon implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }

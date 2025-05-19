@@ -1,4 +1,4 @@
-package no.fint.model.utdanning.vurdering;
+package no.fint.model.utdanning.elev;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,8 +20,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintModelObject;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.FintRelation;
-import no.fint.model.felles.kompleksedatatyper.Periode;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -30,17 +29,13 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-@Deprecated
-public class Fravar  implements FintModelObject {
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class Klassemedlemskap extends Gruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
         ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        REGISTRERTAV("registrertav", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_ONE),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_ONE),
-        FRAVARSTYPE("fravarstype", "no.fint.model.utdanning.kodeverk.Fravarstype", ONE_TO_ONE);
+        KLASSE("klasse", "no.fint.model.utdanning.elev.Klasse", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;
@@ -56,7 +51,7 @@ public class Fravar  implements FintModelObject {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.put("systemId", this.systemId);
+        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }
@@ -77,15 +72,4 @@ public class Fravar  implements FintModelObject {
     private final boolean writeable = false;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    @Deprecated
-    @NotNull
-    private Boolean dokumentert;
-    @NotNull
-    private Boolean foresPaVitnemal;
-    @NotNull
-    private @Valid Periode gjelderPeriode;
-    @NotBlank
-    private String kommentar;
-    @NotNull
-    private @Valid Identifikator systemId;
 }

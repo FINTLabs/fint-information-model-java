@@ -30,8 +30,6 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 @ToString
 public class KontaktpersonResource implements FintResource {
     // Attributes
-    @Deprecated
-    private Boolean foreldreansvar;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Personnavn navn;
     @NotNull
@@ -56,14 +54,5 @@ public class KontaktpersonResource implements FintResource {
     }
     public void addKontaktperson(Link link) {
         addLink("kontaktperson", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getPerson() {
-        return getLinks().getOrDefault("person", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addPerson(Link link) {
-        addLink("person", link);
     }
 }

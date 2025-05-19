@@ -20,13 +20,13 @@ import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
-import no.fint.model.resource.utdanning.basisklasser.UtdanningsforholdResource;
+import no.fint.model.utdanning.basisklasser.Utdanningsforhold;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class UndervisningsforholdResource extends UtdanningsforholdResource implements FintResource {
+public class UndervisningsforholdResource extends Utdanningsforhold implements FintResource {
     // Attributes
     private Boolean hovedskole;
     @JsonIgnore
@@ -49,11 +49,11 @@ public class UndervisningsforholdResource extends UtdanningsforholdResource impl
         addLink("arbeidsforhold", link);
     }
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    public List<Link> getKlasse() {
+        return getLinks().getOrDefault("klasse", Collections.emptyList()); 
     }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
+    public void addKlasse(Link link) {
+        addLink("klasse", link);
     }
     @JsonIgnore
     public List<Link> getKontaktlarergruppe() {
