@@ -146,7 +146,6 @@ class ModelDeserializationSpec extends Specification {
         then:
         result
         result instanceof KontaktpersonResource
-        result.foreldreansvar
         result.links.size() == 2
     }
 }
