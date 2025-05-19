@@ -34,7 +34,6 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Undervisningsgruppe extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
         FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_MANY),
         TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY),
         SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
@@ -64,7 +63,6 @@ public class Undervisningsgruppe extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

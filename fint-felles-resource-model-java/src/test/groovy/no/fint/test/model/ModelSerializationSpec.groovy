@@ -89,20 +89,19 @@ class ModelSerializationSpec extends Specification {
         given:
         def kontaktperson = new KontaktpersonResource(
                 systemId: new Identifikator(identifikatorverdi: "ABCD1234"),
-                foreldreansvar: true,
-                type: "forelder"
+                type: "forelder",
+                navn: new Personnavn(fornavn: "Tore", etternavn: "Tang")
         )
-        kontaktperson.addPerson(Link.with(Person, "fodselsnummer", "12345678901"))
         kontaktperson.addKontaktperson(Link.with(Person, "fodselsnummer", "23456789012"))
 
         when:
         def result = objectMapper.writeValueAsString(kontaktperson)
-        println(result)
         def object = jsonSlurper.parseText(result)
 
         then:
         object
-        object.foreldreansvar
-        object._links.size() == 2
+        object.navn.fornavn == "Tore"
+        object.navn.etternavn == "Tang"
+        object._links.size() == 1
     }
 }

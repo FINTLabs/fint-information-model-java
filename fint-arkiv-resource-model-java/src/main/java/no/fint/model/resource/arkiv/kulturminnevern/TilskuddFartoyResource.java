@@ -40,7 +40,6 @@ public class TilskuddFartoyResource extends SaksmappeResource implements FintRes
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
         identifikators.put("soknadsnummer", this.soknadsnummer);
 
         return Collections.unmodifiableMap(identifikators);

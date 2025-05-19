@@ -35,7 +35,7 @@ public class Undervisningsforhold extends Utdanningsforhold  implements FintMode
     @Getter
     public enum Relasjonsnavn implements FintRelation {
         ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_ONE),
-        BASISGRUPPE("basisgruppe", "no.fint.model.utdanning.elev.Basisgruppe", NONE_TO_MANY),
+        KLASSE("klasse", "no.fint.model.utdanning.elev.Klasse", NONE_TO_MANY),
         KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY),
         UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY),
         EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY),
@@ -64,7 +64,6 @@ public class Undervisningsforhold extends Utdanningsforhold  implements FintMode
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

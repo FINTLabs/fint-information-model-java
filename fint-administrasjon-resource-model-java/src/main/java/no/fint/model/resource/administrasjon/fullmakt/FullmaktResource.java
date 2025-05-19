@@ -45,15 +45,6 @@ public class FullmaktResource implements FintResource {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMyndighet() {
-        return getLinks().getOrDefault("myndighet", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMyndighet(Link link) {
-        addLink("myndighet", link);
-    }
     @JsonIgnore
     public List<Link> getRamme() {
         return getLinks().getOrDefault("ramme", Collections.emptyList()); 

@@ -1,4 +1,4 @@
-package no.fint.model.resource.utdanning.vurdering;
+package no.fint.model.resource.utdanning.elev;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -10,17 +10,16 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-@Deprecated
-public class FravarResources extends AbstractCollectionResources<FravarResource> {
+public class KlasseResources extends AbstractCollectionResources<KlasseResource> {
 
-    public FravarResources(Collection<FravarResource> input) {
+    public KlasseResources(Collection<KlasseResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<FravarResource>> getTypeReference() {
-        return new TypeReference<List<FravarResource>>() {};
+    public TypeReference<List<KlasseResource>> getTypeReference() {
+        return new TypeReference<List<KlasseResource>>() {};
     }
 }

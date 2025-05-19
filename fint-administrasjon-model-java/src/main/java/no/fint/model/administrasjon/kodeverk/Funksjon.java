@@ -51,14 +51,12 @@ public class Funksjon extends Kontodimensjon  implements FintModelObject {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

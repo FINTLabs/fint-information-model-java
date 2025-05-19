@@ -60,7 +60,6 @@ public class Faggruppe extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

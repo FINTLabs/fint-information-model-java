@@ -35,6 +35,8 @@ public class Utdanningsprogram extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
         SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
+        GREPREFERANSE("grepreferanse", "no.fint.model.utdanning.kodeverk.Grepreferanse", NONE_TO_ONE),
+        VIGOREFERANSE("vigoreferanse", "no.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE),
         PROGRAMOMRADE("programomrade", "no.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_MANY);
     
         private final String name;
@@ -58,7 +60,6 @@ public class Utdanningsprogram extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

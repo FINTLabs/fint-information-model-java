@@ -34,7 +34,6 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Underveisordensvurdering extends Ordensvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
         ELEVVURDERING("elevvurdering", "no.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE);
     
         private final String name;

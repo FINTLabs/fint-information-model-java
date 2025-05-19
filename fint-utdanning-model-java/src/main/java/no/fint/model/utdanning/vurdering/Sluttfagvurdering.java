@@ -34,7 +34,6 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Sluttfagvurdering extends Fagvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
         EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_ONE),
         KARAKTERHISTORIE("karakterhistorie", "no.fint.model.utdanning.vurdering.Karakterhistorie", NONE_TO_MANY),
         ELEVVURDERING("elevvurdering", "no.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE);

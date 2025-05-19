@@ -21,13 +21,13 @@ import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import java.util.Date;
-import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
+import no.fint.model.utdanning.basisklasser.Gruppe;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class EksamensgruppeResource extends GruppeResource implements FintResource {
+public class EksamensgruppeResource extends Gruppe implements FintResource {
     // Attributes
     private @Valid Date eksamensdato;
     @JsonIgnore
@@ -42,15 +42,6 @@ public class EksamensgruppeResource extends GruppeResource implements FintResour
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
-    }
     @JsonIgnore
     public List<Link> getEksamen() {
         return getLinks().getOrDefault("eksamen", Collections.emptyList()); 

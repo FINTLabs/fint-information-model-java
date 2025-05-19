@@ -32,35 +32,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public abstract class Kontodimensjon extends Begrep  implements FintAbstractObject {
-    @Getter
-    public enum Relasjonsnavn implements FintRelation {
-        FULLMAKT("fullmakt", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY);
-    
-        private final String name;
-        private final String packageName;
-        private final FintMultiplicity multiplicity;
-
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
-            this.name = name;
-            this.packageName = packageName;
-            this.multiplicity = multiplicity;
-        }
-    }
-
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
-    }
-    @JsonIgnore
-    private List<FintRelation> createRelations() {
-        List<FintRelation> relations = new ArrayList<>();
-
-        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
-
-        return Collections.unmodifiableList(relations);
     }
 
     public boolean isWriteable() {
@@ -69,6 +46,4 @@ public abstract class Kontodimensjon extends Begrep  implements FintAbstractObje
 
     @JsonIgnore
     private final boolean writeable = false;
-    @JsonIgnore
-    private final List<FintRelation> relations = createRelations();
 }

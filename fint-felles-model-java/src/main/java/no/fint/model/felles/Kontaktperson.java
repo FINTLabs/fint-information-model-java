@@ -36,8 +36,7 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Kontaktperson  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KONTAKTPERSON("kontaktperson", "no.fint.model.felles.Person", NONE_TO_MANY),
-        PERSON("person", "no.fint.model.felles.Person", NONE_TO_ONE);
+        KONTAKTPERSON("kontaktperson", "no.fint.model.felles.Person", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;
@@ -74,8 +73,6 @@ public class Kontaktperson  implements FintModelObject {
     private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    @Deprecated
-    private Boolean foreldreansvar;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Personnavn navn;
     @NotNull

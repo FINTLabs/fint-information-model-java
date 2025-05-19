@@ -67,8 +67,6 @@ public class Dokumentobjekt  implements FintComplexDatatypeObject {
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
     private String filstorrelse;
-    @Deprecated
-    private String format;
     private String formatDetaljer;
     private String sjekksum;
     private String sjekksumAlgoritme;

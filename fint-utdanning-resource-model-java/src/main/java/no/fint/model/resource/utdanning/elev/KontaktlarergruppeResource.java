@@ -20,13 +20,13 @@ import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
-import no.fint.model.resource.utdanning.basisklasser.GruppeResource;
+import no.fint.model.utdanning.basisklasser.Gruppe;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class KontaktlarergruppeResource extends GruppeResource implements FintResource {
+public class KontaktlarergruppeResource extends Gruppe implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
@@ -40,20 +40,11 @@ public class KontaktlarergruppeResource extends GruppeResource implements FintRe
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    public List<Link> getKlasse() {
+        return getLinks().getOrDefault("klasse", Collections.emptyList()); 
     }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
+    public void addKlasse(Link link) {
+        addLink("klasse", link);
     }
     @JsonIgnore
     public List<Link> getTermin() {

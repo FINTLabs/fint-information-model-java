@@ -36,7 +36,6 @@ public abstract class Fagvurdering  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
         FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_ONE),
         SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
         KARAKTER("karakter", "no.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE);
     

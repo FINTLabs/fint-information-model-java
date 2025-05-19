@@ -26,7 +26,7 @@ import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class BasisgruppemedlemskapResource extends Gruppemedlemskap implements FintResource {
+public class KlassemedlemskapResource extends Gruppemedlemskap implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
@@ -40,17 +40,17 @@ public class BasisgruppemedlemskapResource extends Gruppemedlemskap implements F
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
-    }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
-    }
-    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getKlasse() {
+        return getLinks().getOrDefault("klasse", Collections.emptyList()); 
+    }
+    public void addKlasse(Link link) {
+        addLink("klasse", link);
     }
 }

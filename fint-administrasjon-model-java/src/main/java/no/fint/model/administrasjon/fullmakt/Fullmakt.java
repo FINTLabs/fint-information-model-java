@@ -35,7 +35,6 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fullmakt  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        MYNDIGHET("myndighet", "no.fint.model.administrasjon.kodeverk.Kontodimensjon", NONE_TO_MANY),
         RAMME("ramme", "no.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE),
         FUNKSJON("funksjon", "no.fint.model.administrasjon.kodeverk.Funksjon", NONE_TO_ONE),
         OBJEKT("objekt", "no.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE),

@@ -43,14 +43,4 @@ public abstract class UtdanningsforholdResource implements FintAbstractObject, F
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMedlemskap() {
-        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMedlemskap(Link link) {
-        addLink("medlemskap", link);
-    }
 }

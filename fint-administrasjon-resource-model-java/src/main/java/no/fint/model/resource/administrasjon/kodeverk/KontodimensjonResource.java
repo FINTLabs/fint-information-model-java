@@ -38,14 +38,4 @@ public abstract class KontodimensjonResource extends Begrep implements FintAbstr
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getFullmakt() {
-        return getLinks().getOrDefault("fullmakt", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addFullmakt(Link link) {
-        addLink("fullmakt", link);
-    }
 }
