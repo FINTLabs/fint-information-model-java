@@ -39,15 +39,6 @@ public class UnderveisfagvurderingResource extends FagvurderingResource implemen
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
-    }
     @JsonIgnore
     public List<Link> getElevvurdering() {
         return getLinks().getOrDefault("elevvurdering", Collections.emptyList()); 

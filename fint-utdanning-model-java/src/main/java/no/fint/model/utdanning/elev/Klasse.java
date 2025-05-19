@@ -1,4 +1,4 @@
-package no.fint.model.utdanning.vurdering;
+package no.fint.model.utdanning.elev;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,7 +20,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintModelObject;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.FintRelation;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.utdanning.basisklasser.Gruppe;
 
 import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -29,17 +29,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-@Deprecated
-public class Vurdering  implements FintModelObject {
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class Klasse extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", NONE_TO_ONE),
-        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", NONE_TO_ONE),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_ONE),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_ONE),
-        KARAKTER("karakter", "no.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE);
+        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
+        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY),
+        TRINN("trinn", "no.fint.model.utdanning.utdanningsprogram.Arstrinn", ONE_TO_ONE),
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
+        KLASSEMEDLEMSKAP("klassemedlemskap", "no.fint.model.utdanning.elev.Klassemedlemskap", NONE_TO_MANY),
+        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;
@@ -55,7 +56,7 @@ public class Vurdering  implements FintModelObject {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.put("systemId", this.systemId);
+        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }
@@ -76,10 +77,4 @@ public class Vurdering  implements FintModelObject {
     private final boolean writeable = false;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    @NotNull
-    private Boolean endelig;
-    @NotBlank
-    private String kommentar;
-    @NotNull
-    private @Valid Identifikator systemId;
 }

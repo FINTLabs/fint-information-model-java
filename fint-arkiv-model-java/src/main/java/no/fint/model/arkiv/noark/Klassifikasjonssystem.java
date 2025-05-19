@@ -21,7 +21,7 @@ import no.fint.model.FintModelObject;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.FintRelation;
 import java.util.Date;
-import no.fint.model.arkiv.noark.Klasse;
+import no.fint.model.utdanning.elev.Klasse;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.fint.model.FintMultiplicity.ONE_TO_ONE;

@@ -56,7 +56,6 @@ public class Arbeidsforhold  implements FintModelObject {
         FASTLONN("fastlonn", "no.fint.model.administrasjon.personal.Fastlonn", NONE_TO_MANY),
         FASTTILLEGG("fasttillegg", "no.fint.model.administrasjon.personal.Fasttillegg", NONE_TO_MANY),
         FRAVAR("fravar", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_MANY),
-        LONN("lonn", "no.fint.model.administrasjon.personal.Lonn", NONE_TO_MANY),
         VARIABELLONN("variabellonn", "no.fint.model.administrasjon.personal.Variabellonn", NONE_TO_MANY),
         PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
         UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE);

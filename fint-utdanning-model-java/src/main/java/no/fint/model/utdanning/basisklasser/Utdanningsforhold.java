@@ -32,35 +32,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 @EqualsAndHashCode
 @ToString
 public abstract class Utdanningsforhold  implements FintAbstractObject {
-    @Getter
-    public enum Relasjonsnavn implements FintRelation {
-        MEDLEMSKAP("medlemskap", "no.fint.model.utdanning.elev.Medlemskap", NONE_TO_MANY);
-    
-        private final String name;
-        private final String packageName;
-        private final FintMultiplicity multiplicity;
-
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
-            this.name = name;
-            this.packageName = packageName;
-            this.multiplicity = multiplicity;
-        }
-    }
-
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
         identifikators.put("systemId", this.systemId);
 
         return Collections.unmodifiableMap(identifikators);
-    }
-    @JsonIgnore
-    private List<FintRelation> createRelations() {
-        List<FintRelation> relations = new ArrayList<>();
-
-        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
-
-        return Collections.unmodifiableList(relations);
     }
 
     public boolean isWriteable() {
@@ -69,8 +46,6 @@ public abstract class Utdanningsforhold  implements FintAbstractObject {
 
     @JsonIgnore
     private final boolean writeable = false;
-    @JsonIgnore
-    private final List<FintRelation> relations = createRelations();
     @NotBlank
     private String beskrivelse;
     @NotNull

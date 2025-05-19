@@ -206,15 +206,6 @@ public class ArbeidsforholdResource implements FintResource {
     public void addFravar(Link link) {
         addLink("fravar", link);
     }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getLonn() {
-        return getLinks().getOrDefault("lonn", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addLonn(Link link) {
-        addLink("lonn", link);
-    }
     @JsonIgnore
     public List<Link> getVariabellonn() {
         return getLinks().getOrDefault("variabellonn", Collections.emptyList()); 

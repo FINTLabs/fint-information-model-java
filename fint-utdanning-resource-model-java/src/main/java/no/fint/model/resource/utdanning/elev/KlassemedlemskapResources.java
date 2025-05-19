@@ -10,16 +10,16 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-public class BasisgruppemedlemskapResources extends AbstractCollectionResources<BasisgruppemedlemskapResource> {
+public class KlassemedlemskapResources extends AbstractCollectionResources<KlassemedlemskapResource> {
 
-    public BasisgruppemedlemskapResources(Collection<BasisgruppemedlemskapResource> input) {
+    public KlassemedlemskapResources(Collection<KlassemedlemskapResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<BasisgruppemedlemskapResource>> getTypeReference() {
-        return new TypeReference<List<BasisgruppemedlemskapResource>>() {};
+    public TypeReference<List<KlassemedlemskapResource>> getTypeReference() {
+        return new TypeReference<List<KlassemedlemskapResource>>() {};
     }
 }

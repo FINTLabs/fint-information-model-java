@@ -22,7 +22,7 @@ import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
 import java.util.Date;
 import no.fint.model.resource.arkiv.noark.DokumentbeskrivelseResource;
-import no.fint.model.resource.arkiv.noark.KlasseResource;
+import no.fint.model.resource.utdanning.elev.KlasseResource;
 import no.fint.model.resource.arkiv.noark.KorrespondansepartResource;
 import no.fint.model.resource.arkiv.noark.MerknadResource;
 import no.fint.model.resource.arkiv.noark.PartResource;

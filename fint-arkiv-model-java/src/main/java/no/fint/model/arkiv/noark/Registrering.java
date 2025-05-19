@@ -22,7 +22,7 @@ import no.fint.model.FintIdentifikator;
 import no.fint.model.FintRelation;
 import java.util.Date;
 import no.fint.model.arkiv.noark.Dokumentbeskrivelse;
-import no.fint.model.arkiv.noark.Klasse;
+import no.fint.model.utdanning.elev.Klasse;
 import no.fint.model.arkiv.noark.Korrespondansepart;
 import no.fint.model.arkiv.noark.Merknad;
 import no.fint.model.arkiv.noark.Part;
