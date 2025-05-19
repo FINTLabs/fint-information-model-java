@@ -5,14 +5,11 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat
 import groovy.json.JsonSlurper
 import no.fint.model.felles.kompleksedatatyper.Identifikator
-import no.fint.model.felles.kompleksedatatyper.Periode
 import no.fint.model.resource.Link
-import no.fint.model.resource.utdanning.elev.BasisgruppeResource
-import no.fint.model.utdanning.elev.Basisgruppe
-import no.fint.model.utdanning.elev.Medlemskap
+import no.fint.model.resource.utdanning.elev.KlasseResource
+import no.fint.model.utdanning.elev.Klasse
+import no.fint.model.utdanning.elev.Klassemedlemskap
 import spock.lang.Specification
-
-import java.util.concurrent.TimeUnit
 
 class ModelSerializationSpec extends Specification {
     def objectMapper
@@ -25,43 +22,41 @@ class ModelSerializationSpec extends Specification {
         jsonSlurper = new JsonSlurper()
     }
 
-    def "Serialize Basisgruppe without Links"() {
+    def "Serialize Klasse without Links"() {
         given:
-        def basisgruppe = new Basisgruppe(
+        def klasse = new Klasse(
                 systemId: new Identifikator(identifikatorverdi: "ABC123"),
-                periode: [new Periode(start: new Date(), slutt: new Date(System.currentTimeMillis()+TimeUnit.DAYS.toMillis(365)))],
-                beskrivelse: "Basisgruppe 123",
+                beskrivelse: "Klasse 123",
                 navn: "ABC123"
         )
 
         when:
-        def result = objectMapper.writeValueAsString(basisgruppe)
+        def result = objectMapper.writeValueAsString(klasse)
         println(result)
         def object = jsonSlurper.parseText(result)
 
         then:
         object
-        object.periode.start
+        object.navn == "ABC123"
     }
 
-    def "Serialize BasisgruppeResource with links"() {
+    def "Serialize KlasseResource with links"() {
         given:
-        def basisgruppe = new BasisgruppeResource(
+        def klasse = new KlasseResource(
                 systemId: new Identifikator(identifikatorverdi: "ABC123"),
-                periode: [new Periode(start: new Date(), slutt: new Date(System.currentTimeMillis()+TimeUnit.DAYS.toMillis(365)))],
-                beskrivelse: "Basisgruppe 123",
+                beskrivelse: "Klasse 123",
                 navn: "ABC123"
         )
-        basisgruppe.addMedlemskap(Link.with(Medlemskap.class, "systemid", "123"))
+        klasse.addKlassemedlemskap(Link.with(Klassemedlemskap.class, "systemid", "123"))
 
         when:
-        def result = objectMapper.writeValueAsString(basisgruppe)
+        def result = objectMapper.writeValueAsString(klasse)
         println(result)
         def object = jsonSlurper.parseText(result)
 
         then:
         object
-        object._links.medlemskap
+        object._links.klassemedlemskap
     }
     
 }

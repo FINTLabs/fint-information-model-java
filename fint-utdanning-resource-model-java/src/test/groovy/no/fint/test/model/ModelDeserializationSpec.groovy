@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
 import no.fint.model.resource.felles.PersonResource
-import no.fint.model.resource.utdanning.elev.BasisgruppeResource
-import no.fint.model.utdanning.elev.Basisgruppe
+import no.fint.model.resource.utdanning.elev.KlasseResource
+import no.fint.model.utdanning.elev.Klasse
 import spock.lang.Specification
 
 class ModelDeserializationSpec extends Specification {
@@ -15,74 +15,70 @@ class ModelDeserializationSpec extends Specification {
         objectMapper = new ObjectMapper()
     }
 
-    def "Read Basisgruppe from basisgruppe.json"() {
+    def "Read Klasse from klasse.json"() {
         given:
-        def input = getClass().getResourceAsStream("/basisgruppe.json")
+        def input = getClass().getResourceAsStream("/klasse.json")
 
         when:
-        def result = objectMapper.readValue(input, Basisgruppe.class)
+        def result = objectMapper.readValue(input, Klasse.class)
         println(result)
 
         then:
         result
-        result.periode.start
         result.navn == "ABC123"
     }
 
-    def "Read BasisgruppeResource from basisgruppe.json"() {
+    def "Read KlasseResource from klasse.json"() {
         given:
-        def input = getClass().getResourceAsStream("/basisgruppe.json")
+        def input = getClass().getResourceAsStream("/klasse.json")
 
         when:
-        def result = objectMapper.readValue(input, BasisgruppeResource.class)
+        def result = objectMapper.readValue(input, KlasseResource.class)
         println(result)
 
         then:
         result
-        result.periode.start
         result.navn == "ABC123"
     }
 
-    def "Read Basisgruppe from basisgrupperesource.json"() {
+    def "Read Klasse from klasseresource.json"() {
         given:
-        def input = getClass().getResourceAsStream("/basisgrupperesource.json")
+        def input = getClass().getResourceAsStream("/klasseresource.json")
 
         when:
-        def result = objectMapper.readValue(input, Basisgruppe.class)
+        def result = objectMapper.readValue(input, Klasse.class)
         println(result)
 
         then:
         thrown(UnrecognizedPropertyException)
     }
 
-    def "Read Basisgruppe from basisgrupperesource.json with ObjectMapper config"() {
+    def "Read Klasse from klasseresource.json with ObjectMapper config"() {
         given:
-        def input = getClass().getResourceAsStream("/basisgrupperesource.json")
+        def input = getClass().getResourceAsStream("/klasseresource.json")
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         when:
-        def result = objectMapper.readValue(input, Basisgruppe.class)
+        def result = objectMapper.readValue(input, Klasse.class)
         println(result)
 
         then:
         result
-        result.periode.start
         result.navn == "ABC123"
     }
 
-    def "Read BasisgruppeResource from basisgrupperesource.json"() {
+    def "Read KlasseResource from klasseresource.json"() {
         given:
-        def input = getClass().getResourceAsStream("/basisgrupperesource.json")
+        def input = getClass().getResourceAsStream("/klasseresource.json")
 
         when:
-        def result = objectMapper.readValue(input, BasisgruppeResource.class)
+        def result = objectMapper.readValue(input, KlasseResource.class)
         println(result)
 
         then:
         result
-        result.periode.start
         result.navn == "ABC123"
-        result.links.size() == 1
+        result.links.size() == 2
     }
 
     def 'Empty Person JSON'() {
