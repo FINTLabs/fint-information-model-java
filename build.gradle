@@ -6,13 +6,16 @@ apply plugin: 'java-library'
 apply plugin: 'maven-publish'
 
 allprojects {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
 
-    project.group = 'no.fint'
+    project.group = 'no.novari'
 
     repositories {
-        maven { url 'https://repo.fintlabs.no/releases' }
+        maven { url = 'https://repo.fintlabs.no/releases' }
         mavenLocal()
         mavenCentral()
     }
@@ -22,12 +25,18 @@ subprojects {
     apply plugin: 'java-library'
     apply plugin: 'groovy'
     apply plugin: 'maven-publish'
-    apply from: 'https://raw.githubusercontent.com/FINTLabs/fint-buildscripts/v1.8.0/dependencies.gradle'
+
+    configurations {
+        annotationProcessor
+    }
 
     dependencies {
+        annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.3")
         implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
+        implementation("javax.validation:validation-api:2.0.1.Final")
+        implementation("org.hibernate.validator:hibernate-validator:6.0.23.Final")
     }
 
     test {
@@ -39,7 +48,7 @@ subprojects {
     publishing {
         repositories {
             maven {
-                url "https://repo.fintlabs.no/releases"
+                url = "https://repo.fintlabs.no/releases"
                 credentials {
                     username = System.getenv("REPOSILITE_USERNAME")
                     password = System.getenv("REPOSILITE_PASSWORD")

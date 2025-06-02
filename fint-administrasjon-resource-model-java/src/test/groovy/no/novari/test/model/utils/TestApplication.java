@@ -1,4 +1,4 @@
-package no.fint.test.model.utils;
+package no.novari.test.model.utils;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.hateoas.config.EnableHypermediaSupport;

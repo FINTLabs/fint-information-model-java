@@ -1,15 +1,15 @@
-package no.fint.test.model
+package no.novari.test.model
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import groovy.json.JsonSlurper
-import no.fint.model.felles.Person
-import no.fint.model.felles.kompleksedatatyper.Adresse
-import no.fint.model.felles.kompleksedatatyper.Identifikator
-import no.fint.model.felles.kompleksedatatyper.Personnavn
-import no.fint.model.resource.Link
-import no.fint.model.resource.felles.KontaktpersonResource
-import no.fint.model.resource.felles.PersonResource
-import no.fint.model.resource.felles.kompleksedatatyper.AdresseResource
+import no.novari.model.felles.Person
+import no.novari.model.felles.kompleksedatatyper.Adresse
+import no.novari.model.felles.kompleksedatatyper.Identifikator
+import no.novari.model.felles.kompleksedatatyper.Personnavn
+import no.novari.model.resource.Link
+import no.novari.model.resource.felles.KontaktpersonResource
+import no.novari.model.resource.felles.PersonResource
+import no.novari.model.resource.felles.kompleksedatatyper.AdresseResource
 import spock.lang.Specification
 
 class ModelSerializationSpec extends Specification {

@@ -1,16 +1,16 @@
-package no.fint.test.model
+package no.novari.test.model
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat
 import groovy.json.JsonSlurper
-import no.fint.model.administrasjon.kompleksedatatyper.Kontostreng
-import no.fint.model.administrasjon.personal.Fastlonn
-import no.fint.model.felles.kompleksedatatyper.Identifikator
-import no.fint.model.felles.kompleksedatatyper.Periode
-import no.fint.model.resource.Link
-import no.fint.model.resource.administrasjon.kompleksedatatyper.KontostrengResource
-import no.fint.model.resource.administrasjon.personal.FastlonnResource
+import no.novari.model.administrasjon.kompleksedatatyper.Kontostreng
+import no.novari.model.administrasjon.personal.Fastlonn
+import no.novari.model.felles.kompleksedatatyper.Identifikator
+import no.novari.model.felles.kompleksedatatyper.Periode
+import no.novari.model.resource.Link
+import no.novari.model.resource.administrasjon.kompleksedatatyper.KontostrengResource
+import no.novari.model.resource.administrasjon.personal.FastlonnResource
 import spock.lang.Specification
 
 class ModelSerializationSpec extends Specification {
@@ -64,6 +64,7 @@ class ModelSerializationSpec extends Specification {
 
         then:
         object
+        object.prosent
         object._links.arbeidsforhold
     }
 
@@ -91,9 +92,11 @@ class ModelSerializationSpec extends Specification {
 
         then:
         object
+        object.prosent
         object._links.arbeidsforhold
         object._links.lonnsart
         object.kontostreng._links.art
+        object.kontostreng._links.ansvar
+        object.kontostreng._links.funksjon
     }
-
 }

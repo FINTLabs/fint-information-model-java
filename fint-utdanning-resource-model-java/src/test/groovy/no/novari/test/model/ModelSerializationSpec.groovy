@@ -1,14 +1,14 @@
-package no.fint.test.model
+package no.novari.test.model
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat
 import groovy.json.JsonSlurper
-import no.fint.model.felles.kompleksedatatyper.Identifikator
-import no.fint.model.resource.Link
-import no.fint.model.resource.utdanning.elev.KlasseResource
-import no.fint.model.utdanning.elev.Klasse
-import no.fint.model.utdanning.elev.Klassemedlemskap
+import no.novari.model.felles.kompleksedatatyper.Identifikator
+import no.novari.model.resource.Link
+import no.novari.model.resource.utdanning.elev.KlasseResource
+import no.novari.model.utdanning.elev.Klasse
+import no.novari.model.utdanning.elev.Klassemedlemskap
 import spock.lang.Specification
 
 class ModelSerializationSpec extends Specification {

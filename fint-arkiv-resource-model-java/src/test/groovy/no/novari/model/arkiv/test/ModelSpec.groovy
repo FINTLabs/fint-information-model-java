@@ -1,7 +1,7 @@
-package no.fint.model.arkiv.test
+package no.novari.model.arkiv.test
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import no.fint.model.resource.arkiv.kulturminnevern.TilskuddFartoyResource
+import no.novari.model.resource.arkiv.kulturminnevern.TilskuddFartoyResource
 import spock.lang.Specification
 
 class ModelSpec extends Specification {

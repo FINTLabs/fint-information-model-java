@@ -1,11 +1,11 @@
-package no.fint.test.model
+package no.novari.test.model
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
-import no.fint.model.resource.felles.PersonResource
-import no.fint.model.resource.utdanning.elev.KlasseResource
-import no.fint.model.utdanning.elev.Klasse
+import no.novari.model.resource.felles.PersonResource
+import no.novari.model.resource.utdanning.elev.KlasseResource
+import no.novari.model.utdanning.elev.Klasse
 import spock.lang.Specification
 
 class ModelDeserializationSpec extends Specification {

@@ -1,4 +1,4 @@
 dependencies {
-    compile project(":fint-personvern-model-java")
-    compile project(":fint-felles-resource-model-java")
+    api project(":fint-personvern-model-java")
+    api project(":fint-felles-resource-model-java")
 }

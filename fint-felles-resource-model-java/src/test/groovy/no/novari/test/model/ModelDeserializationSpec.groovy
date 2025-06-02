@@ -1,14 +1,13 @@
-package no.fint.test.model
+package no.novari.test.model
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
-import no.fint.model.felles.Person
-import no.fint.model.resource.felles.KontaktpersonResource
-import no.fint.model.resource.felles.PersonResource
-import no.fint.model.resource.felles.PersonResources
+import no.novari.model.felles.Person
+import no.novari.model.resource.felles.KontaktpersonResource
+import no.novari.model.resource.felles.PersonResource
+import no.novari.model.resource.felles.PersonResources
 
-//import no.fint.model.resource.felles.PersonResources
 import spock.lang.Specification
 
 class ModelDeserializationSpec extends Specification {
@@ -20,23 +19,30 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read Person from person.json"() {
         given:
-        def input = getClass().getResourceAsStream("/person.json")
+        def input = getClass().getClassLoader().getResourceAsStream("person.json")
 
         when:
         def result = objectMapper.readValue(input, Person.class)
-        println(result)
 
         then:
         result
+        result.fodselsnummer
+        result.fodselsnummer.identifikatorverdi == "12345678901"
+        result.navn
+        result.navn.fornavn == "Tore"
+        result.navn.etternavn == "Test"
+        result.fodselsdato
+        result.bostedsadresse
+        result.bostedsadresse.adresselinje.size() == 1
+        result.bostedsadresse.adresselinje[0] == "Storgata 12"
     }
 
     def "Read PersonResource from person.json"() {
         given:
-        def input = getClass().getResourceAsStream("/person.json")
+        def input = getClass().getClassLoader().getResourceAsStream("person.json")
 
         when:
         def result = objectMapper.readValue(input, PersonResource.class)
-        println(result)
 
         then:
         result
@@ -44,11 +50,10 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read Person from personresource.json"() {
         given:
-        def input = getClass().getResourceAsStream("/personresource.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresource.json")
 
         when:
         def result = objectMapper.readValue(input, Person.class)
-        println(result)
 
         then:
         thrown(UnrecognizedPropertyException)
@@ -56,12 +61,11 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read Person from personresource.json with ObjectMapper config"() {
         given:
-        def input = getClass().getResourceAsStream("/personresource.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresource.json")
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         when:
         def result = objectMapper.readValue(input, Person.class)
-        println(result)
 
         then:
         result
@@ -69,11 +73,10 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read PersonResource from personresource.json"() {
         given:
-        def input = getClass().getResourceAsStream("/personresource.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresource.json")
 
         when:
         def result = objectMapper.readValue(input, PersonResource.class)
-        println(result)
 
         then:
         result
@@ -82,11 +85,10 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read Person from personresourcelinks.json"() {
         given:
-        def input = getClass().getResourceAsStream("/personresourcelinks.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresourcelinks.json")
 
         when:
         def result = objectMapper.readValue(input, Person.class)
-        println(result)
 
         then:
         thrown(UnrecognizedPropertyException)
@@ -94,12 +96,11 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read Person from personresourcelinks.json with ObjectMapper config"() {
         given:
-        def input = getClass().getResourceAsStream("/personresourcelinks.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresourcelinks.json")
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         when:
         def result = objectMapper.readValue(input, Person.class)
-        println(result)
 
         then:
         result
@@ -107,11 +108,10 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read PersonResource from personresourcelinks.json"() {
         given:
-        def input = getClass().getResourceAsStream("/personresourcelinks.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresourcelinks.json")
 
         when:
         def result = objectMapper.readValue(input, PersonResource.class)
-        println(result)
 
         then:
         result
@@ -121,11 +121,10 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read PersonResources from personresourceslinks.json"() {
         given:
-        def input = getClass().getResourceAsStream("/personresourceslinks.json")
+        def input = getClass().getClassLoader().getResourceAsStream("personresourceslinks.json")
 
         when:
         def result = objectMapper.readValue(input, PersonResources.class)
-        println(result)
 
         then:
         result
@@ -137,11 +136,10 @@ class ModelDeserializationSpec extends Specification {
 
     def "Read KontaktpersonResource from kontaktpersonresource.json"() {
         given:
-        def input = getClass().getResourceAsStream("/kontaktpersonresource.json")
+        def input = getClass().getClassLoader().getResourceAsStream("kontaktpersonresource.json")
 
         when:
         def result = objectMapper.readValue(input, KontaktpersonResource)
-        println(result)
 
         then:
         result
