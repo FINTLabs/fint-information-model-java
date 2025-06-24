@@ -20,6 +20,7 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.FintModelObject;
 import no.fint.model.FintIdentifikator;
 import no.fint.model.FintRelation;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 
@@ -76,6 +77,7 @@ public class Eksamen  implements FintModelObject {
     private String beskrivelse;
     @NotBlank
     private String navn;
+    private @Valid Date oppmotetidspunkt;
     @NotNull
     private @Valid Identifikator systemId;
     @NotNull
