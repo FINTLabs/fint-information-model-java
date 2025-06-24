@@ -20,6 +20,7 @@ import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.FintResource;
 import no.fint.model.resource.Link;
 import no.fint.model.FintIdentifikator;
+import java.util.Date;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.felles.kompleksedatatyper.Periode;
 
@@ -32,6 +33,7 @@ public class EksamenResource implements FintResource {
     private String beskrivelse;
     @NotBlank
     private String navn;
+    private @Valid Date oppmotetidspunkt;
     @NotNull
     private @Valid Identifikator systemId;
     @NotNull
