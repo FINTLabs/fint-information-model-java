@@ -2,7 +2,7 @@ package no.novari.fint.test.model
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
-import no.novari.fint.model.utdanning.elev.Basisgruppe
+import no.novari.fint.model.utdanning.elev.Klasse
 import no.novari.fint.test.model.utils.TestApplication
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -20,7 +20,7 @@ class SpringModelDeserializationSpec extends Specification {
         def input = getClass().getClassLoader().getResourceAsStream("klasseresource.json")
 
         when:
-        def result = objectMapper.readValue(input, new TypeReference<Resource<Basisgruppe>>() {})
+        def result = objectMapper.readValue(input, new TypeReference<Resource<Klasse>>() {})
 
         then:
         result

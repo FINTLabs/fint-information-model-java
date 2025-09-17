@@ -6,9 +6,9 @@ import com.fasterxml.jackson.databind.util.ISO8601DateFormat
 import groovy.json.JsonSlurper
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator
 import no.novari.fint.model.resource.Link
-import no.novari.fint.model.resource.utdanning.elev.BasisgruppeResource
-import no.novari.fint.model.utdanning.elev.Basisgruppe
-import no.novari.fint.model.utdanning.elev.Basisgruppemedlemskap
+import no.novari.fint.model.resource.utdanning.elev.KlasseResource
+import no.novari.fint.model.utdanning.elev.Klasse
+import no.novari.fint.model.utdanning.elev.Klassemedlemskap
 import spock.lang.Specification
 
 class ModelSerializationSpec extends Specification {
@@ -24,7 +24,7 @@ class ModelSerializationSpec extends Specification {
 
     def "Serialize Klasse without Links"() {
         given:
-        def klasse = new Basisgruppe(
+        def klasse = new Klasse(
                 systemId: new Identifikator(identifikatorverdi: "ABC123"),
                 beskrivelse: "Klasse 123",
                 navn: "ABC123"
@@ -42,7 +42,7 @@ class ModelSerializationSpec extends Specification {
 
     def "Serialize KlasseResource with links"() {
         given:
-        def klasse = new BasisgruppeResource(
+        def klasse = new KlasseResource(
                 systemId: new Identifikator(identifikatorverdi: "ABC123"),
                 beskrivelse: "Klasse 123",
                 navn: "ABC123"

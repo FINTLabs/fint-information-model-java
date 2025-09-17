@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
 import no.novari.fint.model.resource.felles.PersonResource
-import no.novari.fint.model.resource.utdanning.elev.BasisgruppeResource
-import no.novari.fint.model.utdanning.elev.Basisgruppe
+import no.novari.fint.model.resource.utdanning.elev.KlasseResource
+import no.novari.fint.model.utdanning.elev.Klasse
 import spock.lang.Specification
 
 class ModelDeserializationSpec extends Specification {
