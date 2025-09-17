@@ -1,0 +1,48 @@
+package no.novari.fint.model.resource.administrasjon.kodeverk;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import no.fint.model.resource.FintLinks;
+import no.fint.model.FintAbstractObject;
+import no.fint.model.resource.Link;
+import no.fint.model.FintIdentifikator;
+import no.novari.fint.model.felles.basisklasser.Begrep;
+
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public abstract class KontodimensjonResource extends Begrep implements FintAbstractObject, FintLinks {
+    @JsonIgnore
+    public Map<String, FintIdentifikator> getIdentifikators() {
+        Map<String, FintIdentifikator> identifikators = new HashMap<>();
+        identifikators.putAll(super.getIdentifikators());
+
+        return Collections.unmodifiableMap(identifikators);
+    }
+
+    // Relations
+    @Getter
+    private final Map<String, List<Link>> links = createLinks();
+        
+    @Deprecated
+    @JsonIgnore
+    public List<Link> getFullmakt() {
+        return getLinks().getOrDefault("fullmakt", Collections.emptyList()); 
+    }
+    @Deprecated
+    public void addFullmakt(Link link) {
+        addLink("fullmakt", link);
+    }
+}

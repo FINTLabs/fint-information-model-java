@@ -9,9 +9,13 @@ allprojects {
     java {
         toolchain {
             languageVersion = JavaLanguageVersion.of(11)
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
         }
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.release = 8
     }
 
     project.group = 'no.novari'
