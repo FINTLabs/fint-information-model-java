@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.basisklasser.Begrep;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,7 +32,7 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Kommune extends Begrep  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FYLKE("fylke", "no.fint.model.felles.kodeverk.Fylke", ONE_TO_ONE);
+        FYLKE("fylke", "no.novari.fint.model.felles.kodeverk.Fylke", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

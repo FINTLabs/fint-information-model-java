@@ -7,6 +7,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     testImplementation('org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE')
-    testImplementation('org.springframework.hateoas:spring-hateoas:0.25.1.RELEASE')
+    testImplementation("org.springframework.hateoas:spring-hateoas:${springHateoasVersion}")
     testImplementation("org.apache.groovy:groovy-json:4.0.26")
 }

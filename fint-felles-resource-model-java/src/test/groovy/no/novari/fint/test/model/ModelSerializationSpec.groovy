@@ -6,7 +6,7 @@ import no.novari.fint.model.felles.Person
 import no.novari.fint.model.felles.kompleksedatatyper.Adresse
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator
 import no.novari.fint.model.felles.kompleksedatatyper.Personnavn
-import no.fint.model.resource.Link
+import no.novari.fint.model.resource.Link
 import no.novari.fint.model.resource.felles.KontaktpersonResource
 import no.novari.fint.model.resource.felles.PersonResource
 import no.novari.fint.model.resource.felles.kompleksedatatyper.AdresseResource

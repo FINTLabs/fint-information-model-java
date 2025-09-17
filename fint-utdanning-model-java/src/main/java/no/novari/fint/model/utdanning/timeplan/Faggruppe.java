@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,10 +32,10 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Faggruppe extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
-        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.fint.model.utdanning.timeplan.Faggruppemedlemskap", NONE_TO_MANY);
+        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE),
+        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
+        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
+        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;

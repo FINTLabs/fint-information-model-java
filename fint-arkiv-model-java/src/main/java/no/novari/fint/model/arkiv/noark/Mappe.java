@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintAbstractObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintAbstractObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -34,9 +34,9 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Mappe  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE),
-        AVSLUTTETAV("avsluttetAv", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE),
-        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE),
+        AVSLUTTETAV("avsluttetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE),
+        OPPRETTETAV("opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

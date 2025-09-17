@@ -15,19 +15,19 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import java.util.Date;
 
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -36,12 +36,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fravar  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FRAVARSGRUNN("fravarsgrunn", "no.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE),
-        FRAVARSTYPE("fravarstype", "no.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE),
-        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY),
-        FORTSETTELSE("fortsettelse", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE),
-        GODKJENNER("godkjenner", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        FORTSETTER("fortsetter", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE);
+        FRAVARSGRUNN("fravarsgrunn", "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE),
+        FRAVARSTYPE("fravarstype", "no.novari.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE),
+        ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY),
+        FORTSETTELSE("fortsettelse", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE),
+        GODKJENNER("godkjenner", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
+        FORTSETTER("fortsetter", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

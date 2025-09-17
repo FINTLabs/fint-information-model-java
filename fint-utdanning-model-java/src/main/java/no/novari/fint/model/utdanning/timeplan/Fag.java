@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,12 +32,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fag extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PROGRAMOMRADE("programomrade", "no.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_MANY),
-        TILRETTELEGGING("tilrettelegging", "no.fint.model.utdanning.elev.Elevtilrettelegging", NONE_TO_MANY),
-        FAGGRUPPE("faggruppe", "no.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_MANY),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY);
+        PROGRAMOMRADE("programomrade", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_MANY),
+        TILRETTELEGGING("tilrettelegging", "no.novari.fint.model.utdanning.elev.Elevtilrettelegging", NONE_TO_MANY),
+        FAGGRUPPE("faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_MANY),
+        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
+        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY),
+        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;

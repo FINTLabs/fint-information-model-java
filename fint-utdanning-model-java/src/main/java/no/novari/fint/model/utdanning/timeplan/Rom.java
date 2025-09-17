@@ -15,16 +15,16 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -33,8 +33,8 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Rom  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY),
-        EKSAMEN("eksamen", "no.fint.model.utdanning.timeplan.Eksamen", NONE_TO_MANY);
+        TIME("time", "no.novari.fint.model.utdanning.timeplan.Time", NONE_TO_MANY),
+        EKSAMEN("eksamen", "no.novari.fint.model.utdanning.timeplan.Eksamen", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;

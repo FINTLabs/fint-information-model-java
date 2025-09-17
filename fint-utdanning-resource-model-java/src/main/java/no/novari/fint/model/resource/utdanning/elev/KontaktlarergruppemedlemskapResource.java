@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import no.fint.model.resource.FintLinks;
-import no.fint.model.resource.FintResource;
-import no.fint.model.resource.Link;
-import no.fint.model.FintIdentifikator;
+import no.novari.fint.model.resource.FintLinks;
+import no.novari.fint.model.resource.FintResource;
+import no.novari.fint.model.resource.Link;
+import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 @Data

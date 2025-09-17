@@ -13,16 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintAbstractObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintAbstractObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -31,12 +31,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Registrering  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        TILGANGSGRUPPE("tilgangsgruppe", "no.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
-        ADMINISTRATIVENHET("administrativEnhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
-        ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE),
-        SAKSBEHANDLER("saksbehandler", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE),
-        ARKIVERTAV("arkivertAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE),
-        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        TILGANGSGRUPPE("tilgangsgruppe", "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
+        ADMINISTRATIVENHET("administrativEnhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
+        ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE),
+        SAKSBEHANDLER("saksbehandler", "no.novari.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE),
+        ARKIVERTAV("arkivertAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE),
+        OPPRETTETAV("opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

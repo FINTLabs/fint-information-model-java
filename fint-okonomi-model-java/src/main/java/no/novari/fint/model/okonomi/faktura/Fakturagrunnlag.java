@@ -15,18 +15,18 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -35,8 +35,8 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fakturagrunnlag  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAKTURA("faktura", "no.fint.model.okonomi.faktura.Faktura", NONE_TO_MANY),
-        FAKTURAUTSTEDER("fakturautsteder", "no.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE);
+        FAKTURA("faktura", "no.novari.fint.model.okonomi.faktura.Faktura", NONE_TO_MANY),
+        FAKTURAUTSTEDER("fakturautsteder", "no.novari.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

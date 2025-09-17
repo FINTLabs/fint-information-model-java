@@ -15,21 +15,21 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Adresse;
 import java.util.Date;
 
 import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
 import no.novari.fint.model.felles.basisklasser.Aktor;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -38,18 +38,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Person extends Aktor  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        STATSBORGERSKAP("statsborgerskap", "no.fint.model.felles.kodeverk.iso.Landkode", NONE_TO_MANY),
-        KOMMUNE("kommune", "no.fint.model.felles.kodeverk.Kommune", NONE_TO_ONE),
-        KJONN("kjonn", "no.fint.model.felles.kodeverk.iso.Kjonn", NONE_TO_ONE),
-        FORELDREANSVAR("foreldreansvar", "no.fint.model.felles.Person", NONE_TO_MANY),
-        MALFORM("malform", "no.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        MORSMAL("morsmal", "no.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE),
-        PARORENDE("parorende", "no.fint.model.felles.Kontaktperson", NONE_TO_MANY),
-        FORELDRE("foreldre", "no.fint.model.felles.Person", NONE_TO_MANY),
-        LARLING("larling", "no.fint.model.utdanning.larling.Larling", NONE_TO_MANY),
-        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_ONE),
-        OTUNGDOM("otungdom", "no.fint.model.utdanning.ot.OtUngdom", NONE_TO_ONE);
+        STATSBORGERSKAP("statsborgerskap", "no.novari.fint.model.felles.kodeverk.iso.Landkode", NONE_TO_MANY),
+        KOMMUNE("kommune", "no.novari.fint.model.felles.kodeverk.Kommune", NONE_TO_ONE),
+        KJONN("kjonn", "no.novari.fint.model.felles.kodeverk.iso.Kjonn", NONE_TO_ONE),
+        FORELDREANSVAR("foreldreansvar", "no.novari.fint.model.felles.Person", NONE_TO_MANY),
+        MALFORM("malform", "no.novari.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE),
+        PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
+        MORSMAL("morsmal", "no.novari.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE),
+        PARORENDE("parorende", "no.novari.fint.model.felles.Kontaktperson", NONE_TO_MANY),
+        FORELDRE("foreldre", "no.novari.fint.model.felles.Person", NONE_TO_MANY),
+        LARLING("larling", "no.novari.fint.model.utdanning.larling.Larling", NONE_TO_MANY),
+        ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_ONE),
+        OTUNGDOM("otungdom", "no.novari.fint.model.utdanning.ot.OtUngdom", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

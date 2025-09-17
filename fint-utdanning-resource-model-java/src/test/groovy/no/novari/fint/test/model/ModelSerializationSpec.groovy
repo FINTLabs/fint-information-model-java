@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat
 import groovy.json.JsonSlurper
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator
-import no.fint.model.resource.Link
+import no.novari.fint.model.resource.Link
 import no.novari.fint.model.resource.utdanning.elev.BasisgruppeResource
 import no.novari.fint.model.utdanning.elev.Basisgruppe
 import no.novari.fint.model.utdanning.elev.Basisgruppemedlemskap

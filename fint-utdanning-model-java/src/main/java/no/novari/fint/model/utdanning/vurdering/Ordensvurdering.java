@@ -15,18 +15,18 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintAbstractObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintAbstractObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -35,9 +35,9 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Ordensvurdering  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ATFERD("atferd", "no.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE),
-        ORDEN("orden", "no.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE),
-        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE);
+        ATFERD("atferd", "no.novari.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE),
+        ORDEN("orden", "no.novari.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE),
+        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

@@ -13,17 +13,17 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintComplexDatatypeObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintComplexDatatypeObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,11 +32,11 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Dokumentbeskrivelse  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        DOKUMENTSTATUS("dokumentstatus", "no.fint.model.arkiv.kodeverk.DokumentStatus", ONE_TO_ONE),
-        DOKUMENTTYPE("dokumentType", "no.fint.model.arkiv.kodeverk.DokumentType", ONE_TO_ONE),
-        TILKNYTTETREGISTRERINGSOM("tilknyttetRegistreringSom", "no.fint.model.arkiv.kodeverk.TilknyttetRegistreringSom", ONE_TO_MANY),
-        TILKNYTTETAV("tilknyttetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE),
-        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        DOKUMENTSTATUS("dokumentstatus", "no.novari.fint.model.arkiv.kodeverk.DokumentStatus", ONE_TO_ONE),
+        DOKUMENTTYPE("dokumentType", "no.novari.fint.model.arkiv.kodeverk.DokumentType", ONE_TO_ONE),
+        TILKNYTTETREGISTRERINGSOM("tilknyttetRegistreringSom", "no.novari.fint.model.arkiv.kodeverk.TilknyttetRegistreringSom", ONE_TO_MANY),
+        TILKNYTTETAV("tilknyttetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE),
+        OPPRETTETAV("opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

@@ -15,18 +15,18 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintAbstractObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintAbstractObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -35,10 +35,10 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Fagvurdering  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_ONE),
-        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        KARAKTER("karakter", "no.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE);
+        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE),
+        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_ONE),
+        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
+        KARAKTER("karakter", "no.novari.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

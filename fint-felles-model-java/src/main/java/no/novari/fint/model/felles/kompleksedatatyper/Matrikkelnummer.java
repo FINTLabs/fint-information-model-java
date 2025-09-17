@@ -13,15 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintComplexDatatypeObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintComplexDatatypeObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -30,7 +30,7 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Matrikkelnummer  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KOMMUNENUMMER("kommunenummer", "no.fint.model.felles.kodeverk.Kommune", NONE_TO_ONE);
+        KOMMUNENUMMER("kommunenummer", "no.novari.fint.model.felles.kodeverk.Kommune", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

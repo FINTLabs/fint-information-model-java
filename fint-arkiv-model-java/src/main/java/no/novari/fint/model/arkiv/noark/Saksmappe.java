@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintAbstractObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintAbstractObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -34,12 +34,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        SAKSMAPPETYPE("saksmappetype", "no.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE),
-        SAKSSTATUS("saksstatus", "no.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE),
-        TILGANGSGRUPPE("tilgangsgruppe", "no.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
-        JOURNALENHET("journalenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
-        ADMINISTRATIVENHET("administrativEnhet", "no.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE),
-        SAKSANSVARLIG("saksansvarlig", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        SAKSMAPPETYPE("saksmappetype", "no.novari.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE),
+        SAKSSTATUS("saksstatus", "no.novari.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE),
+        TILGANGSGRUPPE("tilgangsgruppe", "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
+        JOURNALENHET("journalenhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
+        ADMINISTRATIVENHET("administrativEnhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE),
+        SAKSANSVARLIG("saksansvarlig", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

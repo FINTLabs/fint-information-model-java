@@ -15,10 +15,10 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.fint.model.resource.FintLinks;
-import no.fint.model.resource.FintResource;
-import no.fint.model.resource.Link;
-import no.fint.model.FintIdentifikator;
+import no.novari.fint.model.resource.FintLinks;
+import no.novari.fint.model.resource.FintResource;
+import no.novari.fint.model.resource.Link;
+import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.resource.administrasjon.kompleksedatatyper.KontostrengResource;
 import no.novari.fint.model.felles.basisklasser.Begrep;
 

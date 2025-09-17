@@ -15,16 +15,16 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -33,8 +33,8 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Elevfravar  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FRAVARSREGISTRERING("fravarsregistrering", "no.fint.model.utdanning.vurdering.Fravarsregistrering", NONE_TO_MANY),
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE);
+        FRAVARSREGISTRERING("fravarsregistrering", "no.novari.fint.model.utdanning.vurdering.Fravarsregistrering", NONE_TO_MANY),
+        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

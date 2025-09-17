@@ -15,16 +15,16 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -34,11 +34,11 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Medlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        MEDLEM("medlem", "no.fint.model.utdanning.basisklasser.Utdanningsforhold", ONE_TO_ONE),
-        FORTLOPENDEVURDERING("fortlopendeVurdering", "no.fint.model.utdanning.vurdering.Vurdering", NONE_TO_MANY),
-        GRUPPE("gruppe", "no.fint.model.utdanning.basisklasser.Gruppe", ONE_TO_ONE),
-        ENDELIGVURDERING("endeligVurdering", "no.fint.model.utdanning.vurdering.Vurdering", NONE_TO_ONE),
-        FRAVAR("fravar", "no.fint.model.utdanning.vurdering.Fravar", NONE_TO_MANY);
+        MEDLEM("medlem", "no.novari.fint.model.utdanning.basisklasser.Utdanningsforhold", ONE_TO_ONE),
+        FORTLOPENDEVURDERING("fortlopendeVurdering", "no.novari.fint.model.utdanning.vurdering.Vurdering", NONE_TO_MANY),
+        GRUPPE("gruppe", "no.novari.fint.model.utdanning.basisklasser.Gruppe", ONE_TO_ONE),
+        ENDELIGVURDERING("endeligVurdering", "no.novari.fint.model.utdanning.vurdering.Vurdering", NONE_TO_ONE),
+        FRAVAR("fravar", "no.novari.fint.model.utdanning.vurdering.Fravar", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;

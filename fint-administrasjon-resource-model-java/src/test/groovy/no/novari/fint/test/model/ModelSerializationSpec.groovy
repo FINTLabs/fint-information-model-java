@@ -8,7 +8,7 @@ import no.novari.fint.model.administrasjon.kompleksedatatyper.Kontostreng
 import no.novari.fint.model.administrasjon.personal.Fastlonn
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator
 import no.novari.fint.model.felles.kompleksedatatyper.Periode
-import no.fint.model.resource.Link
+import no.novari.fint.model.resource.Link
 import no.novari.fint.model.resource.administrasjon.kompleksedatatyper.KontostrengResource
 import no.novari.fint.model.resource.administrasjon.personal.FastlonnResource
 import spock.lang.Specification

@@ -14,10 +14,10 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 
-import no.fint.model.resource.FintLinks;
-import no.fint.model.resource.FintResource;
-import no.fint.model.resource.Link;
-import no.fint.model.FintIdentifikator;
+import no.novari.fint.model.resource.FintLinks;
+import no.novari.fint.model.resource.FintResource;
+import no.novari.fint.model.resource.Link;
+import no.novari.fint.model.FintIdentifikator;
 import java.util.Date;
 import no.novari.fint.model.resource.utdanning.basisklasser.GruppeResource;
 

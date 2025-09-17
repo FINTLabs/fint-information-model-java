@@ -15,18 +15,18 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import no.novari.fint.model.felles.basisklasser.Enhet;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -35,12 +35,12 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Organisasjonselement extends Enhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ANSVAR("ansvar", "no.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY),
-        LEDER("leder", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        OVERORDNET("overordnet", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        UNDERORDNET("underordnet", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
-        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY);
+        ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY),
+        LEDER("leder", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
+        OVERORDNET("overordnet", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
+        UNDERORDNET("underordnet", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY),
+        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
+        ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;

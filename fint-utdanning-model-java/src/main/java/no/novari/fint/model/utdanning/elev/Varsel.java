@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -34,10 +34,10 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Varsel  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        UTSTEDER("utsteder", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE),
-        KARAKTERANSVARLIG("karakteransvarlig", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE),
-        TYPE("type", "no.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE),
-        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.fint.model.utdanning.timeplan.Faggruppemedlemskap", ONE_TO_ONE);
+        UTSTEDER("utsteder", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE),
+        KARAKTERANSVARLIG("karakteransvarlig", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE),
+        TYPE("type", "no.novari.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE),
+        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

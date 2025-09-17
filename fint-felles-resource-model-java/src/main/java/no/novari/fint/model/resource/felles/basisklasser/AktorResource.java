@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.Valid;
 
-import no.fint.model.resource.FintLinks;
-import no.fint.model.FintAbstractObject;
-import no.fint.model.resource.Link;
-import no.fint.model.FintIdentifikator;
+import no.novari.fint.model.resource.FintLinks;
+import no.novari.fint.model.FintAbstractObject;
+import no.novari.fint.model.resource.Link;
+import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 import no.novari.fint.model.resource.felles.kompleksedatatyper.AdresseResource;
 

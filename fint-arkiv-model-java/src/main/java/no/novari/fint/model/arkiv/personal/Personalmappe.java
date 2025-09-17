@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
 import no.novari.fint.model.arkiv.noark.Saksmappe;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -34,10 +34,10 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Personalmappe extends Saksmappe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE),
-        LEDER("leder", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
-        ARBEIDSSTED("arbeidssted", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE);
+        PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE),
+        LEDER("leder", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
+        ARBEIDSSTED("arbeidssted", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
+        PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

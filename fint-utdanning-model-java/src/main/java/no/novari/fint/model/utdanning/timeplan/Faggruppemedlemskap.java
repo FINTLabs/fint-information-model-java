@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,11 +32,11 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Faggruppemedlemskap extends Gruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAGMERKNAD("fagmerknad", "no.fint.model.utdanning.kodeverk.Fagmerknad", NONE_TO_ONE),
-        FAGSTATUS("fagstatus", "no.fint.model.utdanning.kodeverk.Fagstatus", NONE_TO_ONE),
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        VARSEL("varsel", "no.fint.model.utdanning.elev.Varsel", NONE_TO_MANY),
-        FAGGRUPPE("faggruppe", "no.fint.model.utdanning.timeplan.Faggruppe", ONE_TO_ONE);
+        FAGMERKNAD("fagmerknad", "no.novari.fint.model.utdanning.kodeverk.Fagmerknad", NONE_TO_ONE),
+        FAGSTATUS("fagstatus", "no.novari.fint.model.utdanning.kodeverk.Fagstatus", NONE_TO_ONE),
+        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
+        VARSEL("varsel", "no.novari.fint.model.utdanning.elev.Varsel", NONE_TO_MANY),
+        FAGGRUPPE("faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;

@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,13 +32,13 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Eksamensgruppemedlemskap extends Gruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        DELEGERTTIL("delegertTil", "no.fint.model.felles.kodeverk.Fylke", NONE_TO_ONE),
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        FORETRUKKETSKOLE("foretrukketSkole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE),
-        NUS("nus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE),
-        BETALINGSSTATUS("betalingsstatus", "no.fint.model.utdanning.kodeverk.Betalingsstatus", NONE_TO_ONE),
-        FORETRUKKETSENSOR("foretrukketSensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_ONE);
+        DELEGERTTIL("delegertTil", "no.novari.fint.model.felles.kodeverk.Fylke", NONE_TO_ONE),
+        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
+        FORETRUKKETSKOLE("foretrukketSkole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
+        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE),
+        NUS("nus", "no.novari.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE),
+        BETALINGSSTATUS("betalingsstatus", "no.novari.fint.model.utdanning.kodeverk.Betalingsstatus", NONE_TO_ONE),
+        FORETRUKKETSENSOR("foretrukketSensor", "no.novari.fint.model.utdanning.vurdering.Sensor", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

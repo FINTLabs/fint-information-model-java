@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.Valid;
 
-import no.fint.model.resource.FintLinks;
-import no.fint.model.FintComplexDatatypeObject;
-import no.fint.model.resource.Link;
-import no.fint.model.FintIdentifikator;
+import no.novari.fint.model.resource.FintLinks;
+import no.novari.fint.model.FintComplexDatatypeObject;
+import no.novari.fint.model.resource.Link;
+import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.resource.felles.kompleksedatatyper.AdresseResource;
 import no.novari.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 

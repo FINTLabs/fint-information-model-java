@@ -15,16 +15,16 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -33,15 +33,15 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Elevvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        SLUTTFAGVURDERING("sluttfagvurdering", "no.fint.model.utdanning.vurdering.Sluttfagvurdering", NONE_TO_MANY),
-        UNDERVEISORDENSVURDERING("underveisordensvurdering", "no.fint.model.utdanning.vurdering.Underveisordensvurdering", NONE_TO_MANY),
-        VITNEMALSMERKNAD("vitnemalsmerknad", "no.fint.model.utdanning.kodeverk.Vitnemalsmerknad", NONE_TO_MANY),
-        UNDERVEISFAGVURDERING("underveisfagvurdering", "no.fint.model.utdanning.vurdering.Underveisfagvurdering", NONE_TO_MANY),
-        HALVARSORDENSVURDERING("halvarsordensvurdering", "no.fint.model.utdanning.vurdering.Halvarsordensvurdering", NONE_TO_MANY),
-        HALVARSFAGVURDERING("halvarsfagvurdering", "no.fint.model.utdanning.vurdering.Halvarsfagvurdering", NONE_TO_MANY),
-        SLUTTORDENSVURDERING("sluttordensvurdering", "no.fint.model.utdanning.vurdering.Sluttordensvurdering", NONE_TO_MANY),
-        EKSAMENSVURDERING("eksamensvurdering", "no.fint.model.utdanning.vurdering.Eksamensvurdering", NONE_TO_MANY);
+        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
+        SLUTTFAGVURDERING("sluttfagvurdering", "no.novari.fint.model.utdanning.vurdering.Sluttfagvurdering", NONE_TO_MANY),
+        UNDERVEISORDENSVURDERING("underveisordensvurdering", "no.novari.fint.model.utdanning.vurdering.Underveisordensvurdering", NONE_TO_MANY),
+        VITNEMALSMERKNAD("vitnemalsmerknad", "no.novari.fint.model.utdanning.kodeverk.Vitnemalsmerknad", NONE_TO_MANY),
+        UNDERVEISFAGVURDERING("underveisfagvurdering", "no.novari.fint.model.utdanning.vurdering.Underveisfagvurdering", NONE_TO_MANY),
+        HALVARSORDENSVURDERING("halvarsordensvurdering", "no.novari.fint.model.utdanning.vurdering.Halvarsordensvurdering", NONE_TO_MANY),
+        HALVARSFAGVURDERING("halvarsfagvurdering", "no.novari.fint.model.utdanning.vurdering.Halvarsfagvurdering", NONE_TO_MANY),
+        SLUTTORDENSVURDERING("sluttordensvurdering", "no.novari.fint.model.utdanning.vurdering.Sluttordensvurdering", NONE_TO_MANY),
+        EKSAMENSVURDERING("eksamensvurdering", "no.novari.fint.model.utdanning.vurdering.Eksamensvurdering", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;

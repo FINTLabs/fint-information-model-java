@@ -13,17 +13,17 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
 
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintComplexDatatypeObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintComplexDatatypeObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 
 import java.util.Date;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -32,9 +32,9 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Journalpost extends Registrering  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        JOURNALPOSTTYPE("journalposttype", "no.fint.model.arkiv.kodeverk.JournalpostType", ONE_TO_ONE),
-        JOURNALSTATUS("journalstatus", "no.fint.model.arkiv.kodeverk.JournalStatus", ONE_TO_ONE),
-        JOURNALENHET("journalenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE);
+        JOURNALPOSTTYPE("journalposttype", "no.novari.fint.model.arkiv.kodeverk.JournalpostType", ONE_TO_ONE),
+        JOURNALSTATUS("journalstatus", "no.novari.fint.model.arkiv.kodeverk.JournalStatus", ONE_TO_ONE),
+        JOURNALENHET("journalenhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE);
     
         private final String name;
         private final String packageName;

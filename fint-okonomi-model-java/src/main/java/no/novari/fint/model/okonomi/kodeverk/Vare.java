@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.fint.model.FintMultiplicity;
-import no.fint.model.FintModelObject;
-import no.fint.model.FintIdentifikator;
-import no.fint.model.FintRelation;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.administrasjon.kompleksedatatyper.Kontostreng;
 import no.novari.fint.model.felles.basisklasser.Begrep;
 
-import static no.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
@@ -34,8 +34,8 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Vare extends Begrep  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAKTURAUTSTEDER("fakturautsteder", "no.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE),
-        MERVERDIAVGIFT("merverdiavgift", "no.fint.model.okonomi.kodeverk.Merverdiavgift", ONE_TO_ONE);
+        FAKTURAUTSTEDER("fakturautsteder", "no.novari.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE),
+        MERVERDIAVGIFT("merverdiavgift", "no.novari.fint.model.okonomi.kodeverk.Merverdiavgift", ONE_TO_ONE);
     
         private final String name;
         private final String packageName;
