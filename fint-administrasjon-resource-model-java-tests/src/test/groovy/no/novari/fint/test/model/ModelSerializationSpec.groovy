@@ -20,7 +20,7 @@ class ModelSerializationSpec extends Specification {
     void setup() {
         objectMapper = new ObjectMapper()
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
-        objectMapper.setDateFormat(new ISO8601DateFormat());
+        objectMapper.setDateFormat(new ISO8601DateFormat())
         jsonSlurper = new JsonSlurper()
     }
 

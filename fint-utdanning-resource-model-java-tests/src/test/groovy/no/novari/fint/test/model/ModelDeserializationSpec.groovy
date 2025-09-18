@@ -56,7 +56,7 @@ class ModelDeserializationSpec extends Specification {
     def "Read Klasse from klasseresource.json with ObjectMapper config"() {
         given:
         def input = getClass().getResourceAsStream("/klasseresource.json")
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
         when:
         def result = objectMapper.readValue(input, Klasse.class)

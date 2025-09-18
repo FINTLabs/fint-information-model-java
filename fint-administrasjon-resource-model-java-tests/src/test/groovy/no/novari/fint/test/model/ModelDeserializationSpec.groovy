@@ -68,7 +68,7 @@ class ModelDeserializationSpec extends Specification {
     def "Read Fastlonn from fastlonnresource.json with ObjectMapper config"() {
         given:
         def input = getClass().getResourceAsStream("/fastlonnresource.json")
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
         when:
         def result = objectMapper.readValue(input, Fastlonn.class)
@@ -120,7 +120,7 @@ class ModelDeserializationSpec extends Specification {
     def "Read Fastlonn from fastlonnresourcelinks.json with ObjectMapper config"() {
         given:
         def input = getClass().getResourceAsStream("/fastlonnresourcelinks.json")
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
         when:
         def result = objectMapper.readValue(input, Fastlonn.class)
