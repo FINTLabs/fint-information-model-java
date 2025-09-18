@@ -21,7 +21,7 @@ import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import java.util.Date;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.administrasjon.kompleksedatatyper.Kontostreng;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 

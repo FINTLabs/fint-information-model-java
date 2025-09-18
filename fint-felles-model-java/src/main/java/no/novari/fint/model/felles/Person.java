@@ -22,7 +22,7 @@ import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Adresse;
 import java.util.Date;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
 import no.novari.fint.model.felles.basisklasser.Aktor;
 

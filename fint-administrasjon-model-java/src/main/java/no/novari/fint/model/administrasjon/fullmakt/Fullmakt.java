@@ -21,6 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -34,7 +35,6 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fullmakt  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        MYNDIGHET("myndighet", "no.novari.fint.model.administrasjon.kodeverk.Kontodimensjon", NONE_TO_MANY),
         RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE),
         FUNKSJON("funksjon", "no.novari.fint.model.administrasjon.kodeverk.Funksjon", NONE_TO_ONE),
         OBJEKT("objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE),

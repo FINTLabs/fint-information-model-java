@@ -12,7 +12,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
@@ -35,14 +38,4 @@ public abstract class KontodimensjonResource extends Begrep implements FintAbstr
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getFullmakt() {
-        return getLinks().getOrDefault("fullmakt", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addFullmakt(Link link) {
-        addLink("fullmakt", link);
-    }
 }

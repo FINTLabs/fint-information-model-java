@@ -21,6 +21,7 @@ import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.resource.felles.kompleksedatatyper.MatrikkelnummerResource;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.arkiv.noark.SaksmappeResource;
 
 @Data
@@ -48,7 +49,6 @@ public class DispensasjonAutomatiskFredaKulturminneResource extends SaksmappeRes
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
         identifikators.put("soknadsnummer", this.soknadsnummer);
 
         return Collections.unmodifiableMap(identifikators);

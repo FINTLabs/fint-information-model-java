@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
@@ -20,6 +21,11 @@ import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import java.util.Date;
+import no.novari.fint.model.resource.arkiv.noark.KlasseResource;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.novari.fint.model.resource.arkiv.noark.MerknadResource;
+import no.novari.fint.model.resource.arkiv.noark.PartResource;
+import no.novari.fint.model.resource.arkiv.noark.SkjermingResource;
 
 @Data
 @NoArgsConstructor
@@ -70,13 +76,6 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @JsonIgnore
-    public List<Link> getArkivdel() {
-        return getLinks().getOrDefault("arkivdel", Collections.emptyList()); 
-    }
-    public void addArkivdel(Link link) {
-        addLink("arkivdel", link);
-    }
     @JsonIgnore
     public List<Link> getAvsluttetAv() {
         return getLinks().getOrDefault("avsluttetAv", Collections.emptyList()); 

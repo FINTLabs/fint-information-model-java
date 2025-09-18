@@ -14,13 +14,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
-
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-
+import no.novari.fint.model.arkiv.noark.Journalpost;
 import java.util.Date;
+import no.novari.fint.model.arkiv.noark.Mappe;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -77,7 +79,6 @@ public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    private List<@Valid Registrering> arkivnotat;
     private List<@Valid Journalpost> journalpost;
     private String saksaar;
     private @Valid Date saksdato;

@@ -20,6 +20,7 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -33,9 +34,7 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Arkivdel  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KLASSIFIKASJONSSYSTEM("klassifikasjonssystem", "no.novari.fint.model.arkiv.noark.Klassifikasjonssystem", NONE_TO_MANY),
-        REGISTRERING("registrering", "no.novari.fint.model.arkiv.noark.Registrering", NONE_TO_MANY),
-        MAPPE("mappe", "no.novari.fint.model.arkiv.noark.Mappe", NONE_TO_MANY);
+        KLASSIFIKASJONSSYSTEM("klassifikasjonssystem", "no.novari.fint.model.arkiv.noark.Klassifikasjonssystem", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;
