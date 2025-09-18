@@ -21,7 +21,7 @@ import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import java.util.Date;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
@@ -51,18 +51,18 @@ public class FravarResource implements FintResource {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getFravarsgrunn() {
-        return getLinks().getOrDefault("fravarsgrunn", Collections.emptyList()); 
-    }
-    public void addFravarsgrunn(Link link) {
-        addLink("fravarsgrunn", link);
-    }
-    @JsonIgnore
     public List<Link> getFravarstype() {
         return getLinks().getOrDefault("fravarstype", Collections.emptyList()); 
     }
     public void addFravarstype(Link link) {
         addLink("fravarstype", link);
+    }
+    @JsonIgnore
+    public List<Link> getFravarsgrunn() {
+        return getLinks().getOrDefault("fravarsgrunn", Collections.emptyList()); 
+    }
+    public void addFravarsgrunn(Link link) {
+        addLink("fravarsgrunn", link);
     }
     @JsonIgnore
     public List<Link> getArbeidsforhold() {

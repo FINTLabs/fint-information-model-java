@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -33,7 +35,7 @@ public class Undervisningsforhold extends Utdanningsforhold  implements FintMode
     @Getter
     public enum Relasjonsnavn implements FintRelation {
         ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_ONE),
-        BASISGRUPPE("basisgruppe", "no.novari.fint.model.utdanning.elev.Basisgruppe", NONE_TO_MANY),
+        KLASSE("klasse", "no.novari.fint.model.utdanning.elev.Klasse", NONE_TO_MANY),
         KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY),
         UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY),
         EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY),
@@ -62,7 +64,6 @@ public class Undervisningsforhold extends Utdanningsforhold  implements FintMode
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

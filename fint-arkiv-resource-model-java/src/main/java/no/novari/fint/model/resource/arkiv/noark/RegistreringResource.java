@@ -11,14 +11,22 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import java.util.Date;
+import no.novari.fint.model.resource.arkiv.noark.DokumentbeskrivelseResource;
+import no.novari.fint.model.resource.arkiv.noark.KlasseResource;
+import no.novari.fint.model.resource.arkiv.noark.KorrespondansepartResource;
+import no.novari.fint.model.resource.arkiv.noark.MerknadResource;
+import no.novari.fint.model.resource.arkiv.noark.PartResource;
+import no.novari.fint.model.resource.arkiv.noark.SkjermingResource;
 
 @Data
 @NoArgsConstructor
@@ -84,13 +92,6 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     }
     public void addAdministrativEnhet(Link link) {
         addLink("administrativEnhet", link);
-    }
-    @JsonIgnore
-    public List<Link> getArkivdel() {
-        return getLinks().getOrDefault("arkivdel", Collections.emptyList()); 
-    }
-    public void addArkivdel(Link link) {
-        addLink("arkivdel", link);
     }
     @JsonIgnore
     public List<Link> getSaksbehandler() {

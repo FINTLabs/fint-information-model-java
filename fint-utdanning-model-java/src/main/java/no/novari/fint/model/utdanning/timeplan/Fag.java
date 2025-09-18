@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -32,7 +34,9 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fag extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
+        GREPREFERANSE("grepreferanse", "no.novari.fint.model.utdanning.kodeverk.Grepreferanse", NONE_TO_ONE),
         PROGRAMOMRADE("programomrade", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_MANY),
+        VIGOREFERANSE("vigoreferanse", "no.novari.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE),
         TILRETTELEGGING("tilrettelegging", "no.novari.fint.model.utdanning.elev.Elevtilrettelegging", NONE_TO_MANY),
         FAGGRUPPE("faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_MANY),
         SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
@@ -60,7 +64,6 @@ public class Fag extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

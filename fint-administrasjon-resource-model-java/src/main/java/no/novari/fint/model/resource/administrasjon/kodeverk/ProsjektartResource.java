@@ -12,21 +12,24 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.administrasjon.kodeverk.Kontodimensjon;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ProsjektartResource extends KontodimensjonResource implements FintResource {
+public class ProsjektartResource extends Kontodimensjon implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }
@@ -43,17 +46,17 @@ public class ProsjektartResource extends KontodimensjonResource implements FintR
         addLink("underordnet", link);
     }
     @JsonIgnore
-    public List<Link> getProsjekt() {
-        return getLinks().getOrDefault("prosjekt", Collections.emptyList()); 
-    }
-    public void addProsjekt(Link link) {
-        addLink("prosjekt", link);
-    }
-    @JsonIgnore
     public List<Link> getOverordnet() {
         return getLinks().getOrDefault("overordnet", Collections.emptyList()); 
     }
     public void addOverordnet(Link link) {
         addLink("overordnet", link);
+    }
+    @JsonIgnore
+    public List<Link> getProsjekt() {
+        return getLinks().getOrDefault("prosjekt", Collections.emptyList()); 
+    }
+    public void addProsjekt(Link link) {
+        addLink("prosjekt", link);
     }
 }

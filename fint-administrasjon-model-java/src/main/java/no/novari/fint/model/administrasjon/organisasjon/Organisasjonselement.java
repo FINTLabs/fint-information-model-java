@@ -21,6 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.basisklasser.Enhet;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
@@ -35,6 +36,7 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Organisasjonselement extends Enhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
+        ORGANISASJONSTYPE("organisasjonstype", "no.novari.fint.model.administrasjon.kodeverk.Organisasjonstype", NONE_TO_ONE),
         ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY),
         LEDER("leder", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
         OVERORDNET("overordnet", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),

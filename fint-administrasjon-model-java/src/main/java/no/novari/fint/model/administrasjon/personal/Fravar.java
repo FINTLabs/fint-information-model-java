@@ -21,7 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import java.util.Date;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
@@ -36,8 +36,8 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fravar  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FRAVARSGRUNN("fravarsgrunn", "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE),
         FRAVARSTYPE("fravarstype", "no.novari.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE),
+        FRAVARSGRUNN("fravarsgrunn", "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE),
         ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY),
         FORTSETTELSE("fortsettelse", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE),
         GODKJENNER("godkjenner", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),

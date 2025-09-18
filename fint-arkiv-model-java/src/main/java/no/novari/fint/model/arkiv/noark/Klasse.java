@@ -11,12 +11,16 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintComplexDatatypeObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.arkiv.noark.Skjerming;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;

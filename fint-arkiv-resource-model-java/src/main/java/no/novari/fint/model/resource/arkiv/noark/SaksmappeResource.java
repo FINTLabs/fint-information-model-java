@@ -13,13 +13,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
+import javax.validation.constraints.*;
 
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-
+import no.novari.fint.model.resource.arkiv.noark.JournalpostResource;
 import java.util.Date;
+import no.novari.fint.model.resource.arkiv.noark.MappeResource;
 
 @Data
 @NoArgsConstructor
@@ -31,15 +34,11 @@ public abstract class SaksmappeResource extends MappeResource implements FintAbs
     @Override
     public List<FintLinks> getNestedResources() {
         List<FintLinks> result = super.getNestedResources();
-        if (arkivnotat != null) {
-            result.addAll(arkivnotat);
-        }
         if (journalpost != null) {
             result.addAll(journalpost);
         }
         return result;
     }
-    private List<@Valid RegistreringResource> arkivnotat;
     private List<@Valid JournalpostResource> journalpost;
     private String saksaar;
     private @Valid Date saksdato;

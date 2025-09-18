@@ -16,6 +16,7 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -53,7 +54,6 @@ public class Personalmappe extends Saksmappe  implements FintModelObject {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }
