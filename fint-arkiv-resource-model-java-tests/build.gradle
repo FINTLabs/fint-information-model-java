@@ -1,0 +1,21 @@
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+dependencies {
+    api project(":fint-arkiv-resource-model-java")
+    api project(":fint-arkiv-model-java")
+    api project(":fint-felles-resource-model-java")
+
+    testImplementation("org.spockframework:spock-core:${spockSpringVersion}")
+    testImplementation("org.spockframework:spock-spring:${spockSpringVersion}")
+    testImplementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+
+test {
+    useJUnitPlatform()
+}

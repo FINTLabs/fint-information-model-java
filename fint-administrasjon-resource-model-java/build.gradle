@@ -1,14 +1,4 @@
 dependencies {
     api project(":fint-administrasjon-model-java")
     api project(":fint-felles-resource-model-java")
-
-    testImplementation("org.spockframework:spock-core:${spockSpringVersion}")
-    testImplementation("org.spockframework:spock-spring:${spockSpringVersion}")
-    testImplementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
-    testImplementation("org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE")
-    testImplementation("org.springframework.hateoas:spring-hateoas:${springHateoasVersion}")
-    testImplementation("org.apache.groovy:groovy:4.0.26")
-    testImplementation("org.apache.groovy:groovy-json:4.0.26")
-
 }

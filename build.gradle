@@ -30,7 +30,6 @@ allprojects {
 subprojects {
     apply plugin: 'java-library'
     apply plugin: 'groovy'
-    apply plugin: 'maven-publish'
 
     configurations {
         annotationProcessor
@@ -42,6 +41,9 @@ subprojects {
         implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
         implementation("com.fasterxml.jackson.core:jackson-core:2.20.0")
         implementation("javax.validation:validation-api:2.0.1.Final")
+
+        testImplementation(platform("org.junit:junit-bom:5.10.2"))
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     }
 
     test {
@@ -50,22 +52,26 @@ subprojects {
         }
     }
 
-    publishing {
-        repositories {
-            maven {
-                url = "https://repo.fintlabs.no/releases"
-                credentials {
-                    username = System.getenv("REPOSILITE_USERNAME")
-                    password = System.getenv("REPOSILITE_PASSWORD")
-                }
-                authentication {
-                    basic(BasicAuthentication)
+    if (!project.name.endsWith('-tests')) {
+        apply plugin: 'maven-publish'
+
+        publishing {
+            repositories {
+                maven {
+                    url = "https://repo.fintlabs.no/releases"
+                    credentials {
+                        username = System.getenv("REPOSILITE_USERNAME")
+                        password = System.getenv("REPOSILITE_PASSWORD")
+                    }
+                    authentication {
+                        basic(BasicAuthentication)
+                    }
                 }
             }
-        }
-        publications {
-            maven(MavenPublication) {
-                from(components.java)
+            publications {
+                maven(MavenPublication) {
+                    from(components.java)
+                }
             }
         }
     }

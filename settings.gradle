@@ -1,3 +1,8 @@
 rootProject.name = 'fint-information-model-java'
 
 include 'fint-administrasjon-model-java', 'fint-administrasjon-resource-model-java', 'fint-felles-model-java', 'fint-felles-resource-model-java', 'fint-utdanning-model-java', 'fint-utdanning-resource-model-java', 'fint-arkiv-model-java', 'fint-arkiv-resource-model-java', 'fint-okonomi-model-java', 'fint-okonomi-resource-model-java', 'fint-personvern-model-java', 'fint-personvern-resource-model-java', 'fint-ressurs-model-java', 'fint-ressurs-resource-model-java'
+
+include 'fint-administrasjon-resource-model-java-tests'
+include 'fint-felles-resource-model-java-tests'
+include 'fint-arkiv-resource-model-java-tests'
+include 'fint-utdanning-resource-model-java-tests'

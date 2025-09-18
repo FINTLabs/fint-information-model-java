@@ -6,8 +6,8 @@ import no.novari.fint.model.felles.Person
 import no.novari.fint.test.model.utils.TestApplication
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.hateoas.Resource
-import org.springframework.hateoas.Resources
+import org.springframework.hateoas.CollectionModel
+import org.springframework.hateoas.EntityModel
 import spock.lang.Specification
 
 @SpringBootTest(classes = TestApplication)
@@ -20,7 +20,7 @@ class SpringModelDeserializationSpec extends Specification {
         def input = getClass().getClassLoader().getResourceAsStream("personresourcelinks.json")
 
         when:
-        def result = objectMapper.readValue(input, new TypeReference<Resource<Person>>() {})
+        def result = objectMapper.readValue(input, new TypeReference<EntityModel<Person>>() {})
 
         then:
         result
@@ -35,7 +35,7 @@ class SpringModelDeserializationSpec extends Specification {
         def input = getClass().getClassLoader().getResourceAsStream("personresourceslinks.json")
 
         when:
-        def result = objectMapper.readValue(input, new TypeReference<Resources<Person>>() {})
+        def result = objectMapper.readValue(input, new TypeReference<CollectionModel<Person>>() {})
 
         then:
         result
