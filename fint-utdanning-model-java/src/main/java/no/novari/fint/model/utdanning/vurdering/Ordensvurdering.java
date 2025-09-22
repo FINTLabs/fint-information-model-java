@@ -20,7 +20,7 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import java.util.Date;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;

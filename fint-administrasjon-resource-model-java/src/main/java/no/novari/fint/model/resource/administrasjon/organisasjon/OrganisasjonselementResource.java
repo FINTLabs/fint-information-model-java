@@ -21,6 +21,7 @@ import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.felles.basisklasser.EnhetResource;
 
 @Data
@@ -56,6 +57,13 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
     }
     public void addAnsvar(Link link) {
         addLink("ansvar", link);
+    }
+    @JsonIgnore
+    public List<Link> getOrganisasjonstype() {
+        return getLinks().getOrDefault("organisasjonstype", Collections.emptyList()); 
+    }
+    public void addOrganisasjonstype(Link link) {
+        addLink("organisasjonstype", link);
     }
     @JsonIgnore
     public List<Link> getLeder() {

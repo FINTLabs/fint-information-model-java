@@ -20,6 +20,7 @@ import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.felles.basisklasser.EnhetResource;
 
 @Data
@@ -79,18 +80,18 @@ public class SkoleResource extends EnhetResource implements FintResource {
         addLink("vigoreferanse", link);
     }
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
-    }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
-    }
-    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getKlasse() {
+        return getLinks().getOrDefault("klasse", Collections.emptyList()); 
+    }
+    public void addKlasse(Link link) {
+        addLink("klasse", link);
     }
     @JsonIgnore
     public List<Link> getKontaktlarergruppe() {

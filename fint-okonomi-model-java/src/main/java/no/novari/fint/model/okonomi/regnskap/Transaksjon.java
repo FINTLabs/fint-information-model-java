@@ -20,8 +20,9 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-
+import no.novari.fint.model.okonomi.regnskap.Bilag;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;

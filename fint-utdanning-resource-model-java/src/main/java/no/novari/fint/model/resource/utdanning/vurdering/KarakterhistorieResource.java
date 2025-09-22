@@ -21,6 +21,7 @@ import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor

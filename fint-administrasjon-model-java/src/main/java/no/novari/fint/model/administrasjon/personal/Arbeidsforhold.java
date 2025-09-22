@@ -21,6 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -55,7 +56,6 @@ public class Arbeidsforhold  implements FintModelObject {
         FASTLONN("fastlonn", "no.novari.fint.model.administrasjon.personal.Fastlonn", NONE_TO_MANY),
         FASTTILLEGG("fasttillegg", "no.novari.fint.model.administrasjon.personal.Fasttillegg", NONE_TO_MANY),
         FRAVAR("fravar", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_MANY),
-        LONN("lonn", "no.novari.fint.model.administrasjon.personal.Lonn", NONE_TO_MANY),
         VARIABELLONN("variabellonn", "no.novari.fint.model.administrasjon.personal.Variabellonn", NONE_TO_MANY),
         PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
         UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE);

@@ -15,6 +15,7 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
@@ -33,7 +34,6 @@ public class PersonalmappeResource extends SaksmappeResource implements FintReso
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }

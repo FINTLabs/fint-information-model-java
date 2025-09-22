@@ -20,7 +20,7 @@ import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import java.util.Date;
 
 @Data
@@ -53,15 +53,6 @@ public abstract class FagvurderingResource implements FintAbstractObject, FintLi
     }
     public void addFag(Link link) {
         addLink("fag", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getUndervisningsgruppe() {
-        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addUndervisningsgruppe(Link link) {
-        addLink("undervisningsgruppe", link);
     }
     @JsonIgnore
     public List<Link> getSkolear() {

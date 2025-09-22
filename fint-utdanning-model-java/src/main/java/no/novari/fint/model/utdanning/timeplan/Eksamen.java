@@ -20,6 +20,8 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
@@ -75,6 +77,7 @@ public class Eksamen  implements FintModelObject {
     private String beskrivelse;
     @NotBlank
     private String navn;
+    private Date oppmotetidspunkt;
     @NotNull
     private @Valid Identifikator systemId;
     @NotNull
