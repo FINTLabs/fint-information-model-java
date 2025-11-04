@@ -34,6 +34,9 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Enhetsgruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
+        ORGANISASJONSENHET("organisasjonsenhet", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
+        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE),
+        ENHETSTYPE("enhetstype", "no.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE),
         ENHETSGRUPPEMEDLEMSKAP("enhetsgruppemedlemskap", "no.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap", NONE_TO_MANY);
     
         private final String name;

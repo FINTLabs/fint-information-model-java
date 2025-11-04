@@ -45,6 +45,27 @@ public class EnhetsgruppeResource implements FintResource {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getOrganisasjonsenhet() {
+        return getLinks().getOrDefault("organisasjonsenhet", Collections.emptyList()); 
+    }
+    public void addOrganisasjonsenhet(Link link) {
+        addLink("organisasjonsenhet", link);
+    }
+    @JsonIgnore
+    public List<Link> getPlattform() {
+        return getLinks().getOrDefault("plattform", Collections.emptyList()); 
+    }
+    public void addPlattform(Link link) {
+        addLink("plattform", link);
+    }
+    @JsonIgnore
+    public List<Link> getEnhetstype() {
+        return getLinks().getOrDefault("enhetstype", Collections.emptyList()); 
+    }
+    public void addEnhetstype(Link link) {
+        addLink("enhetstype", link);
+    }
+    @JsonIgnore
     public List<Link> getEnhetsgruppemedlemskap() {
         return getLinks().getOrDefault("enhetsgruppemedlemskap", Collections.emptyList()); 
     }
