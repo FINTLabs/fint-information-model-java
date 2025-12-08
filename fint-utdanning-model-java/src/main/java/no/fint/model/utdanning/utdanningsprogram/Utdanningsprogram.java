@@ -34,17 +34,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Utdanningsprogram extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
-        PROGRAMOMRADE("programomrade", "no.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_MANY);
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY, "utdanningsprogram"),
+        PROGRAMOMRADE("programomrade", "no.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_MANY, "utdanningsprogram");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

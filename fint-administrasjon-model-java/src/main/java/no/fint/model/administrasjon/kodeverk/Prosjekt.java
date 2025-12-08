@@ -34,16 +34,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Prosjekt extends Kontodimensjon  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PROSJEKTART("prosjektart", "no.fint.model.administrasjon.kodeverk.Prosjektart", NONE_TO_MANY);
+        PROSJEKTART("prosjektart", "no.fint.model.administrasjon.kodeverk.Prosjektart", NONE_TO_MANY, "prosjekt");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -35,19 +35,21 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Varsel  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        UTSTEDER("utsteder", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE),
-        KARAKTERANSVARLIG("karakteransvarlig", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE),
-        TYPE("type", "no.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE),
-        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.fint.model.utdanning.timeplan.Faggruppemedlemskap", ONE_TO_ONE);
+        UTSTEDER("utsteder", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE, null),
+        KARAKTERANSVARLIG("karakteransvarlig", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE, null),
+        TYPE("type", "no.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE, null),
+        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.fint.model.utdanning.timeplan.Faggruppemedlemskap", ONE_TO_ONE, "varsel");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

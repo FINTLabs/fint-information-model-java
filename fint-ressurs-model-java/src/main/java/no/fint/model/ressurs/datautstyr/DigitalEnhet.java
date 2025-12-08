@@ -34,24 +34,26 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class DigitalEnhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ADMINISTRATOR("administrator", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        EIER("eier", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_ONE),
-        STATUS("status", "no.fint.model.ressurs.kodeverk.Status", NONE_TO_ONE),
-        PRODUSENT("produsent", "no.fint.model.ressurs.kodeverk.Produsent", NONE_TO_ONE),
-        ENHETSTYPE("enhetstype", "no.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE),
-        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE),
-        ENHETSGRUPPEMEDLEMSKAP("enhetsgruppemedlemskap", "no.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap", NONE_TO_MANY);
+        ADMINISTRATOR("administrator", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE, null),
+        EIER("eier", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE, null),
+        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null),
+        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_ONE, null),
+        STATUS("status", "no.fint.model.ressurs.kodeverk.Status", NONE_TO_ONE, null),
+        PRODUSENT("produsent", "no.fint.model.ressurs.kodeverk.Produsent", NONE_TO_ONE, null),
+        ENHETSTYPE("enhetstype", "no.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null),
+        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null),
+        ENHETSGRUPPEMEDLEMSKAP("enhetsgruppemedlemskap", "no.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap", NONE_TO_MANY, "digitalEnhet");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

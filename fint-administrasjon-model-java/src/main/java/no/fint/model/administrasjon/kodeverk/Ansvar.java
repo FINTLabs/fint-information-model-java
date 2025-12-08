@@ -34,25 +34,26 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Ansvar extends Kontodimensjon  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        OVERORDNET("overordnet", "no.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE),
-        UNDERORDNET("underordnet", "no.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY),
-        ORGANISASJONSELEMENT("organisasjonselement", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY);
+        OVERORDNET("overordnet", "no.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE, "underordnet"),
+        UNDERORDNET("underordnet", "no.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY, "overordnet"),
+        ORGANISASJONSELEMENT("organisasjonselement", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY, "ansvar");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }

@@ -34,17 +34,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Basisgruppemedlemskap extends Gruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        BASISGRUPPE("basisgruppe", "no.fint.model.utdanning.elev.Basisgruppe", ONE_TO_ONE),
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE);
+        BASISGRUPPE("basisgruppe", "no.fint.model.utdanning.elev.Basisgruppe", ONE_TO_ONE, "gruppemedlemskap"),
+        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, "basisgruppemedlemskap");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -34,16 +34,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Kontodimensjon extends Begrep  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FULLMAKT("fullmakt", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY);
+        FULLMAKT("fullmakt", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY, "myndighet");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -30,7 +30,6 @@ public class AktivitetResource extends KontodimensjonResource implements FintRes
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }

@@ -34,17 +34,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Halvarsordensvurdering extends Ordensvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        ELEVVURDERING("elevvurdering", "no.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE);
+        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, "halvarsordensvurdering"),
+        ELEVVURDERING("elevvurdering", "no.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE, "halvarsordensvurdering");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
