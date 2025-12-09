@@ -36,7 +36,6 @@ public class TilskuddFartoy extends Saksmappe  implements FintModelObject {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
         identifikators.put("soknadsnummer", this.soknadsnummer);
 
         return Collections.unmodifiableMap(identifikators);

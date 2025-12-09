@@ -35,26 +35,27 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Personalmappe extends Saksmappe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE),
-        LEDER("leder", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
-        ARBEIDSSTED("arbeidssted", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE);
+        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE, null),
+        LEDER("leder", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE, null),
+        ARBEIDSSTED("arbeidssted", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE, null),
+        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
 
         return Collections.unmodifiableMap(identifikators);
     }

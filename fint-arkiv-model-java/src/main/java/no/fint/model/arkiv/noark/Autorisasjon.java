@@ -34,18 +34,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Autorisasjon  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        TILGANGSRESTRIKSJON("tilgangsrestriksjon", "no.fint.model.arkiv.kodeverk.Tilgangsrestriksjon", ONE_TO_MANY),
-        ADMINISTRATIVENHET("administrativenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_MANY),
-        ARKIVRESSURS("arkivressurs", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_MANY);
+        TILGANGSRESTRIKSJON("tilgangsrestriksjon", "no.fint.model.arkiv.kodeverk.Tilgangsrestriksjon", ONE_TO_MANY, null),
+        ADMINISTRATIVENHET("administrativenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_MANY, null),
+        ARKIVRESSURS("arkivressurs", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_MANY, "autorisasjon");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -34,19 +34,21 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Enhetsgruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ORGANISASJONSENHET("organisasjonsenhet", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE),
-        ENHETSTYPE("enhetstype", "no.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE),
-        ENHETSGRUPPEMEDLEMSKAP("enhetsgruppemedlemskap", "no.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap", NONE_TO_MANY);
+        ORGANISASJONSENHET("organisasjonsenhet", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE, null),
+        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null),
+        ENHETSTYPE("enhetstype", "no.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null),
+        ENHETSGRUPPEMEDLEMSKAP("enhetsgruppemedlemskap", "no.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap", NONE_TO_MANY, "enhetsgruppe");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

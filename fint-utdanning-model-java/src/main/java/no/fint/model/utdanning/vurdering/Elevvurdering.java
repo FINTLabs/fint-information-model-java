@@ -34,24 +34,26 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Elevvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        SLUTTFAGVURDERING("sluttfagvurdering", "no.fint.model.utdanning.vurdering.Sluttfagvurdering", NONE_TO_MANY),
-        UNDERVEISORDENSVURDERING("underveisordensvurdering", "no.fint.model.utdanning.vurdering.Underveisordensvurdering", NONE_TO_MANY),
-        VITNEMALSMERKNAD("vitnemalsmerknad", "no.fint.model.utdanning.kodeverk.Vitnemalsmerknad", NONE_TO_MANY),
-        UNDERVEISFAGVURDERING("underveisfagvurdering", "no.fint.model.utdanning.vurdering.Underveisfagvurdering", NONE_TO_MANY),
-        HALVARSORDENSVURDERING("halvarsordensvurdering", "no.fint.model.utdanning.vurdering.Halvarsordensvurdering", NONE_TO_MANY),
-        HALVARSFAGVURDERING("halvarsfagvurdering", "no.fint.model.utdanning.vurdering.Halvarsfagvurdering", NONE_TO_MANY),
-        SLUTTORDENSVURDERING("sluttordensvurdering", "no.fint.model.utdanning.vurdering.Sluttordensvurdering", NONE_TO_MANY),
-        EKSAMENSVURDERING("eksamensvurdering", "no.fint.model.utdanning.vurdering.Eksamensvurdering", NONE_TO_MANY);
+        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, "elevvurdering"),
+        SLUTTFAGVURDERING("sluttfagvurdering", "no.fint.model.utdanning.vurdering.Sluttfagvurdering", NONE_TO_MANY, "elevvurdering"),
+        UNDERVEISORDENSVURDERING("underveisordensvurdering", "no.fint.model.utdanning.vurdering.Underveisordensvurdering", NONE_TO_MANY, "elevvurdering"),
+        VITNEMALSMERKNAD("vitnemalsmerknad", "no.fint.model.utdanning.kodeverk.Vitnemalsmerknad", NONE_TO_MANY, null),
+        UNDERVEISFAGVURDERING("underveisfagvurdering", "no.fint.model.utdanning.vurdering.Underveisfagvurdering", NONE_TO_MANY, "elevvurdering"),
+        HALVARSORDENSVURDERING("halvarsordensvurdering", "no.fint.model.utdanning.vurdering.Halvarsordensvurdering", NONE_TO_MANY, "elevvurdering"),
+        HALVARSFAGVURDERING("halvarsfagvurdering", "no.fint.model.utdanning.vurdering.Halvarsfagvurdering", NONE_TO_MANY, "elevvurdering"),
+        SLUTTORDENSVURDERING("sluttordensvurdering", "no.fint.model.utdanning.vurdering.Sluttordensvurdering", NONE_TO_MANY, "elevvurdering"),
+        EKSAMENSVURDERING("eksamensvurdering", "no.fint.model.utdanning.vurdering.Eksamensvurdering", NONE_TO_MANY, "elevvurdering");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

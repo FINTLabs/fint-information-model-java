@@ -33,19 +33,21 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Dokumentobjekt  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FILFORMAT("filformat", "no.fint.model.arkiv.kodeverk.Format", NONE_TO_ONE),
-        VARIANTFORMAT("variantFormat", "no.fint.model.arkiv.kodeverk.Variantformat", ONE_TO_ONE),
-        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE),
-        REFERANSEDOKUMENTFIL("referanseDokumentfil", "no.fint.model.arkiv.noark.Dokumentfil", NONE_TO_ONE);
+        FILFORMAT("filformat", "no.fint.model.arkiv.kodeverk.Format", NONE_TO_ONE, null),
+        VARIANTFORMAT("variantFormat", "no.fint.model.arkiv.kodeverk.Variantformat", ONE_TO_ONE, null),
+        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null),
+        REFERANSEDOKUMENTFIL("referanseDokumentfil", "no.fint.model.arkiv.noark.Dokumentfil", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

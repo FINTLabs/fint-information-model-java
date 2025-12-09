@@ -35,18 +35,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Applikasjon  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", NONE_TO_MANY),
-        RESSURS("ressurs", "no.fint.model.ressurs.eiendel.Applikasjonsressurs", NONE_TO_MANY),
-        APPLIKASJONSKATEGORI("applikasjonskategori", "no.fint.model.ressurs.kodeverk.Applikasjonskategori", NONE_TO_MANY);
+        PLATTFORM("plattform", "no.fint.model.ressurs.kodeverk.Plattform", NONE_TO_MANY, null),
+        RESSURS("ressurs", "no.fint.model.ressurs.eiendel.Applikasjonsressurs", NONE_TO_MANY, "applikasjon"),
+        APPLIKASJONSKATEGORI("applikasjonskategori", "no.fint.model.ressurs.kodeverk.Applikasjonskategori", NONE_TO_MANY, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

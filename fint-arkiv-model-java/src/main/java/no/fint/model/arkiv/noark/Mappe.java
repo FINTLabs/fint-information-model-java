@@ -39,18 +39,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Mappe  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE),
-        AVSLUTTETAV("avsluttetAv", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE),
-        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, "mappe"),
+        AVSLUTTETAV("avsluttetAv", "no.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE, null),
+        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

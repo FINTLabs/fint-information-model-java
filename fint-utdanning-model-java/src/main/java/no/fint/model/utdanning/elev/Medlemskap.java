@@ -35,20 +35,22 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Medlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        MEDLEM("medlem", "no.fint.model.utdanning.basisklasser.Utdanningsforhold", ONE_TO_ONE),
-        FORTLOPENDEVURDERING("fortlopendeVurdering", "no.fint.model.utdanning.vurdering.Vurdering", NONE_TO_MANY),
-        GRUPPE("gruppe", "no.fint.model.utdanning.basisklasser.Gruppe", ONE_TO_ONE),
-        ENDELIGVURDERING("endeligVurdering", "no.fint.model.utdanning.vurdering.Vurdering", NONE_TO_ONE),
-        FRAVAR("fravar", "no.fint.model.utdanning.vurdering.Fravar", NONE_TO_MANY);
+        MEDLEM("medlem", "no.fint.model.utdanning.basisklasser.Utdanningsforhold", ONE_TO_ONE, "medlemskap"),
+        FORTLOPENDEVURDERING("fortlopendeVurdering", "no.fint.model.utdanning.vurdering.Vurdering", NONE_TO_MANY, null),
+        GRUPPE("gruppe", "no.fint.model.utdanning.basisklasser.Gruppe", ONE_TO_ONE, "medlemskap"),
+        ENDELIGVURDERING("endeligVurdering", "no.fint.model.utdanning.vurdering.Vurdering", NONE_TO_ONE, null),
+        FRAVAR("fravar", "no.fint.model.utdanning.vurdering.Fravar", NONE_TO_MANY, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

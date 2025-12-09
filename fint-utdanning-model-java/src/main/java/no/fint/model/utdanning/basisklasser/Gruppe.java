@@ -35,18 +35,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Gruppe  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        GREPREFERANSE("grepreferanse", "no.fint.model.utdanning.kodeverk.Grepreferanse", NONE_TO_ONE),
-        VIGOREFERANSE("vigoreferanse", "no.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE),
-        MEDLEMSKAP("medlemskap", "no.fint.model.utdanning.elev.Medlemskap", NONE_TO_MANY);
+        GREPREFERANSE("grepreferanse", "no.fint.model.utdanning.kodeverk.Grepreferanse", NONE_TO_ONE, null),
+        VIGOREFERANSE("vigoreferanse", "no.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE, null),
+        MEDLEMSKAP("medlemskap", "no.fint.model.utdanning.elev.Medlemskap", NONE_TO_MANY, "gruppe");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
