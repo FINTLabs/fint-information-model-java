@@ -57,19 +57,16 @@ subprojects {
         publishing {
             repositories {
                 maven {
-                    url = "https://repo.fintlabs.no/releases"
+                    url "https://repo.fintlabs.no/releases"
                     credentials {
-                        username = System.getenv("REPOSILITE_USERNAME")
-                        password = System.getenv("REPOSILITE_PASSWORD")
-                    }
-                    authentication {
-                        basic(BasicAuthentication)
+                        username System.getenv("REPOSILITE_USERNAME")
+                        password System.getenv("REPOSILITE_PASSWORD")
                     }
                 }
             }
             publications {
-                maven(MavenPublication) {
-                    from(components.java)
+                create('maven', MavenPublication) {
+                    from components.java
                 }
             }
         }
