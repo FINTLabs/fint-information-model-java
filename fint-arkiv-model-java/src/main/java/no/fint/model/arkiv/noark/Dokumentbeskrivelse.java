@@ -37,20 +37,22 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Dokumentbeskrivelse  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        DOKUMENTSTATUS("dokumentstatus", "no.fint.model.arkiv.kodeverk.DokumentStatus", ONE_TO_ONE),
-        DOKUMENTTYPE("dokumentType", "no.fint.model.arkiv.kodeverk.DokumentType", ONE_TO_ONE),
-        TILKNYTTETREGISTRERINGSOM("tilknyttetRegistreringSom", "no.fint.model.arkiv.kodeverk.TilknyttetRegistreringSom", ONE_TO_MANY),
-        TILKNYTTETAV("tilknyttetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE),
-        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        DOKUMENTSTATUS("dokumentstatus", "no.fint.model.arkiv.kodeverk.DokumentStatus", ONE_TO_ONE, null),
+        DOKUMENTTYPE("dokumentType", "no.fint.model.arkiv.kodeverk.DokumentType", ONE_TO_ONE, null),
+        TILKNYTTETREGISTRERINGSOM("tilknyttetRegistreringSom", "no.fint.model.arkiv.kodeverk.TilknyttetRegistreringSom", ONE_TO_MANY, null),
+        TILKNYTTETAV("tilknyttetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null),
+        OPPRETTETAV("opprettetAv", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

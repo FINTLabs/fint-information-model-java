@@ -34,17 +34,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Rom  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY),
-        EKSAMEN("eksamen", "no.fint.model.utdanning.timeplan.Eksamen", NONE_TO_MANY);
+        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY, "rom"),
+        EKSAMEN("eksamen", "no.fint.model.utdanning.timeplan.Eksamen", NONE_TO_MANY, "rom");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

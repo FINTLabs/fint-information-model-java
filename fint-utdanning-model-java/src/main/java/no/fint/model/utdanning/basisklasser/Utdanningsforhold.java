@@ -34,16 +34,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Utdanningsforhold  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        MEDLEMSKAP("medlemskap", "no.fint.model.utdanning.elev.Medlemskap", NONE_TO_MANY);
+        MEDLEMSKAP("medlemskap", "no.fint.model.utdanning.elev.Medlemskap", NONE_TO_MANY, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

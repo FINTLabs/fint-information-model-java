@@ -34,20 +34,22 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Skoleressurs  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PERSON("person", "no.fint.model.felles.Person", NONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
-        SENSOR("sensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_MANY);
+        PERSON("person", "no.fint.model.felles.Person", NONE_TO_ONE, null),
+        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE, "skoleressurs"),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, "skoleressurs"),
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY, "skoleressurs"),
+        SENSOR("sensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_MANY, "skoleressurs");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

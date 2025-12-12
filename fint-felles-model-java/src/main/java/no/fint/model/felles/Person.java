@@ -38,27 +38,29 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Person extends Aktor  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        STATSBORGERSKAP("statsborgerskap", "no.fint.model.felles.kodeverk.iso.Landkode", NONE_TO_MANY),
-        KOMMUNE("kommune", "no.fint.model.felles.kodeverk.Kommune", NONE_TO_ONE),
-        KJONN("kjonn", "no.fint.model.felles.kodeverk.iso.Kjonn", NONE_TO_ONE),
-        FORELDREANSVAR("foreldreansvar", "no.fint.model.felles.Person", NONE_TO_MANY),
-        MALFORM("malform", "no.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        MORSMAL("morsmal", "no.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE),
-        PARORENDE("parorende", "no.fint.model.felles.Kontaktperson", NONE_TO_MANY),
-        FORELDRE("foreldre", "no.fint.model.felles.Person", NONE_TO_MANY),
-        LARLING("larling", "no.fint.model.utdanning.larling.Larling", NONE_TO_MANY),
-        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_ONE),
-        OTUNGDOM("otungdom", "no.fint.model.utdanning.ot.OtUngdom", NONE_TO_ONE);
+        STATSBORGERSKAP("statsborgerskap", "no.fint.model.felles.kodeverk.iso.Landkode", NONE_TO_MANY, null),
+        KOMMUNE("kommune", "no.fint.model.felles.kodeverk.Kommune", NONE_TO_ONE, null),
+        KJONN("kjonn", "no.fint.model.felles.kodeverk.iso.Kjonn", NONE_TO_ONE, null),
+        FORELDREANSVAR("foreldreansvar", "no.fint.model.felles.Person", NONE_TO_MANY, "foreldre"),
+        MALFORM("malform", "no.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE, null),
+        PERSONALRESSURS("personalressurs", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, "person"),
+        MORSMAL("morsmal", "no.fint.model.felles.kodeverk.iso.Sprak", NONE_TO_ONE, null),
+        PARORENDE("parorende", "no.fint.model.felles.Kontaktperson", NONE_TO_MANY, "kontaktperson"),
+        FORELDRE("foreldre", "no.fint.model.felles.Person", NONE_TO_MANY, "foreldreansvar"),
+        LARLING("larling", "no.fint.model.utdanning.larling.Larling", NONE_TO_MANY, "person"),
+        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_ONE, "person"),
+        OTUNGDOM("otungdom", "no.fint.model.utdanning.ot.OtUngdom", NONE_TO_ONE, "person");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

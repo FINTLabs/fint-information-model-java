@@ -37,18 +37,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Lonn  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ANVISER("anviser", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        KONTERER("konterer", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        ATTESTANT("attestant", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE);
+        ANVISER("anviser", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null),
+        KONTERER("konterer", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null),
+        ATTESTANT("attestant", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

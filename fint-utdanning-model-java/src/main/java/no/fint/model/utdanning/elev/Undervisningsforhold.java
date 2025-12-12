@@ -34,23 +34,25 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Undervisningsforhold extends Utdanningsforhold  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_ONE),
-        BASISGRUPPE("basisgruppe", "no.fint.model.utdanning.elev.Basisgruppe", NONE_TO_MANY),
-        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY),
-        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
-        SKOLERESSURS("skoleressurs", "no.fint.model.utdanning.elev.Skoleressurs", ONE_TO_ONE);
+        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_ONE, "undervisningsforhold"),
+        BASISGRUPPE("basisgruppe", "no.fint.model.utdanning.elev.Basisgruppe", NONE_TO_MANY, "undervisningsforhold"),
+        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY, "undervisningsforhold"),
+        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY, "undervisningsforhold"),
+        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY, "undervisningsforhold"),
+        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY, "undervisningsforhold"),
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE, "undervisningsforhold"),
+        SKOLERESSURS("skoleressurs", "no.fint.model.utdanning.elev.Skoleressurs", ONE_TO_ONE, "undervisningsforhold");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

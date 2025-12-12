@@ -34,16 +34,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class OtEnhet extends Begrep  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KOMMUNE("kommune", "no.fint.model.felles.kodeverk.Kommune", ONE_TO_ONE);
+        KOMMUNE("kommune", "no.fint.model.felles.kodeverk.Kommune", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
