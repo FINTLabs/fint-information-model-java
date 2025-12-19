@@ -34,19 +34,21 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class OtUngdom  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE),
-        STATUS("status", "no.fint.model.utdanning.kodeverk.OtStatus", NONE_TO_ONE),
-        ENHET("enhet", "no.fint.model.utdanning.kodeverk.OtEnhet", NONE_TO_ONE),
-        PROGRAMOMRADE("programomrade", "no.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_ONE);
+        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE, "otungdom"),
+        STATUS("status", "no.fint.model.utdanning.kodeverk.OtStatus", NONE_TO_ONE, null),
+        ENHET("enhet", "no.fint.model.utdanning.kodeverk.OtEnhet", NONE_TO_ONE, null),
+        PROGRAMOMRADE("programomrade", "no.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

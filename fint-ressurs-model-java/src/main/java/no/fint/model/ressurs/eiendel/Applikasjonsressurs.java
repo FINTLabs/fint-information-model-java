@@ -35,21 +35,23 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Applikasjonsressurs  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        BRUKERTYPE("brukertype", "no.fint.model.ressurs.kodeverk.Brukertype", ONE_TO_MANY),
-        HANDHEVINGSTYPE("handhevingstype", "no.fint.model.ressurs.kodeverk.Handhevingstype", NONE_TO_ONE),
-        LISENSMODELL("lisensmodell", "no.fint.model.ressurs.kodeverk.Lisensmodell", NONE_TO_ONE),
-        RESSURSTILGJENGELIGHET("ressurstilgjengelighet", "no.fint.model.ressurs.eiendel.Applikasjonsressurstilgjengelighet", NONE_TO_MANY),
-        EIER("eier", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        APPLIKASJON("applikasjon", "no.fint.model.ressurs.eiendel.Applikasjon", ONE_TO_ONE);
+        BRUKERTYPE("brukertype", "no.fint.model.ressurs.kodeverk.Brukertype", ONE_TO_MANY, null),
+        HANDHEVINGSTYPE("handhevingstype", "no.fint.model.ressurs.kodeverk.Handhevingstype", NONE_TO_ONE, null),
+        LISENSMODELL("lisensmodell", "no.fint.model.ressurs.kodeverk.Lisensmodell", NONE_TO_ONE, null),
+        RESSURSTILGJENGELIGHET("ressurstilgjengelighet", "no.fint.model.ressurs.eiendel.Applikasjonsressurstilgjengelighet", NONE_TO_MANY, "ressurs"),
+        EIER("eier", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE, null),
+        APPLIKASJON("applikasjon", "no.fint.model.ressurs.eiendel.Applikasjon", ONE_TO_ONE, "ressurs");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

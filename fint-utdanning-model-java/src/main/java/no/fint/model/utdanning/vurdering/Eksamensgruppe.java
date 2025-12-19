@@ -35,25 +35,27 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Eksamensgruppe extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
-        EKSAMEN("eksamen", "no.fint.model.utdanning.timeplan.Eksamen", NONE_TO_ONE),
-        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
-        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", ONE_TO_ONE),
-        EKSAMENSFORM("eksamensform", "no.fint.model.utdanning.kodeverk.Eksamensform", NONE_TO_ONE),
-        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap", NONE_TO_MANY),
-        SENSOR("sensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_MANY);
+        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY, "eksamensgruppe"),
+        EKSAMEN("eksamen", "no.fint.model.utdanning.timeplan.Eksamen", NONE_TO_ONE, "eksamensgruppe"),
+        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE, "eksamensgruppe"),
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE, "eksamensgruppe"),
+        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", ONE_TO_ONE, null),
+        EKSAMENSFORM("eksamensform", "no.fint.model.utdanning.kodeverk.Eksamensform", NONE_TO_ONE, null),
+        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, "eksamensgruppe"),
+        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap", NONE_TO_MANY, "eksamensgruppe"),
+        SENSOR("sensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_MANY, "eksamensgruppe");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

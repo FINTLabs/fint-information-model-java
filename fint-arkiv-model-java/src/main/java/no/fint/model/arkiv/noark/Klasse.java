@@ -34,16 +34,18 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Klasse  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KLASSIFIKASJONSSYSTEM("klassifikasjonssystem", "no.fint.model.arkiv.noark.Klassifikasjonssystem", ONE_TO_ONE);
+        KLASSIFIKASJONSSYSTEM("klassifikasjonssystem", "no.fint.model.arkiv.noark.Klassifikasjonssystem", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

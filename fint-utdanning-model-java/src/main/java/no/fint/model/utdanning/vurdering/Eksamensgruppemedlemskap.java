@@ -34,22 +34,24 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Eksamensgruppemedlemskap extends Gruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        DELEGERTTIL("delegertTil", "no.fint.model.felles.kodeverk.Fylke", NONE_TO_ONE),
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        FORETRUKKETSKOLE("foretrukketSkole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE),
-        NUS("nus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE),
-        BETALINGSSTATUS("betalingsstatus", "no.fint.model.utdanning.kodeverk.Betalingsstatus", NONE_TO_ONE),
-        FORETRUKKETSENSOR("foretrukketSensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_ONE);
+        DELEGERTTIL("delegertTil", "no.fint.model.felles.kodeverk.Fylke", NONE_TO_ONE, null),
+        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, "eksamensgruppemedlemskap"),
+        FORETRUKKETSKOLE("foretrukketSkole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE, null),
+        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE, "gruppemedlemskap"),
+        NUS("nus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE, null),
+        BETALINGSSTATUS("betalingsstatus", "no.fint.model.utdanning.kodeverk.Betalingsstatus", NONE_TO_ONE, null),
+        FORETRUKKETSENSOR("foretrukketSensor", "no.fint.model.utdanning.vurdering.Sensor", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

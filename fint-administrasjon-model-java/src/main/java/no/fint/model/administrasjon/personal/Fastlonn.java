@@ -34,17 +34,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fastlonn extends Lonn  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        LONNSART("lonnsart", "no.fint.model.administrasjon.kodeverk.Lonnsart", NONE_TO_ONE),
-        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_ONE);
+        LONNSART("lonnsart", "no.fint.model.administrasjon.kodeverk.Lonnsart", NONE_TO_ONE, null),
+        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_ONE, "fastlonn");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

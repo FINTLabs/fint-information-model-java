@@ -36,21 +36,23 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fravar  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FRAVARSGRUNN("fravarsgrunn", "no.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE),
-        FRAVARSTYPE("fravarstype", "no.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE),
-        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY),
-        FORTSETTELSE("fortsettelse", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE),
-        GODKJENNER("godkjenner", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        FORTSETTER("fortsetter", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE);
+        FRAVARSGRUNN("fravarsgrunn", "no.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE, null),
+        FRAVARSTYPE("fravarstype", "no.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE, null),
+        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY, "fravar"),
+        FORTSETTELSE("fortsettelse", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE, "fortsetter"),
+        GODKJENNER("godkjenner", "no.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null),
+        FORTSETTER("fortsetter", "no.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE, "fortsettelse");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

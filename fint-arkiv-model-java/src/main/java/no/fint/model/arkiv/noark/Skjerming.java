@@ -33,17 +33,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Skjerming  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        SKJERMINGSHJEMMEL("skjermingshjemmel", "no.fint.model.arkiv.kodeverk.Skjermingshjemmel", ONE_TO_ONE),
-        TILGANGSRESTRIKSJON("tilgangsrestriksjon", "no.fint.model.arkiv.kodeverk.Tilgangsrestriksjon", ONE_TO_ONE);
+        SKJERMINGSHJEMMEL("skjermingshjemmel", "no.fint.model.arkiv.kodeverk.Skjermingshjemmel", ONE_TO_ONE, null),
+        TILGANGSRESTRIKSJON("tilgangsrestriksjon", "no.fint.model.arkiv.kodeverk.Tilgangsrestriksjon", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

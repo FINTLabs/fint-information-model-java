@@ -34,18 +34,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Arkivdel  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KLASSIFIKASJONSSYSTEM("klassifikasjonssystem", "no.fint.model.arkiv.noark.Klassifikasjonssystem", NONE_TO_MANY),
-        REGISTRERING("registrering", "no.fint.model.arkiv.noark.Registrering", NONE_TO_MANY),
-        MAPPE("mappe", "no.fint.model.arkiv.noark.Mappe", NONE_TO_MANY);
+        KLASSIFIKASJONSSYSTEM("klassifikasjonssystem", "no.fint.model.arkiv.noark.Klassifikasjonssystem", NONE_TO_MANY, "arkivdel"),
+        REGISTRERING("registrering", "no.fint.model.arkiv.noark.Registrering", NONE_TO_MANY, "arkivdel"),
+        MAPPE("mappe", "no.fint.model.arkiv.noark.Mappe", NONE_TO_MANY, "arkivdel");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -36,17 +36,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Klassifikasjonssystem  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KLASSIFIKASJONSTYPE("klassifikasjonstype", "no.fint.model.arkiv.kodeverk.Klassifikasjonstype", NONE_TO_ONE),
-        ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", ONE_TO_MANY);
+        KLASSIFIKASJONSTYPE("klassifikasjonstype", "no.fint.model.arkiv.kodeverk.Klassifikasjonstype", NONE_TO_ONE, null),
+        ARKIVDEL("arkivdel", "no.fint.model.arkiv.noark.Arkivdel", ONE_TO_MANY, "klassifikasjonssystem");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

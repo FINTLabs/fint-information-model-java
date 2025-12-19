@@ -34,22 +34,24 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Persongruppe extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_MANY),
-        PERSONGRUPPEMEDLEMSKAP("persongruppemedlemskap", "no.fint.model.utdanning.elev.Persongruppemedlemskap", NONE_TO_MANY),
-        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY),
-        SKOLERESSURS("skoleressurs", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_MANY),
-        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_MANY);
+        ELEV("elev", "no.fint.model.utdanning.elev.Elev", NONE_TO_MANY, null),
+        PERSONGRUPPEMEDLEMSKAP("persongruppemedlemskap", "no.fint.model.utdanning.elev.Persongruppemedlemskap", NONE_TO_MANY, "persongruppe"),
+        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY, null),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, null),
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_MANY, null),
+        SKOLERESSURS("skoleressurs", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_MANY, null),
+        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_MANY, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

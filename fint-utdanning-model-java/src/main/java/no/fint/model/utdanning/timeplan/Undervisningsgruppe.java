@@ -34,23 +34,25 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Undervisningsgruppe extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
-        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_MANY),
-        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY),
-        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
-        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY),
-        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap", NONE_TO_MANY);
+        ELEVFORHOLD("elevforhold", "no.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY, "undervisningsgruppe"),
+        FAG("fag", "no.fint.model.utdanning.timeplan.Fag", ONE_TO_MANY, "undervisningsgruppe"),
+        TERMIN("termin", "no.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY, null),
+        SKOLE("skole", "no.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE, "undervisningsgruppe"),
+        SKOLEAR("skolear", "no.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, "undervisningsgruppe"),
+        TIME("time", "no.fint.model.utdanning.timeplan.Time", NONE_TO_MANY, "undervisningsgruppe"),
+        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap", NONE_TO_MANY, "undervisningsgruppe");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -37,21 +37,23 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        SAKSMAPPETYPE("saksmappetype", "no.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE),
-        SAKSSTATUS("saksstatus", "no.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE),
-        TILGANGSGRUPPE("tilgangsgruppe", "no.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
-        JOURNALENHET("journalenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
-        ADMINISTRATIVENHET("administrativEnhet", "no.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE),
-        SAKSANSVARLIG("saksansvarlig", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        SAKSMAPPETYPE("saksmappetype", "no.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE, null),
+        SAKSSTATUS("saksstatus", "no.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE, null),
+        TILGANGSGRUPPE("tilgangsgruppe", "no.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE, null),
+        JOURNALENHET("journalenhet", "no.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE, null),
+        ADMINISTRATIVENHET("administrativEnhet", "no.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE, null),
+        SAKSANSVARLIG("saksansvarlig", "no.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -37,23 +37,25 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Personalressurs  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PERSONALRESSURSKATEGORI("personalressurskategori", "no.fint.model.administrasjon.kodeverk.Personalressurskategori", ONE_TO_ONE),
-        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY),
-        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE),
-        STEDFORTREDER("stedfortreder", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY),
-        FULLMAKT("fullmakt", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY),
-        LEDER("leder", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY),
-        PERSONALANSVAR("personalansvar", "no.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY),
-        SKOLERESSURS("skoleressurs", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE);
+        PERSONALRESSURSKATEGORI("personalressurskategori", "no.fint.model.administrasjon.kodeverk.Personalressurskategori", ONE_TO_ONE, null),
+        ARBEIDSFORHOLD("arbeidsforhold", "no.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY, "personalressurs"),
+        PERSON("person", "no.fint.model.felles.Person", ONE_TO_ONE, "personalressurs"),
+        STEDFORTREDER("stedfortreder", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY, "stedfortreder"),
+        FULLMAKT("fullmakt", "no.fint.model.administrasjon.fullmakt.Fullmakt", NONE_TO_MANY, "fullmektig"),
+        LEDER("leder", "no.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY, "leder"),
+        PERSONALANSVAR("personalansvar", "no.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY, "personalleder"),
+        SKOLERESSURS("skoleressurs", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE, "personalressurs");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

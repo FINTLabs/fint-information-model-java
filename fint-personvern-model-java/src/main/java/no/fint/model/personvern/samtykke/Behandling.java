@@ -35,19 +35,21 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Behandling  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        BEHANDLINGSGRUNNLAG("behandlingsgrunnlag", "no.fint.model.personvern.kodeverk.Behandlingsgrunnlag", ONE_TO_ONE),
-        PERSONOPPLYSNING("personopplysning", "no.fint.model.personvern.kodeverk.Personopplysning", ONE_TO_ONE),
-        SAMTYKKE("samtykke", "no.fint.model.personvern.samtykke.Samtykke", NONE_TO_MANY),
-        TJENESTE("tjeneste", "no.fint.model.personvern.samtykke.Tjeneste", ONE_TO_ONE);
+        BEHANDLINGSGRUNNLAG("behandlingsgrunnlag", "no.fint.model.personvern.kodeverk.Behandlingsgrunnlag", ONE_TO_ONE, null),
+        PERSONOPPLYSNING("personopplysning", "no.fint.model.personvern.kodeverk.Personopplysning", ONE_TO_ONE, null),
+        SAMTYKKE("samtykke", "no.fint.model.personvern.samtykke.Samtykke", NONE_TO_MANY, "behandling"),
+        TJENESTE("tjeneste", "no.fint.model.personvern.samtykke.Tjeneste", ONE_TO_ONE, "behandling");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -35,20 +35,22 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Karakterhistorie  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        OPPDATERTAV("oppdatertAv", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE),
-        OPPRINNELIGKARAKTERVERDI("opprinneligKarakterverdi", "no.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE),
-        OPPRINNELIGKARAKTERSTATUS("opprinneligKarakterstatus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE),
-        KARAKTERVERDI("karakterverdi", "no.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE),
-        KARAKTERSTATUS("karakterstatus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE);
+        OPPDATERTAV("oppdatertAv", "no.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE, null),
+        OPPRINNELIGKARAKTERVERDI("opprinneligKarakterverdi", "no.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE, null),
+        OPPRINNELIGKARAKTERSTATUS("opprinneligKarakterstatus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE, null),
+        KARAKTERVERDI("karakterverdi", "no.fint.model.utdanning.vurdering.Karakterverdi", NONE_TO_ONE, null),
+        KARAKTERSTATUS("karakterstatus", "no.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

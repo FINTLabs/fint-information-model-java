@@ -34,18 +34,20 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Eksamensvurdering extends Fagvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE),
-        KARAKTERHISTORIE("karakterhistorie", "no.fint.model.utdanning.vurdering.Karakterhistorie", NONE_TO_ONE),
-        ELEVVURDERING("elevvurdering", "no.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE);
+        EKSAMENSGRUPPE("eksamensgruppe", "no.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE, null),
+        KARAKTERHISTORIE("karakterhistorie", "no.fint.model.utdanning.vurdering.Karakterhistorie", NONE_TO_ONE, null),
+        ELEVVURDERING("elevvurdering", "no.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE, "eksamensvurdering");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -37,17 +37,19 @@ import static no.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fakturagrunnlag  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAKTURA("faktura", "no.fint.model.okonomi.faktura.Faktura", NONE_TO_MANY),
-        FAKTURAUTSTEDER("fakturautsteder", "no.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE);
+        FAKTURA("faktura", "no.fint.model.okonomi.faktura.Faktura", NONE_TO_MANY, "fakturagrunnlag"),
+        FAKTURAUTSTEDER("fakturautsteder", "no.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE, "fakturagrunnlag");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
