@@ -10,6 +10,7 @@ allprojects {
         toolchain {
             languageVersion = JavaLanguageVersion.of(21)
         }
+        withSourcesJar()
     }
 
     tasks.withType(JavaCompile).configureEach {
@@ -57,10 +58,10 @@ subprojects {
         publishing {
             repositories {
                 maven {
-                    url "https://repo.fintlabs.no/releases"
+                    url = "https://repo.fintlabs.no/releases"
                     credentials {
-                        username System.getenv("REPOSILITE_USERNAME")
-                        password System.getenv("REPOSILITE_PASSWORD")
+                        username = System.getenv("REPOSILITE_USERNAME")
+                        password = System.getenv("REPOSILITE_PASSWORD")
                     }
                 }
             }
