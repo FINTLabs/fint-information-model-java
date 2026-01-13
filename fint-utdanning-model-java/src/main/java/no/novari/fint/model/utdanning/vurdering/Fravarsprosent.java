@@ -1,0 +1,39 @@
+package no.novari.fint.model.utdanning.vurdering;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import javax.validation.constraints.*;
+import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.FintComplexDatatypeObject;
+import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintRelation;
+
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
+
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode
+@ToString
+public class Fravarsprosent  implements FintComplexDatatypeObject {
+
+    public boolean isWriteable() {
+        return this.writeable;
+    }
+
+    @JsonIgnore
+    private final boolean writeable = false;
+    @NotNull
+    private Integer fravarstimer;
+    @NotNull
+    private Integer prosent;
+    @NotNull
+    private Integer undervisningstimer;
+}

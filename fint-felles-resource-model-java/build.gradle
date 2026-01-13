@@ -1,11 +1,4 @@
 dependencies {
-    compile project(":fint-felles-model-java")
-    compile('no.fintlabs:fint-model-resource:0.5.0')
-
-    testCompile("org.spockframework:spock-core:${spockSpringVersion}")
-    testCompile("org.spockframework:spock-spring:${spockSpringVersion}")
-    testCompile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
-    testCompile('org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE')
-    testCompile('org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE')
+    api project(":fint-felles-model-java")
+    api("no.novari:fint-model-resource:${fintModelResourceVersion}")
 }

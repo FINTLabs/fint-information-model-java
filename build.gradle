@@ -1,18 +1,27 @@
 plugins {
-    id 'com.github.ben-manes.versions' version '0.27.0'
+    id 'com.github.ben-manes.versions' version '0.53.0'
 }
 
 apply plugin: 'java-library'
 apply plugin: 'maven-publish'
 
 allprojects {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+        withSourcesJar()
+    }
 
-    project.group = 'no.fint'
+    tasks.withType(JavaCompile).configureEach {
+        options.release = 8
+        options.compilerArgs += ['-Xlint:-options']
+    }
+
+    project.group = 'no.novari'
 
     repositories {
-        maven { url 'https://repo.fintlabs.no/releases' }
+        maven { url = 'https://repo.fintlabs.no/releases' }
         mavenLocal()
         mavenCentral()
     }
@@ -21,13 +30,18 @@ allprojects {
 subprojects {
     apply plugin: 'java-library'
     apply plugin: 'groovy'
-    apply plugin: 'maven-publish'
-    apply from: 'https://raw.githubusercontent.com/FINTLabs/fint-buildscripts/v1.8.0/dependencies.gradle'
+
+    configurations {
+        annotationProcessor
+    }
 
     dependencies {
+        annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
-        implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.3")
-        implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
+        implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
+        implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
+        implementation("javax.validation:validation-api:2.0.1.Final")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.2")
     }
 
     test {
@@ -36,22 +50,23 @@ subprojects {
         }
     }
 
-    publishing {
-        repositories {
-            maven {
-                url "https://repo.fintlabs.no/releases"
-                credentials {
-                    username = System.getenv("REPOSILITE_USERNAME")
-                    password = System.getenv("REPOSILITE_PASSWORD")
-                }
-                authentication {
-                    basic(BasicAuthentication)
+    if (!project.name.endsWith('-tests')) {
+        apply plugin: 'maven-publish'
+
+        publishing {
+            repositories {
+                maven {
+                    url = "https://repo.fintlabs.no/releases"
+                    credentials {
+                        username = System.getenv("REPOSILITE_USERNAME")
+                        password = System.getenv("REPOSILITE_PASSWORD")
+                    }
                 }
             }
-        }
-        publications {
-            maven(MavenPublication) {
-                from(components.java)
+            publications {
+                create('maven', MavenPublication) {
+                    from components.java
+                }
             }
         }
     }

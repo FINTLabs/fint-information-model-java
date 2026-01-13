@@ -1,0 +1,19 @@
+{
+  "systemId": {
+    "gyldighetsperiode": null,
+    "identifikatorverdi": "ABCD1234"
+  },
+  "type": "forelder",
+  "_links": {
+    "person": [
+      {
+        "href": "${felles.person}/fodselsnummer/12345678901"
+      }
+    ],
+    "kontaktperson": [
+      {
+        "href": "${felles.person}/fodselsnummer/23456789012"
+      }
+    ]
+  }
+}

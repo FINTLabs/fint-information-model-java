@@ -8,3 +8,5 @@ bin/
 *.ipr
 *.iml
 .vscode/
+.java-version
+.DS_Store

@@ -1,0 +1,22 @@
+{
+  "beskrivelse": "Klasse 123",
+  "navn": "ABC123",
+  "systemId": {
+    "identifikatorverdi": "ABC123"
+  },
+  "_links": {
+    "skolear": [
+      {
+        "href": "${utdanning.kodeverk.skolear}/skolear/systemid/139590"
+      }
+    ],
+    "termin": [
+      {
+        "href": "${utdanning.kodeverk.termin}/termin/systemid/268360"
+      },
+      {
+        "href": "${utdanning.kodeverk.termin}/termin/systemid/268361"
+      }
+    ]
+  }
+}
