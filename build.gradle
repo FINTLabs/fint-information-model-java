@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.ben-manes.versions' version '0.51.0'
+    id 'com.github.ben-manes.versions' version '0.53.0'
 }
 
 apply plugin: 'java-library'
@@ -39,11 +39,9 @@ subprojects {
         annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
-        implementation("com.fasterxml.jackson.core:jackson-core:2.20.0")
+        implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
         implementation("javax.validation:validation-api:2.0.1.Final")
-
-        testImplementation(platform("org.junit:junit-bom:5.10.2"))
-        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.2")
     }
 
     test {
