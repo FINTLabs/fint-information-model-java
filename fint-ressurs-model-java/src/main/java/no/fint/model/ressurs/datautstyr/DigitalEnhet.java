@@ -1,4 +1,4 @@
-package no.novari.fint.model.utdanning.timeplan;
+package no.novari.fint.model.ressurs.datautstyr;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,10 +20,7 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-import java.util.Date;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
-
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -34,11 +31,18 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Eksamen  implements FintModelObject {
+public class DigitalEnhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ROM("rom", "no.novari.fint.model.utdanning.timeplan.Rom", NONE_TO_MANY),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY);
+        ADMINISTRATOR("administrator", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
+        EIER("eier", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE),
+        PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
+        ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_ONE),
+        STATUS("status", "no.novari.fint.model.ressurs.kodeverk.Status", NONE_TO_ONE),
+        PRODUSENT("produsent", "no.novari.fint.model.ressurs.kodeverk.Produsent", NONE_TO_ONE),
+        ENHETSTYPE("enhetstype", "no.novari.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE),
+        PLATTFORM("plattform", "no.novari.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE),
+        ENHETSGRUPPEMEDLEMSKAP("enhetsgruppemedlemskap", "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap", NONE_TO_MANY);
     
         private final String name;
         private final String packageName;
@@ -54,6 +58,7 @@ public class Eksamen  implements FintModelObject {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
+        identifikators.put("dataobjektId", this.dataobjektId);
         identifikators.put("systemId", this.systemId);
 
         return Collections.unmodifiableMap(identifikators);
@@ -72,15 +77,15 @@ public class Eksamen  implements FintModelObject {
     }
 
     @JsonIgnore
-    private final boolean writeable = false;
+    private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    private String beskrivelse;
-    @NotBlank
+    private @Valid Identifikator dataobjektId;
+    private Boolean flerbrukerenhet;
     private String navn;
-    private @Valid Date oppmotetidspunkt;
+    private Boolean privateid;
+    @NotBlank
+    private String serienummer;
     @NotNull
     private @Valid Identifikator systemId;
-    @NotNull
-    private @Valid Periode tidsrom;
 }

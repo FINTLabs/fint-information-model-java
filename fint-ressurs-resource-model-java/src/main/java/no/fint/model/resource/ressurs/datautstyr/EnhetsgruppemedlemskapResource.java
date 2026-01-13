@@ -1,4 +1,4 @@
-package no.novari.fint.model.resource.utdanning.timeplan;
+package no.novari.fint.model.resource.ressurs.datautstyr;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,23 +20,16 @@ import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-import java.util.Date;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class EksamenResource implements FintResource {
+public class EnhetsgruppemedlemskapResource implements FintResource {
     // Attributes
-    private String beskrivelse;
-    @NotBlank
-    private String navn;
-    private @Valid Date oppmotetidspunkt;
     @NotNull
     private @Valid Identifikator systemId;
-    @NotNull
-    private @Valid Periode tidsrom;
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
@@ -50,17 +43,17 @@ public class EksamenResource implements FintResource {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getRom() {
-        return getLinks().getOrDefault("rom", Collections.emptyList()); 
+    public List<Link> getDigitalEnhet() {
+        return getLinks().getOrDefault("digitalEnhet", Collections.emptyList()); 
     }
-    public void addRom(Link link) {
-        addLink("rom", link);
+    public void addDigitalEnhet(Link link) {
+        addLink("digitalEnhet", link);
     }
     @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    public List<Link> getEnhetsgruppe() {
+        return getLinks().getOrDefault("enhetsgruppe", Collections.emptyList()); 
     }
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
+    public void addEnhetsgruppe(Link link) {
+        addLink("enhetsgruppe", link);
     }
 }

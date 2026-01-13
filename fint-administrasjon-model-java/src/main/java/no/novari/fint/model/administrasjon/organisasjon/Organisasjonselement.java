@@ -36,12 +36,13 @@ public class Organisasjonselement extends Enhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
         ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY),
+        ORGANISASJONSTYPE("organisasjonstype", "no.novari.fint.model.administrasjon.kodeverk.Organisasjonstype", NONE_TO_ONE),
         LEDER("leder", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
         OVERORDNET("overordnet", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
         UNDERORDNET("underordnet", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY),
         SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", NONE_TO_ONE),
         ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", NONE_TO_MANY);
-    
+
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;

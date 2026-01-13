@@ -58,6 +58,13 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
         addLink("ansvar", link);
     }
     @JsonIgnore
+    public List<Link> getOrganisasjonstype() {
+        return getLinks().getOrDefault("organisasjonstype", Collections.emptyList()); 
+    }
+    public void addOrganisasjonstype(Link link) {
+        addLink("organisasjonstype", link);
+    }
+    @JsonIgnore
     public List<Link> getLeder() {
         return getLinks().getOrDefault("leder", Collections.emptyList()); 
     }

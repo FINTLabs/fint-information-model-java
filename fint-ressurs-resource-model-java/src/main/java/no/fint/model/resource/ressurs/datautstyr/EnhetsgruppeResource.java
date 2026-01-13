@@ -1,4 +1,4 @@
-package no.novari.fint.model.resource.utdanning.timeplan;
+package no.novari.fint.model.resource.ressurs.datautstyr;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,23 +20,18 @@ import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-import java.util.Date;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class EksamenResource implements FintResource {
+public class EnhetsgruppeResource implements FintResource {
     // Attributes
-    private String beskrivelse;
     @NotBlank
     private String navn;
-    private @Valid Date oppmotetidspunkt;
     @NotNull
     private @Valid Identifikator systemId;
-    @NotNull
-    private @Valid Periode tidsrom;
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
@@ -50,17 +45,31 @@ public class EksamenResource implements FintResource {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getRom() {
-        return getLinks().getOrDefault("rom", Collections.emptyList()); 
+    public List<Link> getOrganisasjonsenhet() {
+        return getLinks().getOrDefault("organisasjonsenhet", Collections.emptyList()); 
     }
-    public void addRom(Link link) {
-        addLink("rom", link);
+    public void addOrganisasjonsenhet(Link link) {
+        addLink("organisasjonsenhet", link);
     }
     @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    public List<Link> getPlattform() {
+        return getLinks().getOrDefault("plattform", Collections.emptyList()); 
     }
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
+    public void addPlattform(Link link) {
+        addLink("plattform", link);
+    }
+    @JsonIgnore
+    public List<Link> getEnhetstype() {
+        return getLinks().getOrDefault("enhetstype", Collections.emptyList()); 
+    }
+    public void addEnhetstype(Link link) {
+        addLink("enhetstype", link);
+    }
+    @JsonIgnore
+    public List<Link> getEnhetsgruppemedlemskap() {
+        return getLinks().getOrDefault("enhetsgruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addEnhetsgruppemedlemskap(Link link) {
+        addLink("enhetsgruppemedlemskap", link);
     }
 }
