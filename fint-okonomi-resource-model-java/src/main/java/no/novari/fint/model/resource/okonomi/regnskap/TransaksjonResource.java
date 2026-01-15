@@ -22,6 +22,7 @@ import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.okonomi.regnskap.Bilag;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -36,6 +37,7 @@ public class TransaksjonResource implements FintResource {
     @NotNull
     private Date forfallsdato;
     private Date oppdateringstidspunkt;
+    @NotNull
     private @Valid Identifikator transaksjonsId;
     private Date transaksjonstidspunkt;
     @JsonIgnore

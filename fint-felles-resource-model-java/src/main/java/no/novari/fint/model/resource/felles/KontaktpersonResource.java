@@ -22,6 +22,7 @@ import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -29,8 +30,6 @@ import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
 @ToString
 public class KontaktpersonResource implements FintResource {
     // Attributes
-    @Deprecated
-    private Boolean foreldreansvar;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Personnavn navn;
     @NotNull
@@ -55,14 +54,5 @@ public class KontaktpersonResource implements FintResource {
     }
     public void addKontaktperson(Link link) {
         addLink("kontaktperson", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getPerson() {
-        return getLinks().getOrDefault("person", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addPerson(Link link) {
-        addLink("person", link);
     }
 }

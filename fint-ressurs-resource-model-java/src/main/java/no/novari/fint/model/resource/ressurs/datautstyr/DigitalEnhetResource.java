@@ -85,13 +85,6 @@ public class DigitalEnhetResource implements FintResource {
         addLink("status", link);
     }
     @JsonIgnore
-    public List<Link> getProdusent() {
-        return getLinks().getOrDefault("produsent", Collections.emptyList()); 
-    }
-    public void addProdusent(Link link) {
-        addLink("produsent", link);
-    }
-    @JsonIgnore
     public List<Link> getEnhetstype() {
         return getLinks().getOrDefault("enhetstype", Collections.emptyList()); 
     }
@@ -104,6 +97,13 @@ public class DigitalEnhetResource implements FintResource {
     }
     public void addPlattform(Link link) {
         addLink("plattform", link);
+    }
+    @JsonIgnore
+    public List<Link> getProdusent() {
+        return getLinks().getOrDefault("produsent", Collections.emptyList()); 
+    }
+    public void addProdusent(Link link) {
+        addLink("produsent", link);
     }
     @JsonIgnore
     public List<Link> getEnhetsgruppemedlemskap() {

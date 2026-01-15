@@ -52,18 +52,18 @@ public class EnhetsgruppeResource implements FintResource {
         addLink("organisasjonsenhet", link);
     }
     @JsonIgnore
-    public List<Link> getPlattform() {
-        return getLinks().getOrDefault("plattform", Collections.emptyList()); 
-    }
-    public void addPlattform(Link link) {
-        addLink("plattform", link);
-    }
-    @JsonIgnore
     public List<Link> getEnhetstype() {
         return getLinks().getOrDefault("enhetstype", Collections.emptyList()); 
     }
     public void addEnhetstype(Link link) {
         addLink("enhetstype", link);
+    }
+    @JsonIgnore
+    public List<Link> getPlattform() {
+        return getLinks().getOrDefault("plattform", Collections.emptyList()); 
+    }
+    public void addPlattform(Link link) {
+        addLink("plattform", link);
     }
     @JsonIgnore
     public List<Link> getEnhetsgruppemedlemskap() {
