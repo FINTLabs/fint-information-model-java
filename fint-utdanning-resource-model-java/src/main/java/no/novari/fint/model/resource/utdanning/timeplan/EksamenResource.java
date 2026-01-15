@@ -15,12 +15,12 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
@@ -32,7 +32,7 @@ public class EksamenResource implements FintResource {
     private String beskrivelse;
     @NotBlank
     private String navn;
-    private @Valid Date oppmotetidspunkt;
+    private Date oppmotetidspunkt;
     @NotNull
     private @Valid Identifikator systemId;
     @NotNull

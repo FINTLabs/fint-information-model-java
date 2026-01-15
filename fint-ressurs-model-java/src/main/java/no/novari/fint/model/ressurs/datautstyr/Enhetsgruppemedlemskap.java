@@ -16,7 +16,6 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -34,17 +33,19 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Enhetsgruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        DIGITALENHET("digitalEnhet", "no.novari.fint.model.ressurs.datautstyr.DigitalEnhet", ONE_TO_ONE),
-        ENHETSGRUPPE("enhetsgruppe", "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppe", ONE_TO_ONE);
+        DIGITALENHET("digitalEnhet", "no.novari.fint.model.ressurs.datautstyr.DigitalEnhet", ONE_TO_ONE, "enhetsgruppemedlemskap"),
+        ENHETSGRUPPE("enhetsgruppe", "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppe", ONE_TO_ONE, "enhetsgruppemedlemskap");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
