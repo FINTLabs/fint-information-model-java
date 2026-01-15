@@ -22,6 +22,7 @@ import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -35,18 +36,20 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Samtykke  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        BEHANDLING("behandling", "no.novari.fint.model.personvern.samtykke.Behandling", ONE_TO_ONE),
-        PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE),
-        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE);
+        BEHANDLING("behandling", "no.novari.fint.model.personvern.samtykke.Behandling", ONE_TO_ONE, "samtykke"),
+        PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, null),
+        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

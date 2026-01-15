@@ -16,6 +16,7 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -34,17 +35,19 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Vare extends Begrep  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FAKTURAUTSTEDER("fakturautsteder", "no.novari.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE),
-        MERVERDIAVGIFT("merverdiavgift", "no.novari.fint.model.okonomi.kodeverk.Merverdiavgift", ONE_TO_ONE);
+        FAKTURAUTSTEDER("fakturautsteder", "no.novari.fint.model.okonomi.faktura.Fakturautsteder", ONE_TO_ONE, "vare"),
+        MERVERDIAVGIFT("merverdiavgift", "no.novari.fint.model.okonomi.kodeverk.Merverdiavgift", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

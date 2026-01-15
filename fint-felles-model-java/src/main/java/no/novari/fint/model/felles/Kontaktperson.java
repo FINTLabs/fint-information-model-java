@@ -22,6 +22,7 @@ import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
 import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -35,17 +36,18 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Kontaktperson  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KONTAKTPERSON("kontaktperson", "no.novari.fint.model.felles.Person", NONE_TO_MANY),
-        PERSON("person", "no.novari.fint.model.felles.Person", NONE_TO_ONE);
+        KONTAKTPERSON("kontaktperson", "no.novari.fint.model.felles.Person", NONE_TO_MANY, "parorende");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -73,8 +75,6 @@ public class Kontaktperson  implements FintModelObject {
     private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    @Deprecated
-    private Boolean foreldreansvar;
     private @Valid Kontaktinformasjon kontaktinformasjon;
     private @Valid Personnavn navn;
     @NotNull

@@ -21,6 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -34,17 +35,19 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Applikasjonsressurstilgjengelighet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        KONSUMENT("konsument", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        RESSURS("ressurs", "no.novari.fint.model.ressurs.eiendel.Applikasjonsressurs", ONE_TO_ONE);
+        KONSUMENT("konsument", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE, null),
+        RESSURS("ressurs", "no.novari.fint.model.ressurs.eiendel.Applikasjonsressurs", ONE_TO_ONE, "ressurstilgjengelighet");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

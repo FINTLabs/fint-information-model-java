@@ -20,6 +20,7 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.basisklasser.Enhet;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
@@ -34,28 +35,30 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Skole extends Enhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ORGANISASJON("organisasjon", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE),
-        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY),
-        SKOLEEIERTYPE("skoleeierType", "no.novari.fint.model.utdanning.kodeverk.Skoleeiertype", NONE_TO_ONE),
-        VIGOREFERANSE("vigoreferanse", "no.novari.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE),
-        BASISGRUPPE("basisgruppe", "no.novari.fint.model.utdanning.elev.Basisgruppe", NONE_TO_MANY),
-        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
-        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY),
-        SKOLERESSURS("skoleressurs", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_MANY),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        FAGGRUPPE("faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_MANY),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY),
-        UTDANNINGSPROGRAM("utdanningsprogram", "no.novari.fint.model.utdanning.utdanningsprogram.Utdanningsprogram", NONE_TO_MANY);
+        ORGANISASJON("organisasjon", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE, "skole"),
+        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY, "skole"),
+        SKOLEEIERTYPE("skoleeierType", "no.novari.fint.model.utdanning.kodeverk.Skoleeiertype", NONE_TO_ONE, null),
+        VIGOREFERANSE("vigoreferanse", "no.novari.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE, null),
+        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY, "skole"),
+        KLASSE("klasse", "no.novari.fint.model.utdanning.elev.Klasse", NONE_TO_MANY, "skole"),
+        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY, "skole"),
+        SKOLERESSURS("skoleressurs", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_MANY, "skole"),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, "skole"),
+        FAGGRUPPE("faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_MANY, "skole"),
+        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY, "skole"),
+        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY, "skole"),
+        UTDANNINGSPROGRAM("utdanningsprogram", "no.novari.fint.model.utdanning.utdanningsprogram.Utdanningsprogram", NONE_TO_MANY, "skole");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

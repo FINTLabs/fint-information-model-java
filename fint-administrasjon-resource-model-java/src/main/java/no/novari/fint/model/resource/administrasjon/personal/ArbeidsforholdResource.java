@@ -21,6 +21,7 @@ import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -204,15 +205,6 @@ public class ArbeidsforholdResource implements FintResource {
     }
     public void addFravar(Link link) {
         addLink("fravar", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getLonn() {
-        return getLinks().getOrDefault("lonn", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addLonn(Link link) {
-        addLink("lonn", link);
     }
     @JsonIgnore
     public List<Link> getVariabellonn() {

@@ -6,8 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
+import lombok.Getter;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
@@ -18,6 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Matrikkelnummer;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.arkiv.noark.Saksmappe;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;

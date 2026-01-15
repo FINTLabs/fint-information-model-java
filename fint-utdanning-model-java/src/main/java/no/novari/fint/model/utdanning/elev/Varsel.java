@@ -21,6 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -34,19 +35,21 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Varsel  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        UTSTEDER("utsteder", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE),
-        KARAKTERANSVARLIG("karakteransvarlig", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE),
-        TYPE("type", "no.novari.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE),
-        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap", ONE_TO_ONE);
+        UTSTEDER("utsteder", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE, null),
+        KARAKTERANSVARLIG("karakteransvarlig", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_ONE, null),
+        TYPE("type", "no.novari.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE, null),
+        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap", ONE_TO_ONE, "varsel");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

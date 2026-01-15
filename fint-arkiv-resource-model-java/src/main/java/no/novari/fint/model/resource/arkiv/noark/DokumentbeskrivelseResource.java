@@ -11,15 +11,19 @@ import lombok.ToString;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintComplexDatatypeObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-
+import no.novari.fint.model.resource.arkiv.noark.DokumentobjektResource;
 import java.util.Date;
+import no.novari.fint.model.resource.arkiv.noark.PartResource;
+import no.novari.fint.model.resource.arkiv.noark.SkjermingResource;
 
 @Data
 @NoArgsConstructor

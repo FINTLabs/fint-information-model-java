@@ -20,6 +20,7 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -33,19 +34,21 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Elevtilrettelegging  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEV("elev", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE),
-        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_ONE),
-        TILRETTELEGGING("tilrettelegging", "no.novari.fint.model.utdanning.kodeverk.Tilrettelegging", ONE_TO_ONE),
-        EKSAMENSFORM("eksamensform", "no.novari.fint.model.utdanning.kodeverk.Eksamensform", NONE_TO_ONE);
+        ELEV("elev", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, "tilrettelegging"),
+        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_ONE, "tilrettelegging"),
+        TILRETTELEGGING("tilrettelegging", "no.novari.fint.model.utdanning.kodeverk.Tilrettelegging", ONE_TO_ONE, null),
+        EKSAMENSFORM("eksamensform", "no.novari.fint.model.utdanning.kodeverk.Eksamensform", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

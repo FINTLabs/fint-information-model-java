@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -32,23 +34,24 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Undervisningsgruppe extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
-        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_MANY),
-        TERMIN("termin", "no.novari.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY),
-        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
-        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        TIME("time", "no.novari.fint.model.utdanning.timeplan.Time", NONE_TO_MANY),
-        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap", NONE_TO_MANY);
+        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_MANY, "undervisningsgruppe"),
+        TERMIN("termin", "no.novari.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY, null),
+        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE, "undervisningsgruppe"),
+        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, "undervisningsgruppe"),
+        TIME("time", "no.novari.fint.model.utdanning.timeplan.Time", NONE_TO_MANY, "undervisningsgruppe"),
+        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap", NONE_TO_MANY, "undervisningsgruppe");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -62,7 +65,6 @@ public class Undervisningsgruppe extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

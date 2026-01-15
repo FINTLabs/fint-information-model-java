@@ -21,7 +21,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import java.util.Date;
-
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
@@ -36,21 +36,23 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fravar  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        FRAVARSGRUNN("fravarsgrunn", "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE),
-        FRAVARSTYPE("fravarstype", "no.novari.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE),
-        ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY),
-        FORTSETTELSE("fortsettelse", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE),
-        GODKJENNER("godkjenner", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        FORTSETTER("fortsetter", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE);
+        FRAVARSGRUNN("fravarsgrunn", "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn", NONE_TO_ONE, null),
+        FRAVARSTYPE("fravarstype", "no.novari.fint.model.administrasjon.kodeverk.Fravarstype", ONE_TO_ONE, null),
+        ARBEIDSFORHOLD("arbeidsforhold", "no.novari.fint.model.administrasjon.personal.Arbeidsforhold", ONE_TO_MANY, "fravar"),
+        FORTSETTELSE("fortsettelse", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE, "fortsetter"),
+        GODKJENNER("godkjenner", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null),
+        FORTSETTER("fortsetter", "no.novari.fint.model.administrasjon.personal.Fravar", NONE_TO_ONE, "fortsettelse");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

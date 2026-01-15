@@ -13,12 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
+import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -29,20 +31,27 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class Basisgruppemedlemskap extends Gruppemedlemskap  implements FintModelObject {
+public class Klasse extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        BASISGRUPPE("basisgruppe", "no.novari.fint.model.utdanning.elev.Basisgruppe", ONE_TO_ONE),
-        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE);
+        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null),
+        TERMIN("termin", "no.novari.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY, null),
+        TRINN("trinn", "no.novari.fint.model.utdanning.utdanningsprogram.Arstrinn", ONE_TO_ONE, "klasse"),
+        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE, "klasse"),
+        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY, "klasse"),
+        KLASSEMEDLEMSKAP("klassemedlemskap", "no.novari.fint.model.utdanning.elev.Klassemedlemskap", NONE_TO_MANY, "klasse"),
+        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY, "klasse");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

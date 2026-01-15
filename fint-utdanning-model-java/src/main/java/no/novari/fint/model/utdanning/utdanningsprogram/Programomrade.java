@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
@@ -32,20 +34,23 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Programomrade extends Gruppe  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
-        UTDANNINGSPROGRAM("utdanningsprogram", "no.novari.fint.model.utdanning.utdanningsprogram.Utdanningsprogram", ONE_TO_MANY),
-        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY),
-        TRINN("trinn", "no.novari.fint.model.utdanning.utdanningsprogram.Arstrinn", NONE_TO_MANY),
-        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrademedlemskap", NONE_TO_MANY);
+        GREPREFERANSE("grepreferanse", "no.novari.fint.model.utdanning.kodeverk.Grepreferanse", NONE_TO_ONE, null),
+        UTDANNINGSPROGRAM("utdanningsprogram", "no.novari.fint.model.utdanning.utdanningsprogram.Utdanningsprogram", ONE_TO_MANY, "programomrade"),
+        VIGOREFERANSE("vigoreferanse", "no.novari.fint.model.utdanning.kodeverk.Vigoreferanse", NONE_TO_ONE, null),
+        FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY, "programomrade"),
+        TRINN("trinn", "no.novari.fint.model.utdanning.utdanningsprogram.Arstrinn", NONE_TO_MANY, "programomrade"),
+        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrademedlemskap", NONE_TO_MANY, "programomrade");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -59,7 +64,6 @@ public class Programomrade extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

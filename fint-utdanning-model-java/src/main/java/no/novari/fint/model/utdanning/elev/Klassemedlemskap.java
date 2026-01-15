@@ -13,12 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-import no.novari.fint.model.utdanning.basisklasser.Gruppe;
+import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -29,26 +31,22 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class Basisgruppe extends Gruppe  implements FintModelObject {
+public class Klassemedlemskap extends Gruppemedlemskap  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", NONE_TO_MANY),
-        TERMIN("termin", "no.novari.fint.model.utdanning.kodeverk.Termin", NONE_TO_MANY),
-        TRINN("trinn", "no.novari.fint.model.utdanning.utdanningsprogram.Arstrinn", ONE_TO_ONE),
-        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
-        UNDERVISNINGSFORHOLD("undervisningsforhold", "no.novari.fint.model.utdanning.elev.Undervisningsforhold", NONE_TO_MANY),
-        GRUPPEMEDLEMSKAP("gruppemedlemskap", "no.novari.fint.model.utdanning.elev.Basisgruppemedlemskap", NONE_TO_MANY),
-        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY);
+        ELEVFORHOLD("elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, "klassemedlemskap"),
+        KLASSE("klasse", "no.novari.fint.model.utdanning.elev.Klasse", ONE_TO_ONE, "klassemedlemskap");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -62,7 +60,6 @@ public class Basisgruppe extends Gruppe  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

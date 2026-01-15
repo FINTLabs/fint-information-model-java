@@ -20,6 +20,7 @@ import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -49,19 +50,5 @@ public class ArkivdelResource implements FintResource {
     }
     public void addKlassifikasjonssystem(Link link) {
         addLink("klassifikasjonssystem", link);
-    }
-    @JsonIgnore
-    public List<Link> getRegistrering() {
-        return getLinks().getOrDefault("registrering", Collections.emptyList()); 
-    }
-    public void addRegistrering(Link link) {
-        addLink("registrering", link);
-    }
-    @JsonIgnore
-    public List<Link> getMappe() {
-        return getLinks().getOrDefault("mappe", Collections.emptyList()); 
-    }
-    public void addMappe(Link link) {
-        addLink("mappe", link);
     }
 }

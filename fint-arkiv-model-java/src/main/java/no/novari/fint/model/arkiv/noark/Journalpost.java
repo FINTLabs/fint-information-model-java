@@ -11,14 +11,18 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import javax.validation.Valid;
-
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintComplexDatatypeObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-
+import no.novari.fint.model.arkiv.noark.Avskrivning;
 import java.util.Date;
+import no.novari.fint.model.arkiv.noark.Registrering;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -32,18 +36,20 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Journalpost extends Registrering  implements FintComplexDatatypeObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        JOURNALPOSTTYPE("journalposttype", "no.novari.fint.model.arkiv.kodeverk.JournalpostType", ONE_TO_ONE),
-        JOURNALSTATUS("journalstatus", "no.novari.fint.model.arkiv.kodeverk.JournalStatus", ONE_TO_ONE),
-        JOURNALENHET("journalenhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE);
+        JOURNALPOSTTYPE("journalposttype", "no.novari.fint.model.arkiv.kodeverk.JournalpostType", ONE_TO_ONE, null),
+        JOURNALSTATUS("journalstatus", "no.novari.fint.model.arkiv.kodeverk.JournalStatus", ONE_TO_ONE, null),
+        JOURNALENHET("journalenhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
