@@ -15,7 +15,6 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
@@ -85,13 +84,6 @@ public class DigitalEnhetResource implements FintResource {
         addLink("status", link);
     }
     @JsonIgnore
-    public List<Link> getProdusent() {
-        return getLinks().getOrDefault("produsent", Collections.emptyList()); 
-    }
-    public void addProdusent(Link link) {
-        addLink("produsent", link);
-    }
-    @JsonIgnore
     public List<Link> getEnhetstype() {
         return getLinks().getOrDefault("enhetstype", Collections.emptyList()); 
     }
@@ -104,6 +96,13 @@ public class DigitalEnhetResource implements FintResource {
     }
     public void addPlattform(Link link) {
         addLink("plattform", link);
+    }
+    @JsonIgnore
+    public List<Link> getProdusent() {
+        return getLinks().getOrDefault("produsent", Collections.emptyList()); 
+    }
+    public void addProdusent(Link link) {
+        addLink("produsent", link);
     }
     @JsonIgnore
     public List<Link> getEnhetsgruppemedlemskap() {

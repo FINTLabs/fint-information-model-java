@@ -15,12 +15,12 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -44,15 +44,6 @@ public class FullmaktResource implements FintResource {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMyndighet() {
-        return getLinks().getOrDefault("myndighet", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMyndighet(Link link) {
-        addLink("myndighet", link);
-    }
     @JsonIgnore
     public List<Link> getRamme() {
         return getLinks().getOrDefault("ramme", Collections.emptyList()); 

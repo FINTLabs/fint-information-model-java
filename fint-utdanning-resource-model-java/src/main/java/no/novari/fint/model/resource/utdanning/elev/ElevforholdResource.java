@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
@@ -62,30 +63,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addElev(Link link) {
         addLink("elev", link);
     }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getSidemal() {
-        return getLinks().getOrDefault("sidemal", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addSidemal(Link link) {
-        addLink("sidemal", link);
-    }
     @JsonIgnore
     public List<Link> getKategori() {
         return getLinks().getOrDefault("kategori", Collections.emptyList()); 
     }
     public void addKategori(Link link) {
         addLink("kategori", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getKroppsoving() {
-        return getLinks().getOrDefault("kroppsoving", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addKroppsoving(Link link) {
-        addLink("kroppsoving", link);
     }
     @JsonIgnore
     public List<Link> getSkole() {
@@ -122,82 +105,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addSkolear(Link link) {
         addLink("skolear", link);
     }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
-    }
-    @JsonIgnore
-    public List<Link> getBasisgruppemedlemskap() {
-        return getLinks().getOrDefault("basisgruppemedlemskap", Collections.emptyList()); 
-    }
-    public void addBasisgruppemedlemskap(Link link) {
-        addLink("basisgruppemedlemskap", link);
-    }
     @JsonIgnore
     public List<Link> getUndervisningsgruppemedlemskap() {
         return getLinks().getOrDefault("undervisningsgruppemedlemskap", Collections.emptyList()); 
     }
     public void addUndervisningsgruppemedlemskap(Link link) {
         addLink("undervisningsgruppemedlemskap", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getVurdering() {
-        return getLinks().getOrDefault("vurdering", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addVurdering(Link link) {
-        addLink("vurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getSluttordensvurdering() {
-        return getLinks().getOrDefault("sluttordensvurdering", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addSluttordensvurdering(Link link) {
-        addLink("sluttordensvurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getKontaktlarergruppe() {
-        return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addKontaktlarergruppe(Link link) {
-        addLink("kontaktlarergruppe", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getUnderveisfagvurdering() {
-        return getLinks().getOrDefault("underveisfagvurdering", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addUnderveisfagvurdering(Link link) {
-        addLink("underveisfagvurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getHalvarsfagvurdering() {
-        return getLinks().getOrDefault("halvarsfagvurdering", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addHalvarsfagvurdering(Link link) {
-        addLink("halvarsfagvurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getSluttfagvurdering() {
-        return getLinks().getOrDefault("sluttfagvurdering", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addSluttfagvurdering(Link link) {
-        addLink("sluttfagvurdering", link);
     }
     @JsonIgnore
     public List<Link> getPersongruppemedlemskap() {
@@ -234,39 +147,12 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addTilrettelegging(Link link) {
         addLink("tilrettelegging", link);
     }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getHalvarsordensvurdering() {
-        return getLinks().getOrDefault("halvarsordensvurdering", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addHalvarsordensvurdering(Link link) {
-        addLink("halvarsordensvurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getProgramomrade() {
-        return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addProgramomrade(Link link) {
-        addLink("programomrade", link);
-    }
     @JsonIgnore
     public List<Link> getElevvurdering() {
         return getLinks().getOrDefault("elevvurdering", Collections.emptyList()); 
     }
     public void addElevvurdering(Link link) {
         addLink("elevvurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getFravar() {
-        return getLinks().getOrDefault("fravar", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addFravar(Link link) {
-        addLink("fravar", link);
     }
     @JsonIgnore
     public List<Link> getProgramomrademedlemskap() {
@@ -275,31 +161,11 @@ public class ElevforholdResource extends UtdanningsforholdResource implements Fi
     public void addProgramomrademedlemskap(Link link) {
         addLink("programomrademedlemskap", link);
     }
-    @Deprecated
     @JsonIgnore
-    public List<Link> getUnderveisordensvurdering() {
-        return getLinks().getOrDefault("underveisordensvurdering", Collections.emptyList()); 
+    public List<Link> getKlassemedlemskap() {
+        return getLinks().getOrDefault("klassemedlemskap", Collections.emptyList()); 
     }
-    @Deprecated
-    public void addUnderveisordensvurdering(Link link) {
-        addLink("underveisordensvurdering", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getUndervisningsgruppe() {
-        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addUndervisningsgruppe(Link link) {
-        addLink("undervisningsgruppe", link);
+    public void addKlassemedlemskap(Link link) {
+        addLink("klassemedlemskap", link);
     }
 }

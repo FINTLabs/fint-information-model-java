@@ -15,18 +15,17 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-import no.novari.fint.model.felles.basisklasser.Begrep;
+import no.novari.fint.model.resource.felles.basisklasser.BegrepResource;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class StatusResource extends Begrep implements FintResource {
+public class StatusResource extends BegrepResource implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();

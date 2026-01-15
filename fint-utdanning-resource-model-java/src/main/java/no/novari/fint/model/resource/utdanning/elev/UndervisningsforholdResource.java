@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
@@ -46,11 +48,11 @@ public class UndervisningsforholdResource extends UtdanningsforholdResource impl
         addLink("arbeidsforhold", link);
     }
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    public List<Link> getKlasse() {
+        return getLinks().getOrDefault("klasse", Collections.emptyList()); 
     }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
+    public void addKlasse(Link link) {
+        addLink("klasse", link);
     }
     @JsonIgnore
     public List<Link> getKontaktlarergruppe() {

@@ -20,18 +20,18 @@ import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.resource.administrasjon.kompleksedatatyper.KontostrengResource;
-import no.novari.fint.model.felles.basisklasser.Begrep;
+import no.novari.fint.model.resource.felles.basisklasser.BegrepResource;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class VareResource extends Begrep implements FintResource {
+public class VareResource extends BegrepResource implements FintResource {
     // Attributes
     @JsonIgnore
     @Override
     public List<FintLinks> getNestedResources() {
-        List<FintLinks> result = FintResource.super.getNestedResources();
+        List<FintLinks> result = super.getNestedResources();
         if (kontering != null) {
             result.add(kontering);
         }
