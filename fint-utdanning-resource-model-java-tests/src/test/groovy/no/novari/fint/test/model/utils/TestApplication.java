@@ -7,5 +7,4 @@ import org.springframework.hateoas.config.EnableHypermediaSupport;
 @EnableHypermediaSupport(type = EnableHypermediaSupport.HypermediaType.HAL)
 @SpringBootApplication
 @Import(TestConfiguration.class)
-public class TestApplication {
-}
+public class TestApplication {}
