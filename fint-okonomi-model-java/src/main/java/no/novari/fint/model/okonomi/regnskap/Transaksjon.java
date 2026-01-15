@@ -16,12 +16,12 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-
+import no.novari.fint.model.okonomi.regnskap.Bilag;
 import java.util.Date;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -35,19 +35,21 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Transaksjon  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        LEVERANDOR("leverandor", "no.novari.fint.model.okonomi.regnskap.Leverandor", NONE_TO_ONE),
-        ANSVARLIG("ansvarlig", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        VALUTA("valuta", "no.novari.fint.model.felles.kodeverk.Valuta", ONE_TO_ONE),
-        POSTERING("postering", "no.novari.fint.model.okonomi.regnskap.Postering", ONE_TO_MANY);
+        LEVERANDOR("leverandor", "no.novari.fint.model.okonomi.regnskap.Leverandor", NONE_TO_ONE, null),
+        ANSVARLIG("ansvarlig", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, null),
+        VALUTA("valuta", "no.novari.fint.model.felles.kodeverk.Valuta", ONE_TO_ONE, null),
+        POSTERING("postering", "no.novari.fint.model.okonomi.regnskap.Postering", ONE_TO_MANY, "transaksjon");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -82,6 +84,7 @@ public class Transaksjon  implements FintModelObject {
     @NotNull
     private Date forfallsdato;
     private Date oppdateringstidspunkt;
+    @NotNull
     private @Valid Identifikator transaksjonsId;
     private Date transaksjonstidspunkt;
 }

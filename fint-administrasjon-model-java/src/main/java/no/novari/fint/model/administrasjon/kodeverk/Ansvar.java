@@ -13,11 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.administrasjon.kodeverk.Kontodimensjon;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -31,18 +33,20 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Ansvar extends Kontodimensjon  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        OVERORDNET("overordnet", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE),
-        UNDERORDNET("underordnet", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY),
-        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY);
+        OVERORDNET("overordnet", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE, "underordnet"),
+        UNDERORDNET("underordnet", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_MANY, "overordnet"),
+        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_MANY, "ansvar");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -56,7 +60,6 @@ public class Ansvar extends Kontodimensjon  implements FintModelObject {
     @JsonIgnore
     private List<FintRelation> createRelations() {
         List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
 
         relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 

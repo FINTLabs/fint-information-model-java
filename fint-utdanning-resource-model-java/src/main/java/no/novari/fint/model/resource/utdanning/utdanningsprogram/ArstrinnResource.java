@@ -12,18 +12,20 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-import no.novari.fint.model.resource.utdanning.basisklasser.GruppeResource;
+import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class ArstrinnResource extends GruppeResource implements FintResource {
+public class ArstrinnResource extends Gruppe implements FintResource {
     @JsonIgnore
     public Map<String, FintIdentifikator> getIdentifikators() {
         Map<String, FintIdentifikator> identifikators = new HashMap<>();
@@ -37,6 +39,20 @@ public class ArstrinnResource extends GruppeResource implements FintResource {
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
+    public void addVigoreferanse(Link link) {
+        addLink("vigoreferanse", link);
+    }
+    @JsonIgnore
+    public List<Link> getGrepreferanse() {
+        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
+    }
+    public void addGrepreferanse(Link link) {
+        addLink("grepreferanse", link);
+    }
+    @JsonIgnore
     public List<Link> getProgramomrade() {
         return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
     }
@@ -44,10 +60,10 @@ public class ArstrinnResource extends GruppeResource implements FintResource {
         addLink("programomrade", link);
     }
     @JsonIgnore
-    public List<Link> getBasisgruppe() {
-        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    public List<Link> getKlasse() {
+        return getLinks().getOrDefault("klasse", Collections.emptyList()); 
     }
-    public void addBasisgruppe(Link link) {
-        addLink("basisgruppe", link);
+    public void addKlasse(Link link) {
+        addLink("klasse", link);
     }
 }
