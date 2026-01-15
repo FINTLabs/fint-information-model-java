@@ -10,16 +10,16 @@ import lombok.NoArgsConstructor;
 import no.novari.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-public class BasisgruppeResources extends AbstractCollectionResources<BasisgruppeResource> {
+public class KlassemedlemskapResources extends AbstractCollectionResources<KlassemedlemskapResource> {
 
-    public BasisgruppeResources(Collection<BasisgruppeResource> input) {
+    public KlassemedlemskapResources(Collection<KlassemedlemskapResource> input) {
         super(input);
     }
 
     @JsonIgnore
     @Deprecated
     @Override
-    public TypeReference<List<BasisgruppeResource>> getTypeReference() {
-        return new TypeReference<List<BasisgruppeResource>>() {};
+    public TypeReference<List<KlassemedlemskapResource>> getTypeReference() {
+        return new TypeReference<List<KlassemedlemskapResource>>() {};
     }
 }
