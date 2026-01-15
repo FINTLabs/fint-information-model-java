@@ -5,5 +5,4 @@ import org.springframework.hateoas.config.EnableHypermediaSupport;
 
 @EnableHypermediaSupport(type = EnableHypermediaSupport.HypermediaType.HAL)
 @SpringBootApplication
-public class TestApplication {
-}
+public class TestApplication {}
