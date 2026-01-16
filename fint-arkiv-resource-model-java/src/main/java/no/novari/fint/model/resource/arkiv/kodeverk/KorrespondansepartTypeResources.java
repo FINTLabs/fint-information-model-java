@@ -2,24 +2,23 @@ package no.novari.fint.model.resource.arkiv.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
-
 import java.util.Collection;
 import java.util.List;
-
 import lombok.NoArgsConstructor;
 import no.novari.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
-public class KorrespondansepartTypeResources extends AbstractCollectionResources<KorrespondansepartTypeResource> {
+public class KorrespondansepartTypeResources
+    extends AbstractCollectionResources<KorrespondansepartTypeResource> {
 
-    public KorrespondansepartTypeResources(Collection<KorrespondansepartTypeResource> input) {
-        super(input);
-    }
+  public KorrespondansepartTypeResources(Collection<KorrespondansepartTypeResource> input) {
+    super(input);
+  }
 
-    @JsonIgnore
-    @Deprecated
-    @Override
-    public TypeReference<List<KorrespondansepartTypeResource>> getTypeReference() {
-        return new TypeReference<List<KorrespondansepartTypeResource>>() {};
-    }
+  @JsonIgnore
+  @Deprecated
+  @Override
+  public TypeReference<List<KorrespondansepartTypeResource>> getTypeReference() {
+    return new TypeReference<List<KorrespondansepartTypeResource>>() {};
+  }
 }

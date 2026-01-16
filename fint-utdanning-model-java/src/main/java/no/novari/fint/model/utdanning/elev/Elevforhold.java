@@ -1,112 +1,148 @@
 package no.novari.fint.model.utdanning.elev;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import javax.validation.Valid;
-
-import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.FintModelObject;
+import javax.validation.constraints.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
-import no.novari.fint.model.utdanning.vurdering.Anmerkninger;
-import java.util.Date;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import no.novari.fint.model.utdanning.basisklasser.Utdanningsforhold;
-
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
+import no.novari.fint.model.utdanning.vurdering.Anmerkninger;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
-public class Elevforhold extends Utdanningsforhold  implements FintModelObject {
-    @Getter
-    public enum Relasjonsnavn implements FintRelation {
-        ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", ONE_TO_ONE),
-        SIDEMAL("sidemal", "no.novari.fint.model.utdanning.kodeverk.Fagmerknad", NONE_TO_MANY),
-        KATEGORI("kategori", "no.novari.fint.model.utdanning.kodeverk.Elevkategori", NONE_TO_ONE),
-        KROPPSOVING("kroppsoving", "no.novari.fint.model.utdanning.kodeverk.Fagmerknad", NONE_TO_ONE),
-        SKOLE("skole", "no.novari.fint.model.utdanning.utdanningsprogram.Skole", ONE_TO_ONE),
-        AVBRUDDSARSAK("avbruddsarsak", "no.novari.fint.model.utdanning.kodeverk.Avbruddsarsak", NONE_TO_MANY),
-        FRAVARSREGISTRERINGER("fravarsregistreringer", "no.novari.fint.model.utdanning.vurdering.Elevfravar", NONE_TO_ONE),
-        FAGGRUPPEMEDLEMSKAP("faggruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap", NONE_TO_MANY),
-        SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE),
-        BASISGRUPPE("basisgruppe", "no.novari.fint.model.utdanning.elev.Basisgruppe", NONE_TO_MANY),
-        BASISGRUPPEMEDLEMSKAP("basisgruppemedlemskap", "no.novari.fint.model.utdanning.elev.Basisgruppemedlemskap", NONE_TO_MANY),
-        UNDERVISNINGSGRUPPEMEDLEMSKAP("undervisningsgruppemedlemskap", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap", NONE_TO_MANY),
-        VURDERING("vurdering", "no.novari.fint.model.utdanning.vurdering.Vurdering", NONE_TO_MANY),
-        SLUTTORDENSVURDERING("sluttordensvurdering", "no.novari.fint.model.utdanning.vurdering.Sluttordensvurdering", NONE_TO_MANY),
-        KONTAKTLARERGRUPPE("kontaktlarergruppe", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe", NONE_TO_MANY),
-        UNDERVEISFAGVURDERING("underveisfagvurdering", "no.novari.fint.model.utdanning.vurdering.Underveisfagvurdering", NONE_TO_MANY),
-        HALVARSFAGVURDERING("halvarsfagvurdering", "no.novari.fint.model.utdanning.vurdering.Halvarsfagvurdering", NONE_TO_MANY),
-        SLUTTFAGVURDERING("sluttfagvurdering", "no.novari.fint.model.utdanning.vurdering.Sluttfagvurdering", NONE_TO_MANY),
-        PERSONGRUPPEMEDLEMSKAP("persongruppemedlemskap", "no.novari.fint.model.utdanning.elev.Persongruppemedlemskap", NONE_TO_MANY),
-        EKSAMENSGRUPPEMEDLEMSKAP("eksamensgruppemedlemskap", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap", NONE_TO_MANY),
-        KONTAKTLARERGRUPPEMEDLEMSKAP("kontaktlarergruppemedlemskap", "no.novari.fint.model.utdanning.elev.Kontaktlarergruppemedlemskap", NONE_TO_MANY),
-        ELEVFRAVAR("elevfravar", "no.novari.fint.model.utdanning.vurdering.Fravarsoversikt", NONE_TO_MANY),
-        TILRETTELEGGING("tilrettelegging", "no.novari.fint.model.utdanning.elev.Elevtilrettelegging", NONE_TO_MANY),
-        HALVARSORDENSVURDERING("halvarsordensvurdering", "no.novari.fint.model.utdanning.vurdering.Halvarsordensvurdering", NONE_TO_MANY),
-        PROGRAMOMRADE("programomrade", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_ONE),
-        ELEVVURDERING("elevvurdering", "no.novari.fint.model.utdanning.vurdering.Elevvurdering", NONE_TO_ONE),
-        FRAVAR("fravar", "no.novari.fint.model.utdanning.vurdering.Fravar", NONE_TO_MANY),
-        PROGRAMOMRADEMEDLEMSKAP("programomrademedlemskap", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrademedlemskap", NONE_TO_MANY),
-        UNDERVEISORDENSVURDERING("underveisordensvurdering", "no.novari.fint.model.utdanning.vurdering.Underveisordensvurdering", NONE_TO_MANY),
-        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", NONE_TO_MANY),
-        UNDERVISNINGSGRUPPE("undervisningsgruppe", "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe", NONE_TO_MANY);
-    
-        private final String name;
-        private final String packageName;
-        private final FintMultiplicity multiplicity;
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class Elevforhold extends Utdanningsforhold implements FintModelObject {
+  @Getter
+  public enum Relasjonsnavn implements FintRelation {
+    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", ONE_TO_ONE, "elevforhold"),
+    KATEGORI("kategori", "no.novari.fint.model.utdanning.kodeverk.Elevkategori", NONE_TO_ONE, null),
+    SKOLE(
+        "skole",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
+        ONE_TO_ONE,
+        "elevforhold"),
+    AVBRUDDSARSAK(
+        "avbruddsarsak",
+        "no.novari.fint.model.utdanning.kodeverk.Avbruddsarsak",
+        NONE_TO_MANY,
+        null),
+    FRAVARSREGISTRERINGER(
+        "fravarsregistreringer",
+        "no.novari.fint.model.utdanning.vurdering.Elevfravar",
+        NONE_TO_ONE,
+        "elevforhold"),
+    FAGGRUPPEMEDLEMSKAP(
+        "faggruppemedlemskap",
+        "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap",
+        NONE_TO_MANY,
+        null),
+    SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null),
+    UNDERVISNINGSGRUPPEMEDLEMSKAP(
+        "undervisningsgruppemedlemskap",
+        "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap",
+        NONE_TO_MANY,
+        "elevforhold"),
+    PERSONGRUPPEMEDLEMSKAP(
+        "persongruppemedlemskap",
+        "no.novari.fint.model.utdanning.elev.Persongruppemedlemskap",
+        NONE_TO_MANY,
+        "elevforhold"),
+    EKSAMENSGRUPPEMEDLEMSKAP(
+        "eksamensgruppemedlemskap",
+        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap",
+        NONE_TO_MANY,
+        "elevforhold"),
+    KONTAKTLARERGRUPPEMEDLEMSKAP(
+        "kontaktlarergruppemedlemskap",
+        "no.novari.fint.model.utdanning.elev.Kontaktlarergruppemedlemskap",
+        NONE_TO_MANY,
+        "elevforhold"),
+    ELEVFRAVAR(
+        "elevfravar",
+        "no.novari.fint.model.utdanning.vurdering.Fravarsoversikt",
+        NONE_TO_MANY,
+        "elevforhold"),
+    TILRETTELEGGING(
+        "tilrettelegging",
+        "no.novari.fint.model.utdanning.elev.Elevtilrettelegging",
+        NONE_TO_MANY,
+        "elev"),
+    ELEVVURDERING(
+        "elevvurdering",
+        "no.novari.fint.model.utdanning.vurdering.Elevvurdering",
+        NONE_TO_ONE,
+        "elevforhold"),
+    PROGRAMOMRADEMEDLEMSKAP(
+        "programomrademedlemskap",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Programomrademedlemskap",
+        NONE_TO_MANY,
+        "elevforhold"),
+    KLASSEMEDLEMSKAP(
+        "klassemedlemskap",
+        "no.novari.fint.model.utdanning.elev.Klassemedlemskap",
+        NONE_TO_MANY,
+        "elevforhold");
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
-            this.name = name;
-            this.packageName = packageName;
-            this.multiplicity = multiplicity;
-        }
+    private final String name;
+    private final String packageName;
+    private final FintMultiplicity multiplicity;
+    private final String inverseName;
+
+    private Relasjonsnavn(
+        String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
+      this.name = name;
+      this.packageName = packageName;
+      this.multiplicity = multiplicity;
+      this.inverseName = inverseName;
     }
+  }
 
-    @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
-        Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
+  @JsonIgnore
+  public Map<String, FintIdentifikator> getIdentifikators() {
+    Map<String, FintIdentifikator> identifikators = new HashMap<>();
+    identifikators.putAll(super.getIdentifikators());
 
-        return Collections.unmodifiableMap(identifikators);
-    }
-    @JsonIgnore
-    private List<FintRelation> createRelations() {
-        List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
+    return Collections.unmodifiableMap(identifikators);
+  }
 
-        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+  @JsonIgnore
+  private List<FintRelation> createRelations() {
+    List<FintRelation> relations = new ArrayList<>();
 
-        return Collections.unmodifiableList(relations);
-    }
+    relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 
-    public boolean isWriteable() {
-        return this.writeable;
-    }
+    return Collections.unmodifiableList(relations);
+  }
 
-    @JsonIgnore
-    private final boolean writeable = false;
-    @JsonIgnore
-    private final List<FintRelation> relations = createRelations();
-    private List<@Valid Anmerkninger> anmerkninger;
-    private Date avbruddsdato;
-    private @Valid Periode gyldighetsperiode;
-    private Boolean hovedskole;
-    private Boolean tosprakligFagopplaring;
+  public boolean isWriteable() {
+    return this.writeable;
+  }
+
+  @JsonIgnore private final boolean writeable = false;
+  @JsonIgnore private final List<FintRelation> relations = createRelations();
+  private List<@Valid Anmerkninger> anmerkninger;
+  private Date avbruddsdato;
+  private @Valid Periode gyldighetsperiode;
+  private Boolean hovedskole;
+  private Boolean tosprakligFagopplaring;
 }
