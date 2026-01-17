@@ -15,7 +15,6 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
@@ -52,18 +51,18 @@ public class EnhetsgruppeResource implements FintResource {
         addLink("organisasjonsenhet", link);
     }
     @JsonIgnore
-    public List<Link> getPlattform() {
-        return getLinks().getOrDefault("plattform", Collections.emptyList()); 
-    }
-    public void addPlattform(Link link) {
-        addLink("plattform", link);
-    }
-    @JsonIgnore
     public List<Link> getEnhetstype() {
         return getLinks().getOrDefault("enhetstype", Collections.emptyList()); 
     }
     public void addEnhetstype(Link link) {
         addLink("enhetstype", link);
+    }
+    @JsonIgnore
+    public List<Link> getPlattform() {
+        return getLinks().getOrDefault("plattform", Collections.emptyList()); 
+    }
+    public void addPlattform(Link link) {
+        addLink("plattform", link);
     }
     @JsonIgnore
     public List<Link> getEnhetsgruppemedlemskap() {

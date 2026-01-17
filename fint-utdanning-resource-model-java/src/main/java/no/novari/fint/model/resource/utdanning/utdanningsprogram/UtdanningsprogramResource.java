@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
@@ -42,6 +44,20 @@ public class UtdanningsprogramResource extends GruppeResource implements FintRes
     }
     public void addSkole(Link link) {
         addLink("skole", link);
+    }
+    @JsonIgnore
+    public List<Link> getGrepreferanse() {
+        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
+    }
+    public void addGrepreferanse(Link link) {
+        addLink("grepreferanse", link);
+    }
+    @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
+    public void addVigoreferanse(Link link) {
+        addLink("vigoreferanse", link);
     }
     @JsonIgnore
     public List<Link> getProgramomrade() {

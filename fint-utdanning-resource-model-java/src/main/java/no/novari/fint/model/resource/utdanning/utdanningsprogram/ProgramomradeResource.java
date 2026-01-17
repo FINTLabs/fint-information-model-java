@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
@@ -36,14 +38,12 @@ public class ProgramomradeResource extends GruppeResource implements FintResourc
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
     @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    public List<Link> getGrepreferanse() {
+        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
     }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
+    public void addGrepreferanse(Link link) {
+        addLink("grepreferanse", link);
     }
     @JsonIgnore
     public List<Link> getUtdanningsprogram() {
@@ -51,6 +51,13 @@ public class ProgramomradeResource extends GruppeResource implements FintResourc
     }
     public void addUtdanningsprogram(Link link) {
         addLink("utdanningsprogram", link);
+    }
+    @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
+    public void addVigoreferanse(Link link) {
+        addLink("vigoreferanse", link);
     }
     @JsonIgnore
     public List<Link> getFag() {

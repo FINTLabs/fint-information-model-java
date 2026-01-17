@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
@@ -36,15 +38,6 @@ public class UndervisningsgruppeResource extends GruppeResource implements FintR
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
-    }
     @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 

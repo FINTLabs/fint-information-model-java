@@ -14,12 +14,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
-
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -33,18 +33,20 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Arkivressurs  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
-        AUTORISASJON("autorisasjon", "no.novari.fint.model.arkiv.noark.Autorisasjon", NONE_TO_MANY),
-        TILGANG("tilgang", "no.novari.fint.model.arkiv.noark.Tilgang", NONE_TO_MANY);
+        PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE, null),
+        AUTORISASJON("autorisasjon", "no.novari.fint.model.arkiv.noark.Autorisasjon", NONE_TO_MANY, "arkivressurs"),
+        TILGANG("tilgang", "no.novari.fint.model.arkiv.noark.Tilgang", NONE_TO_MANY, "arkivressurs");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -16,10 +16,10 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.basisklasser.Enhet;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
@@ -34,16 +34,18 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Virksomhet extends Enhet  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        LARLING("larling", "no.novari.fint.model.utdanning.larling.Larling", NONE_TO_MANY);
+        LARLING("larling", "no.novari.fint.model.utdanning.larling.Larling", NONE_TO_MANY, "bedrift");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

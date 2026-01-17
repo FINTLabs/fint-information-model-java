@@ -16,11 +16,11 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -34,32 +34,33 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Fullmakt  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        MYNDIGHET("myndighet", "no.novari.fint.model.administrasjon.kodeverk.Kontodimensjon", NONE_TO_MANY),
-        RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE),
-        FUNKSJON("funksjon", "no.novari.fint.model.administrasjon.kodeverk.Funksjon", NONE_TO_ONE),
-        OBJEKT("objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE),
-        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE),
-        ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", NONE_TO_ONE),
-        ANLEGG("anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE),
-        DIVERSE("diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE),
-        AKTIVITET("aktivitet", "no.novari.fint.model.administrasjon.kodeverk.Aktivitet", NONE_TO_ONE),
-        ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE),
-        STEDFORTREDER("stedfortreder", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        KONTRAKT("kontrakt", "no.novari.fint.model.administrasjon.kodeverk.Kontrakt", NONE_TO_ONE),
-        FULLMEKTIG("fullmektig", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        PROSJEKT("prosjekt", "no.novari.fint.model.administrasjon.kodeverk.Prosjekt", NONE_TO_ONE),
-        FORMAL("formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE),
-        ROLLE("rolle", "no.novari.fint.model.administrasjon.fullmakt.Rolle", ONE_TO_ONE),
-        LOPENUMMER("lopenummer", "no.novari.fint.model.administrasjon.kodeverk.Lopenummer", NONE_TO_ONE);
+        RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE, null),
+        FUNKSJON("funksjon", "no.novari.fint.model.administrasjon.kodeverk.Funksjon", NONE_TO_ONE, null),
+        OBJEKT("objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE, null),
+        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE, null),
+        ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", NONE_TO_ONE, null),
+        ANLEGG("anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE, null),
+        DIVERSE("diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE, null),
+        AKTIVITET("aktivitet", "no.novari.fint.model.administrasjon.kodeverk.Aktivitet", NONE_TO_ONE, null),
+        ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE, null),
+        STEDFORTREDER("stedfortreder", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, "stedfortreder"),
+        KONTRAKT("kontrakt", "no.novari.fint.model.administrasjon.kodeverk.Kontrakt", NONE_TO_ONE, null),
+        FULLMEKTIG("fullmektig", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE, "fullmakt"),
+        PROSJEKT("prosjekt", "no.novari.fint.model.administrasjon.kodeverk.Prosjekt", NONE_TO_ONE, null),
+        FORMAL("formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE, null),
+        ROLLE("rolle", "no.novari.fint.model.administrasjon.fullmakt.Rolle", ONE_TO_ONE, "fullmakt"),
+        LOPENUMMER("lopenummer", "no.novari.fint.model.administrasjon.kodeverk.Lopenummer", NONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

@@ -12,19 +12,20 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-import no.novari.fint.model.felles.basisklasser.Begrep;
+import no.novari.fint.model.resource.felles.basisklasser.BegrepResource;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class OtStatusResource extends Begrep implements FintResource {
+public class OtStatusResource extends BegrepResource implements FintResource {
     // Attributes
     private String beskrivelse;
     @NotBlank

@@ -14,13 +14,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import javax.validation.Valid;
-
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
-
+import no.novari.fint.model.arkiv.noark.Journalpost;
 import java.util.Date;
+import no.novari.fint.model.arkiv.noark.Mappe;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -34,21 +35,23 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        SAKSMAPPETYPE("saksmappetype", "no.novari.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE),
-        SAKSSTATUS("saksstatus", "no.novari.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE),
-        TILGANGSGRUPPE("tilgangsgruppe", "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE),
-        JOURNALENHET("journalenhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE),
-        ADMINISTRATIVENHET("administrativEnhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE),
-        SAKSANSVARLIG("saksansvarlig", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE);
+        SAKSMAPPETYPE("saksmappetype", "no.novari.fint.model.arkiv.kodeverk.Saksmappetype", NONE_TO_ONE, null),
+        SAKSSTATUS("saksstatus", "no.novari.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE, null),
+        TILGANGSGRUPPE("tilgangsgruppe", "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe", NONE_TO_ONE, null),
+        JOURNALENHET("journalenhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", NONE_TO_ONE, null),
+        ADMINISTRATIVENHET("administrativEnhet", "no.novari.fint.model.arkiv.noark.AdministrativEnhet", ONE_TO_ONE, null),
+        SAKSANSVARLIG("saksansvarlig", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null);
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 
@@ -77,7 +80,6 @@ public abstract class Saksmappe extends Mappe  implements FintAbstractObject {
     private final boolean writeable = true;
     @JsonIgnore
     private final List<FintRelation> relations = createRelations();
-    private List<@Valid Registrering> arkivnotat;
     private List<@Valid Journalpost> journalpost;
     private String saksaar;
     private @Valid Date saksdato;

@@ -13,11 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.utdanning.vurdering.Fagvurdering;
 
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
@@ -31,18 +33,20 @@ import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 public class Eksamensvurdering extends Fagvurdering  implements FintModelObject {
     @Getter
     public enum Relasjonsnavn implements FintRelation {
-        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE),
-        KARAKTERHISTORIE("karakterhistorie", "no.novari.fint.model.utdanning.vurdering.Karakterhistorie", NONE_TO_ONE),
-        ELEVVURDERING("elevvurdering", "no.novari.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE);
+        EKSAMENSGRUPPE("eksamensgruppe", "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe", ONE_TO_ONE, null),
+        KARAKTERHISTORIE("karakterhistorie", "no.novari.fint.model.utdanning.vurdering.Karakterhistorie", NONE_TO_ONE, null),
+        ELEVVURDERING("elevvurdering", "no.novari.fint.model.utdanning.vurdering.Elevvurdering", ONE_TO_ONE, "eksamensvurdering");
     
         private final String name;
         private final String packageName;
         private final FintMultiplicity multiplicity;
+        private final String inverseName;
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
+        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity, String inverseName) {
             this.name = name;
             this.packageName = packageName;
             this.multiplicity = multiplicity;
+            this.inverseName = inverseName;
         }
     }
 

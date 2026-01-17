@@ -15,11 +15,11 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -42,14 +42,4 @@ public abstract class UtdanningsforholdResource implements FintAbstractObject, F
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMedlemskap() {
-        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMedlemskap(Link link) {
-        addLink("medlemskap", link);
-    }
 }

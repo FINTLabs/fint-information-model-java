@@ -15,12 +15,11 @@ import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.resource.FintLinks;
 import no.novari.fint.model.FintAbstractObject;
 import no.novari.fint.model.resource.Link;
 import no.novari.fint.model.FintIdentifikator;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 
 @Data
 @NoArgsConstructor
@@ -32,8 +31,6 @@ public abstract class GruppeResource implements FintAbstractObject, FintLinks {
     private String beskrivelse;
     @NotBlank
     private String navn;
-    @Deprecated
-    private List<@Valid Periode> periode;
     @NotNull
     private @Valid Identifikator systemId;
     @JsonIgnore
@@ -47,28 +44,4 @@ public abstract class GruppeResource implements FintAbstractObject, FintLinks {
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @JsonIgnore
-    public List<Link> getGrepreferanse() {
-        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
-    }
-    public void addGrepreferanse(Link link) {
-        addLink("grepreferanse", link);
-    }
-    @JsonIgnore
-    public List<Link> getVigoreferanse() {
-        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
-    }
-    public void addVigoreferanse(Link link) {
-        addLink("vigoreferanse", link);
-    }
-    @Deprecated
-    @JsonIgnore
-    public List<Link> getMedlemskap() {
-        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
-    }
-    @Deprecated
-    public void addMedlemskap(Link link) {
-        addLink("medlemskap", link);
-    }
 }
