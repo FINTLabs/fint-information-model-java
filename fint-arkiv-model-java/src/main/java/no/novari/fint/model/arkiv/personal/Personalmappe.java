@@ -1,80 +1,98 @@
 package no.novari.fint.model.arkiv.personal;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.FintModelObject;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
-import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
 import no.novari.fint.model.arkiv.noark.Saksmappe;
-
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
+import no.novari.fint.model.felles.kompleksedatatyper.Personnavn;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
-public class Personalmappe extends Saksmappe  implements FintModelObject {
-    @Getter
-    public enum Relasjonsnavn implements FintRelation {
-        PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE),
-        LEDER("leder", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE),
-        ARBEIDSSTED("arbeidssted", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", ONE_TO_ONE),
-        PERSONALRESSURS("personalressurs", "no.novari.fint.model.administrasjon.personal.Personalressurs", ONE_TO_ONE);
-    
-        private final String name;
-        private final String packageName;
-        private final FintMultiplicity multiplicity;
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class Personalmappe extends Saksmappe implements FintModelObject {
+  @Getter
+  public enum Relasjonsnavn implements FintRelation {
+    PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, null, null),
+    LEDER(
+        "leder",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        ONE_TO_ONE,
+        null,
+        null),
+    ARBEIDSSTED(
+        "arbeidssted",
+        "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
+        ONE_TO_ONE,
+        null,
+        null),
+    PERSONALRESSURS(
+        "personalressurs",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        ONE_TO_ONE,
+        null,
+        null);
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
-            this.name = name;
-            this.packageName = packageName;
-            this.multiplicity = multiplicity;
-        }
+    private final String name;
+    private final String packageName;
+    private final FintMultiplicity multiplicity;
+    private final String inverseName;
+    private final Boolean isSource;
+
+    private Relasjonsnavn(
+        String name,
+        String packageName,
+        FintMultiplicity multiplicity,
+        Boolean isSource,
+        String inverseName) {
+      this.name = name;
+      this.packageName = packageName;
+      this.multiplicity = multiplicity;
+      this.inverseName = inverseName;
+      this.isSource = isSource;
     }
+  }
 
-    @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
-        Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.putAll(super.getIdentifikators());
+  @JsonIgnore
+  public Map<String, FintIdentifikator> getIdentifikators() {
+    Map<String, FintIdentifikator> identifikators = new HashMap<>();
+    identifikators.putAll(super.getIdentifikators());
 
-        return Collections.unmodifiableMap(identifikators);
-    }
-    @JsonIgnore
-    private List<FintRelation> createRelations() {
-        List<FintRelation> relations = new ArrayList<>();
-        relations.addAll(super.getRelations());
+    return Collections.unmodifiableMap(identifikators);
+  }
 
-        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+  @JsonIgnore
+  private List<FintRelation> createRelations() {
+    List<FintRelation> relations = new ArrayList<>();
+    relations.addAll(super.getRelations());
 
-        return Collections.unmodifiableList(relations);
-    }
+    relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 
-    public boolean isWriteable() {
-        return this.writeable;
-    }
+    return Collections.unmodifiableList(relations);
+  }
 
-    @JsonIgnore
-    private final boolean writeable = true;
-    @JsonIgnore
-    private final List<FintRelation> relations = createRelations();
-    @NotNull
-    private @Valid Personnavn navn;
+  public boolean isWriteable() {
+    return this.writeable;
+  }
+
+  @JsonIgnore private final boolean writeable = true;
+  @JsonIgnore private final List<FintRelation> relations = createRelations();
+  @NotNull private @Valid Personnavn navn;
 }

@@ -1,81 +1,96 @@
 package no.novari.fint.model.utdanning.larling;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.FintModelObject;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
-
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Larling  implements FintModelObject {
-    @Getter
-    public enum Relasjonsnavn implements FintRelation {
-        PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE),
-        BEDRIFT("bedrift", "no.novari.fint.model.felles.Virksomhet", NONE_TO_ONE),
-        PROGRAMOMRADE("programomrade", "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade", NONE_TO_ONE),
-        AVLAGTPROVE("avlagtprove", "no.novari.fint.model.utdanning.larling.AvlagtProve", NONE_TO_MANY);
-    
-        private final String name;
-        private final String packageName;
-        private final FintMultiplicity multiplicity;
+public class Larling implements FintModelObject {
+  @Getter
+  public enum Relasjonsnavn implements FintRelation {
+    PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, true, "larling"),
+    BEDRIFT("bedrift", "no.novari.fint.model.felles.Virksomhet", NONE_TO_ONE, true, "larling"),
+    PROGRAMOMRADE(
+        "programomrade",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
+        NONE_TO_ONE,
+        null,
+        null),
+    AVLAGTPROVE(
+        "avlagtprove",
+        "no.novari.fint.model.utdanning.larling.AvlagtProve",
+        NONE_TO_MANY,
+        false,
+        "larling");
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
-            this.name = name;
-            this.packageName = packageName;
-            this.multiplicity = multiplicity;
-        }
+    private final String name;
+    private final String packageName;
+    private final FintMultiplicity multiplicity;
+    private final String inverseName;
+    private final Boolean isSource;
+
+    private Relasjonsnavn(
+        String name,
+        String packageName,
+        FintMultiplicity multiplicity,
+        Boolean isSource,
+        String inverseName) {
+      this.name = name;
+      this.packageName = packageName;
+      this.multiplicity = multiplicity;
+      this.inverseName = inverseName;
+      this.isSource = isSource;
     }
+  }
 
-    @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
-        Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.put("systemId", this.systemId);
+  @JsonIgnore
+  public Map<String, FintIdentifikator> getIdentifikators() {
+    Map<String, FintIdentifikator> identifikators = new HashMap<>();
+    identifikators.put("systemId", this.systemId);
 
-        return Collections.unmodifiableMap(identifikators);
-    }
-    @JsonIgnore
-    private List<FintRelation> createRelations() {
-        List<FintRelation> relations = new ArrayList<>();
+    return Collections.unmodifiableMap(identifikators);
+  }
 
-        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+  @JsonIgnore
+  private List<FintRelation> createRelations() {
+    List<FintRelation> relations = new ArrayList<>();
 
-        return Collections.unmodifiableList(relations);
-    }
+    relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 
-    public boolean isWriteable() {
-        return this.writeable;
-    }
+    return Collections.unmodifiableList(relations);
+  }
 
-    @JsonIgnore
-    private final boolean writeable = false;
-    @JsonIgnore
-    private final List<FintRelation> relations = createRelations();
-    private String kontraktstype;
-    private @Valid Periode laretid;
-    @NotNull
-    private @Valid Identifikator systemId;
+  public boolean isWriteable() {
+    return this.writeable;
+  }
+
+  @JsonIgnore private final boolean writeable = false;
+  @JsonIgnore private final List<FintRelation> relations = createRelations();
+  private String kontraktstype;
+  private @Valid Periode laretid;
+  @NotNull private @Valid Identifikator systemId;
 }
