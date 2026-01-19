@@ -2,24 +2,22 @@ package no.novari.fint.model.resource.utdanning.ot;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
-
 import java.util.Collection;
 import java.util.List;
-
 import lombok.NoArgsConstructor;
 import no.novari.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
 public class OtUngdomResources extends AbstractCollectionResources<OtUngdomResource> {
 
-    public OtUngdomResources(Collection<OtUngdomResource> input) {
-        super(input);
-    }
+  public OtUngdomResources(Collection<OtUngdomResource> input) {
+    super(input);
+  }
 
-    @JsonIgnore
-    @Deprecated
-    @Override
-    public TypeReference<List<OtUngdomResource>> getTypeReference() {
-        return new TypeReference<List<OtUngdomResource>>() {};
-    }
+  @JsonIgnore
+  @Deprecated
+  @Override
+  public TypeReference<List<OtUngdomResource>> getTypeReference() {
+    return new TypeReference<List<OtUngdomResource>>() {};
+  }
 }

@@ -1,94 +1,146 @@
 package no.novari.fint.model.administrasjon.fullmakt;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
+import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import no.novari.fint.model.FintMultiplicity;
-import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.FintModelObject;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
+import no.novari.fint.model.FintModelObject;
+import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
+import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
-
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.ONE_TO_MANY;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
-import static no.novari.fint.model.FintMultiplicity.NONE_TO_MANY;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Fullmakt  implements FintModelObject {
-    @Getter
-    public enum Relasjonsnavn implements FintRelation {
-        MYNDIGHET("myndighet", "no.novari.fint.model.administrasjon.kodeverk.Kontodimensjon", NONE_TO_MANY),
-        RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE),
-        FUNKSJON("funksjon", "no.novari.fint.model.administrasjon.kodeverk.Funksjon", NONE_TO_ONE),
-        OBJEKT("objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE),
-        ORGANISASJONSELEMENT("organisasjonselement", "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement", NONE_TO_ONE),
-        ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", NONE_TO_ONE),
-        ANLEGG("anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE),
-        DIVERSE("diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE),
-        AKTIVITET("aktivitet", "no.novari.fint.model.administrasjon.kodeverk.Aktivitet", NONE_TO_ONE),
-        ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE),
-        STEDFORTREDER("stedfortreder", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        KONTRAKT("kontrakt", "no.novari.fint.model.administrasjon.kodeverk.Kontrakt", NONE_TO_ONE),
-        FULLMEKTIG("fullmektig", "no.novari.fint.model.administrasjon.personal.Personalressurs", NONE_TO_ONE),
-        PROSJEKT("prosjekt", "no.novari.fint.model.administrasjon.kodeverk.Prosjekt", NONE_TO_ONE),
-        FORMAL("formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE),
-        ROLLE("rolle", "no.novari.fint.model.administrasjon.fullmakt.Rolle", ONE_TO_ONE),
-        LOPENUMMER("lopenummer", "no.novari.fint.model.administrasjon.kodeverk.Lopenummer", NONE_TO_ONE);
-    
-        private final String name;
-        private final String packageName;
-        private final FintMultiplicity multiplicity;
+public class Fullmakt implements FintModelObject {
+  @Getter
+  public enum Relasjonsnavn implements FintRelation {
+    RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE, null, null),
+    FUNKSJON(
+        "funksjon",
+        "no.novari.fint.model.administrasjon.kodeverk.Funksjon",
+        NONE_TO_ONE,
+        null,
+        null),
+    OBJEKT(
+        "objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE, null, null),
+    ORGANISASJONSELEMENT(
+        "organisasjonselement",
+        "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
+        NONE_TO_ONE,
+        null,
+        null),
+    ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", NONE_TO_ONE, null, null),
+    ANLEGG(
+        "anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE, null, null),
+    DIVERSE(
+        "diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE, null, null),
+    AKTIVITET(
+        "aktivitet",
+        "no.novari.fint.model.administrasjon.kodeverk.Aktivitet",
+        NONE_TO_ONE,
+        null,
+        null),
+    ANSVAR(
+        "ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE, null, null),
+    STEDFORTREDER(
+        "stedfortreder",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        NONE_TO_ONE,
+        true,
+        "stedfortreder"),
+    KONTRAKT(
+        "kontrakt",
+        "no.novari.fint.model.administrasjon.kodeverk.Kontrakt",
+        NONE_TO_ONE,
+        null,
+        null),
+    FULLMEKTIG(
+        "fullmektig",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        NONE_TO_ONE,
+        true,
+        "fullmakt"),
+    PROSJEKT(
+        "prosjekt",
+        "no.novari.fint.model.administrasjon.kodeverk.Prosjekt",
+        NONE_TO_ONE,
+        null,
+        null),
+    FORMAL(
+        "formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE, null, null),
+    ROLLE(
+        "rolle",
+        "no.novari.fint.model.administrasjon.fullmakt.Rolle",
+        ONE_TO_ONE,
+        true,
+        "fullmakt"),
+    LOPENUMMER(
+        "lopenummer",
+        "no.novari.fint.model.administrasjon.kodeverk.Lopenummer",
+        NONE_TO_ONE,
+        null,
+        null);
 
-        private Relasjonsnavn(String name, String packageName, FintMultiplicity multiplicity) {
-            this.name = name;
-            this.packageName = packageName;
-            this.multiplicity = multiplicity;
-        }
+    private final String name;
+    private final String packageName;
+    private final FintMultiplicity multiplicity;
+    private final String inverseName;
+    private final Boolean isSource;
+
+    private Relasjonsnavn(
+        String name,
+        String packageName,
+        FintMultiplicity multiplicity,
+        Boolean isSource,
+        String inverseName) {
+      this.name = name;
+      this.packageName = packageName;
+      this.multiplicity = multiplicity;
+      this.inverseName = inverseName;
+      this.isSource = isSource;
     }
+  }
 
-    @JsonIgnore
-    public Map<String, FintIdentifikator> getIdentifikators() {
-        Map<String, FintIdentifikator> identifikators = new HashMap<>();
-        identifikators.put("systemId", this.systemId);
+  @JsonIgnore
+  public Map<String, FintIdentifikator> getIdentifikators() {
+    Map<String, FintIdentifikator> identifikators = new HashMap<>();
+    identifikators.put("systemId", this.systemId);
 
-        return Collections.unmodifiableMap(identifikators);
-    }
-    @JsonIgnore
-    private List<FintRelation> createRelations() {
-        List<FintRelation> relations = new ArrayList<>();
+    return Collections.unmodifiableMap(identifikators);
+  }
 
-        relations.addAll(Arrays.asList(Relasjonsnavn.values()));
+  @JsonIgnore
+  private List<FintRelation> createRelations() {
+    List<FintRelation> relations = new ArrayList<>();
 
-        return Collections.unmodifiableList(relations);
-    }
+    relations.addAll(Arrays.asList(Relasjonsnavn.values()));
 
-    public boolean isWriteable() {
-        return this.writeable;
-    }
+    return Collections.unmodifiableList(relations);
+  }
 
-    @JsonIgnore
-    private final boolean writeable = false;
-    @JsonIgnore
-    private final List<FintRelation> relations = createRelations();
-    @NotNull
-    private @Valid Periode gyldighetsperiode;
-    @NotNull
-    private @Valid Identifikator systemId;
+  public boolean isWriteable() {
+    return this.writeable;
+  }
+
+  @JsonIgnore private final boolean writeable = false;
+  @JsonIgnore private final List<FintRelation> relations = createRelations();
+  @NotNull private @Valid Periode gyldighetsperiode;
+  @NotNull private @Valid Identifikator systemId;
 }
