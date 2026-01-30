@@ -49,7 +49,7 @@ public class Kontaktlarergruppe extends Gruppe implements FintModelObject {
         "undervisningsforhold",
         "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
         NONE_TO_MANY,
-        false,
+        true,
         "kontaktlarergruppe"),
     GRUPPEMEDLEMSKAP(
         "gruppemedlemskap",

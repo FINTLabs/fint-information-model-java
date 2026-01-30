@@ -37,7 +37,6 @@ public class Skole extends Enhet implements FintModelObject {
         NONE_TO_ONE,
         true,
         "skole"),
-    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY, true, "skole"),
     SKOLEEIERTYPE(
         "skoleeierType",
         "no.novari.fint.model.utdanning.kodeverk.Skoleeiertype",
@@ -75,6 +74,7 @@ public class Skole extends Enhet implements FintModelObject {
         NONE_TO_MANY,
         false,
         "skole"),
+    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY, false, "skole"),
     FAGGRUPPE(
         "faggruppe",
         "no.novari.fint.model.utdanning.timeplan.Faggruppe",

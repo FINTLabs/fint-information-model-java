@@ -54,33 +54,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
   }
 
   @JsonIgnore
-  public List<Link> getKontaktlarergruppe() {
-    return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList());
-  }
-
-  public void addKontaktlarergruppe(Link link) {
-    addLink("kontaktlarergruppe", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getUndervisningsgruppe() {
-    return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList());
-  }
-
-  public void addUndervisningsgruppe(Link link) {
-    addLink("undervisningsgruppe", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getEksamensgruppe() {
-    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
-  }
-
-  public void addEksamensgruppe(Link link) {
-    addLink("eksamensgruppe", link);
-  }
-
-  @JsonIgnore
   public List<Link> getTime() {
     return getLinks().getOrDefault("time", Collections.emptyList());
   }
@@ -99,11 +72,38 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
   }
 
   @JsonIgnore
+  public List<Link> getKontaktlarergruppe() {
+    return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList());
+  }
+
+  public void addKontaktlarergruppe(Link link) {
+    addLink("kontaktlarergruppe", link);
+  }
+
+  @JsonIgnore
   public List<Link> getSkoleressurs() {
     return getLinks().getOrDefault("skoleressurs", Collections.emptyList());
   }
 
   public void addSkoleressurs(Link link) {
     addLink("skoleressurs", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getUndervisningsgruppe() {
+    return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList());
+  }
+
+  public void addUndervisningsgruppe(Link link) {
+    addLink("undervisningsgruppe", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getEksamensgruppe() {
+    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
+  }
+
+  public void addEksamensgruppe(Link link) {
+    addLink("eksamensgruppe", link);
   }
 }

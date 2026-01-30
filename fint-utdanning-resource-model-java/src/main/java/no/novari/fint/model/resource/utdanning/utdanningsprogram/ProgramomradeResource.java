@@ -33,6 +33,24 @@ public class ProgramomradeResource extends Gruppe implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
+  public List<Link> getFag() {
+    return getLinks().getOrDefault("fag", Collections.emptyList());
+  }
+
+  public void addFag(Link link) {
+    addLink("fag", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getTrinn() {
+    return getLinks().getOrDefault("trinn", Collections.emptyList());
+  }
+
+  public void addTrinn(Link link) {
+    addLink("trinn", link);
+  }
+
+  @JsonIgnore
   public List<Link> getGrepreferanse() {
     return getLinks().getOrDefault("grepreferanse", Collections.emptyList());
   }
@@ -57,24 +75,6 @@ public class ProgramomradeResource extends Gruppe implements FintResource {
 
   public void addVigoreferanse(Link link) {
     addLink("vigoreferanse", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getFag() {
-    return getLinks().getOrDefault("fag", Collections.emptyList());
-  }
-
-  public void addFag(Link link) {
-    addLink("fag", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getTrinn() {
-    return getLinks().getOrDefault("trinn", Collections.emptyList());
-  }
-
-  public void addTrinn(Link link) {
-    addLink("trinn", link);
   }
 
   @JsonIgnore

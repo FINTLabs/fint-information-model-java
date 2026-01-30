@@ -30,6 +30,13 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 public class Programomrade extends Gruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY, true, "programomrade"),
+    TRINN(
+        "trinn",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Arstrinn",
+        NONE_TO_MANY,
+        true,
+        "programomrade"),
     GREPREFERANSE(
         "grepreferanse",
         "no.novari.fint.model.utdanning.kodeverk.Grepreferanse",
@@ -48,13 +55,6 @@ public class Programomrade extends Gruppe implements FintModelObject {
         NONE_TO_ONE,
         null,
         null),
-    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_MANY, false, "programomrade"),
-    TRINN(
-        "trinn",
-        "no.novari.fint.model.utdanning.utdanningsprogram.Arstrinn",
-        NONE_TO_MANY,
-        false,
-        "programomrade"),
     GRUPPEMEDLEMSKAP(
         "gruppemedlemskap",
         "no.novari.fint.model.utdanning.utdanningsprogram.Programomrademedlemskap",

@@ -41,13 +41,13 @@ public class Arstrinn extends Gruppe implements FintModelObject {
         NONE_TO_ONE,
         null,
         null),
+    KLASSE("klasse", "no.novari.fint.model.utdanning.elev.Klasse", NONE_TO_MANY, false, "trinn"),
     PROGRAMOMRADE(
         "programomrade",
         "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
         NONE_TO_MANY,
-        true,
-        "trinn"),
-    KLASSE("klasse", "no.novari.fint.model.utdanning.elev.Klasse", NONE_TO_MANY, false, "trinn");
+        false,
+        "trinn");
 
     private final String name;
     private final String packageName;
