@@ -53,15 +53,6 @@ public class SkoleResource extends EnhetResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getFag() {
-    return getLinks().getOrDefault("fag", Collections.emptyList());
-  }
-
-  public void addFag(Link link) {
-    addLink("fag", link);
-  }
-
-  @JsonIgnore
   public List<Link> getSkoleeierType() {
     return getLinks().getOrDefault("skoleeierType", Collections.emptyList());
   }
@@ -122,6 +113,15 @@ public class SkoleResource extends EnhetResource implements FintResource {
 
   public void addUndervisningsforhold(Link link) {
     addLink("undervisningsforhold", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getFag() {
+    return getLinks().getOrDefault("fag", Collections.emptyList());
+  }
+
+  public void addFag(Link link) {
+    addLink("fag", link);
   }
 
   @JsonIgnore

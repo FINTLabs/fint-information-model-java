@@ -41,24 +41,6 @@ public class Undervisningsforhold extends Utdanningsforhold implements FintModel
         NONE_TO_MANY,
         true,
         "undervisningsforhold"),
-    KONTAKTLARERGRUPPE(
-        "kontaktlarergruppe",
-        "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe",
-        NONE_TO_MANY,
-        true,
-        "undervisningsforhold"),
-    UNDERVISNINGSGRUPPE(
-        "undervisningsgruppe",
-        "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe",
-        NONE_TO_MANY,
-        true,
-        "undervisningsforhold"),
-    EKSAMENSGRUPPE(
-        "eksamensgruppe",
-        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
-        NONE_TO_MANY,
-        true,
-        "undervisningsforhold"),
     TIME(
         "time",
         "no.novari.fint.model.utdanning.timeplan.Time",
@@ -71,10 +53,28 @@ public class Undervisningsforhold extends Utdanningsforhold implements FintModel
         ONE_TO_ONE,
         true,
         "undervisningsforhold"),
+    KONTAKTLARERGRUPPE(
+        "kontaktlarergruppe",
+        "no.novari.fint.model.utdanning.elev.Kontaktlarergruppe",
+        NONE_TO_MANY,
+        false,
+        "undervisningsforhold"),
     SKOLERESSURS(
         "skoleressurs",
         "no.novari.fint.model.utdanning.elev.Skoleressurs",
         ONE_TO_ONE,
+        false,
+        "undervisningsforhold"),
+    UNDERVISNINGSGRUPPE(
+        "undervisningsgruppe",
+        "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe",
+        NONE_TO_MANY,
+        false,
+        "undervisningsforhold"),
+    EKSAMENSGRUPPE(
+        "eksamensgruppe",
+        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
+        NONE_TO_MANY,
         false,
         "undervisningsforhold");
 

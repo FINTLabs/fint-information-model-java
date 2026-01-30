@@ -31,6 +31,12 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 public class Undervisningsgruppe extends Gruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    UNDERVISNINGSFORHOLD(
+        "undervisningsforhold",
+        "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
+        NONE_TO_MANY,
+        true,
+        "undervisningsgruppe"),
     FAG(
         "fag",
         "no.novari.fint.model.utdanning.timeplan.Fag",
@@ -45,12 +51,6 @@ public class Undervisningsgruppe extends Gruppe implements FintModelObject {
         true,
         "undervisningsgruppe"),
     SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null),
-    UNDERVISNINGSFORHOLD(
-        "undervisningsforhold",
-        "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
-        NONE_TO_MANY,
-        false,
-        "undervisningsgruppe"),
     TIME(
         "time",
         "no.novari.fint.model.utdanning.timeplan.Time",

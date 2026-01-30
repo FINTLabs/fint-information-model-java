@@ -51,20 +51,20 @@ public class ArstrinnResource extends Gruppe implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getProgramomrade() {
-    return getLinks().getOrDefault("programomrade", Collections.emptyList());
-  }
-
-  public void addProgramomrade(Link link) {
-    addLink("programomrade", link);
-  }
-
-  @JsonIgnore
   public List<Link> getKlasse() {
     return getLinks().getOrDefault("klasse", Collections.emptyList());
   }
 
   public void addKlasse(Link link) {
     addLink("klasse", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getProgramomrade() {
+    return getLinks().getOrDefault("programomrade", Collections.emptyList());
+  }
+
+  public void addProgramomrade(Link link) {
+    addLink("programomrade", link);
   }
 }
