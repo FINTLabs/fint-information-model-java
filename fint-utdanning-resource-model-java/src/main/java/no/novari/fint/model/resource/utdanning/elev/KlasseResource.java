@@ -60,21 +60,21 @@ public class KlasseResource extends Gruppe implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getSkole() {
-    return getLinks().getOrDefault("skole", Collections.emptyList());
-  }
-
-  public void addSkole(Link link) {
-    addLink("skole", link);
-  }
-
-  @JsonIgnore
   public List<Link> getUndervisningsforhold() {
     return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList());
   }
 
   public void addUndervisningsforhold(Link link) {
     addLink("undervisningsforhold", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getSkole() {
+    return getLinks().getOrDefault("skole", Collections.emptyList());
+  }
+
+  public void addSkole(Link link) {
+    addLink("skole", link);
   }
 
   @JsonIgnore

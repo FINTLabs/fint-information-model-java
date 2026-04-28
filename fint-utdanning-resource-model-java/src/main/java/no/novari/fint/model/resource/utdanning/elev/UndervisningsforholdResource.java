@@ -45,15 +45,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
   }
 
   @JsonIgnore
-  public List<Link> getKlasse() {
-    return getLinks().getOrDefault("klasse", Collections.emptyList());
-  }
-
-  public void addKlasse(Link link) {
-    addLink("klasse", link);
-  }
-
-  @JsonIgnore
   public List<Link> getTime() {
     return getLinks().getOrDefault("time", Collections.emptyList());
   }
@@ -69,6 +60,15 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
 
   public void addSkole(Link link) {
     addLink("skole", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getKlasse() {
+    return getLinks().getOrDefault("klasse", Collections.emptyList());
+  }
+
+  public void addKlasse(Link link) {
+    addLink("klasse", link);
   }
 
   @JsonIgnore
