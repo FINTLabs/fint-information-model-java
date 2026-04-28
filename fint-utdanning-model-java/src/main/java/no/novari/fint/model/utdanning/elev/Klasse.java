@@ -38,17 +38,17 @@ public class Klasse extends Gruppe implements FintModelObject {
         ONE_TO_ONE,
         true,
         "klasse"),
+    UNDERVISNINGSFORHOLD(
+        "undervisningsforhold",
+        "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
+        NONE_TO_MANY,
+        true,
+        "Klasse"),
     SKOLE(
         "skole",
         "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
         ONE_TO_ONE,
         true,
-        "klasse"),
-    UNDERVISNINGSFORHOLD(
-        "undervisningsforhold",
-        "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
-        NONE_TO_MANY,
-        false,
         "klasse"),
     KLASSEMEDLEMSKAP(
         "klassemedlemskap",
