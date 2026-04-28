@@ -35,12 +35,6 @@ public class Undervisningsforhold extends Utdanningsforhold implements FintModel
         ONE_TO_ONE,
         true,
         "undervisningsforhold"),
-    KLASSE(
-        "klasse",
-        "no.novari.fint.model.utdanning.elev.Klasse",
-        NONE_TO_MANY,
-        true,
-        "undervisningsforhold"),
     TIME(
         "time",
         "no.novari.fint.model.utdanning.timeplan.Time",
@@ -52,6 +46,12 @@ public class Undervisningsforhold extends Utdanningsforhold implements FintModel
         "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
         ONE_TO_ONE,
         true,
+        "undervisningsforhold"),
+    KLASSE(
+        "klasse",
+        "no.novari.fint.model.utdanning.elev.Klasse",
+        NONE_TO_MANY,
+        false,
         "undervisningsforhold"),
     KONTAKTLARERGRUPPE(
         "kontaktlarergruppe",
