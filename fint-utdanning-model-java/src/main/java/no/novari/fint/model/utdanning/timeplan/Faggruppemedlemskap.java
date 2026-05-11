@@ -39,7 +39,11 @@ public class Faggruppemedlemskap extends Gruppemedlemskap implements FintModelOb
     FAGSTATUS(
         "fagstatus", "no.novari.fint.model.utdanning.kodeverk.Fagstatus", NONE_TO_ONE, null, null),
     ELEVFORHOLD(
-        "elevforhold", "no.novari.fint.model.utdanning.elev.Elevforhold", ONE_TO_ONE, null, null),
+        "elevforhold",
+        "no.novari.fint.model.utdanning.elev.Elevforhold",
+        ONE_TO_ONE,
+        false,
+        "faggruppemedlemskap"),
     VARSEL(
         "varsel",
         "no.novari.fint.model.utdanning.elev.Varsel",

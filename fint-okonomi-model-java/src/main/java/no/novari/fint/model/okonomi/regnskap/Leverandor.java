@@ -34,8 +34,8 @@ public class Leverandor implements FintModelObject {
         "leverandorgruppe",
         "no.novari.fint.model.okonomi.regnskap.Leverandorgruppe",
         NONE_TO_ONE,
-        null,
-        null),
+        true,
+        "leverandor"),
     VIRKSOMHET("virksomhet", "no.novari.fint.model.felles.Virksomhet", NONE_TO_ONE, null, null);
 
     private final String name;
