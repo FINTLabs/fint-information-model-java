@@ -55,14 +55,14 @@ public class Organisasjonselement extends Enhet implements FintModelObject {
         "overordnet",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         ONE_TO_ONE,
-        null,
-        null),
+        true,
+        "underordnet"),
     UNDERORDNET(
         "underordnet",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         NONE_TO_MANY,
-        null,
-        null),
+        true,
+        "overordnet"),
     SKOLE(
         "skole",
         "no.novari.fint.model.utdanning.utdanningsprogram.Skole",

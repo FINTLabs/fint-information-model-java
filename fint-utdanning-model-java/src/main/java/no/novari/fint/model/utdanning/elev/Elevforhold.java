@@ -63,8 +63,8 @@ public class Elevforhold extends Utdanningsforhold implements FintModelObject {
         "faggruppemedlemskap",
         "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap",
         NONE_TO_MANY,
-        null,
-        null),
+        true,
+        "elevforhold"),
     SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null),
     UNDERVISNINGSGRUPPEMEDLEMSKAP(
         "undervisningsgruppemedlemskap",
