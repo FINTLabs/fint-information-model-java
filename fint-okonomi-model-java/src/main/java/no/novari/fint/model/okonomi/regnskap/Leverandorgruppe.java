@@ -30,7 +30,11 @@ public class Leverandorgruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
     LEVERANDOR(
-        "leverandor", "no.novari.fint.model.okonomi.regnskap.Leverandor", NONE_TO_MANY, null, null);
+        "leverandor",
+        "no.novari.fint.model.okonomi.regnskap.Leverandor",
+        NONE_TO_MANY,
+        false,
+        "leverandorgruppe");
 
     private final String name;
     private final String packageName;
