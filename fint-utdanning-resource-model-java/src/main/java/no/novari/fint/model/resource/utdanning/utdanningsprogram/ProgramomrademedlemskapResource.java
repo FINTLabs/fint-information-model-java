@@ -33,20 +33,20 @@ public class ProgramomrademedlemskapResource extends Gruppemedlemskap implements
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getElevforhold() {
-    return getLinks().getOrDefault("elevforhold", Collections.emptyList());
-  }
-
-  public void addElevforhold(Link link) {
-    addLink("elevforhold", link);
-  }
-
-  @JsonIgnore
   public List<Link> getProgramomrade() {
     return getLinks().getOrDefault("programomrade", Collections.emptyList());
   }
 
   public void addProgramomrade(Link link) {
     addLink("programomrade", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getElevforhold() {
+    return getLinks().getOrDefault("elevforhold", Collections.emptyList());
+  }
+
+  public void addElevforhold(Link link) {
+    addLink("elevforhold", link);
   }
 }

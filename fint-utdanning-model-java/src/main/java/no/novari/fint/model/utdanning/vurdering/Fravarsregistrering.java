@@ -31,23 +31,23 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Fravarsregistrering implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    FAGGRUPPE(
+        "faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_ONE, null, null),
+    FRAVARSTYPE(
+        "fravarstype",
+        "no.novari.fint.model.utdanning.kodeverk.Fravarstype",
+        ONE_TO_ONE,
+        null,
+        null),
     REGISTRERTAV(
         "registrertAv",
         "no.novari.fint.model.utdanning.elev.Skoleressurs",
         NONE_TO_ONE,
         null,
         null),
-    FAGGRUPPE(
-        "faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_ONE, null, null),
     UNDERVISNINGSGRUPPE(
         "undervisningsgruppe",
         "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe",
-        ONE_TO_ONE,
-        null,
-        null),
-    FRAVARSTYPE(
-        "fravarstype",
-        "no.novari.fint.model.utdanning.kodeverk.Fravarstype",
         ONE_TO_ONE,
         null,
         null),

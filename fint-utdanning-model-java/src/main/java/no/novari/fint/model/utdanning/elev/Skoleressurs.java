@@ -31,17 +31,16 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Skoleressurs implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    PERSON("person", "no.novari.fint.model.felles.Person", NONE_TO_ONE, null, null),
-    PERSONALRESSURS(
-        "personalressurs",
-        "no.novari.fint.model.administrasjon.personal.Personalressurs",
-        ONE_TO_ONE,
-        true,
-        "skoleressurs"),
     UNDERVISNINGSFORHOLD(
         "undervisningsforhold",
         "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
         NONE_TO_MANY,
+        true,
+        "skoleressurs"),
+    PERSONALRESSURS(
+        "personalressurs",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        ONE_TO_ONE,
         true,
         "skoleressurs"),
     SKOLE(
@@ -50,6 +49,7 @@ public class Skoleressurs implements FintModelObject {
         NONE_TO_MANY,
         true,
         "skoleressurs"),
+    PERSON("person", "no.novari.fint.model.felles.Person", NONE_TO_ONE, null, null),
     SENSOR(
         "sensor",
         "no.novari.fint.model.utdanning.vurdering.Sensor",

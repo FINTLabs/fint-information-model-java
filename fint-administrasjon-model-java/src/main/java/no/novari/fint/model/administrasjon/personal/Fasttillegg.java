@@ -27,18 +27,18 @@ import no.novari.fint.model.FintRelation;
 public class Fasttillegg extends Lonn implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    LONNSART(
-        "lonnsart",
-        "no.novari.fint.model.administrasjon.kodeverk.Lonnsart",
-        ONE_TO_ONE,
-        null,
-        null),
     ARBEIDSFORHOLD(
         "arbeidsforhold",
         "no.novari.fint.model.administrasjon.personal.Arbeidsforhold",
         ONE_TO_ONE,
         true,
-        "fasttillegg");
+        "fasttillegg"),
+    LONNSART(
+        "lonnsart",
+        "no.novari.fint.model.administrasjon.kodeverk.Lonnsart",
+        ONE_TO_ONE,
+        null,
+        null);
 
     private final String name;
     private final String packageName;

@@ -38,15 +38,6 @@ public class EnhetsgruppeResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getOrganisasjonsenhet() {
-    return getLinks().getOrDefault("organisasjonsenhet", Collections.emptyList());
-  }
-
-  public void addOrganisasjonsenhet(Link link) {
-    addLink("organisasjonsenhet", link);
-  }
-
-  @JsonIgnore
   public List<Link> getEnhetstype() {
     return getLinks().getOrDefault("enhetstype", Collections.emptyList());
   }
@@ -62,6 +53,15 @@ public class EnhetsgruppeResource implements FintResource {
 
   public void addPlattform(Link link) {
     addLink("plattform", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getOrganisasjonsenhet() {
+    return getLinks().getOrDefault("organisasjonsenhet", Collections.emptyList());
+  }
+
+  public void addOrganisasjonsenhet(Link link) {
+    addLink("organisasjonsenhet", link);
   }
 
   @JsonIgnore

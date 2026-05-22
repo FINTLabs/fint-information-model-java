@@ -37,15 +37,6 @@ public class ElevtilretteleggingResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getElev() {
-    return getLinks().getOrDefault("elev", Collections.emptyList());
-  }
-
-  public void addElev(Link link) {
-    addLink("elev", link);
-  }
-
-  @JsonIgnore
   public List<Link> getFag() {
     return getLinks().getOrDefault("fag", Collections.emptyList());
   }
@@ -61,6 +52,15 @@ public class ElevtilretteleggingResource implements FintResource {
 
   public void addTilrettelegging(Link link) {
     addLink("tilrettelegging", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getElev() {
+    return getLinks().getOrDefault("elev", Collections.emptyList());
+  }
+
+  public void addElev(Link link) {
+    addLink("elev", link);
   }
 
   @JsonIgnore

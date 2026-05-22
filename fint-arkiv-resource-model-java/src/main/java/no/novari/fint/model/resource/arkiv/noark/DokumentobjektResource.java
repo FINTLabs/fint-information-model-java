@@ -30,12 +30,12 @@ public class DokumentobjektResource implements FintComplexDatatypeObject, FintLi
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getFilformat() {
-    return getLinks().getOrDefault("filformat", Collections.emptyList());
+  public List<Link> getReferanseDokumentfil() {
+    return getLinks().getOrDefault("referanseDokumentfil", Collections.emptyList());
   }
 
-  public void addFilformat(Link link) {
-    addLink("filformat", link);
+  public void addReferanseDokumentfil(Link link) {
+    addLink("referanseDokumentfil", link);
   }
 
   @JsonIgnore
@@ -57,11 +57,11 @@ public class DokumentobjektResource implements FintComplexDatatypeObject, FintLi
   }
 
   @JsonIgnore
-  public List<Link> getReferanseDokumentfil() {
-    return getLinks().getOrDefault("referanseDokumentfil", Collections.emptyList());
+  public List<Link> getFilformat() {
+    return getLinks().getOrDefault("filformat", Collections.emptyList());
   }
 
-  public void addReferanseDokumentfil(Link link) {
-    addLink("referanseDokumentfil", link);
+  public void addFilformat(Link link) {
+    addLink("filformat", link);
   }
 }

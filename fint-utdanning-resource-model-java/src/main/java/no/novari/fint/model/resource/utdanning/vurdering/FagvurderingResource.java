@@ -41,15 +41,6 @@ public abstract class FagvurderingResource implements FintAbstractObject, FintLi
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getFag() {
-    return getLinks().getOrDefault("fag", Collections.emptyList());
-  }
-
-  public void addFag(Link link) {
-    addLink("fag", link);
-  }
-
-  @JsonIgnore
   public List<Link> getSkolear() {
     return getLinks().getOrDefault("skolear", Collections.emptyList());
   }
@@ -65,5 +56,14 @@ public abstract class FagvurderingResource implements FintAbstractObject, FintLi
 
   public void addKarakter(Link link) {
     addLink("karakter", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getFag() {
+    return getLinks().getOrDefault("fag", Collections.emptyList());
+  }
+
+  public void addFag(Link link) {
+    addLink("fag", link);
   }
 }

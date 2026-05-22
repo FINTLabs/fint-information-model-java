@@ -29,14 +29,12 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Leverandor implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    PERSON("person", "no.novari.fint.model.felles.Person", NONE_TO_ONE, null, null),
     LEVERANDORGRUPPE(
         "leverandorgruppe",
         "no.novari.fint.model.okonomi.regnskap.Leverandorgruppe",
         NONE_TO_ONE,
         true,
-        "leverandor"),
-    VIRKSOMHET("virksomhet", "no.novari.fint.model.felles.Virksomhet", NONE_TO_ONE, null, null);
+        "leverandor");
 
     private final String name;
     private final String packageName;

@@ -45,21 +45,21 @@ public class TransaksjonResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getLeverandor() {
-    return getLinks().getOrDefault("leverandor", Collections.emptyList());
-  }
-
-  public void addLeverandor(Link link) {
-    addLink("leverandor", link);
-  }
-
-  @JsonIgnore
   public List<Link> getAnsvarlig() {
     return getLinks().getOrDefault("ansvarlig", Collections.emptyList());
   }
 
   public void addAnsvarlig(Link link) {
     addLink("ansvarlig", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getLeverandor() {
+    return getLinks().getOrDefault("leverandor", Collections.emptyList());
+  }
+
+  public void addLeverandor(Link link) {
+    addLink("leverandor", link);
   }
 
   @JsonIgnore

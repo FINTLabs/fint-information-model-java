@@ -30,12 +30,6 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Elevtilrettelegging implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ELEV(
-        "elev",
-        "no.novari.fint.model.utdanning.elev.Elevforhold",
-        ONE_TO_ONE,
-        true,
-        "tilrettelegging"),
     FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_ONE, true, "tilrettelegging"),
     TILRETTELEGGING(
         "tilrettelegging",
@@ -43,6 +37,12 @@ public class Elevtilrettelegging implements FintModelObject {
         ONE_TO_ONE,
         null,
         null),
+    ELEV(
+        "elev",
+        "no.novari.fint.model.utdanning.elev.Elevforhold",
+        ONE_TO_ONE,
+        true,
+        "tilrettelegging"),
     EKSAMENSFORM(
         "eksamensform",
         "no.novari.fint.model.utdanning.kodeverk.Eksamensform",

@@ -32,9 +32,41 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Arbeidsforhold implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    TIMERPERUKE(
+        "timerPerUke",
+        "no.novari.fint.model.administrasjon.kodeverk.Uketimetall",
+        NONE_TO_ONE,
+        null,
+        null),
+    ARBEIDSFORHOLDSTYPE(
+        "arbeidsforholdstype",
+        "no.novari.fint.model.administrasjon.kodeverk.Arbeidsforholdstype",
+        NONE_TO_ONE,
+        null,
+        null),
+    PERSONALLEDER(
+        "personalleder",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        NONE_TO_ONE,
+        true,
+        "personalansvar"),
+    ARBEIDSLOKASJON(
+        "arbeidslokasjon",
+        "no.novari.fint.model.administrasjon.organisasjon.Arbeidslokasjon",
+        NONE_TO_ONE,
+        true,
+        "arbeidsforhold"),
+    FORMAL(
+        "formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE, null, null),
     AKTIVITET(
         "aktivitet",
         "no.novari.fint.model.administrasjon.kodeverk.Aktivitet",
+        NONE_TO_ONE,
+        null,
+        null),
+    PROSJEKT(
+        "prosjekt",
+        "no.novari.fint.model.administrasjon.kodeverk.Prosjekt",
         NONE_TO_ONE,
         null,
         null),
@@ -42,23 +74,22 @@ public class Arbeidsforhold implements FintModelObject {
         "anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE, null, null),
     ANSVAR(
         "ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", NONE_TO_ONE, null, null),
-    ARBEIDSFORHOLDSTYPE(
-        "arbeidsforholdstype",
-        "no.novari.fint.model.administrasjon.kodeverk.Arbeidsforholdstype",
-        NONE_TO_ONE,
-        null,
-        null),
-    ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", NONE_TO_ONE, null, null),
-    DIVERSE(
-        "diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE, null, null),
-    FORMAL(
-        "formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE, null, null),
     FUNKSJON(
         "funksjon",
         "no.novari.fint.model.administrasjon.kodeverk.Funksjon",
         NONE_TO_ONE,
         null,
         null),
+    OBJEKT(
+        "objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE, null, null),
+    ARBEIDSSTED(
+        "arbeidssted",
+        "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
+        ONE_TO_ONE,
+        true,
+        "arbeidsforhold"),
+    DIVERSE(
+        "diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE, null, null),
     KONTRAKT(
         "kontrakt",
         "no.novari.fint.model.administrasjon.kodeverk.Kontrakt",
@@ -71,14 +102,7 @@ public class Arbeidsforhold implements FintModelObject {
         NONE_TO_ONE,
         null,
         null),
-    OBJEKT(
-        "objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE, null, null),
-    PROSJEKT(
-        "prosjekt",
-        "no.novari.fint.model.administrasjon.kodeverk.Prosjekt",
-        NONE_TO_ONE,
-        null,
-        null),
+    ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", NONE_TO_ONE, null, null),
     RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE, null, null),
     STILLINGSKODE(
         "stillingskode",
@@ -86,30 +110,6 @@ public class Arbeidsforhold implements FintModelObject {
         NONE_TO_ONE,
         null,
         null),
-    TIMERPERUKE(
-        "timerPerUke",
-        "no.novari.fint.model.administrasjon.kodeverk.Uketimetall",
-        NONE_TO_ONE,
-        null,
-        null),
-    ARBEIDSLOKASJON(
-        "arbeidslokasjon",
-        "no.novari.fint.model.administrasjon.organisasjon.Arbeidslokasjon",
-        NONE_TO_ONE,
-        true,
-        "arbeidsforhold"),
-    ARBEIDSSTED(
-        "arbeidssted",
-        "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
-        ONE_TO_ONE,
-        true,
-        "arbeidsforhold"),
-    PERSONALLEDER(
-        "personalleder",
-        "no.novari.fint.model.administrasjon.personal.Personalressurs",
-        NONE_TO_ONE,
-        true,
-        "personalansvar"),
     FASTLONN(
         "fastlonn",
         "no.novari.fint.model.administrasjon.personal.Fastlonn",

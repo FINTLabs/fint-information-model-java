@@ -29,26 +29,24 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 public class Eksamensgruppemedlemskap extends Gruppemedlemskap implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    DELEGERTTIL(
-        "delegertTil", "no.novari.fint.model.felles.kodeverk.Fylke", NONE_TO_ONE, null, null),
-    ELEVFORHOLD(
-        "elevforhold",
-        "no.novari.fint.model.utdanning.elev.Elevforhold",
-        ONE_TO_ONE,
-        true,
-        "eksamensgruppemedlemskap"),
-    FORETRUKKETSKOLE(
-        "foretrukketSkole",
-        "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
-        NONE_TO_ONE,
-        null,
-        null),
     EKSAMENSGRUPPE(
         "eksamensgruppe",
         "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
         ONE_TO_ONE,
         true,
         "gruppemedlemskap"),
+    FORETRUKKETSKOLE(
+        "foretrukketSkole",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
+        NONE_TO_ONE,
+        null,
+        null),
+    ELEVFORHOLD(
+        "elevforhold",
+        "no.novari.fint.model.utdanning.elev.Elevforhold",
+        ONE_TO_ONE,
+        true,
+        "eksamensgruppemedlemskap"),
     NUS("nus", "no.novari.fint.model.utdanning.kodeverk.Karakterstatus", NONE_TO_ONE, null, null),
     BETALINGSSTATUS(
         "betalingsstatus",
@@ -56,6 +54,8 @@ public class Eksamensgruppemedlemskap extends Gruppemedlemskap implements FintMo
         NONE_TO_ONE,
         null,
         null),
+    DELEGERTTIL(
+        "delegertTil", "no.novari.fint.model.felles.kodeverk.Fylke", NONE_TO_ONE, null, null),
     FORETRUKKETSENSOR(
         "foretrukketSensor",
         "no.novari.fint.model.utdanning.vurdering.Sensor",

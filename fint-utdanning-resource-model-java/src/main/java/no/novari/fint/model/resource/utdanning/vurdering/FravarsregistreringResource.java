@@ -41,15 +41,6 @@ public class FravarsregistreringResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getRegistrertAv() {
-    return getLinks().getOrDefault("registrertAv", Collections.emptyList());
-  }
-
-  public void addRegistrertAv(Link link) {
-    addLink("registrertAv", link);
-  }
-
-  @JsonIgnore
   public List<Link> getFaggruppe() {
     return getLinks().getOrDefault("faggruppe", Collections.emptyList());
   }
@@ -59,21 +50,30 @@ public class FravarsregistreringResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getUndervisningsgruppe() {
-    return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList());
-  }
-
-  public void addUndervisningsgruppe(Link link) {
-    addLink("undervisningsgruppe", link);
-  }
-
-  @JsonIgnore
   public List<Link> getFravarstype() {
     return getLinks().getOrDefault("fravarstype", Collections.emptyList());
   }
 
   public void addFravarstype(Link link) {
     addLink("fravarstype", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getRegistrertAv() {
+    return getLinks().getOrDefault("registrertAv", Collections.emptyList());
+  }
+
+  public void addRegistrertAv(Link link) {
+    addLink("registrertAv", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getUndervisningsgruppe() {
+    return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList());
+  }
+
+  public void addUndervisningsgruppe(Link link) {
+    addLink("undervisningsgruppe", link);
   }
 
   @JsonIgnore

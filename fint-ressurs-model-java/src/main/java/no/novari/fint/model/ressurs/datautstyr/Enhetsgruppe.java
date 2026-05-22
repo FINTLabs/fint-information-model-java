@@ -30,16 +30,16 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Enhetsgruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    ENHETSTYPE(
+        "enhetstype", "no.novari.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null, null),
+    PLATTFORM(
+        "plattform", "no.novari.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null, null),
     ORGANISASJONSENHET(
         "organisasjonsenhet",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         ONE_TO_ONE,
         null,
         null),
-    ENHETSTYPE(
-        "enhetstype", "no.novari.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null, null),
-    PLATTFORM(
-        "plattform", "no.novari.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null, null),
     ENHETSGRUPPEMEDLEMSKAP(
         "enhetsgruppemedlemskap",
         "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap",

@@ -31,18 +31,18 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Skole extends Enhet implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ORGANISASJON(
-        "organisasjon",
-        "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
-        NONE_TO_ONE,
-        true,
-        "skole"),
     SKOLEEIERTYPE(
         "skoleeierType",
         "no.novari.fint.model.utdanning.kodeverk.Skoleeiertype",
         NONE_TO_ONE,
         null,
         null),
+    ORGANISASJON(
+        "organisasjon",
+        "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
+        NONE_TO_ONE,
+        true,
+        "skole"),
     VIGOREFERANSE(
         "vigoreferanse",
         "no.novari.fint.model.utdanning.kodeverk.Vigoreferanse",
@@ -87,15 +87,15 @@ public class Skole extends Enhet implements FintModelObject {
         NONE_TO_MANY,
         false,
         "skole"),
-    EKSAMENSGRUPPE(
-        "eksamensgruppe",
-        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
-        NONE_TO_MANY,
-        false,
-        "skole"),
     UTDANNINGSPROGRAM(
         "utdanningsprogram",
         "no.novari.fint.model.utdanning.utdanningsprogram.Utdanningsprogram",
+        NONE_TO_MANY,
+        false,
+        "skole"),
+    EKSAMENSGRUPPE(
+        "eksamensgruppe",
+        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
         NONE_TO_MANY,
         false,
         "skole");

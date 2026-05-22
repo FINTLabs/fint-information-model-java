@@ -40,29 +40,11 @@ public class LeverandorResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getPerson() {
-    return getLinks().getOrDefault("person", Collections.emptyList());
-  }
-
-  public void addPerson(Link link) {
-    addLink("person", link);
-  }
-
-  @JsonIgnore
   public List<Link> getLeverandorgruppe() {
     return getLinks().getOrDefault("leverandorgruppe", Collections.emptyList());
   }
 
   public void addLeverandorgruppe(Link link) {
     addLink("leverandorgruppe", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getVirksomhet() {
-    return getLinks().getOrDefault("virksomhet", Collections.emptyList());
-  }
-
-  public void addVirksomhet(Link link) {
-    addLink("virksomhet", link);
   }
 }
