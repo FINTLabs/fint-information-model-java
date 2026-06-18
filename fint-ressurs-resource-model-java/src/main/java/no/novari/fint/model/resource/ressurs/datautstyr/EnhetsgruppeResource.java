@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 
@@ -23,6 +24,7 @@ import no.novari.fint.model.resource.Link;
 @ToString
 public class EnhetsgruppeResource implements FintResource {
   // Attributes
+  private @Valid Periode gyldighetsperiode;
   @NotBlank private String navn;
   @NotNull private @Valid Identifikator systemId;
 

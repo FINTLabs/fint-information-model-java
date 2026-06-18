@@ -1,11 +1,13 @@
-package no.novari.fint.model.ressurs.datautstyr;
+package no.novari.fint.model.utdanning.vurdering;
 
+import static no.novari.fint.model.FintMultiplicity.NONE_TO_ONE;
 import static no.novari.fint.model.FintMultiplicity.ONE_TO_ONE;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,27 +23,39 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Enhetsgruppemedlemskap implements FintModelObject {
+public class Aktivitetsfravar implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    DIGITALENHET(
-        "digitalEnhet",
-        "no.novari.fint.model.ressurs.datautstyr.DigitalEnhet",
+    REGISTRERTAV(
+        "registrertAv",
+        "no.novari.fint.model.utdanning.elev.Skoleressurs",
+        NONE_TO_ONE,
+        null,
+        null),
+    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE, null, null),
+    UNDERVISNINGSGRUPPE(
+        "undervisningsgruppe",
+        "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe",
         ONE_TO_ONE,
-        true,
-        "enhetsgruppemedlemskap"),
-    ENHETSGRUPPE(
-        "enhetsgruppe",
-        "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppe",
+        null,
+        null),
+    FRAVARSTYPE(
+        "fravarstype",
+        "no.novari.fint.model.utdanning.kodeverk.Fravarstype",
         ONE_TO_ONE,
-        true,
-        "enhetsgruppemedlemskap");
+        null,
+        null),
+    ELEVFRAVAR(
+        "elevfravar",
+        "no.novari.fint.model.utdanning.vurdering.Elevfravar",
+        ONE_TO_ONE,
+        false,
+        "aktivitetsfravar");
 
     private final String name;
     private final String packageName;
@@ -86,6 +100,8 @@ public class Enhetsgruppemedlemskap implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Periode gyldighetsperiode;
+  @NotNull private @Valid Date dato;
+  private String kommentar;
+  @NotNull private Integer minutter;
   @NotNull private @Valid Identifikator systemId;
 }
