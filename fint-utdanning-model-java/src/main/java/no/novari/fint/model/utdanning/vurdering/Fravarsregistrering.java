@@ -37,6 +37,7 @@ public class Fravarsregistrering implements FintModelObject {
         NONE_TO_ONE,
         null,
         null),
+    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", NONE_TO_ONE, null, null),
     FAGGRUPPE(
         "faggruppe", "no.novari.fint.model.utdanning.timeplan.Faggruppe", NONE_TO_ONE, null, null),
     UNDERVISNINGSGRUPPE(

@@ -2,6 +2,7 @@ package no.novari.fint.model.resource.utdanning.vurdering;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 
@@ -22,11 +22,11 @@ import no.novari.fint.model.resource.Link;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class FravarsregistreringResource implements FintResource {
+public class AktivitetsfravarResource implements FintResource {
   // Attributes
-  @NotNull private Boolean foresPaVitnemal;
+  @NotNull private @Valid Date dato;
   private String kommentar;
-  @NotNull private @Valid Periode periode;
+  @NotNull private Integer minutter;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore
@@ -56,15 +56,6 @@ public class FravarsregistreringResource implements FintResource {
 
   public void addFag(Link link) {
     addLink("fag", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getFaggruppe() {
-    return getLinks().getOrDefault("faggruppe", Collections.emptyList());
-  }
-
-  public void addFaggruppe(Link link) {
-    addLink("faggruppe", link);
   }
 
   @JsonIgnore

@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum VurderingActions {
+  GET_AKTIVITETSFRAVAR,
+  GET_ALL_AKTIVITETSFRAVAR,
+  UPDATE_AKTIVITETSFRAVAR,
   GET_ANMERKNINGER,
   GET_ALL_ANMERKNINGER,
   UPDATE_ANMERKNINGER,
