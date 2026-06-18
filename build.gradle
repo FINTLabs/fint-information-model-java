@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.ben-manes.versions' version '0.53.0'
+    id 'com.github.ben-manes.versions' version '0.54.0'
     id "com.diffplug.spotless" version "8.1.0"
 }
 
@@ -39,8 +39,8 @@ subprojects {
     dependencies {
         annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
-        implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
-        implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
+        implementation("com.fasterxml.jackson.core:jackson-annotations:2.22")
+        implementation("com.fasterxml.jackson.core:jackson-core:2.22.0")
         implementation("javax.validation:validation-api:2.0.1.Final")
         testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.2")
     }
