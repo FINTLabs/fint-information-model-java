@@ -9,7 +9,7 @@ allprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
-    project.group = 'no.fint'
+    project.group = 'no.novari'
 
     repositories {
         maven { url 'https://repo.fintlabs.no/releases' }
