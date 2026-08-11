@@ -37,6 +37,15 @@ public class ElevfravarResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
+  public List<Link> getAktivitetsfravar() {
+    return getLinks().getOrDefault("aktivitetsfravar", Collections.emptyList());
+  }
+
+  public void addAktivitetsfravar(Link link) {
+    addLink("aktivitetsfravar", link);
+  }
+
+  @JsonIgnore
   public List<Link> getFravarsregistrering() {
     return getLinks().getOrDefault("fravarsregistrering", Collections.emptyList());
   }

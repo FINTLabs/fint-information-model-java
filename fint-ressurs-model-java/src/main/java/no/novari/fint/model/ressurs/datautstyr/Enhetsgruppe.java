@@ -22,6 +22,7 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
@@ -90,6 +91,7 @@ public class Enhetsgruppe implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
+  private @Valid Periode gyldighetsperiode;
   @NotBlank private String navn;
   @NotNull private @Valid Identifikator systemId;
 }
