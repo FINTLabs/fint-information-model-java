@@ -37,15 +37,6 @@ public class OtUngdomResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getPerson() {
-    return getLinks().getOrDefault("person", Collections.emptyList());
-  }
-
-  public void addPerson(Link link) {
-    addLink("person", link);
-  }
-
-  @JsonIgnore
   public List<Link> getStatus() {
     return getLinks().getOrDefault("status", Collections.emptyList());
   }
@@ -61,6 +52,15 @@ public class OtUngdomResource implements FintResource {
 
   public void addEnhet(Link link) {
     addLink("enhet", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getPerson() {
+    return getLinks().getOrDefault("person", Collections.emptyList());
+  }
+
+  public void addPerson(Link link) {
+    addLink("person", link);
   }
 
   @JsonIgnore

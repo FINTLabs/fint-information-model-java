@@ -27,25 +27,25 @@ import no.novari.fint.model.FintRelation;
 public abstract class Registrering implements FintAbstractObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    SAKSBEHANDLER(
+        "saksbehandler", "no.novari.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE, null, null),
     TILGANGSGRUPPE(
         "tilgangsgruppe",
         "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe",
         NONE_TO_ONE,
         null,
         null),
+    ARKIVERTAV(
+        "arkivertAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
+    OPPRETTETAV(
+        "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
     ADMINISTRATIVENHET(
         "administrativEnhet",
         "no.novari.fint.model.arkiv.noark.AdministrativEnhet",
         NONE_TO_ONE,
         null,
         null),
-    ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, null, null),
-    SAKSBEHANDLER(
-        "saksbehandler", "no.novari.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE, null, null),
-    ARKIVERTAV(
-        "arkivertAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
-    OPPRETTETAV(
-        "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null);
+    ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;
@@ -82,7 +82,7 @@ public abstract class Registrering implements FintAbstractObject {
 
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Date arkivertDato;
+  private Date arkivertDato;
   private String beskrivelse;
   private List<@Valid Dokumentbeskrivelse> dokumentbeskrivelse;
   private List<String> forfatter;
@@ -91,7 +91,7 @@ public abstract class Registrering implements FintAbstractObject {
   private List<@Valid Merknad> merknad;
   private List<String> nokkelord;
   private String offentligTittel;
-  private @Valid Date opprettetDato;
+  private Date opprettetDato;
   private List<@Valid Part> part;
   private List<String> referanseArkivDel;
   private String registreringsId;

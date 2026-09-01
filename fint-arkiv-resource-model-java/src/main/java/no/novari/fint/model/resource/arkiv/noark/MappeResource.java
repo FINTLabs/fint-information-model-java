@@ -44,14 +44,14 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
     return result;
   }
 
-  private @Valid Date avsluttetDato;
+  private Date avsluttetDato;
   private String beskrivelse;
   private List<@Valid KlasseResource> klasse;
   private @Valid Identifikator mappeId;
   private List<@Valid MerknadResource> merknad;
   private List<String> noekkelord;
   private String offentligTittel;
-  private @Valid Date opprettetDato;
+  private Date opprettetDato;
   private List<@Valid PartResource> part;
   private @Valid SkjermingResource skjerming;
   private @Valid Identifikator systemId;
@@ -70,15 +70,6 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getArkivdel() {
-    return getLinks().getOrDefault("arkivdel", Collections.emptyList());
-  }
-
-  public void addArkivdel(Link link) {
-    addLink("arkivdel", link);
-  }
-
-  @JsonIgnore
   public List<Link> getAvsluttetAv() {
     return getLinks().getOrDefault("avsluttetAv", Collections.emptyList());
   }
@@ -94,5 +85,14 @@ public abstract class MappeResource implements FintAbstractObject, FintLinks {
 
   public void addOpprettetAv(Link link) {
     addLink("opprettetAv", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getArkivdel() {
+    return getLinks().getOrDefault("arkivdel", Collections.emptyList());
+  }
+
+  public void addArkivdel(Link link) {
+    addLink("arkivdel", link);
   }
 }

@@ -23,8 +23,8 @@ import no.novari.fint.model.resource.Link;
 @ToString
 public class AnmerkningerResource implements FintResource {
   // Attributes
-  @NotNull private Integer atferd;
-  @NotNull private Integer orden;
+  @NotNull private Long atferd;
+  @NotNull private Long orden;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore

@@ -32,19 +32,19 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Samtykke implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    BEHANDLING(
-        "behandling",
-        "no.novari.fint.model.personvern.samtykke.Behandling",
-        ONE_TO_ONE,
-        true,
-        "samtykke"),
     PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, null, null),
     ORGANISASJONSELEMENT(
         "organisasjonselement",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         NONE_TO_ONE,
         null,
-        null);
+        null),
+    BEHANDLING(
+        "behandling",
+        "no.novari.fint.model.personvern.samtykke.Behandling",
+        ONE_TO_ONE,
+        true,
+        "samtykke");
 
     private final String name;
     private final String packageName;
@@ -90,6 +90,6 @@ public class Samtykke implements FintModelObject {
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   @NotNull private @Valid Periode gyldighetsperiode;
-  @NotNull private @Valid Date opprettet;
+  @NotNull private Date opprettet;
   @NotNull private @Valid Identifikator systemId;
 }

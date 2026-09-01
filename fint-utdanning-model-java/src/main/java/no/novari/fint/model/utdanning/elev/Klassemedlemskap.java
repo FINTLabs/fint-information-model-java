@@ -28,15 +28,15 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 public class Klassemedlemskap extends Gruppemedlemskap implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ELEVFORHOLD(
-        "elevforhold",
-        "no.novari.fint.model.utdanning.elev.Elevforhold",
-        ONE_TO_ONE,
-        true,
-        "klassemedlemskap"),
     KLASSE(
         "klasse",
         "no.novari.fint.model.utdanning.elev.Klasse",
+        ONE_TO_ONE,
+        true,
+        "klassemedlemskap"),
+    ELEVFORHOLD(
+        "elevforhold",
+        "no.novari.fint.model.utdanning.elev.Elevforhold",
         ONE_TO_ONE,
         true,
         "klassemedlemskap");
