@@ -86,6 +86,6 @@ public class Sensor implements FintModelObject {
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   @NotNull private Boolean aktiv;
-  private Integer sensornummer;
+  private Long sensornummer;
   @NotNull private @Valid Identifikator systemId;
 }

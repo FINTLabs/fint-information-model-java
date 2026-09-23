@@ -44,21 +44,21 @@ public class SkoleResource extends EnhetResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getOrganisasjon() {
-    return getLinks().getOrDefault("organisasjon", Collections.emptyList());
-  }
-
-  public void addOrganisasjon(Link link) {
-    addLink("organisasjon", link);
-  }
-
-  @JsonIgnore
   public List<Link> getSkoleeierType() {
     return getLinks().getOrDefault("skoleeierType", Collections.emptyList());
   }
 
   public void addSkoleeierType(Link link) {
     addLink("skoleeierType", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getOrganisasjon() {
+    return getLinks().getOrDefault("organisasjon", Collections.emptyList());
+  }
+
+  public void addOrganisasjon(Link link) {
+    addLink("organisasjon", link);
   }
 
   @JsonIgnore
@@ -143,20 +143,20 @@ public class SkoleResource extends EnhetResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getEksamensgruppe() {
-    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
-  }
-
-  public void addEksamensgruppe(Link link) {
-    addLink("eksamensgruppe", link);
-  }
-
-  @JsonIgnore
   public List<Link> getUtdanningsprogram() {
     return getLinks().getOrDefault("utdanningsprogram", Collections.emptyList());
   }
 
   public void addUtdanningsprogram(Link link) {
     addLink("utdanningsprogram", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getEksamensgruppe() {
+    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
+  }
+
+  public void addEksamensgruppe(Link link) {
+    addLink("eksamensgruppe", link);
   }
 }

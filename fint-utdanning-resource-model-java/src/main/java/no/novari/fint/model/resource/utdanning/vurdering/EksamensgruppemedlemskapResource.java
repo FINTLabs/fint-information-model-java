@@ -37,21 +37,12 @@ public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implement
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getDelegertTil() {
-    return getLinks().getOrDefault("delegertTil", Collections.emptyList());
+  public List<Link> getEksamensgruppe() {
+    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
   }
 
-  public void addDelegertTil(Link link) {
-    addLink("delegertTil", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getElevforhold() {
-    return getLinks().getOrDefault("elevforhold", Collections.emptyList());
-  }
-
-  public void addElevforhold(Link link) {
-    addLink("elevforhold", link);
+  public void addEksamensgruppe(Link link) {
+    addLink("eksamensgruppe", link);
   }
 
   @JsonIgnore
@@ -64,12 +55,12 @@ public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implement
   }
 
   @JsonIgnore
-  public List<Link> getEksamensgruppe() {
-    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
+  public List<Link> getElevforhold() {
+    return getLinks().getOrDefault("elevforhold", Collections.emptyList());
   }
 
-  public void addEksamensgruppe(Link link) {
-    addLink("eksamensgruppe", link);
+  public void addElevforhold(Link link) {
+    addLink("elevforhold", link);
   }
 
   @JsonIgnore
@@ -88,6 +79,15 @@ public class EksamensgruppemedlemskapResource extends Gruppemedlemskap implement
 
   public void addBetalingsstatus(Link link) {
     addLink("betalingsstatus", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getDelegertTil() {
+    return getLinks().getOrDefault("delegertTil", Collections.emptyList());
+  }
+
+  public void addDelegertTil(Link link) {
+    addLink("delegertTil", link);
   }
 
   @JsonIgnore

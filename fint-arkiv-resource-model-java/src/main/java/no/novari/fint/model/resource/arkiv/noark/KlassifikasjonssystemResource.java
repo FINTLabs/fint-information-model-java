@@ -36,11 +36,11 @@ public class KlassifikasjonssystemResource implements FintResource {
   }
 
   private String avsluttetAv;
-  private @Valid Date avsluttetDato;
+  private Date avsluttetDato;
   private String beskrivelse;
   @NotEmpty private List<@Valid KlasseResource> klasse;
   @NotBlank private String opprettetAv;
-  @NotNull private @Valid Date opprettetDato;
+  @NotNull private Date opprettetDato;
   @NotNull private @Valid Identifikator systemId;
   @NotBlank private String tittel;
 

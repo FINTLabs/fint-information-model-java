@@ -30,18 +30,18 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Identitet implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    PERSONALRESSURS(
-        "personalressurs",
-        "no.novari.fint.model.administrasjon.personal.Personalressurs",
-        NONE_TO_ONE,
-        null,
-        null),
     RETTIGHET(
         "rettighet",
         "no.novari.fint.model.ressurs.tilgang.Rettighet",
         NONE_TO_MANY,
         true,
-        "identitet");
+        "identitet"),
+    PERSONALRESSURS(
+        "personalressurs",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        NONE_TO_ONE,
+        null,
+        null);
 
     private final String name;
     private final String packageName;

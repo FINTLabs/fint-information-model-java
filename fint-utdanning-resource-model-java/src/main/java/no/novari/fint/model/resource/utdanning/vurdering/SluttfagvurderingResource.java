@@ -31,13 +31,11 @@ public class SluttfagvurderingResource extends FagvurderingResource implements F
   // Relations
   @Getter private final Map<String, List<Link>> links = createLinks();
 
-  @Deprecated
   @JsonIgnore
   public List<Link> getEksamensgruppe() {
     return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
   }
 
-  @Deprecated
   public void addEksamensgruppe(Link link) {
     addLink("eksamensgruppe", link);
   }

@@ -19,7 +19,7 @@ public class Fravarsprosent implements FintComplexDatatypeObject {
   }
 
   @JsonIgnore private final boolean writeable = false;
-  @NotNull private Integer fravarstimer;
-  @NotNull private Integer prosent;
-  @NotNull private Integer undervisningstimer;
+  @NotNull private Long fravarstimer;
+  @NotNull private Long prosent;
+  @NotNull private Long undervisningstimer;
 }
