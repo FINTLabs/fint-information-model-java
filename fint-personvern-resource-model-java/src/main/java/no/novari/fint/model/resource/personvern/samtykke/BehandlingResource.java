@@ -26,7 +26,7 @@ public class BehandlingResource implements FintResource {
   // Attributes
   @NotNull private Boolean aktiv;
   @NotBlank private String formal;
-  private @Valid Date slettet;
+  private Date slettet;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore

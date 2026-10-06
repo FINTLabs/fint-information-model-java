@@ -27,24 +27,24 @@ import no.novari.fint.model.FintRelation;
 public class Dokumentbeskrivelse implements FintComplexDatatypeObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    DOKUMENTTYPE(
+        "dokumentType", "no.novari.fint.model.arkiv.kodeverk.DokumentType", ONE_TO_ONE, null, null),
+    TILKNYTTETAV(
+        "tilknyttetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
+    OPPRETTETAV(
+        "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
     DOKUMENTSTATUS(
         "dokumentstatus",
         "no.novari.fint.model.arkiv.kodeverk.DokumentStatus",
         ONE_TO_ONE,
         null,
         null),
-    DOKUMENTTYPE(
-        "dokumentType", "no.novari.fint.model.arkiv.kodeverk.DokumentType", ONE_TO_ONE, null, null),
     TILKNYTTETREGISTRERINGSOM(
         "tilknyttetRegistreringSom",
         "no.novari.fint.model.arkiv.kodeverk.TilknyttetRegistreringSom",
         ONE_TO_MANY,
         null,
-        null),
-    TILKNYTTETAV(
-        "tilknyttetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
-    OPPRETTETAV(
-        "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null);
+        null);
 
     private final String name;
     private final String packageName;
@@ -85,10 +85,10 @@ public class Dokumentbeskrivelse implements FintComplexDatatypeObject {
   private Long dokumentnummer;
   private List<@Valid Dokumentobjekt> dokumentobjekt;
   private List<String> forfatter;
-  private @Valid Date opprettetDato;
+  private Date opprettetDato;
   private List<@Valid Part> part;
   private List<String> referanseArkivdel;
   private @Valid Skjerming skjerming;
-  private @Valid Date tilknyttetDato;
+  private Date tilknyttetDato;
   @NotBlank private String tittel;
 }

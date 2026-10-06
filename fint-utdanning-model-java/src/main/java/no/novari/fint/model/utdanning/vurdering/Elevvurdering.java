@@ -30,12 +30,6 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Elevvurdering implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ELEVFORHOLD(
-        "elevforhold",
-        "no.novari.fint.model.utdanning.elev.Elevforhold",
-        ONE_TO_ONE,
-        true,
-        "elevvurdering"),
     SLUTTFAGVURDERING(
         "sluttfagvurdering",
         "no.novari.fint.model.utdanning.vurdering.Sluttfagvurdering",
@@ -64,6 +58,12 @@ public class Elevvurdering implements FintModelObject {
         "halvarsordensvurdering",
         "no.novari.fint.model.utdanning.vurdering.Halvarsordensvurdering",
         NONE_TO_MANY,
+        true,
+        "elevvurdering"),
+    ELEVFORHOLD(
+        "elevforhold",
+        "no.novari.fint.model.utdanning.elev.Elevforhold",
+        ONE_TO_ONE,
         true,
         "elevvurdering"),
     HALVARSFAGVURDERING(

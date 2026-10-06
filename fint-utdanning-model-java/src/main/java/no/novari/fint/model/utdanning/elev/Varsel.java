@@ -31,14 +31,14 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Varsel implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    UTSTEDER(
-        "utsteder", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE, null, null),
     KARAKTERANSVARLIG(
         "karakteransvarlig",
         "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
         NONE_TO_ONE,
         null,
         null),
+    UTSTEDER(
+        "utsteder", "no.novari.fint.model.utdanning.elev.Skoleressurs", NONE_TO_ONE, null, null),
     TYPE("type", "no.novari.fint.model.utdanning.kodeverk.Varseltype", NONE_TO_ONE, null, null),
     FAGGRUPPEMEDLEMSKAP(
         "faggruppemedlemskap",

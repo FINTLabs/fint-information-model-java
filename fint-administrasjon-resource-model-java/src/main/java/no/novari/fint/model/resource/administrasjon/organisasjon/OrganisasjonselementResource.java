@@ -45,15 +45,6 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getAnsvar() {
-    return getLinks().getOrDefault("ansvar", Collections.emptyList());
-  }
-
-  public void addAnsvar(Link link) {
-    addLink("ansvar", link);
-  }
-
-  @JsonIgnore
   public List<Link> getOrganisasjonstype() {
     return getLinks().getOrDefault("organisasjonstype", Collections.emptyList());
   }
@@ -69,6 +60,15 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
 
   public void addLeder(Link link) {
     addLink("leder", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getAnsvar() {
+    return getLinks().getOrDefault("ansvar", Collections.emptyList());
+  }
+
+  public void addAnsvar(Link link) {
+    addLink("ansvar", link);
   }
 
   @JsonIgnore
@@ -90,20 +90,20 @@ public class OrganisasjonselementResource extends EnhetResource implements FintR
   }
 
   @JsonIgnore
-  public List<Link> getSkole() {
-    return getLinks().getOrDefault("skole", Collections.emptyList());
-  }
-
-  public void addSkole(Link link) {
-    addLink("skole", link);
-  }
-
-  @JsonIgnore
   public List<Link> getArbeidsforhold() {
     return getLinks().getOrDefault("arbeidsforhold", Collections.emptyList());
   }
 
   public void addArbeidsforhold(Link link) {
     addLink("arbeidsforhold", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getSkole() {
+    return getLinks().getOrDefault("skole", Collections.emptyList());
+  }
+
+  public void addSkole(Link link) {
+    addLink("skole", link);
   }
 }

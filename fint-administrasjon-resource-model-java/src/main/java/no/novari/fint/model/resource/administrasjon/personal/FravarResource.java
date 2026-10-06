@@ -25,7 +25,7 @@ import no.novari.fint.model.resource.Link;
 @ToString
 public class FravarResource implements FintResource {
   // Attributes
-  private @Valid Date godkjent;
+  private Date godkjent;
   private @Valid Identifikator kildesystemId;
   @NotNull private @Valid Periode periode;
   @NotNull private Long prosent;
@@ -44,21 +44,21 @@ public class FravarResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getFravarsgrunn() {
-    return getLinks().getOrDefault("fravarsgrunn", Collections.emptyList());
-  }
-
-  public void addFravarsgrunn(Link link) {
-    addLink("fravarsgrunn", link);
-  }
-
-  @JsonIgnore
   public List<Link> getFravarstype() {
     return getLinks().getOrDefault("fravarstype", Collections.emptyList());
   }
 
   public void addFravarstype(Link link) {
     addLink("fravarstype", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getFravarsgrunn() {
+    return getLinks().getOrDefault("fravarsgrunn", Collections.emptyList());
+  }
+
+  public void addFravarsgrunn(Link link) {
+    addLink("fravarsgrunn", link);
   }
 
   @JsonIgnore

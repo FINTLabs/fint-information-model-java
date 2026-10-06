@@ -24,7 +24,7 @@ import no.novari.fint.model.resource.Link;
 public class SensorResource implements FintResource {
   // Attributes
   @NotNull private Boolean aktiv;
-  private Integer sensornummer;
+  private Long sensornummer;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore

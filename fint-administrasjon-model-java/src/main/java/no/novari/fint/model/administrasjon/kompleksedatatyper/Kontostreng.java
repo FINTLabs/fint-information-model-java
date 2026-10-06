@@ -25,24 +25,17 @@ import no.novari.fint.model.FintRelation;
 public class Kontostreng implements FintComplexDatatypeObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    AKTIVITET(
-        "aktivitet",
-        "no.novari.fint.model.administrasjon.kodeverk.Aktivitet",
-        NONE_TO_ONE,
-        null,
-        null),
-    ANLEGG(
-        "anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE, null, null),
-    ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", ONE_TO_ONE, null, null),
-    ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", ONE_TO_ONE, null, null),
-    DIVERSE(
-        "diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE, null, null),
-    FORMAL(
-        "formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE, null, null),
     FUNKSJON(
         "funksjon",
         "no.novari.fint.model.administrasjon.kodeverk.Funksjon",
         ONE_TO_ONE,
+        null,
+        null),
+    RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE, null, null),
+    LOPENUMMER(
+        "lopenummer",
+        "no.novari.fint.model.administrasjon.kodeverk.Lopenummer",
+        NONE_TO_ONE,
         null,
         null),
     KONTRAKT(
@@ -51,27 +44,34 @@ public class Kontostreng implements FintComplexDatatypeObject {
         NONE_TO_ONE,
         null,
         null),
-    LOPENUMMER(
-        "lopenummer",
-        "no.novari.fint.model.administrasjon.kodeverk.Lopenummer",
-        NONE_TO_ONE,
-        null,
-        null),
-    OBJEKT(
-        "objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE, null, null),
     PROSJEKT(
         "prosjekt",
         "no.novari.fint.model.administrasjon.kodeverk.Prosjekt",
         NONE_TO_ONE,
         null,
         null),
+    DIVERSE(
+        "diverse", "no.novari.fint.model.administrasjon.kodeverk.Diverse", NONE_TO_ONE, null, null),
+    ANLEGG(
+        "anlegg", "no.novari.fint.model.administrasjon.kodeverk.Anlegg", NONE_TO_ONE, null, null),
+    ART("art", "no.novari.fint.model.administrasjon.kodeverk.Art", ONE_TO_ONE, null, null),
     PROSJEKTART(
         "prosjektart",
         "no.novari.fint.model.administrasjon.kodeverk.Prosjektart",
         NONE_TO_ONE,
         null,
         null),
-    RAMME("ramme", "no.novari.fint.model.administrasjon.kodeverk.Ramme", NONE_TO_ONE, null, null);
+    OBJEKT(
+        "objekt", "no.novari.fint.model.administrasjon.kodeverk.Objekt", NONE_TO_ONE, null, null),
+    ANSVAR("ansvar", "no.novari.fint.model.administrasjon.kodeverk.Ansvar", ONE_TO_ONE, null, null),
+    AKTIVITET(
+        "aktivitet",
+        "no.novari.fint.model.administrasjon.kodeverk.Aktivitet",
+        NONE_TO_ONE,
+        null,
+        null),
+    FORMAL(
+        "formal", "no.novari.fint.model.administrasjon.kodeverk.Formal", NONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;

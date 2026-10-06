@@ -32,21 +32,21 @@ public class EksamensvurderingResource extends FagvurderingResource implements F
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getEksamensgruppe() {
-    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
-  }
-
-  public void addEksamensgruppe(Link link) {
-    addLink("eksamensgruppe", link);
-  }
-
-  @JsonIgnore
   public List<Link> getKarakterhistorie() {
     return getLinks().getOrDefault("karakterhistorie", Collections.emptyList());
   }
 
   public void addKarakterhistorie(Link link) {
     addLink("karakterhistorie", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getEksamensgruppe() {
+    return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList());
+  }
+
+  public void addEksamensgruppe(Link link) {
+    addLink("eksamensgruppe", link);
   }
 
   @JsonIgnore

@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -32,19 +31,6 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 public class Eksamensgruppe extends Gruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    UNDERVISNINGSFORHOLD(
-        "undervisningsforhold",
-        "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
-        NONE_TO_MANY,
-        true,
-        "eksamensgruppe"),
-    EKSAMEN(
-        "eksamen",
-        "no.novari.fint.model.utdanning.timeplan.Eksamen",
-        NONE_TO_ONE,
-        true,
-        "eksamensgruppe"),
-    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE, true, "eksamensgruppe"),
     SKOLE(
         "skole",
         "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
@@ -59,6 +45,19 @@ public class Eksamensgruppe extends Gruppe implements FintModelObject {
         null,
         null),
     SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null),
+    UNDERVISNINGSFORHOLD(
+        "undervisningsforhold",
+        "no.novari.fint.model.utdanning.elev.Undervisningsforhold",
+        NONE_TO_MANY,
+        true,
+        "eksamensgruppe"),
+    EKSAMEN(
+        "eksamen",
+        "no.novari.fint.model.utdanning.timeplan.Eksamen",
+        NONE_TO_ONE,
+        true,
+        "eksamensgruppe"),
+    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE, true, "eksamensgruppe"),
     GRUPPEMEDLEMSKAP(
         "gruppemedlemskap",
         "no.novari.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap",
@@ -115,5 +114,5 @@ public class Eksamensgruppe extends Gruppe implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Date eksamensdato;
+  private Date eksamensdato;
 }

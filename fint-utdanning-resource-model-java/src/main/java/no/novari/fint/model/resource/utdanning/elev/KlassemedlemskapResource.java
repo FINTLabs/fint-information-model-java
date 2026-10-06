@@ -33,20 +33,20 @@ public class KlassemedlemskapResource extends Gruppemedlemskap implements FintRe
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getElevforhold() {
-    return getLinks().getOrDefault("elevforhold", Collections.emptyList());
-  }
-
-  public void addElevforhold(Link link) {
-    addLink("elevforhold", link);
-  }
-
-  @JsonIgnore
   public List<Link> getKlasse() {
     return getLinks().getOrDefault("klasse", Collections.emptyList());
   }
 
   public void addKlasse(Link link) {
     addLink("klasse", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getElevforhold() {
+    return getLinks().getOrDefault("elevforhold", Collections.emptyList());
+  }
+
+  public void addElevforhold(Link link) {
+    addLink("elevforhold", link);
   }
 }

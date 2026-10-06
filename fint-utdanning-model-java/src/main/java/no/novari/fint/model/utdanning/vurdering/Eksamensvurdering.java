@@ -28,16 +28,16 @@ import no.novari.fint.model.FintRelation;
 public class Eksamensvurdering extends Fagvurdering implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    EKSAMENSGRUPPE(
-        "eksamensgruppe",
-        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
-        ONE_TO_ONE,
-        null,
-        null),
     KARAKTERHISTORIE(
         "karakterhistorie",
         "no.novari.fint.model.utdanning.vurdering.Karakterhistorie",
         NONE_TO_ONE,
+        null,
+        null),
+    EKSAMENSGRUPPE(
+        "eksamensgruppe",
+        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppe",
+        ONE_TO_ONE,
         null,
         null),
     ELEVVURDERING(

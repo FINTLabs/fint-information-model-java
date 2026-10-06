@@ -26,7 +26,7 @@ import no.novari.fint.model.resource.Link;
 public class SamtykkeResource implements FintResource {
   // Attributes
   @NotNull private @Valid Periode gyldighetsperiode;
-  @NotNull private @Valid Date opprettet;
+  @NotNull private Date opprettet;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore
@@ -39,15 +39,6 @@ public class SamtykkeResource implements FintResource {
 
   // Relations
   @Getter private final Map<String, List<Link>> links = createLinks();
-
-  @JsonIgnore
-  public List<Link> getBehandling() {
-    return getLinks().getOrDefault("behandling", Collections.emptyList());
-  }
-
-  public void addBehandling(Link link) {
-    addLink("behandling", link);
-  }
 
   @JsonIgnore
   public List<Link> getPerson() {
@@ -65,5 +56,14 @@ public class SamtykkeResource implements FintResource {
 
   public void addOrganisasjonselement(Link link) {
     addLink("organisasjonselement", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getBehandling() {
+    return getLinks().getOrDefault("behandling", Collections.emptyList());
+  }
+
+  public void addBehandling(Link link) {
+    addLink("behandling", link);
   }
 }

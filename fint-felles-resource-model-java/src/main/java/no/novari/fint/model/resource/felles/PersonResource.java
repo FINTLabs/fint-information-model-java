@@ -137,21 +137,21 @@ public class PersonResource extends AktorResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getLarling() {
-    return getLinks().getOrDefault("larling", Collections.emptyList());
-  }
-
-  public void addLarling(Link link) {
-    addLink("larling", link);
-  }
-
-  @JsonIgnore
   public List<Link> getElev() {
     return getLinks().getOrDefault("elev", Collections.emptyList());
   }
 
   public void addElev(Link link) {
     addLink("elev", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getLarling() {
+    return getLinks().getOrDefault("larling", Collections.emptyList());
+  }
+
+  public void addLarling(Link link) {
+    addLink("larling", link);
   }
 
   @JsonIgnore

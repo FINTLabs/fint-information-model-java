@@ -53,12 +53,6 @@ public class Fag extends Gruppe implements FintModelObject {
         NONE_TO_MANY,
         false,
         "fag"),
-    PROGRAMOMRADE(
-        "programomrade",
-        "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
-        NONE_TO_MANY,
-        false,
-        "fag"),
     FAGGRUPPE(
         "faggruppe",
         "no.novari.fint.model.utdanning.timeplan.Faggruppe",
@@ -68,6 +62,12 @@ public class Fag extends Gruppe implements FintModelObject {
     UNDERVISNINGSGRUPPE(
         "undervisningsgruppe",
         "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppe",
+        NONE_TO_MANY,
+        false,
+        "fag"),
+    PROGRAMOMRADE(
+        "programomrade",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
         NONE_TO_MANY,
         false,
         "fag"),

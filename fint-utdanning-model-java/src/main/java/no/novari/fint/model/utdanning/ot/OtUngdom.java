@@ -30,9 +30,9 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class OtUngdom implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, true, "otungdom"),
     STATUS("status", "no.novari.fint.model.utdanning.kodeverk.OtStatus", NONE_TO_ONE, null, null),
     ENHET("enhet", "no.novari.fint.model.utdanning.kodeverk.OtEnhet", NONE_TO_ONE, null, null),
+    PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, true, "otungdom"),
     PROGRAMOMRADE(
         "programomrade",
         "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
