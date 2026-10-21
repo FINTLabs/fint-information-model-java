@@ -25,7 +25,6 @@ import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import no.novari.fint.model.utdanning.basisklasser.Utdanningsforhold;
-import no.novari.fint.model.utdanning.vurdering.Anmerkninger;
 
 @Data
 @NoArgsConstructor
@@ -34,7 +33,12 @@ import no.novari.fint.model.utdanning.vurdering.Anmerkninger;
 public class Elevforhold extends Utdanningsforhold implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", ONE_TO_ONE, true, "elevforhold"),
+    ANMERKNINGER(
+        "anmerkninger",
+        "no.novari.fint.model.utdanning.vurdering.Anmerkninger",
+        NONE_TO_MANY,
+        null,
+        null),
     KATEGORI(
         "kategori",
         "no.novari.fint.model.utdanning.kodeverk.Elevkategori",
@@ -59,6 +63,7 @@ public class Elevforhold extends Utdanningsforhold implements FintModelObject {
         NONE_TO_ONE,
         true,
         "elevforhold"),
+    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", ONE_TO_ONE, true, "elevforhold"),
     FAGGRUPPEMEDLEMSKAP(
         "faggruppemedlemskap",
         "no.novari.fint.model.utdanning.timeplan.Faggruppemedlemskap",
@@ -66,21 +71,15 @@ public class Elevforhold extends Utdanningsforhold implements FintModelObject {
         true,
         "elevforhold"),
     SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null),
-    UNDERVISNINGSGRUPPEMEDLEMSKAP(
-        "undervisningsgruppemedlemskap",
-        "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap",
+    TILRETTELEGGING(
+        "tilrettelegging",
+        "no.novari.fint.model.utdanning.elev.Elevtilrettelegging",
         NONE_TO_MANY,
         false,
-        "elevforhold"),
-    PERSONGRUPPEMEDLEMSKAP(
-        "persongruppemedlemskap",
-        "no.novari.fint.model.utdanning.elev.Persongruppemedlemskap",
-        NONE_TO_MANY,
-        false,
-        "elevforhold"),
-    EKSAMENSGRUPPEMEDLEMSKAP(
-        "eksamensgruppemedlemskap",
-        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap",
+        "elev"),
+    KLASSEMEDLEMSKAP(
+        "klassemedlemskap",
+        "no.novari.fint.model.utdanning.elev.Klassemedlemskap",
         NONE_TO_MANY,
         false,
         "elevforhold"),
@@ -90,22 +89,16 @@ public class Elevforhold extends Utdanningsforhold implements FintModelObject {
         NONE_TO_MANY,
         false,
         "elevforhold"),
-    ELEVFRAVAR(
-        "elevfravar",
-        "no.novari.fint.model.utdanning.vurdering.Fravarsoversikt",
+    PERSONGRUPPEMEDLEMSKAP(
+        "persongruppemedlemskap",
+        "no.novari.fint.model.utdanning.elev.Persongruppemedlemskap",
         NONE_TO_MANY,
         false,
         "elevforhold"),
-    TILRETTELEGGING(
-        "tilrettelegging",
-        "no.novari.fint.model.utdanning.elev.Elevtilrettelegging",
+    UNDERVISNINGSGRUPPEMEDLEMSKAP(
+        "undervisningsgruppemedlemskap",
+        "no.novari.fint.model.utdanning.timeplan.Undervisningsgruppemedlemskap",
         NONE_TO_MANY,
-        false,
-        "elev"),
-    ELEVVURDERING(
-        "elevvurdering",
-        "no.novari.fint.model.utdanning.vurdering.Elevvurdering",
-        NONE_TO_ONE,
         false,
         "elevforhold"),
     PROGRAMOMRADEMEDLEMSKAP(
@@ -114,9 +107,21 @@ public class Elevforhold extends Utdanningsforhold implements FintModelObject {
         NONE_TO_MANY,
         false,
         "elevforhold"),
-    KLASSEMEDLEMSKAP(
-        "klassemedlemskap",
-        "no.novari.fint.model.utdanning.elev.Klassemedlemskap",
+    EKSAMENSGRUPPEMEDLEMSKAP(
+        "eksamensgruppemedlemskap",
+        "no.novari.fint.model.utdanning.vurdering.Eksamensgruppemedlemskap",
+        NONE_TO_MANY,
+        false,
+        "elevforhold"),
+    ELEVVURDERING(
+        "elevvurdering",
+        "no.novari.fint.model.utdanning.vurdering.Elevvurdering",
+        NONE_TO_ONE,
+        false,
+        "elevforhold"),
+    ELEVFRAVAR(
+        "elevfravar",
+        "no.novari.fint.model.utdanning.vurdering.Fravarsoversikt",
         NONE_TO_MANY,
         false,
         "elevforhold");
@@ -164,7 +169,6 @@ public class Elevforhold extends Utdanningsforhold implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private List<@Valid Anmerkninger> anmerkninger;
   private Date avbruddsdato;
   private @Valid Periode gyldighetsperiode;
   private Boolean hovedskole;

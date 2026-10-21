@@ -31,11 +31,11 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public abstract class Mappe implements FintAbstractObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, null, null),
     AVSLUTTETAV(
         "avsluttetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", NONE_TO_ONE, null, null),
     OPPRETTETAV(
-        "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null);
+        "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
+    ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;
@@ -81,14 +81,14 @@ public abstract class Mappe implements FintAbstractObject {
 
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Date avsluttetDato;
+  private Date avsluttetDato;
   private String beskrivelse;
   private List<@Valid Klasse> klasse;
   private @Valid Identifikator mappeId;
   private List<@Valid Merknad> merknad;
   private List<String> noekkelord;
   private String offentligTittel;
-  private @Valid Date opprettetDato;
+  private Date opprettetDato;
   private List<@Valid Part> part;
   private @Valid Skjerming skjerming;
   private @Valid Identifikator systemId;

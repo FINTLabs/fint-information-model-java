@@ -47,6 +47,15 @@ public class TilgangResource implements FintResource {
   }
 
   @JsonIgnore
+  public List<Link> getArkivressurs() {
+    return getLinks().getOrDefault("arkivressurs", Collections.emptyList());
+  }
+
+  public void addArkivressurs(Link link) {
+    addLink("arkivressurs", link);
+  }
+
+  @JsonIgnore
   public List<Link> getAdministrativEnhet() {
     return getLinks().getOrDefault("administrativEnhet", Collections.emptyList());
   }
@@ -62,14 +71,5 @@ public class TilgangResource implements FintResource {
 
   public void addArkivdel(Link link) {
     addLink("arkivdel", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getArkivressurs() {
-    return getLinks().getOrDefault("arkivressurs", Collections.emptyList());
-  }
-
-  public void addArkivressurs(Link link) {
-    addLink("arkivressurs", link);
   }
 }

@@ -68,7 +68,7 @@ public class Klasse implements FintComplexDatatypeObject {
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   @NotBlank private String klasseId;
-  private Integer rekkefolge;
+  private Long rekkefolge;
   private @Valid Skjerming skjerming;
   @NotBlank private String tittel;
 }

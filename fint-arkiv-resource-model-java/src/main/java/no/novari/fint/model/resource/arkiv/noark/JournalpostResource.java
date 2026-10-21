@@ -26,27 +26,18 @@ public class JournalpostResource extends RegistreringResource
   // Attributes
   private Long antallVedlegg;
   private @Valid Avskrivning avskrivning;
-  private @Valid Date dokumentetsDato;
-  private @Valid Date forfallsDato;
+  private Date dokumentetsDato;
+  private Date forfallsDato;
   private String journalAr;
-  private @Valid Date journalDato;
+  private Date journalDato;
   private Long journalPostnummer;
   private Long journalSekvensnummer;
-  private @Valid Date mottattDato;
-  private @Valid Date offentlighetsvurdertDato;
-  private @Valid Date sendtDato;
+  private Date mottattDato;
+  private Date offentlighetsvurdertDato;
+  private Date sendtDato;
 
   // Relations
   @Getter private final Map<String, List<Link>> links = createLinks();
-
-  @JsonIgnore
-  public List<Link> getJournalposttype() {
-    return getLinks().getOrDefault("journalposttype", Collections.emptyList());
-  }
-
-  public void addJournalposttype(Link link) {
-    addLink("journalposttype", link);
-  }
 
   @JsonIgnore
   public List<Link> getJournalstatus() {
@@ -64,5 +55,14 @@ public class JournalpostResource extends RegistreringResource
 
   public void addJournalenhet(Link link) {
     addLink("journalenhet", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getJournalposttype() {
+    return getLinks().getOrDefault("journalposttype", Collections.emptyList());
+  }
+
+  public void addJournalposttype(Link link) {
+    addLink("journalposttype", link);
   }
 }

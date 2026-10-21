@@ -101,6 +101,6 @@ public class Behandling implements FintModelObject {
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   @NotNull private Boolean aktiv;
   @NotBlank private String formal;
-  private @Valid Date slettet;
+  private Date slettet;
   @NotNull private @Valid Identifikator systemId;
 }

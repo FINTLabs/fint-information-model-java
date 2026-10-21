@@ -41,21 +41,21 @@ public class VarselResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getUtsteder() {
-    return getLinks().getOrDefault("utsteder", Collections.emptyList());
-  }
-
-  public void addUtsteder(Link link) {
-    addLink("utsteder", link);
-  }
-
-  @JsonIgnore
   public List<Link> getKarakteransvarlig() {
     return getLinks().getOrDefault("karakteransvarlig", Collections.emptyList());
   }
 
   public void addKarakteransvarlig(Link link) {
     addLink("karakteransvarlig", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getUtsteder() {
+    return getLinks().getOrDefault("utsteder", Collections.emptyList());
+  }
+
+  public void addUtsteder(Link link) {
+    addLink("utsteder", link);
   }
 
   @JsonIgnore

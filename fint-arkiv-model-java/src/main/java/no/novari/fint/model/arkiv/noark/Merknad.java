@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,14 +25,14 @@ import no.novari.fint.model.FintRelation;
 public class Merknad implements FintComplexDatatypeObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    MERKNADSTYPE(
-        "merknadstype", "no.novari.fint.model.arkiv.kodeverk.Merknadstype", ONE_TO_ONE, null, null),
     MERKNADREGISTRERTAV(
         "merknadRegistrertAv",
         "no.novari.fint.model.arkiv.noark.Arkivressurs",
         ONE_TO_ONE,
         null,
-        null);
+        null),
+    MERKNADSTYPE(
+        "merknadstype", "no.novari.fint.model.arkiv.kodeverk.Merknadstype", ONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;
@@ -70,6 +69,6 @@ public class Merknad implements FintComplexDatatypeObject {
 
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  @NotNull private @Valid Date merknadsdato;
+  @NotNull private Date merknadsdato;
   @NotBlank private String merknadstekst;
 }

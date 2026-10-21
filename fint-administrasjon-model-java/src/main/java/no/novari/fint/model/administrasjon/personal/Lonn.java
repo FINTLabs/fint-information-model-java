@@ -95,11 +95,11 @@ public abstract class Lonn implements FintAbstractObject {
 
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Date anvist;
-  private @Valid Date attestert;
+  private Date anvist;
+  private Date attestert;
   @NotBlank private String beskrivelse;
   private @Valid Identifikator kildesystemId;
-  private @Valid Date kontert;
+  private Date kontert;
   @NotNull private @Valid Kontostreng kontostreng;
   private @Valid Periode opptjent;
   @NotNull private @Valid Periode periode;

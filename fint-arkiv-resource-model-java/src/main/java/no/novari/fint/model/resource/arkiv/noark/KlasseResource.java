@@ -32,7 +32,7 @@ public class KlasseResource implements FintComplexDatatypeObject, FintLinks {
   }
 
   @NotBlank private String klasseId;
-  private Integer rekkefolge;
+  private Long rekkefolge;
   private @Valid SkjermingResource skjerming;
   @NotBlank private String tittel;
 

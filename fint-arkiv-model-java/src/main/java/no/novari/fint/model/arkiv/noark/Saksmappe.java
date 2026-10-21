@@ -30,23 +30,19 @@ import no.novari.fint.model.FintRelation;
 public abstract class Saksmappe extends Mappe implements FintAbstractObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    SAKSMAPPETYPE(
-        "saksmappetype",
-        "no.novari.fint.model.arkiv.kodeverk.Saksmappetype",
+    JOURNALENHET(
+        "journalenhet",
+        "no.novari.fint.model.arkiv.noark.AdministrativEnhet",
         NONE_TO_ONE,
         null,
         null),
     SAKSSTATUS(
         "saksstatus", "no.novari.fint.model.arkiv.kodeverk.Saksstatus", ONE_TO_ONE, null, null),
-    TILGANGSGRUPPE(
-        "tilgangsgruppe",
-        "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe",
-        NONE_TO_ONE,
-        null,
-        null),
-    JOURNALENHET(
-        "journalenhet",
-        "no.novari.fint.model.arkiv.noark.AdministrativEnhet",
+    SAKSANSVARLIG(
+        "saksansvarlig", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
+    SAKSMAPPETYPE(
+        "saksmappetype",
+        "no.novari.fint.model.arkiv.kodeverk.Saksmappetype",
         NONE_TO_ONE,
         null,
         null),
@@ -56,8 +52,12 @@ public abstract class Saksmappe extends Mappe implements FintAbstractObject {
         ONE_TO_ONE,
         null,
         null),
-    SAKSANSVARLIG(
-        "saksansvarlig", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null);
+    TILGANGSGRUPPE(
+        "tilgangsgruppe",
+        "no.novari.fint.model.arkiv.kodeverk.Tilgangsgruppe",
+        NONE_TO_ONE,
+        null,
+        null);
 
     private final String name;
     private final String packageName;
@@ -105,7 +105,7 @@ public abstract class Saksmappe extends Mappe implements FintAbstractObject {
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   private List<@Valid Journalpost> journalpost;
   private String saksaar;
-  private @Valid Date saksdato;
+  private Date saksdato;
   private String sakssekvensnummer;
-  private @Valid Date utlaantDato;
+  private Date utlaantDato;
 }

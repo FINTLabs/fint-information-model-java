@@ -37,20 +37,20 @@ public class IdentitetResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getPersonalressurs() {
-    return getLinks().getOrDefault("personalressurs", Collections.emptyList());
-  }
-
-  public void addPersonalressurs(Link link) {
-    addLink("personalressurs", link);
-  }
-
-  @JsonIgnore
   public List<Link> getRettighet() {
     return getLinks().getOrDefault("rettighet", Collections.emptyList());
   }
 
   public void addRettighet(Link link) {
     addLink("rettighet", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getPersonalressurs() {
+    return getLinks().getOrDefault("personalressurs", Collections.emptyList());
+  }
+
+  public void addPersonalressurs(Link link) {
+    addLink("personalressurs", link);
   }
 }

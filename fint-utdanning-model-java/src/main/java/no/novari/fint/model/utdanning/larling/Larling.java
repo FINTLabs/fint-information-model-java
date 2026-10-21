@@ -32,14 +32,14 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Larling implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, true, "larling"),
-    BEDRIFT("bedrift", "no.novari.fint.model.felles.Virksomhet", NONE_TO_ONE, true, "larling"),
     PROGRAMOMRADE(
         "programomrade",
         "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
         NONE_TO_ONE,
         null,
         null),
+    BEDRIFT("bedrift", "no.novari.fint.model.felles.Virksomhet", NONE_TO_ONE, true, "larling"),
+    PERSON("person", "no.novari.fint.model.felles.Person", ONE_TO_ONE, true, "larling"),
     AVLAGTPROVE(
         "avlagtprove",
         "no.novari.fint.model.utdanning.larling.AvlagtProve",

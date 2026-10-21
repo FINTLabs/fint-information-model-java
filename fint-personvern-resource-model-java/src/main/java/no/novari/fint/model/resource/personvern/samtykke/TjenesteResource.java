@@ -25,7 +25,7 @@ import no.novari.fint.model.resource.Link;
 public class TjenesteResource implements FintResource {
   // Attributes
   @NotBlank private String navn;
-  private @Valid Date slettet;
+  private Date slettet;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore

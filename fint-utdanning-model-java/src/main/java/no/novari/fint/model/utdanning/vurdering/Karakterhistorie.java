@@ -100,6 +100,6 @@ public class Karakterhistorie implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  @NotNull private @Valid Date endretDato;
+  @NotNull private Date endretDato;
   @NotNull private @Valid Identifikator systemId;
 }

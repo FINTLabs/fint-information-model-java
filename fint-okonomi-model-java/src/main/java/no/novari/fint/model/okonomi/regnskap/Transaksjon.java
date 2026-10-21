@@ -32,14 +32,14 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Transaksjon implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    LEVERANDOR(
-        "leverandor", "no.novari.fint.model.okonomi.regnskap.Leverandor", NONE_TO_ONE, null, null),
     ANSVARLIG(
         "ansvarlig",
         "no.novari.fint.model.administrasjon.personal.Personalressurs",
         NONE_TO_ONE,
         null,
         null),
+    LEVERANDOR(
+        "leverandor", "no.novari.fint.model.okonomi.regnskap.Leverandor", NONE_TO_ONE, null, null),
     VALUTA("valuta", "no.novari.fint.model.felles.kodeverk.Valuta", ONE_TO_ONE, null, null),
     POSTERING(
         "postering",

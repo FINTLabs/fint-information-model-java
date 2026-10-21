@@ -28,7 +28,6 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppe;
 public class Persongruppe extends Gruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_MANY, null, null),
     PERSONGRUPPEMEDLEMSKAP(
         "persongruppemedlemskap",
         "no.novari.fint.model.utdanning.elev.Persongruppemedlemskap",
@@ -42,6 +41,7 @@ public class Persongruppe extends Gruppe implements FintModelObject {
         NONE_TO_MANY,
         null,
         null),
+    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_MANY, null, null),
     SKOLE(
         "skole",
         "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
