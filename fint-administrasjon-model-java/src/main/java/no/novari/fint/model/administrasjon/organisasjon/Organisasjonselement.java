@@ -33,12 +33,6 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Organisasjonselement extends Enhet implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ANSVAR(
-        "ansvar",
-        "no.novari.fint.model.administrasjon.kodeverk.Ansvar",
-        NONE_TO_MANY,
-        true,
-        "organisasjonselement"),
     ORGANISASJONSTYPE(
         "organisasjonstype",
         "no.novari.fint.model.administrasjon.kodeverk.Organisasjonstype",
@@ -51,6 +45,12 @@ public class Organisasjonselement extends Enhet implements FintModelObject {
         NONE_TO_ONE,
         true,
         "leder"),
+    ANSVAR(
+        "ansvar",
+        "no.novari.fint.model.administrasjon.kodeverk.Ansvar",
+        NONE_TO_MANY,
+        true,
+        "organisasjonselement"),
     OVERORDNET(
         "overordnet",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
@@ -63,18 +63,18 @@ public class Organisasjonselement extends Enhet implements FintModelObject {
         NONE_TO_MANY,
         true,
         "overordnet"),
-    SKOLE(
-        "skole",
-        "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
-        NONE_TO_ONE,
-        false,
-        "organisasjon"),
     ARBEIDSFORHOLD(
         "arbeidsforhold",
         "no.novari.fint.model.administrasjon.personal.Arbeidsforhold",
         NONE_TO_MANY,
         false,
-        "arbeidssted");
+        "arbeidssted"),
+    SKOLE(
+        "skole",
+        "no.novari.fint.model.utdanning.utdanningsprogram.Skole",
+        NONE_TO_ONE,
+        false,
+        "organisasjon");
 
     private final String name;
     private final String packageName;

@@ -33,30 +33,21 @@ public class UndervisningsgruppeResource extends Gruppe implements FintResource 
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getUndervisningsforhold() {
-    return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList());
-  }
-
-  public void addUndervisningsforhold(Link link) {
-    addLink("undervisningsforhold", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getFag() {
-    return getLinks().getOrDefault("fag", Collections.emptyList());
-  }
-
-  public void addFag(Link link) {
-    addLink("fag", link);
-  }
-
-  @JsonIgnore
   public List<Link> getTermin() {
     return getLinks().getOrDefault("termin", Collections.emptyList());
   }
 
   public void addTermin(Link link) {
     addLink("termin", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getUndervisningsforhold() {
+    return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList());
+  }
+
+  public void addUndervisningsforhold(Link link) {
+    addLink("undervisningsforhold", link);
   }
 
   @JsonIgnore
@@ -75,6 +66,15 @@ public class UndervisningsgruppeResource extends Gruppe implements FintResource 
 
   public void addSkolear(Link link) {
     addLink("skolear", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getFag() {
+    return getLinks().getOrDefault("fag", Collections.emptyList());
+  }
+
+  public void addFag(Link link) {
+    addLink("fag", link);
   }
 
   @JsonIgnore

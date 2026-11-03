@@ -37,11 +37,11 @@ public abstract class LonnResource implements FintAbstractObject, FintLinks {
     return result;
   }
 
-  private @Valid Date anvist;
-  private @Valid Date attestert;
+  private Date anvist;
+  private Date attestert;
   @NotBlank private String beskrivelse;
   private @Valid Identifikator kildesystemId;
-  private @Valid Date kontert;
+  private Date kontert;
   @NotNull private @Valid KontostrengResource kontostreng;
   private @Valid Periode opptjent;
   @NotNull private @Valid Periode periode;

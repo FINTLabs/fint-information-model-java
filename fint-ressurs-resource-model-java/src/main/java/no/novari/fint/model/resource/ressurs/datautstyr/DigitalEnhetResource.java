@@ -43,33 +43,6 @@ public class DigitalEnhetResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getAdministrator() {
-    return getLinks().getOrDefault("administrator", Collections.emptyList());
-  }
-
-  public void addAdministrator(Link link) {
-    addLink("administrator", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getEier() {
-    return getLinks().getOrDefault("eier", Collections.emptyList());
-  }
-
-  public void addEier(Link link) {
-    addLink("eier", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getPersonalressurs() {
-    return getLinks().getOrDefault("personalressurs", Collections.emptyList());
-  }
-
-  public void addPersonalressurs(Link link) {
-    addLink("personalressurs", link);
-  }
-
-  @JsonIgnore
   public List<Link> getElev() {
     return getLinks().getOrDefault("elev", Collections.emptyList());
   }
@@ -79,12 +52,30 @@ public class DigitalEnhetResource implements FintResource {
   }
 
   @JsonIgnore
+  public List<Link> getAdministrator() {
+    return getLinks().getOrDefault("administrator", Collections.emptyList());
+  }
+
+  public void addAdministrator(Link link) {
+    addLink("administrator", link);
+  }
+
+  @JsonIgnore
   public List<Link> getStatus() {
     return getLinks().getOrDefault("status", Collections.emptyList());
   }
 
   public void addStatus(Link link) {
     addLink("status", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getEier() {
+    return getLinks().getOrDefault("eier", Collections.emptyList());
+  }
+
+  public void addEier(Link link) {
+    addLink("eier", link);
   }
 
   @JsonIgnore
@@ -112,6 +103,15 @@ public class DigitalEnhetResource implements FintResource {
 
   public void addProdusent(Link link) {
     addLink("produsent", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getPersonalressurs() {
+    return getLinks().getOrDefault("personalressurs", Collections.emptyList());
+  }
+
+  public void addPersonalressurs(Link link) {
+    addLink("personalressurs", link);
   }
 
   @JsonIgnore

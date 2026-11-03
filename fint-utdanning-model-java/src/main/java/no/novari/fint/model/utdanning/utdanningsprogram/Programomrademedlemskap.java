@@ -28,18 +28,18 @@ import no.novari.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 public class Programomrademedlemskap extends Gruppemedlemskap implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    ELEVFORHOLD(
-        "elevforhold",
-        "no.novari.fint.model.utdanning.elev.Elevforhold",
-        ONE_TO_ONE,
-        true,
-        "programomrademedlemskap"),
     PROGRAMOMRADE(
         "programomrade",
         "no.novari.fint.model.utdanning.utdanningsprogram.Programomrade",
         ONE_TO_ONE,
         true,
-        "gruppemedlemskap");
+        "gruppemedlemskap"),
+    ELEVFORHOLD(
+        "elevforhold",
+        "no.novari.fint.model.utdanning.elev.Elevforhold",
+        ONE_TO_ONE,
+        true,
+        "programomrademedlemskap");
 
     private final String name;
     private final String packageName;

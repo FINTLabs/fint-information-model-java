@@ -47,7 +47,7 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
     return result;
   }
 
-  private @Valid Date arkivertDato;
+  private Date arkivertDato;
   private String beskrivelse;
   private List<@Valid DokumentbeskrivelseResource> dokumentbeskrivelse;
   private List<String> forfatter;
@@ -56,7 +56,7 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
   private List<@Valid MerknadResource> merknad;
   private List<String> nokkelord;
   private String offentligTittel;
-  private @Valid Date opprettetDato;
+  private Date opprettetDato;
   private List<@Valid PartResource> part;
   private List<String> referanseArkivDel;
   private String registreringsId;
@@ -67,39 +67,21 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getTilgangsgruppe() {
-    return getLinks().getOrDefault("tilgangsgruppe", Collections.emptyList());
-  }
-
-  public void addTilgangsgruppe(Link link) {
-    addLink("tilgangsgruppe", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getAdministrativEnhet() {
-    return getLinks().getOrDefault("administrativEnhet", Collections.emptyList());
-  }
-
-  public void addAdministrativEnhet(Link link) {
-    addLink("administrativEnhet", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getArkivdel() {
-    return getLinks().getOrDefault("arkivdel", Collections.emptyList());
-  }
-
-  public void addArkivdel(Link link) {
-    addLink("arkivdel", link);
-  }
-
-  @JsonIgnore
   public List<Link> getSaksbehandler() {
     return getLinks().getOrDefault("saksbehandler", Collections.emptyList());
   }
 
   public void addSaksbehandler(Link link) {
     addLink("saksbehandler", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getTilgangsgruppe() {
+    return getLinks().getOrDefault("tilgangsgruppe", Collections.emptyList());
+  }
+
+  public void addTilgangsgruppe(Link link) {
+    addLink("tilgangsgruppe", link);
   }
 
   @JsonIgnore
@@ -118,5 +100,23 @@ public abstract class RegistreringResource implements FintAbstractObject, FintLi
 
   public void addOpprettetAv(Link link) {
     addLink("opprettetAv", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getAdministrativEnhet() {
+    return getLinks().getOrDefault("administrativEnhet", Collections.emptyList());
+  }
+
+  public void addAdministrativEnhet(Link link) {
+    addLink("administrativEnhet", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getArkivdel() {
+    return getLinks().getOrDefault("arkivdel", Collections.emptyList());
+  }
+
+  public void addArkivdel(Link link) {
+    addLink("arkivdel", link);
   }
 }

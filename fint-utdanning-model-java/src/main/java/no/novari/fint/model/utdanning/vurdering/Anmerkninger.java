@@ -74,7 +74,7 @@ public class Anmerkninger implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  @NotNull private Integer atferd;
-  @NotNull private Integer orden;
+  @NotNull private Long atferd;
+  @NotNull private Long orden;
   @NotNull private @Valid Identifikator systemId;
 }

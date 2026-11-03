@@ -32,19 +32,19 @@ public class Tilgang implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
     ROLLE("rolle", "no.novari.fint.model.arkiv.kodeverk.Rolle", ONE_TO_ONE, null, null),
+    ARKIVRESSURS(
+        "arkivressurs",
+        "no.novari.fint.model.arkiv.noark.Arkivressurs",
+        NONE_TO_MANY,
+        true,
+        "tilgang"),
     ADMINISTRATIVENHET(
         "administrativEnhet",
         "no.novari.fint.model.arkiv.noark.AdministrativEnhet",
         NONE_TO_ONE,
         null,
         null),
-    ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, null, null),
-    ARKIVRESSURS(
-        "arkivressurs",
-        "no.novari.fint.model.arkiv.noark.Arkivressurs",
-        NONE_TO_MANY,
-        true,
-        "tilgang");
+    ARKIVDEL("arkivdel", "no.novari.fint.model.arkiv.noark.Arkivdel", NONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;

@@ -35,20 +35,20 @@ public class FasttilleggResource extends LonnResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getLonnsart() {
-    return getLinks().getOrDefault("lonnsart", Collections.emptyList());
-  }
-
-  public void addLonnsart(Link link) {
-    addLink("lonnsart", link);
-  }
-
-  @JsonIgnore
   public List<Link> getArbeidsforhold() {
     return getLinks().getOrDefault("arbeidsforhold", Collections.emptyList());
   }
 
   public void addArbeidsforhold(Link link) {
     addLink("arbeidsforhold", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getLonnsart() {
+    return getLinks().getOrDefault("lonnsart", Collections.emptyList());
+  }
+
+  public void addLonnsart(Link link) {
+    addLink("lonnsart", link);
   }
 }
