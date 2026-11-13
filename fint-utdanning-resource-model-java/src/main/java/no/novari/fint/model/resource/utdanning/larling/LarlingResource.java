@@ -40,12 +40,12 @@ public class LarlingResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getPerson() {
-    return getLinks().getOrDefault("person", Collections.emptyList());
+  public List<Link> getProgramomrade() {
+    return getLinks().getOrDefault("programomrade", Collections.emptyList());
   }
 
-  public void addPerson(Link link) {
-    addLink("person", link);
+  public void addProgramomrade(Link link) {
+    addLink("programomrade", link);
   }
 
   @JsonIgnore
@@ -58,12 +58,12 @@ public class LarlingResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getProgramomrade() {
-    return getLinks().getOrDefault("programomrade", Collections.emptyList());
+  public List<Link> getPerson() {
+    return getLinks().getOrDefault("person", Collections.emptyList());
   }
 
-  public void addProgramomrade(Link link) {
-    addLink("programomrade", link);
+  public void addPerson(Link link) {
+    addLink("person", link);
   }
 
   @JsonIgnore

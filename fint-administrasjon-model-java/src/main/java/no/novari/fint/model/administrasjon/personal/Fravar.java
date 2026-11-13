@@ -33,16 +33,16 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Fravar implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    FRAVARSGRUNN(
-        "fravarsgrunn",
-        "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn",
-        NONE_TO_ONE,
-        null,
-        null),
     FRAVARSTYPE(
         "fravarstype",
         "no.novari.fint.model.administrasjon.kodeverk.Fravarstype",
         ONE_TO_ONE,
+        null,
+        null),
+    FRAVARSGRUNN(
+        "fravarsgrunn",
+        "no.novari.fint.model.administrasjon.kodeverk.Fravarsgrunn",
+        NONE_TO_ONE,
         null,
         null),
     ARBEIDSFORHOLD(
@@ -114,7 +114,7 @@ public class Fravar implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Date godkjent;
+  private Date godkjent;
   private @Valid Identifikator kildesystemId;
   @NotNull private @Valid Periode periode;
   @NotNull private Long prosent;

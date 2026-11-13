@@ -37,9 +37,9 @@ public abstract class SaksmappeResource extends MappeResource
 
   private List<@Valid JournalpostResource> journalpost;
   private String saksaar;
-  private @Valid Date saksdato;
+  private Date saksdato;
   private String sakssekvensnummer;
-  private @Valid Date utlaantDato;
+  private Date utlaantDato;
 
   @JsonIgnore
   public Map<String, FintIdentifikator> getIdentifikators() {
@@ -53,12 +53,12 @@ public abstract class SaksmappeResource extends MappeResource
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getSaksmappetype() {
-    return getLinks().getOrDefault("saksmappetype", Collections.emptyList());
+  public List<Link> getJournalenhet() {
+    return getLinks().getOrDefault("journalenhet", Collections.emptyList());
   }
 
-  public void addSaksmappetype(Link link) {
-    addLink("saksmappetype", link);
+  public void addJournalenhet(Link link) {
+    addLink("journalenhet", link);
   }
 
   @JsonIgnore
@@ -71,21 +71,21 @@ public abstract class SaksmappeResource extends MappeResource
   }
 
   @JsonIgnore
-  public List<Link> getTilgangsgruppe() {
-    return getLinks().getOrDefault("tilgangsgruppe", Collections.emptyList());
+  public List<Link> getSaksansvarlig() {
+    return getLinks().getOrDefault("saksansvarlig", Collections.emptyList());
   }
 
-  public void addTilgangsgruppe(Link link) {
-    addLink("tilgangsgruppe", link);
+  public void addSaksansvarlig(Link link) {
+    addLink("saksansvarlig", link);
   }
 
   @JsonIgnore
-  public List<Link> getJournalenhet() {
-    return getLinks().getOrDefault("journalenhet", Collections.emptyList());
+  public List<Link> getSaksmappetype() {
+    return getLinks().getOrDefault("saksmappetype", Collections.emptyList());
   }
 
-  public void addJournalenhet(Link link) {
-    addLink("journalenhet", link);
+  public void addSaksmappetype(Link link) {
+    addLink("saksmappetype", link);
   }
 
   @JsonIgnore
@@ -98,11 +98,11 @@ public abstract class SaksmappeResource extends MappeResource
   }
 
   @JsonIgnore
-  public List<Link> getSaksansvarlig() {
-    return getLinks().getOrDefault("saksansvarlig", Collections.emptyList());
+  public List<Link> getTilgangsgruppe() {
+    return getLinks().getOrDefault("tilgangsgruppe", Collections.emptyList());
   }
 
-  public void addSaksansvarlig(Link link) {
-    addLink("saksansvarlig", link);
+  public void addTilgangsgruppe(Link link) {
+    addLink("tilgangsgruppe", link);
   }
 }
