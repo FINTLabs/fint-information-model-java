@@ -13,7 +13,8 @@ jobs:
         uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: '21.0.13.1+2'
+          java-version: '21'
+          check-latest: true
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
