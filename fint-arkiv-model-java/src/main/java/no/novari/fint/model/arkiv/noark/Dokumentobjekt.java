@@ -25,7 +25,12 @@ import no.novari.fint.model.FintRelation;
 public class Dokumentobjekt implements FintComplexDatatypeObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    FILFORMAT("filformat", "no.novari.fint.model.arkiv.kodeverk.Format", NONE_TO_ONE, null, null),
+    REFERANSEDOKUMENTFIL(
+        "referanseDokumentfil",
+        "no.novari.fint.model.arkiv.noark.Dokumentfil",
+        NONE_TO_ONE,
+        null,
+        null),
     VARIANTFORMAT(
         "variantFormat",
         "no.novari.fint.model.arkiv.kodeverk.Variantformat",
@@ -34,12 +39,7 @@ public class Dokumentobjekt implements FintComplexDatatypeObject {
         null),
     OPPRETTETAV(
         "opprettetAv", "no.novari.fint.model.arkiv.noark.Arkivressurs", ONE_TO_ONE, null, null),
-    REFERANSEDOKUMENTFIL(
-        "referanseDokumentfil",
-        "no.novari.fint.model.arkiv.noark.Dokumentfil",
-        NONE_TO_ONE,
-        null,
-        null);
+    FILFORMAT("filformat", "no.novari.fint.model.arkiv.kodeverk.Format", NONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;

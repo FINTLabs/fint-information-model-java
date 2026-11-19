@@ -2,7 +2,6 @@ package no.novari.fint.model.felles.kompleksedatatyper;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,6 +21,6 @@ public class Periode implements FintComplexDatatypeObject {
 
   @JsonIgnore private final boolean writeable = false;
   private String beskrivelse;
-  private @Valid Date slutt;
-  @NotNull private @Valid Date start;
+  private Date slutt;
+  @NotNull private Date start;
 }

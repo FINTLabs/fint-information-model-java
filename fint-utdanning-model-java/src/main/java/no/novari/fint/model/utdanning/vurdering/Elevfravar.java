@@ -30,12 +30,6 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class Elevfravar implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    AKTIVITETSFRAVAR(
-        "aktivitetsfravar",
-        "no.novari.fint.model.utdanning.vurdering.Aktivitetsfravar",
-        NONE_TO_MANY,
-        true,
-        "elevfravar"),
     FRAVARSREGISTRERING(
         "fravarsregistrering",
         "no.novari.fint.model.utdanning.vurdering.Fravarsregistrering",

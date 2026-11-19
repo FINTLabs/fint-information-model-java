@@ -81,6 +81,6 @@ public class Tjeneste implements FintModelObject {
   @JsonIgnore private final boolean writeable = true;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   @NotBlank private String navn;
-  private @Valid Date slettet;
+  private Date slettet;
   @NotNull private @Valid Identifikator systemId;
 }

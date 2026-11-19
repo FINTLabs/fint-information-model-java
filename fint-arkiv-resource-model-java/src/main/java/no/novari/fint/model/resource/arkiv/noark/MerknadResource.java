@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,20 +21,11 @@ import no.novari.fint.model.resource.Link;
 @ToString
 public class MerknadResource implements FintComplexDatatypeObject, FintLinks {
   // Attributes
-  @NotNull private @Valid Date merknadsdato;
+  @NotNull private Date merknadsdato;
   @NotBlank private String merknadstekst;
 
   // Relations
   @Getter private final Map<String, List<Link>> links = createLinks();
-
-  @JsonIgnore
-  public List<Link> getMerknadstype() {
-    return getLinks().getOrDefault("merknadstype", Collections.emptyList());
-  }
-
-  public void addMerknadstype(Link link) {
-    addLink("merknadstype", link);
-  }
 
   @JsonIgnore
   public List<Link> getMerknadRegistrertAv() {
@@ -44,5 +34,14 @@ public class MerknadResource implements FintComplexDatatypeObject, FintLinks {
 
   public void addMerknadRegistrertAv(Link link) {
     addLink("merknadRegistrertAv", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getMerknadstype() {
+    return getLinks().getOrDefault("merknadstype", Collections.emptyList());
+  }
+
+  public void addMerknadstype(Link link) {
+    addLink("merknadstype", link);
   }
 }

@@ -33,9 +33,9 @@ public abstract class Ordensvurdering implements FintAbstractObject {
   public enum Relasjonsnavn implements FintRelation {
     ATFERD(
         "atferd", "no.novari.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE, null, null),
+    SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null),
     ORDEN(
-        "orden", "no.novari.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE, null, null),
-    SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null);
+        "orden", "no.novari.fint.model.utdanning.vurdering.Karakterverdi", ONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;

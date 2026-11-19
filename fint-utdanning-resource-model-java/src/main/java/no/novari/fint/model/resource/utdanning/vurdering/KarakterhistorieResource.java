@@ -24,7 +24,7 @@ import no.novari.fint.model.resource.Link;
 @ToString
 public class KarakterhistorieResource implements FintResource {
   // Attributes
-  @NotNull private @Valid Date endretDato;
+  @NotNull private Date endretDato;
   @NotNull private @Valid Identifikator systemId;
 
   @JsonIgnore

@@ -69,15 +69,6 @@ public class FagResource extends Gruppe implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getProgramomrade() {
-    return getLinks().getOrDefault("programomrade", Collections.emptyList());
-  }
-
-  public void addProgramomrade(Link link) {
-    addLink("programomrade", link);
-  }
-
-  @JsonIgnore
   public List<Link> getFaggruppe() {
     return getLinks().getOrDefault("faggruppe", Collections.emptyList());
   }
@@ -93,6 +84,15 @@ public class FagResource extends Gruppe implements FintResource {
 
   public void addUndervisningsgruppe(Link link) {
     addLink("undervisningsgruppe", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getProgramomrade() {
+    return getLinks().getOrDefault("programomrade", Collections.emptyList());
+  }
+
+  public void addProgramomrade(Link link) {
+    addLink("programomrade", link);
   }
 
   @JsonIgnore

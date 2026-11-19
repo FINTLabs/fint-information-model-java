@@ -47,12 +47,66 @@ public class ArbeidsforholdResource implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
+  public List<Link> getTimerPerUke() {
+    return getLinks().getOrDefault("timerPerUke", Collections.emptyList());
+  }
+
+  public void addTimerPerUke(Link link) {
+    addLink("timerPerUke", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getArbeidsforholdstype() {
+    return getLinks().getOrDefault("arbeidsforholdstype", Collections.emptyList());
+  }
+
+  public void addArbeidsforholdstype(Link link) {
+    addLink("arbeidsforholdstype", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getPersonalleder() {
+    return getLinks().getOrDefault("personalleder", Collections.emptyList());
+  }
+
+  public void addPersonalleder(Link link) {
+    addLink("personalleder", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getArbeidslokasjon() {
+    return getLinks().getOrDefault("arbeidslokasjon", Collections.emptyList());
+  }
+
+  public void addArbeidslokasjon(Link link) {
+    addLink("arbeidslokasjon", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getFormal() {
+    return getLinks().getOrDefault("formal", Collections.emptyList());
+  }
+
+  public void addFormal(Link link) {
+    addLink("formal", link);
+  }
+
+  @JsonIgnore
   public List<Link> getAktivitet() {
     return getLinks().getOrDefault("aktivitet", Collections.emptyList());
   }
 
   public void addAktivitet(Link link) {
     addLink("aktivitet", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getProsjekt() {
+    return getLinks().getOrDefault("prosjekt", Collections.emptyList());
+  }
+
+  public void addProsjekt(Link link) {
+    addLink("prosjekt", link);
   }
 
   @JsonIgnore
@@ -74,21 +128,30 @@ public class ArbeidsforholdResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getArbeidsforholdstype() {
-    return getLinks().getOrDefault("arbeidsforholdstype", Collections.emptyList());
+  public List<Link> getFunksjon() {
+    return getLinks().getOrDefault("funksjon", Collections.emptyList());
   }
 
-  public void addArbeidsforholdstype(Link link) {
-    addLink("arbeidsforholdstype", link);
+  public void addFunksjon(Link link) {
+    addLink("funksjon", link);
   }
 
   @JsonIgnore
-  public List<Link> getArt() {
-    return getLinks().getOrDefault("art", Collections.emptyList());
+  public List<Link> getObjekt() {
+    return getLinks().getOrDefault("objekt", Collections.emptyList());
   }
 
-  public void addArt(Link link) {
-    addLink("art", link);
+  public void addObjekt(Link link) {
+    addLink("objekt", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getArbeidssted() {
+    return getLinks().getOrDefault("arbeidssted", Collections.emptyList());
+  }
+
+  public void addArbeidssted(Link link) {
+    addLink("arbeidssted", link);
   }
 
   @JsonIgnore
@@ -98,24 +161,6 @@ public class ArbeidsforholdResource implements FintResource {
 
   public void addDiverse(Link link) {
     addLink("diverse", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getFormal() {
-    return getLinks().getOrDefault("formal", Collections.emptyList());
-  }
-
-  public void addFormal(Link link) {
-    addLink("formal", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getFunksjon() {
-    return getLinks().getOrDefault("funksjon", Collections.emptyList());
-  }
-
-  public void addFunksjon(Link link) {
-    addLink("funksjon", link);
   }
 
   @JsonIgnore
@@ -137,21 +182,12 @@ public class ArbeidsforholdResource implements FintResource {
   }
 
   @JsonIgnore
-  public List<Link> getObjekt() {
-    return getLinks().getOrDefault("objekt", Collections.emptyList());
+  public List<Link> getArt() {
+    return getLinks().getOrDefault("art", Collections.emptyList());
   }
 
-  public void addObjekt(Link link) {
-    addLink("objekt", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getProsjekt() {
-    return getLinks().getOrDefault("prosjekt", Collections.emptyList());
-  }
-
-  public void addProsjekt(Link link) {
-    addLink("prosjekt", link);
+  public void addArt(Link link) {
+    addLink("art", link);
   }
 
   @JsonIgnore
@@ -170,42 +206,6 @@ public class ArbeidsforholdResource implements FintResource {
 
   public void addStillingskode(Link link) {
     addLink("stillingskode", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getTimerPerUke() {
-    return getLinks().getOrDefault("timerPerUke", Collections.emptyList());
-  }
-
-  public void addTimerPerUke(Link link) {
-    addLink("timerPerUke", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getArbeidslokasjon() {
-    return getLinks().getOrDefault("arbeidslokasjon", Collections.emptyList());
-  }
-
-  public void addArbeidslokasjon(Link link) {
-    addLink("arbeidslokasjon", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getArbeidssted() {
-    return getLinks().getOrDefault("arbeidssted", Collections.emptyList());
-  }
-
-  public void addArbeidssted(Link link) {
-    addLink("arbeidssted", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getPersonalleder() {
-    return getLinks().getOrDefault("personalleder", Collections.emptyList());
-  }
-
-  public void addPersonalleder(Link link) {
-    addLink("personalleder", link);
   }
 
   @JsonIgnore

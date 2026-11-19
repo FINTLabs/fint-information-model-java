@@ -27,12 +27,6 @@ import no.novari.fint.model.FintRelation;
 public class Journalpost extends Registrering implements FintComplexDatatypeObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    JOURNALPOSTTYPE(
-        "journalposttype",
-        "no.novari.fint.model.arkiv.kodeverk.JournalpostType",
-        ONE_TO_ONE,
-        null,
-        null),
     JOURNALSTATUS(
         "journalstatus",
         "no.novari.fint.model.arkiv.kodeverk.JournalStatus",
@@ -43,6 +37,12 @@ public class Journalpost extends Registrering implements FintComplexDatatypeObje
         "journalenhet",
         "no.novari.fint.model.arkiv.noark.AdministrativEnhet",
         NONE_TO_ONE,
+        null,
+        null),
+    JOURNALPOSTTYPE(
+        "journalposttype",
+        "no.novari.fint.model.arkiv.kodeverk.JournalpostType",
+        ONE_TO_ONE,
         null,
         null);
 
@@ -84,13 +84,13 @@ public class Journalpost extends Registrering implements FintComplexDatatypeObje
   @JsonIgnore private final List<FintRelation> relations = createRelations();
   private Long antallVedlegg;
   private @Valid Avskrivning avskrivning;
-  private @Valid Date dokumentetsDato;
-  private @Valid Date forfallsDato;
+  private Date dokumentetsDato;
+  private Date forfallsDato;
   private String journalAr;
-  private @Valid Date journalDato;
+  private Date journalDato;
   private Long journalPostnummer;
   private Long journalSekvensnummer;
-  private @Valid Date mottattDato;
-  private @Valid Date offentlighetsvurdertDato;
-  private @Valid Date sendtDato;
+  private Date mottattDato;
+  private Date offentlighetsvurdertDato;
+  private Date sendtDato;
 }

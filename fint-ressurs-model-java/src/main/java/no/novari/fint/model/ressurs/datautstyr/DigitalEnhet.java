@@ -31,32 +31,32 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public class DigitalEnhet implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_ONE, null, null),
     ADMINISTRATOR(
         "administrator",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         ONE_TO_ONE,
         null,
         null),
+    STATUS("status", "no.novari.fint.model.ressurs.kodeverk.Status", NONE_TO_ONE, null, null),
     EIER(
         "eier",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         NONE_TO_ONE,
         null,
         null),
-    PERSONALRESSURS(
-        "personalressurs",
-        "no.novari.fint.model.administrasjon.personal.Personalressurs",
-        NONE_TO_ONE,
-        null,
-        null),
-    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_ONE, null, null),
-    STATUS("status", "no.novari.fint.model.ressurs.kodeverk.Status", NONE_TO_ONE, null, null),
     ENHETSTYPE(
         "enhetstype", "no.novari.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null, null),
     PLATTFORM(
         "plattform", "no.novari.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null, null),
     PRODUSENT(
         "produsent", "no.novari.fint.model.ressurs.kodeverk.Produsent", NONE_TO_ONE, null, null),
+    PERSONALRESSURS(
+        "personalressurs",
+        "no.novari.fint.model.administrasjon.personal.Personalressurs",
+        NONE_TO_ONE,
+        null,
+        null),
     ENHETSGRUPPEMEDLEMSKAP(
         "enhetsgruppemedlemskap",
         "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap",

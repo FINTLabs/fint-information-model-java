@@ -22,7 +22,6 @@ import no.novari.fint.model.FintModelObject;
 import no.novari.fint.model.FintMultiplicity;
 import no.novari.fint.model.FintRelation;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 
 @Data
 @NoArgsConstructor
@@ -31,16 +30,16 @@ import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 public class Enhetsgruppe implements FintModelObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
+    ENHETSTYPE(
+        "enhetstype", "no.novari.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null, null),
+    PLATTFORM(
+        "plattform", "no.novari.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null, null),
     ORGANISASJONSENHET(
         "organisasjonsenhet",
         "no.novari.fint.model.administrasjon.organisasjon.Organisasjonselement",
         ONE_TO_ONE,
         null,
         null),
-    ENHETSTYPE(
-        "enhetstype", "no.novari.fint.model.ressurs.kodeverk.Enhetstype", ONE_TO_ONE, null, null),
-    PLATTFORM(
-        "plattform", "no.novari.fint.model.ressurs.kodeverk.Plattform", ONE_TO_ONE, null, null),
     ENHETSGRUPPEMEDLEMSKAP(
         "enhetsgruppemedlemskap",
         "no.novari.fint.model.ressurs.datautstyr.Enhetsgruppemedlemskap",
@@ -91,7 +90,6 @@ public class Enhetsgruppe implements FintModelObject {
 
   @JsonIgnore private final boolean writeable = false;
   @JsonIgnore private final List<FintRelation> relations = createRelations();
-  private @Valid Periode gyldighetsperiode;
   @NotBlank private String navn;
   @NotNull private @Valid Identifikator systemId;
 }

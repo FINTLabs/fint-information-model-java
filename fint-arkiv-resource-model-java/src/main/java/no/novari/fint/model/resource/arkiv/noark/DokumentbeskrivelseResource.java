@@ -42,24 +42,15 @@ public class DokumentbeskrivelseResource implements FintComplexDatatypeObject, F
   private Long dokumentnummer;
   private List<@Valid DokumentobjektResource> dokumentobjekt;
   private List<String> forfatter;
-  private @Valid Date opprettetDato;
+  private Date opprettetDato;
   private List<@Valid PartResource> part;
   private List<String> referanseArkivdel;
   private @Valid SkjermingResource skjerming;
-  private @Valid Date tilknyttetDato;
+  private Date tilknyttetDato;
   @NotBlank private String tittel;
 
   // Relations
   @Getter private final Map<String, List<Link>> links = createLinks();
-
-  @JsonIgnore
-  public List<Link> getDokumentstatus() {
-    return getLinks().getOrDefault("dokumentstatus", Collections.emptyList());
-  }
-
-  public void addDokumentstatus(Link link) {
-    addLink("dokumentstatus", link);
-  }
 
   @JsonIgnore
   public List<Link> getDokumentType() {
@@ -68,15 +59,6 @@ public class DokumentbeskrivelseResource implements FintComplexDatatypeObject, F
 
   public void addDokumentType(Link link) {
     addLink("dokumentType", link);
-  }
-
-  @JsonIgnore
-  public List<Link> getTilknyttetRegistreringSom() {
-    return getLinks().getOrDefault("tilknyttetRegistreringSom", Collections.emptyList());
-  }
-
-  public void addTilknyttetRegistreringSom(Link link) {
-    addLink("tilknyttetRegistreringSom", link);
   }
 
   @JsonIgnore
@@ -95,5 +77,23 @@ public class DokumentbeskrivelseResource implements FintComplexDatatypeObject, F
 
   public void addOpprettetAv(Link link) {
     addLink("opprettetAv", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getDokumentstatus() {
+    return getLinks().getOrDefault("dokumentstatus", Collections.emptyList());
+  }
+
+  public void addDokumentstatus(Link link) {
+    addLink("dokumentstatus", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getTilknyttetRegistreringSom() {
+    return getLinks().getOrDefault("tilknyttetRegistreringSom", Collections.emptyList());
+  }
+
+  public void addTilknyttetRegistreringSom(Link link) {
+    addLink("tilknyttetRegistreringSom", link);
   }
 }
