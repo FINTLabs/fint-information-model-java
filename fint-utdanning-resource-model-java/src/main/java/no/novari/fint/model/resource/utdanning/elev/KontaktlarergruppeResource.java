@@ -33,15 +33,6 @@ public class KontaktlarergruppeResource extends Gruppe implements FintResource {
   @Getter private final Map<String, List<Link>> links = createLinks();
 
   @JsonIgnore
-  public List<Link> getKlasse() {
-    return getLinks().getOrDefault("klasse", Collections.emptyList());
-  }
-
-  public void addKlasse(Link link) {
-    addLink("klasse", link);
-  }
-
-  @JsonIgnore
   public List<Link> getTermin() {
     return getLinks().getOrDefault("termin", Collections.emptyList());
   }
@@ -66,6 +57,15 @@ public class KontaktlarergruppeResource extends Gruppe implements FintResource {
 
   public void addSkolear(Link link) {
     addLink("skolear", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getKlasse() {
+    return getLinks().getOrDefault("klasse", Collections.emptyList());
+  }
+
+  public void addKlasse(Link link) {
+    addLink("klasse", link);
   }
 
   @JsonIgnore

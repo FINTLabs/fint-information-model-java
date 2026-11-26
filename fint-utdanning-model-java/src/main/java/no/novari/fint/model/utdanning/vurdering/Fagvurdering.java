@@ -31,14 +31,14 @@ import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
 public abstract class Fagvurdering implements FintAbstractObject {
   @Getter
   public enum Relasjonsnavn implements FintRelation {
-    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE, null, null),
     SKOLEAR("skolear", "no.novari.fint.model.utdanning.kodeverk.Skolear", NONE_TO_ONE, null, null),
     KARAKTER(
         "karakter",
         "no.novari.fint.model.utdanning.vurdering.Karakterverdi",
         NONE_TO_ONE,
         null,
-        null);
+        null),
+    FAG("fag", "no.novari.fint.model.utdanning.timeplan.Fag", ONE_TO_ONE, null, null);
 
     private final String name;
     private final String packageName;

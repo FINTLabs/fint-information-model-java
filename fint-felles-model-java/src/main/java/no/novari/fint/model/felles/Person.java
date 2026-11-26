@@ -60,9 +60,9 @@ public class Person extends Aktor implements FintModelObject {
         "kontaktperson"),
     FORELDRE(
         "foreldre", "no.novari.fint.model.felles.Person", NONE_TO_MANY, true, "foreldreansvar"),
+    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_ONE, false, "person"),
     LARLING(
         "larling", "no.novari.fint.model.utdanning.larling.Larling", NONE_TO_MANY, false, "person"),
-    ELEV("elev", "no.novari.fint.model.utdanning.elev.Elev", NONE_TO_ONE, false, "person"),
     OTUNGDOM(
         "otungdom", "no.novari.fint.model.utdanning.ot.OtUngdom", NONE_TO_ONE, false, "person");
 

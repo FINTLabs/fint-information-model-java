@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import no.novari.fint.model.FintIdentifikator;
 import no.novari.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.novari.fint.model.felles.kompleksedatatyper.Periode;
 import no.novari.fint.model.resource.FintResource;
 import no.novari.fint.model.resource.Link;
 
@@ -24,7 +23,6 @@ import no.novari.fint.model.resource.Link;
 @ToString
 public class EnhetsgruppeResource implements FintResource {
   // Attributes
-  private @Valid Periode gyldighetsperiode;
   @NotBlank private String navn;
   @NotNull private @Valid Identifikator systemId;
 
@@ -38,15 +36,6 @@ public class EnhetsgruppeResource implements FintResource {
 
   // Relations
   @Getter private final Map<String, List<Link>> links = createLinks();
-
-  @JsonIgnore
-  public List<Link> getOrganisasjonsenhet() {
-    return getLinks().getOrDefault("organisasjonsenhet", Collections.emptyList());
-  }
-
-  public void addOrganisasjonsenhet(Link link) {
-    addLink("organisasjonsenhet", link);
-  }
 
   @JsonIgnore
   public List<Link> getEnhetstype() {
@@ -64,6 +53,15 @@ public class EnhetsgruppeResource implements FintResource {
 
   public void addPlattform(Link link) {
     addLink("plattform", link);
+  }
+
+  @JsonIgnore
+  public List<Link> getOrganisasjonsenhet() {
+    return getLinks().getOrDefault("organisasjonsenhet", Collections.emptyList());
+  }
+
+  public void addOrganisasjonsenhet(Link link) {
+    addLink("organisasjonsenhet", link);
   }
 
   @JsonIgnore

@@ -2,7 +2,6 @@ package no.novari.fint.model.arkiv.noark;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,6 +21,6 @@ public class Avskrivning implements FintComplexDatatypeObject {
 
   @JsonIgnore private final boolean writeable = true;
   @NotBlank private String avskrevetAv;
-  @NotNull private @Valid Date avskrivningsdato;
+  @NotNull private Date avskrivningsdato;
   @NotBlank private String avskrivningsmate;
 }
